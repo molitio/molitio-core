@@ -4,7 +4,9 @@
   "description": "Universal reusable React UI Components",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,21 @@
   "bugs": {
     "url": "https://github.com/molitio/molitio-ui-core/issues"
   },
-  "homepage": "https://github.com/molitio/molitio-ui-core#readme"
+  "homepage": "https://github.com/molitio/molitio-ui-core#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.2.9",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {}
 }
