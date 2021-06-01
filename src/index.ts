@@ -1,1 +1,1 @@
-export * from './molitio-ui/public-api'
+export * from './ui-core/public-api'
