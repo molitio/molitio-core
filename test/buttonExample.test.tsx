@@ -1,6 +1,6 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ButtonExample, ButtonExampleProps } from '../src';
+import { ButtonExample } from '../src';
 
 describe('Thing', () => {
   it('renders without crashing', () => {
