@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "esnext",
+        "outDir": "./lib",
+        "rootDir": "./",
+        "strict": true,
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "declaration": true,
+        "removeComments": true,
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "noFallthroughCasesInSwitch": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react"
+    },
+    "lib": ["esnext", "dom"],
+    "typeRoots": ["node_modules/@types"],
+   "paths": {
+        "@molitio-ui/*": ["*", "molitio-ui/*"],
+        "@molitio-ui-interface/*": ["*", "molitio-ui-interface/*"],
+    },
+    "include": ["./**/*.ts"],
+    "exclude": ["./tests", "./node_modules", "./lib"]
+}

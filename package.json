@@ -1,40 +1,95 @@
 {
-  "name": "molitio-ui-core",
-  "version": "0.0.0",
-  "description": "Universal reusable React UI Components",
-  "main": "index.js",
-  "scripts": {
-    "test": "test",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/molitio/molitio-ui-core.git"
-  },
-  "keywords": [
-    "ui"
-  ],
-  "author": "molitio foundation",
-  "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/molitio/molitio-ui-core/issues"
-  },
-  "homepage": "https://github.com/molitio/molitio-ui-core#readme",
-  "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@storybook/addon-actions": "^6.2.9",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addon-links": "^6.2.9",
-    "@storybook/preset-create-react-app": "^3.1.7",
-    "@storybook/react": "^6.2.9",
-    "babel-loader": "^8.2.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "dependencies": {}
+    "name": "@molitio-ui/core",
+    "version": "0.0.0",
+    "description": "Universal reusable React UI Components",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/molitio/molitio-ui-core.git"
+    },
+    "keywords": [
+        "ui"
+    ],
+    "author": "molitio foundation",
+    "license": "CC0-1.0",
+    "bugs": {
+        "url": "https://github.com/molitio/molitio-ui-core/issues"
+    },
+    "homepage": "https://github.com/molitio/molitio-ui-core#readme",
+    "scripts": {
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook",
+        "lint": "eslint src/** --ext .ts",
+        "lint-fix": "eslint src/** --ext .ts --fix",
+        "build": "tsdx build",
+        "prestart": "npm run build",
+        "pretest": "npm run lint",
+        "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
+        "test-nolint": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
+        "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test",
+        "start": "tsdx watch",
+        "prepare": "tsdx build",
+        "size": "size-limit",
+        "analyze": "size-limit --why"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "type": "module",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "engines": {
+      "node": ">=10"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "tsdx lint"
+      }
+    },
+    "size-limit": [
+      {
+        "path": "dist/molitio-ui-core.cjs.production.min.js",
+        "limit": "10 KB"
+      },
+      {
+        "path": "dist/molitio-ui-core.esm.js",
+        "limit": "10 KB"
+      }
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.14.3",
+        "@material-ui/core": "^4.11.3",
+        "@storybook/addon-actions": "^6.2.9",
+        "@storybook/addon-essentials": "^6.1.21",
+        "@storybook/addon-links": "^6.2.9",
+        "@storybook/preset-create-react-app": "^3.1.7",
+        "@storybook/react": "^6.2.9",
+        "@storybook/addon-info": "^5.3.21",
+        "@storybook/addons": "^6.2.9",
+        "@types/jasmine": "^3.6.3",
+        "@types/node": "12.12.2",
+        "@typescript-eslint/eslint-plugin": "^4.15.0",
+        "@typescript-eslint/parser": "^4.15.0",
+        "babel-loader": "^8.2.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "eslint": "^7.20.0",
+        "eslint-config-google": "^0.14.0",
+        "jasmine": "^3.6.4",
+        "ts-node": "^9.0.0",
+        "ts-node-dev": "1.0.0-pre.63",
+        "typescript": "^4.1.5",
+        "@size-limit/preset-small-lib": "^4.11.0",
+        "@types/react": "^17.0.8",
+        "@types/react-dom": "^17.0.5",
+        "husky": "^6.0.0",
+        "react-is": "^17.0.2",
+        "size-limit": "^4.11.0",
+        "tsdx": "^0.14.1",
+        "tslib": "^2.2.0"
+    },
+    "peerDependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    }
 }
