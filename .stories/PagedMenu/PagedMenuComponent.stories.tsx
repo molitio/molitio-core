@@ -1,23 +1,44 @@
 // YourComponent.stories.tsx
 
-import React, { ComponentProps } from "react";
+import React from 'react';
 
-import { Story } from "@storybook/react";
+import { Story, Meta } from '@storybook/react';
 
-import { PagedMenuComponent } from "../../public-api";
+import { MenuPageData, PagedMenuComponent } from '../index';
 
 //👇 This default export determines where your story goes in the story list
-export default {
-  title: "Paged Menu",
+const meta: Meta = {
+  title: 'Paged Menu',
   component: PagedMenuComponent,
+  args: {
+    data: {
+      pageName: 'page example',
+      menuItems: [
+        {
+          id: 'random1',
+          name: 'example menu item',
+        },
+      ],
+    },
+  },
 };
 
+export default meta;
+
 //👇 We create a “template” of how args map to rendering
-const Template: Story<ComponentProps<typeof PagedMenuComponent>> = (args) => (
-  <PagedMenuComponent />
-);
+const Template: Story<MenuPageData> = args => <PagedMenuComponent {...args} />;
 
 export const PagedMenu = Template.bind({});
+
 PagedMenu.args = {
+  data: {
+    pageName: 'page example',
+    menuItems: [
+      {
+        id: 'random1',
+        name: 'example menu item',
+      },
+    ],
+  },
   /*👇 The args you need here will depend on your component */
 };

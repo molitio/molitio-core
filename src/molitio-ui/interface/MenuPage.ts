@@ -1,7 +1,8 @@
-import { MenuItem } from "./MenuItem";
+import { MenuItem } from './MenuItem';
 
-export interface MenuPageData{
+export interface MenuPageData {
+  data: {
     pageName: string;
     menuItems: MenuItem[];
-
+  };
 }

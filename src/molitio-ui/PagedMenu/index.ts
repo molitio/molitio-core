@@ -1,2 +1,2 @@
-export { PagedMenuComponent } from './PagedMenuComponent';
-export { PagedMenuItemComponent } from './PagedMenuItemComponent';
+export * from './PagedMenuComponent';
+export * from './PagedMenuItemComponent';

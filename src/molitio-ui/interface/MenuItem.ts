@@ -2,9 +2,9 @@ export interface MenuItem {
     data: {
         id: string;
         name: string;
-        price: number;
-        currency: string;
-        imageUrl: string;
-        description: string;
+        currency?: string;
+        imageUrl?: string;
+        description?: string;
+        price?: number;
     };
 }

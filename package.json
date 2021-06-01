@@ -36,10 +36,6 @@
   "engines": {
     "node": ">=12"
   },
-  "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -62,6 +58,10 @@
       "limit": "10 KB"
     }
   ],
+  "peerDependencies": {
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
   "devDependencies": {
     "@material-ui/core": "^4.11.3",
     "@size-limit/preset-small-lib": "^4.11.0",
@@ -74,8 +74,8 @@
     "@types/react-dom": "^17.0.5",
     "babel-loader": "^8.2.2",
     "husky": "^6.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-is": "^17.0.2",
     "size-limit": "^4.11.0",
     "tsdx": "^0.14.1",
