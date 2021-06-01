@@ -8,7 +8,7 @@ import { PagedMenuComponent } from "../../public-api";
 
 //👇 This default export determines where your story goes in the story list
 export default {
-  title: "Paged Menu",
+  title: "Paged Menu a",
   component: PagedMenuComponent,
 };
 
