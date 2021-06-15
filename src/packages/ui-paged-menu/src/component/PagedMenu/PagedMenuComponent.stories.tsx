@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Story, Meta } from '@storybook/react';
 
-import { MenuPageDataCollection, PagedMenuComponent } from '../index';
+import { MenuPageDataCollection, PagedMenuComponent } from '../../src/ui-core/public-api';
 import { MenuPageData } from '../../src';
 
 const defaultArgs = new Map<string, MenuPageData>([

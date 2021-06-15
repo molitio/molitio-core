@@ -1,13 +1,11 @@
-import { useTheme, makeStyles, createStyles } from '@material-ui/core';
 import React from 'react';
-import { MenuPageDataCollection, PagedMenuItemComponent } from '../public-api';
-import {} from '../public-api';
+import { useTheme, makeStyles, createStyles } from '@material-ui/core';
+import { MenuPageDataCollection } from '../../interface/IPagedMenu';
+import { PagedMenuItemComponent } from 'ui-paged-menu';
 
 export function PagedMenuComponent({
   menuPages,
 }: MenuPageDataCollection): JSX.Element {
-  console.log(Array.from(menuPages));
-
   const theme = useTheme();
   const useStyles = makeStyles(() =>
     createStyles({

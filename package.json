@@ -1,63 +1,11 @@
 {
-  "name": "@molitio/ui-core",
-  "version": "0.2.2",
-  "author": "molitio foundation",
-  "description": "Universal reusable React UI Components",
-  "license": "CC0-1.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/molitio/molitio-ui-core.git"
-  },
-  "keywords": [
-    "molitio",
-    "ui"
+  "workspaces": [
+    "packages/*"
   ],
-  "bugs": {
-    "url": "https://github.com/molitio/molitio-ui-core/issues"
-  },
-  "homepage": "https://github.com/molitio/molitio-ui-core#readme",
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "scripts": {},
   "engines": {
     "node": ">=12"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "module": "dist/molitio-ui-core.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/molitio-ui-core.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/molitio-ui-core.esm.js",
-      "limit": "10 KB"
-    }
-  ],
   "peerDependencies": {
     "react": "^16.14.0",
     "react-dom": "^16.14.0"

@@ -11,7 +11,7 @@ import {
   CardActions,
   Button,
 } from "@material-ui/core";
-import { MenuItem } from '../public-api';
+import { MenuItem } from 'src';
 
 export function PagedMenuItemComponent({ data }: MenuItem): JSX.Element {
   const theme = useTheme();

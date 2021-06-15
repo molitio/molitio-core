@@ -1,12 +1,14 @@
 {
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
-  "include": ["src", "types", "index.ts"],
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"],
+  "declarationDir": "./dist",
   "compilerOptions": {
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "baseUrl": "./",
     "paths": {
-      "@molitio-ui": ["src/*"]
+      "ui-paged-menu": ["src/packages/ui-paged-menu/src/*"]
     },
     "importHelpers": true,
     "downlevelIteration": false,
