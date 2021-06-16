@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme, makeStyles, createStyles } from '@material-ui/core';
-import { MenuPageDataCollection } from '../../interface/IPagedMenu';
-import { PagedMenuItemComponent } from 'ui-paged-menu';
+import { MenuPageDataCollection } from 'ui-paged-menu/interface/IPagedMenu';
+import { PagedMenuItemComponent } from 'ui-paged-menu/component/PagedMenu';
 
 export function PagedMenuComponent({
   menuPages,

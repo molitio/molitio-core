@@ -1,6 +1,6 @@
 {
   "workspaces": [
-    "packages/*"
+    "src"
   ],
   "scripts": {},
   "engines": {
