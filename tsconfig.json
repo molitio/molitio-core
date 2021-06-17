@@ -1,8 +1,8 @@
 {
   // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
-  "include": ["./"],
-  "exclude": ["node_modules", "dist"],
-  "declarationDir": "dist",
+  "include": ["./src"],
+  "exclude": ["node_modules", "lib"],
+  "declarationDir": "lib",
   "compilerOptions": {
     "module": "esnext",
     "lib": ["dom", "esnext"],

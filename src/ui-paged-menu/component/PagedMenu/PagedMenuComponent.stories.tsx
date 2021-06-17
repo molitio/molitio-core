@@ -1,5 +1,3 @@
-// YourComponent.stories.tsx
-
 import React from "react";
 
 import { Story, Meta } from "@storybook/react";
@@ -29,7 +27,6 @@ const defaultArgs = new Map<string, MenuPageData>([
   ],
 ]);
 
-//👇 This default export determines where your story goes in the story list
 const meta: Meta = {
   title: "Paged Menu",
   component: PagedMenuComponent,
@@ -40,7 +37,6 @@ const meta: Meta = {
 
 export default meta;
 
-//👇 We create a “template” of how args map to rendering
 const Template: Story<MenuPageDataCollection> = (args) => (
   <PagedMenuComponent {...args} />
 );
@@ -49,5 +45,4 @@ export const PagedMenu = Template.bind({});
 
 PagedMenu.args = {
   menuPages: defaultArgs,
-  /*👇 The args you need here will depend on your component */
 };

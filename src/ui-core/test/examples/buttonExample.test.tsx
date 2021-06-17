@@ -1,14 +1,14 @@
-import React from 'react';
-import * as ReactDOM from 'react-dom';
-import { ButtonExample } from 'ui-core/component/examples';
+import React from "react";
+import * as ReactDOM from "react-dom";
+import { ButtonExample } from "ui-core/component/examples";
 
-describe('Thing', () => {
-  it('renders without crashing', () => {
+describe("Thing", () => {
+  it("renders without crashing", () => {
     const props = {
       primary: true,
-      label: 'test',
+      label: "test"
     };
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     ReactDOM.render(<ButtonExample props={props} />, div);
     ReactDOM.unmountComponentAtNode(div);
   });

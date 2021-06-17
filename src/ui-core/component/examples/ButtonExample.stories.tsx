@@ -9,17 +9,15 @@ const meta: Meta = {
   args: {
     props: {
       primary: true,
-      label: "Example Button",
-    },
-  },
+      label: "Example Button"
+    }
+  }
 };
 
 export default meta;
 
 //👇 We create a “template” of how args map to rendering
-const Template: Story<ButtonExampleProps> = (args) => (
-  <ButtonExample {...args} />
-);
+const Template: Story<ButtonExampleProps> = args => <ButtonExample {...args} />;
 
 export const Primary = Template.bind({});
 export const Secondary = Template.bind({});
@@ -27,13 +25,13 @@ export const Secondary = Template.bind({});
 Primary.args = {
   props: {
     primary: true,
-    label: "Button",
-  },
+    label: "Button"
+  }
 };
 
 Secondary.args = {
   props: {
     primary: false,
-    label: "Secondary Button",
-  },
+    label: "Secondary Button"
+  }
 };

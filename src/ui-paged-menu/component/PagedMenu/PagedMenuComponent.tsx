@@ -1,28 +1,28 @@
-import React from 'react';
-import { useTheme, makeStyles, createStyles } from '@material-ui/core';
-import { MenuPageDataCollection } from 'ui-paged-menu/interface/IPagedMenu';
-import { PagedMenuItemComponent } from 'ui-paged-menu/component/PagedMenu';
+import React from "react";
+import { useTheme, makeStyles, createStyles } from "@material-ui/core";
+import { MenuPageDataCollection } from "ui-paged-menu/interface/IPagedMenu";
+import { PagedMenuItemComponent } from "ui-paged-menu/component/PagedMenu";
 
 export function PagedMenuComponent({
-  menuPages,
+  menuPages
 }: MenuPageDataCollection): JSX.Element {
   const theme = useTheme();
   const useStyles = makeStyles(() =>
     createStyles({
       menuList: {
-        listStyleType: 'none',
+        listStyleType: "none",
         color: theme.palette.text.primary,
-        margin: '10px',
+        margin: "10px",
         border: 0,
-        borderStyle: 'solid',
+        borderStyle: "solid",
         borderColor: theme.palette.secondary.main,
         boxShadow: theme.shadows[5],
         opacity: 0.9,
-        [theme.breakpoints.down('xs')]: {},
-        backgroundColor: 'transparent',
-        borderRadius: 20,
+        [theme.breakpoints.down("xs")]: {},
+        backgroundColor: "transparent",
+        borderRadius: 20
         /*...theme.themeGradient,*/
-      },
+      }
     })
   );
 

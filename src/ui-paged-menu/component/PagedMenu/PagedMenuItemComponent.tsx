@@ -9,9 +9,9 @@ import {
   CardContent,
   Typography,
   CardActions,
-  Button,
+  Button
 } from "@material-ui/core";
-import { MenuItem } from 'ui-paged-menu/interface/IPagedMenu';
+import { MenuItem } from "ui-paged-menu/interface/IPagedMenu";
 
 export function PagedMenuItemComponent({ data }: MenuItem): JSX.Element {
   const theme = useTheme();
@@ -27,16 +27,16 @@ export function PagedMenuItemComponent({ data }: MenuItem): JSX.Element {
         opacity: 0.9,
         [theme.breakpoints.down("xs")]: {},
         backgroundColor: "transparent",
-        borderRadius: 20,
+        borderRadius: 20
         /*...theme.themeGradient,*/
       },
       contentContainer: {
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "row"
       },
       card: {
         borderRadius: 20,
-        backgroundColor: "transparent",
+        backgroundColor: "transparent"
       },
       cardMedia: {
         flex: 3,
@@ -45,19 +45,19 @@ export function PagedMenuItemComponent({ data }: MenuItem): JSX.Element {
           borderRadius: "50%",
           border: 1,
           borderStyle: "solid",
-          borderColor: theme.palette.primary.main,
-        },
+          borderColor: theme.palette.primary.main
+        }
       },
       cardContent: {
         flex: 6,
-        textShadow: `1px 1px ${theme.palette.secondary.main}`,
+        textShadow: `1px 1px ${theme.palette.secondary.main}`
       },
       cardInfo: {
-        color: theme.palette.text.secondary,
+        color: theme.palette.text.secondary
       },
       cardButton: {
-        color: theme.palette.text.primary,
-      },
+        color: theme.palette.text.primary
+      }
     })
   );
 

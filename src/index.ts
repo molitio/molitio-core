@@ -1,11 +1,11 @@
 import {
   PagedMenuComponent,
-  PagedMenuItemComponent,
+  PagedMenuItemComponent
 } from "ui-paged-menu/component/PagedMenu";
 import {
   MenuItem,
   MenuPageData,
-  MenuPageDataCollection,
+  MenuPageDataCollection
 } from "ui-paged-menu/interface/IPagedMenu";
 
 export {
@@ -13,5 +13,5 @@ export {
   PagedMenuItemComponent,
   MenuItem,
   MenuPageData,
-  MenuPageDataCollection,
+  MenuPageDataCollection
 };
