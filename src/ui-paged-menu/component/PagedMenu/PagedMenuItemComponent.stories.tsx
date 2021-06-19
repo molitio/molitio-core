@@ -10,23 +10,21 @@ const defaultArgs: MenuItem = {
     id: "random2",
     name: "expample menu item",
     imageUrl: "",
-    description: "best item in town",
-  },
+    description: "best item in town"
+  }
 };
 
 const meta: Meta = {
   title: "Paged Menu Item",
   component: PagedMenuItemComponent,
-  args: defaultArgs,
+  args: defaultArgs
 };
 
 export default meta;
 
-const Template: Story<MenuItem> = (args) => (
-  <PagedMenuItemComponent {...args} />
-);
+const Template: Story<MenuItem> = args => <PagedMenuItemComponent {...args} />;
 
 export const PagedMenuItem = Template.bind({});
 PagedMenuItem.args = {
-  data: defaultArgs.data,
+  data: defaultArgs.data
 };
