@@ -2,11 +2,11 @@ import React from "react";
 
 import { Story, Meta } from "@storybook/react";
 
-import { PagedMenuComponent } from "ui-paged-menu/component/PagedMenu";
+import { PagedMenuComponent } from "ui-page-nav-menu";
 import {
   MenuPageData,
   MenuPageDataCollection
-} from "ui-paged-menu/interface/IPagedMenu";
+} from "ui-page-nav-menu/interface/IPagedMenu";
 
 const defaultArgs = new Map<string, MenuPageData>([
   [

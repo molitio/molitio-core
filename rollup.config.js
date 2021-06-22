@@ -1,6 +1,6 @@
 import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
+import commonjs from '@rollup/plugin-commonjs' 
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -22,7 +22,7 @@ export default {
       globals,
       sourcemap: true,
     },
-    { file: './lib/index.module.js', format: 'es', globals, sourcemap: true },
+    { file: './lib/index.js', format: 'umd', globals, sourcemap: true },
   ],
   plugins: [
     resolve({ extensions }),

@@ -2,8 +2,8 @@ import React from "react";
 
 import { Story, Meta } from "@storybook/react";
 
-import { MenuItem } from "ui-paged-menu/interface/IPagedMenu";
-import { PagedMenuItemComponent } from "ui-paged-menu/component/PagedMenu";
+import { MenuItem } from "ui-page-nav-menu/interface/IPagedMenu";
+import { PagedMenuItemComponent } from "ui-page-nav-menu";
 
 const defaultArgs: MenuItem = {
   data: {

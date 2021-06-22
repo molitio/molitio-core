@@ -31,5 +31,17 @@ module.exports = {
                 ...sharedPresets,
             ],
         },
+        umd: {
+            ...shared,
+            presets: [
+                [
+                    '@babel/preset-env',
+                    {
+                        modules: 'umd',
+                    },
+                ],
+                ...sharedPresets,
+            ],
+        },
     },
 };
