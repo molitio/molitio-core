@@ -3,7 +3,7 @@ import { MenuItem, MenuPageData, MenuPageDataCollection } from 'ui-page-nav-menu
 
 export { PagedMenuComponent, PagedMenuItemComponent };
 
-const number1: number = 3;
-export number1; 
+/* const number1: number = 3;
+export const number1: number;  */
 
 export type { MenuItem, MenuPageData, MenuPageDataCollection };

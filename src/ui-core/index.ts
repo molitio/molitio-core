@@ -1,3 +1,3 @@
-import { ButtonExample } from "ui-core/examples";
+import { ButtonExample } from "ui-core/component/examples";
 
 export { ButtonExample };
