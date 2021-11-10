@@ -1,0 +1,21 @@
+<p class="mofo-message-p">{{formName}}</p>
+<div>
+    <form class="mofo-message-form" [formGroup]="moForm" (ngSubmit)="onSubmit()">
+        <label class="mofo-message-label">
+            <p class="mofo-message-p">Name:</p>
+            <input class="mofo-message-input" type="text" formControlName="name" required>
+        </label>
+        <br>
+        <label class="mofo-message-label">
+            <p class="mofo-message-p">Message:</p>
+            <input class="mofo-message-input" type="text" formControlName="message" required>
+        </label>
+        <br>
+        <div>
+            <br>
+            <button class="mofo-message-button" type="submit" [disabled]="!moForm.valid || submited">
+                <label class="mofo-message-label">Submit</label>
+            </button>
+        </div>
+    </form>
+</div>
