@@ -1,0 +1,47 @@
+{
+  "name": "@molitio/molitio-lib",
+  "version": "0.0.24",
+  "description": "Universal resource distribution model library",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "type": "module",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "lint": "eslint src/** --ext .ts",
+    "lint-fix": "eslint src/** --ext .ts --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "pretest": "npm run lint",
+    "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
+    "test-nolint": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
+    "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.6.3",
+    "@types/node": "12.12.2",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "eslint": "^7.20.0",
+    "eslint-config-google": "^0.14.0",
+    "jasmine": "^3.6.4",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "1.0.0-pre.63",
+    "typescript": "^4.1.5"
+  },
+  "homepage": "http://molitio.org/about",
+  "author": "Peter Koller - peterkollerlv@live.com",
+  "bugs": {
+    "url": "https://github.com/molitio/molitio-lib",
+    "email": "peterkollerlv@live.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/molitio/molitio-lib.git"
+  },
+  "license": "MIT"
+}

@@ -1,1 +1,2 @@
-export { ButtonExample, ButtonExampleProps } from "./ButtonExample";
+export { ButtonExample } from "./ButtonExample";
+export { ButtonExampleProps } from "./ButtonExampleProps";
