@@ -1,10 +1,9 @@
 import React from "react";
 import { useTheme, makeStyles, createStyles } from "@material-ui/core";
-import { MenuPageDataCollection } from "ui-paged-menu/interface/IPagedMenu";
-import { PagedMenuItemComponent } from "ui-paged-menu/component/PagedMenu";
+import { PagedMenuItemComponent, MenuPageDataCollection } from "./index";
 
 export function PagedMenuComponent({
-  menuPages
+  menuPages,
 }: MenuPageDataCollection): JSX.Element {
   const theme = useTheme();
   const useStyles = makeStyles(() =>
@@ -20,9 +19,9 @@ export function PagedMenuComponent({
         opacity: 0.9,
         [theme.breakpoints.down("xs")]: {},
         backgroundColor: "transparent",
-        borderRadius: 20
+        borderRadius: 20,
         /*...theme.themeGradient,*/
-      }
+      },
     })
   );
 
@@ -30,11 +29,11 @@ export function PagedMenuComponent({
   return (
     <div>
       test
-      {Array.from(menuPages).map(page => (
+      {Array.from(menuPages).map((page) => (
         <div key={page[0]}>
           <span>{page[1].pageName}</span>
           <ul className={componentStyle.menuList}>
-            {page[1].menuItems.map(item => (
+            {page[1].menuItems.map((item) => (
               <li key={item.data.id}>
                 <PagedMenuItemComponent data={item.data} />
               </li>

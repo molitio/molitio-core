@@ -1,10 +1,5 @@
 import React from "react";
-export interface ButtonExampleProps {
-  props: {
-    primary: boolean;
-    label: string;
-  };
-}
+import { ButtonExampleProps } from "./ButtonExampleProps";
 
 export function ButtonExample({ props }: ButtonExampleProps): JSX.Element {
   return (

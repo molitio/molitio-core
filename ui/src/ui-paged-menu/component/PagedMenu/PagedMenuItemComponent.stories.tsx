@@ -2,8 +2,7 @@ import React from "react";
 
 import { Story, Meta } from "@storybook/react";
 
-import { MenuItem } from "ui-paged-menu/interface/IPagedMenu";
-import { PagedMenuItemComponent } from "ui-paged-menu/component/PagedMenu";
+import { PagedMenuItemComponent, MenuItem } from "./index";
 
 const defaultArgs: MenuItem = {
   data: {
@@ -27,6 +26,11 @@ const Template: Story<MenuItem> = (args) => (
 );
 
 export const PagedMenuItem = Template.bind({});
+PagedMenuItem.args = {
+  data: defaultArgs.data,
+};
+
+export const PagedMenuItem2 = Template.bind({});
 PagedMenuItem.args = {
   data: defaultArgs.data,
 };
