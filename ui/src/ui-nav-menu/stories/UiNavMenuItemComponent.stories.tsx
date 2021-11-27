@@ -3,7 +3,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { UiNavMenuItem } from 'ui-nav-menu/interface/IUiNavMenu';
-import { PagedMenuItemComponent } from 'ui-nav-menu';
+import { UiNavMenuItemComponent } from '../../index';
 
 const defaultArgs: UiNavMenuItem = {
     pathSegment: '/first',
@@ -12,16 +12,16 @@ const defaultArgs: UiNavMenuItem = {
 
 const meta: Meta = {
     title: 'Paged Menu Item',
-    component: PagedMenuItemComponent,
+    component: UiNavMenuItemComponent,
     args: defaultArgs,
 };
 
 export default meta;
 
-const Template: Story<UiNavMenuItem> = (args) => <PagedMenuItemComponent {...args} />;
+const Template: Story<UiNavMenuItem> = (args) => <UiNavMenuItemComponent {...args} />;
 
-export const PagedMenuItem = Template.bind({});
-PagedMenuItem.args = {
+export const NavMenuItem = Template.bind({});
+NavMenuItem.args = {
     itemName: defaultArgs.itemName,
     pathSegment: defaultArgs.pathSegment,
 };

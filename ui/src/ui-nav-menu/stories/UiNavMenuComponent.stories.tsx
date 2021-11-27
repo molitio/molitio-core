@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Story, Meta } from '@storybook/react';
 
-import { PagedMenuComponent } from 'ui-nav-menu';
+import { UiNavMenuComponent } from '../../index';
 import { UiNavMenuPageData, UiNavMenuPageDataCollection } from 'ui-nav-menu/interface/IUiNavMenu';
 
 const defaultArgs = new Map<string, UiNavMenuPageData>([
@@ -23,7 +23,7 @@ const defaultArgs = new Map<string, UiNavMenuPageData>([
 
 const meta: Meta = {
     title: 'Paged Menu',
-    component: PagedMenuComponent,
+    component: UiNavMenuComponent,
     args: {
         menuPages: defaultArgs,
     },
@@ -31,10 +31,10 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<UiNavMenuPageDataCollection> = (args) => <PagedMenuComponent {...args} />;
+const Template: Story<UiNavMenuPageDataCollection> = (args) => <UiNavMenuComponent {...args} />;
 
-export const PagedMenu = Template.bind({});
+export const NavMenu = Template.bind({});
 
-PagedMenu.args = {
+NavMenu.args = {
     menuPages: defaultArgs,
 };

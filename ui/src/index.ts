@@ -5,6 +5,6 @@ import { UiNavMenuItem, UiNavMenuPageData, UiNavMenuPageDataCollection } from 'u
 /* const number1: number = 3;
 export const number1: number;  */
 
-export default { UiNavMenuComponent, UiNavMenuItemComponent };
+export { UiNavMenuComponent, UiNavMenuItemComponent };
 
 export type { UiNavMenuItem, UiNavMenuPageData, UiNavMenuPageDataCollection };

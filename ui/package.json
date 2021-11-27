@@ -111,5 +111,8 @@
         "ts-node-dev": "^1.1.6",
         "tslib": "^2.3.0",
         "typescript": "^4.3.3"
-    }
+    },
+    "workspaces": [
+        "src"
+    ]
 }

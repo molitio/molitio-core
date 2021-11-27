@@ -1,0 +1,26 @@
+<ul>
+  <ng-container *ngFor="let form of formData">
+    <li>
+      <span>Id: {{ form._id }}</span
+      ><br />
+      <span>Form Name: {{ form.name }}</span
+      ><br />
+      <span>Form Id: {{ form.formId }}</span
+      ><br />
+      <span>Form URL: {{ form.originUrl }}</span
+      ><br />
+      <span>Time Sent: {{ form.timeSent }}</span
+      ><br />
+      <span>Form Values:</span><br />
+      <ul>
+        <ng-container>
+          <li *ngFor="let value of form.values">
+            <span>{{ value.fieldName }}: {{ value.fieldValue }}</span>
+          </li>
+        </ng-container>
+      </ul>
+      <button type="button" (click)="delete(form._id)">Delete</button>
+      <br />
+    </li>
+  </ng-container>
+</ul>

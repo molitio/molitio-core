@@ -1,0 +1,10 @@
+# environment
+**/*.env*
+
+# git
+.git
+.cashe
+
+# node 
+**/node_modules
+**/dist
