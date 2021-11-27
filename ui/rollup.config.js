@@ -1,6 +1,10 @@
 import babel from '@rollup/plugin-babel';
-import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+
+const packageJson = require('./package.json');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -12,13 +16,12 @@ const globals = {
 };
 
 export default {
-    input: './src/index.ts',
-
+    input: 'src/index.ts',
+    plugins: [typescript(), peerDepsExternal(), resolve(), commonjs(), peerDepsExternal()],
     output: [
         //unbundled esm
         {
-            name: 'molitio-ui-core',
-            file: './lib/index.esm.js',
+            file: packageJson.module,
             format: 'esm',
             globals,
             sourcemap: true,
@@ -33,8 +36,7 @@ export default {
         },
         //bundled esm
         {
-            name: 'molitio-ui-core',
-            file: './lib/bundled/index.esm.js',
+            file: packageJson.bundle.esm,
             format: 'esm',
             globals,
             sourcemap: true,
@@ -50,7 +52,7 @@ export default {
         },
         //unbundled cjs
         {
-            file: './lib/index.cjs.js',
+            file: packageJson.main,
             format: 'cjs',
             globals,
             sourcemap: true,
@@ -65,7 +67,8 @@ export default {
         },
         //bundled umd
         {
-            file: './lib/bundled/index.umd.js',
+            name: '@molitio-core/ui',
+            file: packageJson.bundle.umd,
             format: 'umd',
             globals,
             sourcemap: true,

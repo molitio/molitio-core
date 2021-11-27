@@ -4,12 +4,14 @@
     "exclude": ["node_modules", "lib"],
     "declarationDir": "./lib/types",
     "compilerOptions": {
+        "target": "esnext",
         "module": "esnext",
         "lib": ["dom", "esnext"],
         "importHelpers": true,
         "downlevelIteration": false,
         // output .d.ts declaration files for consumers
         "declaration": true,
+        "declarationDir": "./lib/types",
         "emitDeclarationOnly": true,
         "isolatedModules": true,
         // output .js.map sourcemap files for consumers
