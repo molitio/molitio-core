@@ -22,7 +22,7 @@ const defaultArgs = new Map<string, UiNavMenuPageData>([
 ]);
 
 const meta: Meta = {
-    title: 'Paged Menu',
+    title: 'molitio-core/Nav/Menu',
     component: UiNavMenuComponent,
     args: {
         menuPages: defaultArgs,

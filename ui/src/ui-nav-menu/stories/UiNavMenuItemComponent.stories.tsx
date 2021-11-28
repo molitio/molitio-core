@@ -11,7 +11,7 @@ const defaultArgs: UiNavMenuItem = {
 };
 
 const meta: Meta = {
-    title: 'Paged Menu Item',
+    title: 'molitio-core/Nav/Menu Item',
     component: UiNavMenuItemComponent,
     args: defaultArgs,
 };

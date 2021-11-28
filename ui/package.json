@@ -1,84 +1,119 @@
 {
-  "name": "@molitio/molitio-ui-core",
-  "version": "0.2.2",
-  "author": "molitio foundation",
-  "description": "Universal reusable React UI Components",
-  "license": "CC0-1.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/molitio/molitio-ui-core.git"
-  },
-  "keywords": [
-    "molitio"
-  ],
-  "bugs": {
-    "url": "https://github.com/molitio/molitio-ui-core/issues"
-  },
-  "homepage": "https://github.com/molitio/molitio-ui-core#readme",
-  "main": "lib/index.js",
-  "typings": "lib/types/index.d.ts",
-  "engines": {
-    "node": ">=12"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint  --entry src/index.ts"
-    }
-  },
-  "files": [
-    "lib",
-    "*.d.ts",
-    "package.json, README.md, LICENSE"
-  ],
-  "workspaces": [
-    "src"
-  ],
-  "module": "lib/molitio-ui-core.esm.js",
-  "scripts": {
-    "start": "tsdx watch --entry src/index.ts",
-    "build": "tsdx build --entry src/index.ts --format cjs,esm,umd",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build  --entry src/index.ts",
-    "size": "size-limit",
-    "analyze": "size-limit --why",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "peerDependencies": {
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
-  },
-  "devDependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@size-limit/preset-small-lib": "^4.11.0",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-info": "^5.3.21",
-    "@storybook/addon-links": "^6.2.9",
-    "@storybook/addons": "^6.2.9",
-    "@storybook/react": "^6.2.9",
-    "@types/react": "^17.0.8",
-    "@types/react-dom": "^17.0.5",
-    "babel-loader": "^8.2.2",
-    "husky": "^6.0.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-is": "^17.0.2",
-    "size-limit": "^4.11.0",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.2.0",
-    "typescript": "^4.1.5",
-    "@babel/core": "^7.14.3",
-    "@storybook/addon-actions": "^6.2.9",
-    "@storybook/preset-create-react-app": "^3.1.7",
-    "@types/jasmine": "^3.6.3",
-    "@types/node": "12.12.2",
-    "@typescript-eslint/eslint-plugin": "^4.15.0",
-    "@typescript-eslint/parser": "^4.15.0",
-    "eslint": "^7.20.0",
-    "eslint-config-google": "^0.14.0",
-    "jasmine": "^3.6.4",
-    "ts-node": "^9.0.0",
-    "ts-node-dev": "1.0.0-pre.63"
-  }
+    "name": "@molitio-core/ui",
+    "version": "1.0.0",
+    "author": "molitio foundation",
+    "description": "Universal reusable React UI Components",
+    "license": "CC0-1.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/molitio/molitio-core.git"
+    },
+    "keywords": [
+        "molitio",
+        "ui"
+    ],
+    "bugs": {
+        "url": "https://github.com/molitio/molitio-core/issues"
+    },
+    "homepage": "https://github.com/molitio/molitio-core#readme",
+    "main": "build/index.js",
+    "module": "build/index.es.js",
+    "typings": "build/types/index.d.ts",
+    "bundle": {
+        "esm": "build/bundle/index.esm.js",
+        "umd": "build/bundle/index.umd.js"
+    },
+    "files": [
+        "build"
+    ],
+    "engines": {
+        "node": ">=12"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+        }
+    },
+    "size-limit": [
+        {
+            "path": "build/index.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "build/index.es.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "build/bundle/index.esm.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "build/bundle/index.umd.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "build/types/index.d.ts",
+            "limit": "10 KB"
+        }
+    ],
+    "scripts": {
+        "build": "rollup --config",
+        "build:watch": "rollup --config --watch",
+        "xpile": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps",
+        "build:esm": "cross-env BABEL_ENV=esmUnbundled babel src --extensions '.ts,.tsx' --out-dir 'lib/esm' --source-maps",
+        "build:cjs": "cross-env BABEL_ENV=cjs babel src --extensions '.ts,.tsx' --out-dir 'lib/cjs' --source-maps",
+        "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+        "size": "size-limit",
+        "analyze": "size-limit --why",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
+    },
+    "peerDependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.16.0",
+        "@babel/core": "^7.16.0",
+        "@babel/plugin-transform-typescript": "^7.16.1",
+        "@babel/preset-env": "^7.16.4",
+        "@babel/preset-typescript": "^7.16.0",
+        "@material-ui/core": "^4.12.3",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-commonjs": "^21.0.1",
+        "@rollup/plugin-node-resolve": "^13.0.6",
+        "@rollup/plugin-typescript": "^8.3.0",
+        "@storybook/addon-actions": "^6.4.0",
+        "@storybook/addon-essentials": "^6.4.0",
+        "@storybook/addon-links": "^6.4.0",
+        "@storybook/react": "^6.4.0",
+        "@types/jasmine": "^3.10.2",
+        "@types/node": "^16.11.10",
+        "@types/react": "^17.0.37",
+        "@types/react-dom": "^17.0.11",
+        "@typescript-eslint/eslint-plugin": "^5.4.0",
+        "@typescript-eslint/parser": "^5.4.0",
+        "babel-cli": "^6.26.0",
+        "babel-loader": "^8.2.3",
+        "babel-preset-latest": "^6.24.1",
+        "cross-env": "^7.0.3",
+        "eslint": "^8.3.0",
+        "eslint-config-google": "^0.14.0",
+        "husky": "^7.0.4",
+        "jasmine": "^3.10.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "rollup": "^2.60.1",
+        "rollup-plugin-buble": "^0.19.8",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-sizes": "^1.0.4",
+        "size-limit": "^7.0.3",
+        "ts-node": "^10.4.0",
+        "ts-node-dev": "^1.1.8",
+        "tslib": "^2.3.1",
+        "typescript": "^4.5.2"
+    },
+    "workspaces": [
+        "src"
+    ]
 }
