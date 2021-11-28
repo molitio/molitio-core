@@ -1,5 +1,5 @@
 {
-    "name": "@molitio-core/ui",
+    "name": "@molitio/ui-core",
     "version": "1.0.0",
     "author": "molitio foundation",
     "description": "Universal reusable React UI Components",

@@ -111,6 +111,7 @@ dist
 
 # UI lib outputs
 lib
+build
 
 # Dev Keys
 *.pem
