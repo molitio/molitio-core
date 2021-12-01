@@ -5,6 +5,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import buble from 'rollup-plugin-buble';
 import sizes from 'rollup-plugin-sizes';
+import copy from 'rollup-plugin-copy';
 
 const packageJson = require('./package.json');
 
@@ -32,7 +33,7 @@ export default {
             babelHelpers: 'bundled',
             include: ['src/**/*'],
             exclude: 'node_modules/**',
-        }),
+        })
     ],
     output: [
         //unbundled esm

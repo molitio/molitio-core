@@ -8,6 +8,9 @@ export const UiNavMenuItemComponent: React.FC<UiNavMenuItem> = ({ ...data }: UiN
             itemText: {
                 color: 'black',
             },
+            itemBackground: {
+                backgroundColor: 'blue',
+            },
         }),
     );
 
