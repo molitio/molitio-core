@@ -5,75 +5,76 @@ import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import buble from 'rollup-plugin-buble';
 import sizes from 'rollup-plugin-sizes';
-import mdx from '@mdx-js/rollup';
 
 const packageJson = require('./package.json');
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const extensions = ['.js', '.jsx', '.ts', '.tsx', '.mjs', '.md', '.mdx'];
+const extensions = ['.ts', '.tsx', '.mjs', '.md', '.mdx'];
 
 const globals = {
     react: 'React',
     'react-dom': 'ReactDOM',
 };
 
-export default {
-    input: 'src/index.ts',
-    plugins: [
-        typescript(),
-        peerDepsExternal(),
-        resolve(),
-        commonjs(),
-        peerDepsExternal(),
-        buble(),
-        sizes(),
-        mdx(),
-        babel({
-            extensions,
-            babelHelpers: 'bundled',
-            include: ['src/**/*'],
-            exclude: 'node_modules/**',
-        })
-    ],
-    output: [
-        //unbundled esm
-        {
-            name: '@molitio-core/ui',
-            file: packageJson.module,
-            format: 'esm',
-            globals,
-            sourcemap: true,
-            plugins: [],
-        },
-        //bundled esm
-        {
-            name: '@molitio-core/ui',
-            file: packageJson.bundle.esm,
-            format: 'esm',
-            globals,
-            sourcemap: true,
-            plugins: [],
-        },
-        //unbundled cjs
-        {
-            name: '@molitio-core/ui',
-            file: packageJson.main,
-            format: 'cjs',
-            globals,
-            sourcemap: true,
-            plugins: [],
-        },
-        //bundled umd
-        {
-            name: '@molitio-core/ui',
-            file: packageJson.bundle.umd,
-            format: 'umd',
-            globals,
-            sourcemap: true,
-            plugins: [],
-        },
-    ],
+export default [
+    {
+        input: 'src/ui-nav-menu/index.ts',
+        plugins: [
+            typescript(),
+            peerDepsExternal(),
+            resolve(),
+            commonjs(),
+            peerDepsExternal(),
+            buble(),
+            sizes(),
+            babel({
+                extensions,
+                babelHelpers: 'bundled',
+                include: ['src/**/*'],
+                exclude: 'node_modules/**',
+            }),
+        ],
+        output: [
+            //unbundled esm
+            {
+                name: '@molitio-core/ui-nav-menu',
+                file: packageJson.module,
+                format: 'esm',
+                globals,
+                sourcemap: true,
+                plugins: [],
+            },
+            //bundled esm
+            {
+                name: '@molitio-core/ui-nav-menu',
+                file: packageJson.bundle.esm,
+                format: 'esm',
+                globals,
+                sourcemap: true,
+                plugins: [],
+            },
+            //unbundled cjs
+            {
+                name: '@molitio-core/ui-nav-menu',
+                file: packageJson.main,
+                format: 'cjs',
+                globals,
+                sourcemap: true,
+                plugins: [],
+            },
+            //bundled umd
+            {
+                name: '@molitio-core/ui-nav-menu',
+                file: packageJson.bundle.umd,
+                format: 'umd',
+                globals,
+                sourcemap: true,
+                plugins: [],
+            },
+        ],
 
-    external: Object.keys(globals),
-};
+        external: Object.keys(globals),
+    },
+];
+    

@@ -2,12 +2,11 @@ import React from 'react';
 
 import { Story, Meta } from '@storybook/react';
 
-import { UiNavMenuComponent } from '../../index';
-import { UiNavMenuPageDataCollection } from 'ui-core-models/IUiNavMenu';
+import { UiNavMenuComponent, UiNavMenuPageDataCollection } from '../index';
 
 const navMenuPageDataArgs: UiNavMenuPageDataCollection = {
     pageDataCollectionTag: 'basicNavMenu01',
-    pageDataCollection:new Map([
+    pageDataCollection: new Map([
         [
             'idtag',
             {
@@ -46,5 +45,3 @@ export const NavMenu = Template.bind({});
 NavMenu.args = {
     ...navMenuPageDataArgs,
 };
-
-

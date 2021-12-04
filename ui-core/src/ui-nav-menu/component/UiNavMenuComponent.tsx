@@ -1,6 +1,6 @@
 import React from 'react';
 import { UiNavMenuItemComponent } from './UiNavMenuItemComponent';
-import { UiNavMenuPageData, UiNavMenuPageDataCollection } from '../../index';
+import { UiNavMenuPageData, UiNavMenuPageDataCollection } from '../index';
 import { StyleContextProvider } from '../../style-context/StyleContextProvider';
 import { StyleContext } from '../../style-context/StyleContextStore';
 import { PageTag } from '../../page-tag/PageTag';
