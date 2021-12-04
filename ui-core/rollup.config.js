@@ -5,13 +5,13 @@ import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import buble from 'rollup-plugin-buble';
 import sizes from 'rollup-plugin-sizes';
-import copy from 'rollup-plugin-copy';
+import mdx from '@mdx-js/rollup';
 
 const packageJson = require('./package.json');
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const extensions = ['.js', '.jsx', '.ts', '.tsx'];
+const extensions = ['.js', '.jsx', '.ts', '.tsx', '.mjs', '.md', '.mdx'];
 
 const globals = {
     react: 'React',
@@ -28,6 +28,7 @@ export default {
         peerDepsExternal(),
         buble(),
         sizes(),
+        mdx(),
         babel({
             extensions,
             babelHelpers: 'bundled',

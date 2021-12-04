@@ -1,6 +1,6 @@
 import { UiNavMenuComponent } from './ui-nav-menu/component/UiNavMenuComponent';
 import { UiNavMenuItemComponent } from './ui-nav-menu/component/UiNavMenuItemComponent';
-import { UiNavMenuItem, UiNavMenuPageData, UiNavMenuPageDataCollection } from 'ui-nav-menu/interface/IUiNavMenu';
+import { UiNavMenuItem, UiNavMenuPageData, UiNavMenuPageDataCollection } from 'ui-core-models/IUiNavMenu';
 
 export { UiNavMenuComponent, UiNavMenuItemComponent };
 

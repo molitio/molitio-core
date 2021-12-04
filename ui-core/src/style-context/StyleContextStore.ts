@@ -3,8 +3,8 @@ import React from 'react';
 import { IStyleContext } from './interface/IStyleContext';
 import { ClassNameMap } from '@material-ui/styles';
 
-const getStyles = () => {
-    const useStyles = makeStyles(() =>
+export const getStyles = () => {
+    /* const useStyles = makeStyles(() =>
         createStyles({
             menuList: {
                 listStyleType: 'none',
@@ -21,9 +21,10 @@ const getStyles = () => {
         }),
     );
 
-    const componentStyle = useStyles();
+    const componentStyle = useStyles(); */
 
-    return new Map<string, ClassNameMap<string>>([['nav-menu', { ...componentStyle }]]);
+    return new Map<string, ClassNameMap<string>>([['nav-menu', {}]]);
+    // return new Map<string, ClassNameMap<string>>();
 };
 
 export const styleDefault = () => {

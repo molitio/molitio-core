@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, createStyles } from '@material-ui/core';
-import { UiNavMenuItem } from 'ui-nav-menu/interface/IUiNavMenu';
+import { UiNavMenuItem } from 'ui-core-models/IUiNavMenu';
 
 export const UiNavMenuItemComponent: React.FC<UiNavMenuItem> = ({ ...data }: UiNavMenuItem) => {
     const useStyles = makeStyles(() =>
