@@ -1,18 +1,18 @@
-type UiNavMenuItem = {
-        itemName: string;
-        pathSegment?: string;
-        menuItems?: UiNavMenuItem[];
-}
+type ItemData = {
+    itemName: string;
+    pathSegment?: string;
+    menuItems?: ItemData[];
+};
 
 type UiNavMenuPageData = {
-        pageName: string;
-        pathSegment?: string;
-        menuItems?: UiNavMenuItem[];
-}
+    pageName: string;
+    pathSegment?: string;
+    menuItems?: ItemData[];
+};
 
-type UiNavMenuPageDataCollection  = {
-        pageDataCollectionTag: string;
-        pageDataCollection?: Map<string, UiNavMenuPageData>;
-}
+type UiNavMenuPageDataCollection = {
+    pageDataCollectionTag: string;
+    pageDataCollection?: Map<string, UiNavMenuPageData>;
+};
 
-export type { UiNavMenuItem, UiNavMenuPageData, UiNavMenuPageDataCollection };
+export type { ItemData , UiNavMenuPageData, UiNavMenuPageDataCollection };

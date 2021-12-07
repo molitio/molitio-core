@@ -20,6 +20,12 @@ const navMenuPageDataArgs: UiNavMenuPageDataCollection = {
                             {
                                 pathSegment: '/secound',
                                 itemName: 'secound',
+                                menuItems: [
+                                    {
+                                        pathSegment: '/third',
+                                        itemName: 'third',
+                                    },
+                                ],
                             },
                         ],
                     },
