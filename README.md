@@ -1,12 +1,15 @@
-Under development disclaimer: the following information regarding the project reflects the current
+Under development disclaimer: 
+- The following information regarding the project reflects the current
 direction for the future. At the early stage of it, many components are not yet realized and possibly
 change in the future. The projects seeks like minded individuals and it is open source. Many of the
 connecting concepts yet not documented. As time goes it will be.
 
-Presently a universal component library is being built mainly with React and TypeScript, targeting esm, cjs, umd 
+- Presently a universal component library is being built mainly with React and TypeScript, targeting esm, cjs, umd 
 module types and seeks to work with server and client side alike. This libray later can be used for the building
 blocks of molitio.org, a PWA that will be a tool for #digital_samaritans and help document resource needs anywhere 
 around the globe.
+
+- Legaly molitio foundation is not registered just yet, it is under progress to properly register it.
 
 # molitio.org by molitio foundation - In service of humanity for every human being.
 
