@@ -2,19 +2,18 @@ import React from 'react';
 
 import { Story, Meta } from '@storybook/react';
 
-import { ItemData } from 'ui-core-models/IUiNavMenu';
-import { UiNavMenuItemComponent } from '../index';
-import { UiNavMenuItemProps } from 'ui-core-models/interface/UiNavMenuItemProps';
+import { NavMenuComponent, NavSegmentComponent } from 'ui-nav-menu';
+import { NavSegmentProps } from 'ui-core-models';
 
-const navMenuItemArgs: UiNavMenuItemProps = {
+const navMenuItemArgs: NavSegmentProps = {
     data: {
         pathSegment: '/first',
         itemName: 'first',
-        menuItems: [
+        navSegments: [
             {
                 pathSegment: '/secound',
                 itemName: 'secound',
-                menuItems: [
+                navSegments: [
                     {
                         pathSegment: '/third',
                         itemName: 'third',
@@ -27,12 +26,12 @@ const navMenuItemArgs: UiNavMenuItemProps = {
 
 const meta: Meta = {
     title: 'molitio-core/Nav Menu/Menu Item',
-    component: UiNavMenuItemComponent,
+    component: NavMenuComponent,
 };
 
 export default meta;
 
-const Template: Story<UiNavMenuItemProps> = (args) => <UiNavMenuItemComponent {...args} />;
+const Template: Story<NavSegmentProps> = (args) => <NavSegmentComponent {...args} />;
 
 export const NavMenuItem = Template.bind({});
 NavMenuItem.args = {

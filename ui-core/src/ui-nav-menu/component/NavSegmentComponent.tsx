@@ -1,9 +1,8 @@
 import React from 'react';
 import { makeStyles, createStyles } from '@material-ui/core';
-import {  ItemData } from 'ui-core-models/IUiNavMenu';
-import { UiNavMenuItemProps } from 'ui-core-models/interface/UiNavMenuItemProps';
+import { NavSegmentProps } from 'ui-core-models';
 
-export const UiNavMenuItemComponent: React.FC<UiNavMenuItemProps> = ({ data }: UiNavMenuItemProps) => {
+export const NavSegmentComponent: React.FC<NavSegmentProps> = ({ data }: NavSegmentProps) => {
     const useStyles = makeStyles(() =>
         createStyles({
             itemText: {
@@ -22,10 +21,10 @@ export const UiNavMenuItemComponent: React.FC<UiNavMenuItemProps> = ({ data }: U
             <div key={data.itemName}>
                 <label className={componentStyle.itemText}>{`label: ${data.itemName} path: ${data.pathSegment}`}</label>
             </div>
-            {data.menuItems ? (
+            {data.navSegments ? (
                 <ul>
-                    {Array.from(data.menuItems).map((item) => (
-                        <UiNavMenuItemComponent key={item.itemName} data={item} />
+                    {Array.from(data.navSegments).map((item) => (
+                        <NavSegmentComponent key={item.itemName} data={item} />
                     ))}
                 </ul>
             ) : null}

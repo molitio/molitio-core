@@ -1,7 +1,4 @@
-import { UiNavMenuComponent } from './component/UiNavMenuComponent';
-import { UiNavMenuItemComponent } from './component/UiNavMenuItemComponent';
-import { UiNavMenuItem, UiNavMenuPageData, UiNavMenuPageDataCollection } from 'ui-core-models/IUiNavMenu';
+import { NavMenuComponent } from './component/NavMenuComponent';
+import { NavSegmentComponent } from './component/NavSegmentComponent';
 
-export { UiNavMenuComponent, UiNavMenuItemComponent };
-
-export type { UiNavMenuItem, UiNavMenuPageData, UiNavMenuPageDataCollection };
+export { NavMenuComponent, NavSegmentComponent };

@@ -1,19 +1,17 @@
 import React from 'react';
-import { UiNavMenuItemComponent } from './UiNavMenuItemComponent';
-import { UiNavMenuPageData, UiNavMenuPageDataCollection } from '../index';
+import { NavSegmentComponent } from './NavSegmentComponent';
+import { NavMenuComponentProps, NavPage } from 'ui-core-models';
 import { StyleContextProvider } from '../../style-context/StyleContextProvider';
 import { StyleContext } from '../../style-context/StyleContextStore';
 import { PageTag } from '../../page-tag/PageTag';
 import { createUseStyles } from 'react-jss';
 
-export const UiNavMenuComponent: React.FC<UiNavMenuPageDataCollection> = ({ ...data }: UiNavMenuPageDataCollection) => {
-    const [menuPages, setmenuPages] = React.useState<Map<string, UiNavMenuPageData>>(
-        new Map<string, UiNavMenuPageData>(),
-    );
+export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ data }: NavMenuComponentProps) => {
+    const [menuPages, setMenuPages] = React.useState<Map<string, NavPage>>(new Map<string, NavPage>());
 
     React.useEffect(() => {
-        setmenuPages(new Map([...(data.pageDataCollection ?? new Map<string, UiNavMenuPageData>())]));
-        console.log(data.pageDataCollection);
+        setMenuPages(new Map([...(data.pageCollection ?? new Map<string, NavPage>())]));
+        console.log(data.pageCollection);
     }, []);
 
     //console.log(JSON.stringify(StyleContext));
@@ -42,17 +40,17 @@ export const UiNavMenuComponent: React.FC<UiNavMenuPageDataCollection> = ({ ...d
 
     return (
         <nav>
-            <PageTag tag={'navMenu01'} theme={'defaultThemeName'} />
+            <PageTag data={{tag: 'navMenu01', theme:'defaultThemeName'}}  />
 
             {/*  <StyleContextProvider> */}
             <div>
-                <label className={componentStyle.pageTitle}> {data.pageDataCollectionTag} </label>
+                <label className={componentStyle.pageTitle}> {data.pageCollectionTag} </label>
                 {Array.from(menuPages).map((page) => (
                     <div key={page[0]}>
                         <span>{page[1].pageName}</span>
                         <ul>
-                            {(page[1].menuItems ?? []).map((item) => (
-                                <UiNavMenuItemComponent key={item.itemName} data={item} />
+                            {(page[1].navSegments ?? []).map((item) => (
+                                <NavSegmentComponent key={item.itemName} data={item} />
                             ))}
                         </ul>
                     </div>
