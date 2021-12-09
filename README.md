@@ -15,7 +15,7 @@ around the globe.
 Open source initiative to develop impactful digital solutions for human problems in service of humanity for every human being.
 By creating digital tools, that are accessible easily to anyone and can perform at high capacities to serve the population of the population of planet earth, and possibly other communities anywhere else.
 
-# Main initiatieves
+# Main Initiatieves
 
 - ## #everyhuman
 
@@ -27,7 +27,7 @@ By creating digital tools, that are accessible easily to anyone and can perform 
   provide emergency response to listed contacts and possibly local ER organizations
 
 - # Foundation Roles
-  ## digital samaritan
+  ## #digital_samaritan
   A human being who provides aid to anyone with insufficient technical understanding to utilize digital tools, including how to use molitio.org. Besides aiding the usage of the tools also documents resource needs of others who are in need and unable to do it for themself. 
 
 # Contributors
