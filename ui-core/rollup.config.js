@@ -10,7 +10,7 @@ const packageJson = require('./package.json');
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const extensions = ['.ts', '.tsx', '.mjs', '.md', '.mdx'];
+const extensions = ['.ts', '.tsx', '.md', '.mdx'];
 
 const globals = {
     react: 'React',
@@ -19,7 +19,7 @@ const globals = {
 
 export default [
     {
-        input: 'src/ui-nav-menu/index.ts',
+        input: 'src/index.ts',
         plugins: [
             typescript(),
             peerDepsExternal(),
@@ -38,7 +38,7 @@ export default [
         output: [
             //unbundled esm
             {
-                name: '@molitio-core/ui-nav-menu',
+                name: '@molitio/ui-core',
                 file: packageJson.module,
                 format: 'esm',
                 globals,
@@ -47,7 +47,7 @@ export default [
             },
             //bundled esm
             {
-                name: '@molitio-core/ui-nav-menu',
+                name: '@molitio/ui-core',
                 file: packageJson.bundle.esm,
                 format: 'esm',
                 globals,
@@ -56,7 +56,7 @@ export default [
             },
             //unbundled cjs
             {
-                name: '@molitio-core/ui-nav-menu',
+                name: '@molitio/ui-core',
                 file: packageJson.main,
                 format: 'cjs',
                 globals,
@@ -65,65 +65,7 @@ export default [
             },
             //bundled umd
             {
-                name: '@molitio-core/ui-nav-menu',
-                file: packageJson.bundle.umd,
-                format: 'umd',
-                globals,
-                sourcemap: true,
-                plugins: [],
-            },
-        ],
-
-        external: Object.keys(globals),
-    },
-    {
-        input: 'src/ui-core-models/index.ts',
-        plugins: [
-            typescript(),
-            peerDepsExternal(),
-            resolve(),
-            commonjs(),
-            peerDepsExternal(),
-            buble(),
-            sizes(),
-            babel({
-                extensions,
-                babelHelpers: 'bundled',
-                include: ['src/**/*'],
-                exclude: 'node_modules/**',
-            }),
-        ],
-        output: [
-            //unbundled esm
-            {
-                name: '@molitio-core/ui-core-models',
-                file: packageJson.module,
-                format: 'esm',
-                globals,
-                sourcemap: true,
-                plugins: [],
-            },
-            //bundled esm
-            {
-                name: '@molitio-core/ui-core-models',
-                file: packageJson.bundle.esm,
-                format: 'esm',
-                globals,
-                sourcemap: true,
-                plugins: [],
-            },
-            //unbundled cjs
-            {
-                name: '@molitio-core/ui-core-models',
-                file: packageJson.main,
-                format: 'cjs',
-                globals,
-                sourcemap: true,
-                plugins: [],
-            },
-            //bundled umd
-            {
-                name: '@molitio-core/ui-core-models',
+                name: '@molitio/ui-core',
                 file: packageJson.bundle.umd,
                 format: 'umd',
                 globals,
@@ -135,4 +77,3 @@ export default [
         external: Object.keys(globals),
     },
 ];
-    

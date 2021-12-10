@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ClassNameMap } from '@material-ui/styles';
-import { StyleContextProviderProps } from './interface/StyleContextProviderProps';
-import { getStyles, StyleContext } from './StyleContextStore';
+import { StyleContextProviderProps } from '../interface/StyleContextProviderProps';
+import { getStyles, StyleContext } from '../store/StyleContextStore';
 
 export const StyleContextProvider: React.FC<StyleContextProviderProps> = ({ children }) => {
     const [styleMap, setStyleMap] = React.useState(new Map<string, ClassNameMap<string>>());

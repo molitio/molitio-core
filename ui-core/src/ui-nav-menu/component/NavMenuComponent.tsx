@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps, NavPage } from 'ui-core-models';
-import { StyleContextProvider } from '../../style-context/StyleContextProvider';
-import { StyleContext } from '../../style-context/StyleContextStore';
-import { PageTag } from '../../page-tag/PageTag';
+import { StyleContextProvider } from '../../ui-style-context/component/StyleContextProvider';
+import { StyleContext } from '../../ui-style-context/store/StyleContextStore';
+import { PageTag } from '../../ui-common/page-tag/PageTag';
 import { createUseStyles } from 'react-jss';
 
 export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ data }: NavMenuComponentProps) => {
