@@ -1,5 +1,6 @@
-Under development disclaimer:
+# molitio.org by molitio foundation - In service of humanity for every human being.
 
+### Under development disclaimers:
 - The following information regarding the project reflects the current
   direction for the future. At the early stage of it, many components are not yet realized and possibly
   change in the future. The projects seeks like minded individuals and it is open source. Many of the
@@ -12,7 +13,6 @@ Under development disclaimer:
 
 - Legaly molitio foundation is not registered just yet, it is under progress to properly register it.
 
-# molitio.org by molitio foundation - In service of humanity for every human being.
 
 ## Mission
 
@@ -31,9 +31,9 @@ By creating digital tools, that are accessible easily to anyone and can perform 
   A human lost and found that enables the identification of missing humans. It seeks to
   provide emergency response to listed contacts and possibly local ER organizations
 
-- ## Foundation Roles
+## Foundation Roles
 
-  ## #digital_samaritan
+-  ## #digital_samaritan
   A human being who provides aid to anyone with insufficient technical understanding to utilize digital tools, including how to use molitio.org. Besides aiding the usage of the tools also documents resource needs of others who are in need and unable to do it for themself.
 
 ## Contributors
