@@ -1,4 +1,4 @@
-# molitio.org by molitio foundation - In service of humanity for every human being.
+# molitio-core by molitio foundation - in service of humanity for every human being.
 
 ### Under development disclaimers:
 - The following information regarding the project reflects the current
