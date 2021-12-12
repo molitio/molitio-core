@@ -9,7 +9,7 @@ export { NavMenuComponent, NavSegmentComponent };
 /*
 ui-core-models
 */
-    
+
 import { NavSegment } from './ui-core-models';
 import { NavPage } from './ui-core-models';
 import { NavPageCollection } from './ui-core-models';
@@ -29,3 +29,13 @@ ui-common
 /* 
 ui-page-landing
 */
+
+/*
+circle-pattern 
+*/
+
+import { CirclePattern } from './circle-pattern';
+import { CirclePatternProps } from './ui-core-models';
+
+export { CirclePattern };
+export type { CirclePatternProps };

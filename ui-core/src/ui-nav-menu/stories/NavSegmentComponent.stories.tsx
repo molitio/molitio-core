@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Story, Meta } from '@storybook/react';
 
-import { NavMenuComponent, NavSegmentComponent } from 'ui-nav-menu';
-import { NavSegmentProps } from 'ui-core-models';
+import { NavMenuComponent, NavSegmentComponent } from '../../index';
+import { NavSegmentProps } from '../../index';
 
 const navMenuItemArgs: NavSegmentProps = {
     data: {
