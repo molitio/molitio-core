@@ -47,8 +47,8 @@ export const CirclePattern: React.FC<CirclePatternProps> = ({ data }: CirclePatt
 
     return (
         <>
-            {circles.length}
-            <svg viewBox="0 0 1000 1000">
+            <label> {`circles ${circles.length}`}</label>
+            <svg viewBox="0 0 4200 4200">
                 {circles.map((circle, i) => (
                     <circle key={i} cx={circle.x} cy={circle.y} r={circle.rad} stroke="blue" fill="none" />
                 ))}

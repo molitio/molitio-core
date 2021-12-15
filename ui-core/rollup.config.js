@@ -5,6 +5,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import buble from 'rollup-plugin-buble';
 import sizes from 'rollup-plugin-sizes';
+import replace from '@rollup/plugin-replace';
 
 const packageJson = require('./package.json');
 
@@ -19,9 +20,22 @@ const globals = {
 
 export default [
     {
+        input: 'src/ui-page-radio/component/RadioPage.tsx',
+        plugins: [commonjs(), typescript()],
+        output: [
+            //bundled iife
+            {
+                file: packageJson.iife.radioPage,
+                format: 'iife',
+                bundled: true,
+                globals,
+            },
+        ],
+    },
+    {
         input: 'src/index.ts',
         plugins: [
-            typescript(),
+            typescript({ tsconfig: './tsconfig.json' }),
             peerDepsExternal(),
             resolve(),
             commonjs(),
@@ -34,6 +48,12 @@ export default [
                 include: ['src/**/*'],
                 exclude: 'node_modules/**',
             }),
+            replace({
+                'process.env.NODE_ENV': JSON.stringify('production'),
+                __buildDate__: () => JSON.stringify(new Date()),
+                __buildVersion: 17,
+                preventAssignment: true,
+            }),
         ],
         output: [
             //unbundled esm
@@ -41,6 +61,7 @@ export default [
                 name: '@molitio/ui-core',
                 file: packageJson.module,
                 format: 'esm',
+                exports: 'named',
                 globals,
                 sourcemap: true,
                 plugins: [],
@@ -50,6 +71,8 @@ export default [
                 name: '@molitio/ui-core',
                 file: packageJson.bundle.esm,
                 format: 'esm',
+                exports: 'named',
+                bundled: true,
                 globals,
                 sourcemap: true,
                 plugins: [],
@@ -68,6 +91,7 @@ export default [
                 name: '@molitio/ui-core',
                 file: packageJson.bundle.umd,
                 format: 'umd',
+                bundled: true,
                 globals,
                 sourcemap: true,
                 plugins: [],

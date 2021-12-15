@@ -1,4 +1,4 @@
-export type PageTag = {
+export type TPageTag = {
     tag: string;
     theme: string;
 };

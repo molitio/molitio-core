@@ -1,3 +1,1 @@
-import { PageTag } from './page-tag/PageTag';
-
-export { PageTag };
+export { PageTag } from './component/PageTag';

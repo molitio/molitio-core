@@ -1,3 +1,1 @@
-import { CirclePattern } from './component/CirclePattern';
-
-export { CirclePattern };
+export { CirclePattern } from './component/CirclePattern';

@@ -1,6 +1,6 @@
 import { createStyles, makeStyles } from '@material-ui/core';
 import React from 'react';
-import { IStyleContext } from '../interface/IStyleContext';
+import { IStyleContext } from '../../ui-core-models/interface/StyleContext/IStyleContext';
 import { ClassNameMap } from '@material-ui/styles';
 
 export const getStyles = () => {

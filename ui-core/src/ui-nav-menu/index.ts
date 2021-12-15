@@ -1,4 +1,2 @@
-import { NavMenuComponent } from './component/NavMenuComponent';
-import { NavSegmentComponent } from './component/NavSegmentComponent';
-
-export { NavMenuComponent, NavSegmentComponent };
+export { NavMenuComponent } from './component/NavMenuComponent';
+export { NavSegmentComponent } from './component/NavSegmentComponent';

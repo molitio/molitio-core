@@ -1,16 +1,15 @@
 import React from 'react';
 import { NavSegmentComponent } from './NavSegmentComponent';
-import { NavMenuComponentProps, NavPage } from 'ui-core-models';
-import { StyleContextProvider } from '../../ui-style-context/component/StyleContextProvider';
-import { StyleContext } from '../../ui-style-context/store/StyleContextStore';
-import { PageTag } from '../../ui-common/page-tag/PageTag';
+import { NavMenuComponentProps, TNavPage, StyleContextTags } from '../../ui-core-models';
+import { PageTag } from '../../ui-common';
+import { StyleContext, StyleContextProvider } from '../../ui-style-context';
 import { createUseStyles } from 'react-jss';
 
 export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ data }: NavMenuComponentProps) => {
-    const [menuPages, setMenuPages] = React.useState<Map<string, NavPage>>(new Map<string, NavPage>());
+    const [menuPages, setMenuPages] = React.useState<Map<string, TNavPage>>(new Map<string, TNavPage>());
 
     React.useEffect(() => {
-        setMenuPages(new Map([...(data.pageCollection ?? new Map<string, NavPage>())]));
+        setMenuPages(new Map([...(data.pageCollection ?? new Map<string, TNavPage>())]));
         console.log(data.pageCollection);
     }, []);
 
@@ -29,8 +28,8 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ data }: NavM
         itemText: {
             color: 'black',
         },
-        itemBackground: {
-            backgroundColor: 'blue',
+        pageBackground: {
+            backgroundColor: styleContext.styleMap.get(StyleContextTags.THEME_BACKGROUND_IMAGE),
         },
     });
 
@@ -40,23 +39,23 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ data }: NavM
 
     return (
         <nav>
-            <PageTag data={{tag: 'navMenu01', theme:'defaultThemeName'}}  />
+            <PageTag data={{ tag: 'navMenu01', theme: 'defaultThemeName' }} />
 
-            {/*  <StyleContextProvider> */}
-            <div>
-                <label className={componentStyle.pageTitle}> {data.pageCollectionTag} </label>
-                {Array.from(menuPages).map((page) => (
-                    <div key={page[0]}>
-                        <span>{page[1].pageName}</span>
-                        <ul>
-                            {(page[1].navSegments ?? []).map((item) => (
-                                <NavSegmentComponent key={item.itemName} data={item} />
-                            ))}
-                        </ul>
-                    </div>
-                ))}
-            </div>
-            {/*    </StyleContextProvider> */}
+            <StyleContextProvider>
+                <div>
+                    <label className={componentStyle.pageTitle}> {data.pageCollectionTag} </label>
+                    {Array.from(menuPages).map((page) => (
+                        <div key={page[0]}>
+                            <span>{page[1].pageName}</span>
+                            <ul>
+                                {(page[1].navSegments ?? []).map((item) => (
+                                    <NavSegmentComponent key={item.itemName} data={item} />
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </StyleContextProvider>
         </nav>
     );
 };

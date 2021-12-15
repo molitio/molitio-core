@@ -1,5 +1,5 @@
-import { NavSegment } from "ui-core-models";
+import { TNavSegment } from "ui-core-models";
 
 export interface NavSegmentProps {
-    data: NavSegment;
+    data: TNavSegment;
 }

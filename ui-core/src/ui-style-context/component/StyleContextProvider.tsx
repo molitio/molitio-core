@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { ClassNameMap } from '@material-ui/styles';
-import { StyleContextProviderProps } from '../interface/StyleContextProviderProps';
+import { Classes } from 'jss';
+import { StyleContextProviderProps } from 'ui-core-models';
 import { getStyles, StyleContext } from '../store/StyleContextStore';
 
 export const StyleContextProvider: React.FC<StyleContextProviderProps> = ({ children }) => {
-    const [styleMap, setStyleMap] = React.useState(new Map<string, ClassNameMap<string>>());
+    const [styleMap, setStyleMap] = React.useState(new Map<string, Classes<string>>());
 
     useEffect(() => {
         setStyleMap(getStyles());
@@ -16,7 +16,9 @@ export const StyleContextProvider: React.FC<StyleContextProviderProps> = ({ chil
 
     return (
         <>
-            <StyleContext.Provider value={{ styleMap: styleMap ?? new Map<string, ClassNameMap<string>>(), themeName: "sirály"}}>
+            <StyleContext.Provider
+                value={{ styleMap: styleMap ?? new Map<string, Classes<string>>(), themeName: 'sirály' }}
+            >
                 {children}
             </StyleContext.Provider>
         </>
