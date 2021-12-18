@@ -1,17 +1,18 @@
 import babel from '@rollup/plugin-babel';
-import typescript from '@rollup/plugin-typescript';
+import tsPlugin from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import buble from 'rollup-plugin-buble';
 import sizes from 'rollup-plugin-sizes';
 import replace from '@rollup/plugin-replace';
+import image from '@rollup/plugin-image';
 
 const packageJson = require('./package.json');
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const extensions = ['.ts', '.tsx', '.md', '.mdx'];
+const extensions = ['.ts', '.tsx', '.md', '.mdx', '.svg'];
 
 const globals = {
     react: 'React',
@@ -21,13 +22,24 @@ const globals = {
 export default [
     {
         input: 'src/ui-page-radio/component/RadioPage.tsx',
-        plugins: [commonjs(), typescript()],
+        plugins: [
+            commonjs(),
+            resolve(),
+            image(),
+            tsPlugin({ tsconfig: './tsconfig.json', sourceMap: true }),
+            replace({
+                'process.env.NODE_ENV': JSON.stringify('production'),
+                __buildDate__: () => JSON.stringify(new Date()),
+                __buildVersion: 17,
+                preventAssignment: true,
+            }),
+        ],
         output: [
             //bundled iife
             {
+                name: packageJson.iife.radioPage,
                 file: packageJson.iife.radioPage,
                 format: 'iife',
-                bundled: true,
                 globals,
             },
         ],
@@ -35,11 +47,10 @@ export default [
     {
         input: 'src/index.ts',
         plugins: [
-            typescript({ tsconfig: './tsconfig.json' }),
+            tsPlugin({ tsconfig: './tsconfig.json' }),
             peerDepsExternal(),
             resolve(),
             commonjs(),
-            peerDepsExternal(),
             buble(),
             sizes(),
             babel({
@@ -54,6 +65,7 @@ export default [
                 __buildVersion: 17,
                 preventAssignment: true,
             }),
+            image(),
         ],
         output: [
             //unbundled esm
@@ -72,7 +84,6 @@ export default [
                 file: packageJson.bundle.esm,
                 format: 'esm',
                 exports: 'named',
-                bundled: true,
                 globals,
                 sourcemap: true,
                 plugins: [],
@@ -91,7 +102,6 @@ export default [
                 name: '@molitio/ui-core',
                 file: packageJson.bundle.umd,
                 format: 'umd',
-                bundled: true,
                 globals,
                 sourcemap: true,
                 plugins: [],

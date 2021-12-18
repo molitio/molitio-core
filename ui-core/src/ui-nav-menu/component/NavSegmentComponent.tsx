@@ -1,18 +1,16 @@
 import React from 'react';
-import { makeStyles, createStyles } from '@material-ui/core';
-import { NavSegmentProps } from 'ui-core-models';
+import { createUseStyles } from 'react-jss';
+import { NavSegmentProps } from '../interface/NavSegmentProps';
 
 export const NavSegmentComponent: React.FC<NavSegmentProps> = ({ data }: NavSegmentProps) => {
-    const useStyles = makeStyles(() =>
-        createStyles({
-            itemText: {
-                color: 'black',
-            },
-            itemBackground: {
-                backgroundColor: 'blue',
-            },
-        }),
-    );
+    const useStyles = createUseStyles({
+        itemText: {
+            color: 'black',
+        },
+        itemBackground: {
+            backgroundColor: 'blue',
+        },
+    });
 
     const componentStyle = useStyles();
 

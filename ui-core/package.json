@@ -10,18 +10,18 @@
     },
     "keywords": [
         "molitio",
-        "ui"
+        "ui-core"
     ],
     "bugs": {
         "url": "https://github.com/molitio/molitio-core/issues"
     },
     "homepage": "https://github.com/molitio/molitio-core#readme",
-    "main": "build/index.js",
-    "module": "build/index.es.js",
-    "typings": "build/types/index.d.ts",
+    "main": "build/@molitio/ui-core/index.js",
+    "module": "build/@molitio/ui-core/index.es.js",
+    "typings": "build/@molitio/ui-core/types/index.d.ts",
     "bundle": {
-        "esm": "build/bundle/index.esm.js",
-        "umd": "build/bundle/index.umd.js"
+        "esm": "build/@molitio/ui-core/bundle/index.esm.js",
+        "umd": "build/@molitio/ui-core/bundle/index.umd.js"
     },
     "iife": {
         "radioPage": "deploy/molitio-radio-page.js"
@@ -39,23 +39,23 @@
     },
     "size-limit": [
         {
-            "path": "build/index.js",
+            "path": "build/@molitio/ui-core/index.js",
             "limit": "10 KB"
         },
         {
-            "path": "build/index.es.js",
+            "path": "build/@molitio/ui-core/index.es.js",
             "limit": "10 KB"
         },
         {
-            "path": "build/bundle/index.esm.js",
+            "path": "build/bundle/@molitio/ui-core/index.esm.js",
             "limit": "10 KB"
         },
         {
-            "path": "build/bundle/index.umd.js",
+            "path": "build/bundle/@molitio/ui-core/index.umd.js",
             "limit": "10 KB"
         },
         {
-            "path": "build/types/index.d.ts",
+            "path": "build/types/@molitio/ui-core/index.d.ts",
             "limit": "10 KB"
         }
     ],
@@ -88,6 +88,7 @@
         "@mdx-js/rollup": "^2.0.0-rc.2",
         "@rollup/plugin-babel": "^5.3.0",
         "@rollup/plugin-commonjs": "^21.0.1",
+        "@rollup/plugin-image": "^2.1.1",
         "@rollup/plugin-node-resolve": "^13.0.6",
         "@rollup/plugin-replace": "^3.0.0",
         "@rollup/plugin-typescript": "^8.3.0",
@@ -95,6 +96,7 @@
         "@storybook/addon-essentials": "^6.4.4",
         "@storybook/addon-links": "^6.4.4",
         "@storybook/react": "^6.4.4",
+        "@types/anymatch": "^3.0.0",
         "@types/jasmine": "^3.10.2",
         "@types/node": "^16.11.10",
         "@types/react": "^17.0.37",
@@ -117,6 +119,7 @@
         "rollup-plugin-buble": "^0.19.8",
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-sizes": "^1.0.4",
+        "rollup-plugin-svg": "^2.0.0",
         "size-limit": "^7.0.3",
         "ts-node": "^10.4.0",
         "ts-node-dev": "^1.1.8",

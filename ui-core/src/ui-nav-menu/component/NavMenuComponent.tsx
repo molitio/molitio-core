@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavSegmentComponent } from './NavSegmentComponent';
-import { NavMenuComponentProps, TNavPage, StyleContextTags } from '../../ui-core-models';
+import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
+import { TNavPage, StyleContextTags } from '../../ui-core-models';
 import { PageTag } from '../../ui-common';
 import { StyleContext, StyleContextProvider } from '../../ui-style-context';
 import { createUseStyles } from 'react-jss';

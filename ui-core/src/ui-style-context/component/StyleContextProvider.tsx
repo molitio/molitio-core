@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Classes } from 'jss';
-import { StyleContextProviderProps } from 'ui-core-models';
+import { StyleContextProviderProps } from '../interface/StyleContextProviderProps';
 import { getStyles, StyleContext } from '../store/StyleContextStore';
 
 export const StyleContextProvider: React.FC<StyleContextProviderProps> = ({ children }) => {

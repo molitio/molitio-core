@@ -1,4 +1,4 @@
-import { StyleContextProvider } from './component/StyleContextProvider';
-import { StyleContext } from './store/StyleContextStore';
-
-export { StyleContextProvider, StyleContext };
+export { StyleContextProvider } from './component/StyleContextProvider';
+export { StyleContext } from './store/StyleContextStore';
+export type { StyleContextProviderProps } from './interface/StyleContextProviderProps';
+export type { IStyleContext } from './interface/IStyleContext'
