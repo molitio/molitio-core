@@ -23,7 +23,7 @@ const storyArgs: RadioPageProps = {
 };
 
 const meta: Meta = {
-    title: 'molitio-core/Radio/Radio Page',
+    title: 'molitio-core/Pages/Radio Page',
     component: RadioPage,
 };
 
@@ -31,7 +31,7 @@ export default meta;
 
 const Template: Story<RadioPageProps> = (args) => <RadioPage {...args} />;
 
-export const storyComponent = Template.bind({});
-storyComponent.args = {
+export const RadioPageStory = Template.bind({});
+RadioPageStory.args = {
     ...storyArgs,
 };

@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 import { NavMenuComponentProps } from '../../index';
 import { NavMenuComponent } from '../../index';
 
-const navMenuPageDataArgs: NavMenuComponentProps = {
+const storyArgs: NavMenuComponentProps = {
     data: {
         pageCollectionTag: 'basicNavMenu01',
         pageCollection: new Map([
@@ -37,10 +37,10 @@ const navMenuPageDataArgs: NavMenuComponentProps = {
 };
 
 const meta: Meta = {
-    title: 'molitio-core/Nav Menu/Menu',
+    title: 'molitio-core/Components/Nav Menu',
     component: NavMenuComponent,
     args: {
-        ...navMenuPageDataArgs,
+        ...storyArgs,
     },
 };
 
@@ -48,7 +48,7 @@ export default meta;
 
 const Template: Story<NavMenuComponentProps> = (args) => <NavMenuComponent {...args} />;
 
-export const NavMenu = Template.bind({});
-NavMenu.args = {
-    ...navMenuPageDataArgs,
+export const NavMenuStory = Template.bind({});
+NavMenuStory.args = {
+    ...storyArgs,
 };

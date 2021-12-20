@@ -33,7 +33,9 @@ export const RadioPage: React.FC<RadioPageProps> = ({ data }: RadioPageProps) =>
     return (
         <main className={style.pageContainer}>
             {data.playUrl}
-            <StripedBackground />
+            <StripedBackground>
+                <h1>Show content</h1>
+            </StripedBackground>
         </main>
     );
 };

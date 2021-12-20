@@ -1,9 +1,9 @@
 import { Story, Meta } from '@storybook/react';
 
-import { NavMenuComponent, NavSegmentComponent } from '../../index';
+import { NavSegmentComponent } from '../../index';
 import { NavSegmentProps } from '../../index';
 
-const navMenuItemArgs: NavSegmentProps = {
+const storyArgs: NavSegmentProps = {
     data: {
         pathSegment: '/first',
         itemName: 'first',
@@ -23,15 +23,15 @@ const navMenuItemArgs: NavSegmentProps = {
 };
 
 const meta: Meta = {
-    title: 'molitio-core/Nav Menu/Menu Item',
-    component: NavMenuComponent,
+    title: 'molitio-core/Components/Nav Menu Segment',
+    component: NavSegmentComponent,
 };
 
 export default meta;
 
 const Template: Story<NavSegmentProps> = (args) => <NavSegmentComponent {...args} />;
 
-export const NavMenuItem = Template.bind({});
-NavMenuItem.args = {
-    ...navMenuItemArgs,
+export const NavSegmentStory = Template.bind({});
+NavSegmentStory.args = {
+    ...storyArgs,
 };

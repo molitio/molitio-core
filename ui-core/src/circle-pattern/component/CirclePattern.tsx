@@ -24,7 +24,7 @@ export const CirclePattern: React.FC<CirclePatternProps> = ({ data }: CirclePatt
 
     useEffect(() => {
         setCircles(createPattern());
-    }, []);
+    }, [data.r]);
 
     const createPattern = () => {
         const rad = data.r;

@@ -1,4 +1,7 @@
-declare module '*.svg' {
-    const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
-    export default content;
+import { SVGAttributes } from "react";
+
+declare module 'react' {
+    interface SVGProps<T> extends SVGAttributes<T>, ClassAttributes<T> {
+        onHover?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    }
 }

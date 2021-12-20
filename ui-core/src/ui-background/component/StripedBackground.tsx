@@ -1,12 +1,17 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { StripesSvg } from './StripesSvg';
 
-import flatBackground from '../svg/flatBackground.svg';
-import stripeBackground from '../svg/stripeBackground.svg';
-
-export const StripedBackground: React.FC = () => {
-    const useStyles = createUseStyles({
-        flatBackground: {
+export const StripedBackground: React.FC = ({ children }) => {
+    const style = createUseStyles({
+        componentContainer: {
+          position: 'fixed',
+          
+        },
+        componentContent: {
+            /* position: 'absolute', */
+            /*      
+            display: 'none',
             margin: 0,
             position: 'fixed',
             backgroundColor: 'transparent',
@@ -15,33 +20,17 @@ export const StripedBackground: React.FC = () => {
             backgroundSize: 'cover',
             minHeight: '100vh',
             minWidth: '100vw',
-            zIndex: -90,
-            backgroundImage: `url(${flatBackground})`,
             width: '100vw',
-            height: '100vh',
+            height: '100vh', */
         },
-        stripedBackground: {
-            margin: 0,
-            position: 'fixed',
-            backgroundColor: 'transparent',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            minHeight: '100vh',
-            minWidth: '100vw',
-            zIndex: -90,
-            backgroundImage: `url(${stripeBackground})`,
-            width: '100vw',
-            height: '100vh',
-        },
-    });
-
-    const style = useStyles();
+    }).apply({});
 
     return (
-        <>
-            <div className={style.flatBackground}></div>
-            <div className={style.stripedBackground}></div>
-        </>
+        <div className={style.componentContainer}>
+            {/*<StripesSvg background-type={BACKGROUND_TYPES.FlatWithStripes} />*/}
+            <StripesSvg>
+                <div className={style.componentContent}>{children}</div>
+            </StripesSvg>
+        </div>
     );
 };
