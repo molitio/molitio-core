@@ -69,7 +69,7 @@
         "size": "size-limit",
         "analyze": "size-limit --why",
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook -o ./storybook-build --docs"
+        "build-storybook": "mkdir ./storybook-build && build-storybook -o ./storybook-build --docs"
     },
     "peerDependencies": {
         "react": "^17.0.2",
