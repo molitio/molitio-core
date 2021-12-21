@@ -28,12 +28,12 @@
      scale-x="1"
      viewbox-width="1920"
      inkscape:zoom="0.27333626"
-     inkscape:cx="184.75412"
-     inkscape:cy="876.21013"
-     inkscape:window-width="1836"
-     inkscape:window-height="837"
-     inkscape:window-x="1440"
-     inkscape:window-y="37"
+     inkscape:cx="-155.48614"
+     inkscape:cy="36.584974"
+     inkscape:window-width="1440"
+     inkscape:window-height="762"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
   <defs
@@ -60,8 +60,8 @@
        height="94.453232"
        x="-572.11523"
        y="474.74719"
-       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)" 
-       onHoover="backgroundStripeOnHoover()"/>
+       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)"
+       onHoover="backgroundStripeOnHoover()" />
     <rect
        style="fill:#363636;fill-opacity:0.87058824;fill-rule:evenodd;stroke-width:0.640397"
        id="rect523"
@@ -77,8 +77,8 @@
        height="94.453232"
        x="-250.2057"
        y="152.83763"
-       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)" 
-       onHoover="backgroundStripeOnHoover()"/>
+       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)"
+       onHoover="backgroundStripeOnHoover()" />
     <rect
        style="fill:#363636;fill-opacity:0.87058824;fill-rule:evenodd;stroke-width:0.640397"
        id="rect527"
@@ -86,8 +86,8 @@
        height="94.453232"
        x="-89.250931"
        y="-8.1171389"
-       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)" 
-       onHoover="backgroundStripeOnHoover()"/>
+       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)"
+       onHoover="backgroundStripeOnHoover()" />
     <rect
        style="fill:#363636;fill-opacity:0.87058824;fill-rule:evenodd;stroke-width:0.640397"
        id="rect529"
@@ -95,8 +95,8 @@
        height="94.453232"
        x="232.65862"
        y="-330.02667"
-       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)" 
-       onHoover="backgroundStripeOnHoover()"/>
+       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)"
+       onHoover="backgroundStripeOnHoover()" />
     <rect
        style="fill:#363636;fill-opacity:0.87058824;fill-rule:evenodd;stroke-width:0.640397"
        id="rect531"
@@ -104,8 +104,8 @@
        height="94.453232"
        x="71.703842"
        y="-169.07191"
-       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)" 
-       onHoover="backgroundStripeOnHoover()"/>
+       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)"
+       onHoover="backgroundStripeOnHoover()" />
     <rect
        style="fill:#363636;fill-opacity:0.87058824;fill-rule:evenodd;stroke-width:0.640397"
        id="rect533"
@@ -113,8 +113,8 @@
        height="94.453232"
        x="393.6134"
        y="-490.98145"
-       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)" 
-       onHoover="backgroundStripeOnHoover()"/>
+       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)"
+       onHoover="backgroundStripeOnHoover()" />
     <rect
        style="fill:#363636;fill-opacity:0.87058824;fill-rule:evenodd;stroke-width:0.640397"
        id="rect535"
@@ -122,8 +122,8 @@
        height="94.453232"
        x="715.52295"
        y="-812.89099"
-       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)" 
-       onHoover="backgroundStripeOnHoover()"/>
+       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)"
+       onHoover="backgroundStripeOnHoover()" />
     <rect
        style="fill:#363636;fill-opacity:0.87058824;fill-rule:evenodd;stroke-width:0.640397"
        id="rect550"
@@ -149,8 +149,8 @@
        height="94.453232"
        x="1037.4325"
        y="-1134.8005"
-       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)" 
-       onHoover="backgroundStripeOnHoover()"/>
+       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)"
+       onHoover="backgroundStripeOnHoover()" />
     <rect
        style="fill:#363636;fill-opacity:0.87058824;fill-rule:evenodd;stroke-width:0.640397"
        id="rect556"
@@ -158,8 +158,8 @@
        height="94.453232"
        x="1198.3873"
        y="-1295.7554"
-       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)" 
-       onHoover="backgroundStripeOnHoover()"/>
+       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)"
+       onHoover="backgroundStripeOnHoover()" />
     <rect
        style="fill:#363636;fill-opacity:0.87058824;fill-rule:evenodd;stroke-width:0.640397"
        id="rect558"
@@ -167,7 +167,7 @@
        height="94.453232"
        x="1359.342"
        y="-1456.7101"
-       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)" 
-       onHoover="backgroundStripeOnHoover()"/>
+       transform="matrix(0.68342179,0.73002374,-0.68342179,0.73002374,0,0)"
+       onHoover="backgroundStripeOnHoover()" />
   </g>
 </svg>

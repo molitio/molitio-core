@@ -2,13 +2,14 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 export const StripesSvg: React.FC = () => {
-    const isBackground = false;
+    const isBackground = true;
 
     const bckg = {
         background: {
             position: 'fixed',
             height: '100%',
             width: '100%',
+            zIndex: -90,
         },
         backgroundStripes: {
             '& rect:hover': {
