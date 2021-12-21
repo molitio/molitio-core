@@ -5,8 +5,7 @@ import { StripesSvg } from './StripesSvg';
 export const StripedBackground: React.FC = ({ children }) => {
     const style = createUseStyles({
         componentContainer: {
-          position: 'fixed',
-          
+            position: 'relative',
         },
         componentContent: {
             /* position: 'absolute', */
@@ -28,9 +27,8 @@ export const StripedBackground: React.FC = ({ children }) => {
     return (
         <div className={style.componentContainer}>
             {/*<StripesSvg background-type={BACKGROUND_TYPES.FlatWithStripes} />*/}
-            <StripesSvg>
-                <div className={style.componentContent}>{children}</div>
-            </StripesSvg>
+            <StripesSvg />
+            <div className={style.componentContent}>{children}</div>
         </div>
     );
 };

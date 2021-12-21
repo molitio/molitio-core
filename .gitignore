@@ -113,6 +113,7 @@ dist
 lib
 build
 deploy
+storybook-build
 
 # Dev Keys
 *.pem
