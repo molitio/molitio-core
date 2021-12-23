@@ -6,16 +6,6 @@ export const FlatColorSvg: React.FC = () => {
         background: {
             width: '100%',
             top: 0,
-            /*      margin: 0,
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundColor: 'transparent',
-            minHeight: '100vh',
-            minWidth: '100vw',
-            zIndex: -90,
-            width: '100vw',
-            height: '100vh', */
         },
     }).apply({});
 

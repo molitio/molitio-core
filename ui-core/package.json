@@ -1,6 +1,6 @@
 {
     "name": "@molitio/ui-core",
-    "version": "1.0.0",
+    "version": "0.3.0-alpha.0",
     "author": "molitio foundation",
     "description": "Universal reusable React UI Components",
     "license": "CC0-1.0",
@@ -16,15 +16,15 @@
         "url": "https://github.com/molitio/molitio-core/issues"
     },
     "homepage": "https://github.com/molitio/molitio-core#readme",
-    "main": "build/@molitio/ui-core/index.js",
-    "module": "build/@molitio/ui-core/index.es.js",
-    "typings": "build/@molitio/ui-core/types/index.d.ts",
+    "main": "src/index.ts",
+    "module": "build/index.es.js",
+    "typings": "build/types/index.d.ts",
     "bundle": {
-        "esm": "build/@molitio/ui-core/bundle/index.esm.js",
-        "umd": "build/@molitio/ui-core/bundle/index.umd.js"
+        "esm": "build/bundle/index.esm.js",
+        "umd": "build/bundle/index.umd.js"
     },
     "iife": {
-        "radioPage": "deploy/molitio-radio-page.js"
+        "radioPage": "build/iife/molitio-radio-page.js"
     },
     "files": [
         "build"
@@ -39,11 +39,11 @@
     },
     "size-limit": [
         {
-            "path": "build/@molitio/ui-core/index.js",
+            "path": "build/index.js",
             "limit": "10 KB"
         },
         {
-            "path": "build/@molitio/ui-core/index.es.js",
+            "path": "build/index.es.js",
             "limit": "10 KB"
         },
         {
@@ -60,16 +60,17 @@
         }
     ],
     "scripts": {
+        "prebuild": "npm run clean",
         "build": "rollup --config",
+        "postbuild": "node packageBuilder",
         "build:watch": "rollup --config --watch",
-        "xpile": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps",
-        "build:esm": "cross-env BABEL_ENV=esmUnbundled babel src --extensions '.ts,.tsx' --out-dir 'lib/esm' --source-maps",
-        "build:cjs": "cross-env BABEL_ENV=cjs babel src --extensions '.ts,.tsx' --out-dir 'lib/cjs' --source-maps",
-        "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+        "lint": "eslint '*/**/*.{js,ts,tsx}'",
+        "lint-fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
         "size": "size-limit",
         "analyze": "size-limit --why",
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "mkdir ./storybook-build && build-storybook -o ./storybook-build --docs"
+        "build-storybook": "mkdir ./storybook-build && build-storybook -o ./storybook-build --docs",
+        "clean": "rm -rf build"
     },
     "peerDependencies": {
         "react": "^17.0.2",
@@ -123,6 +124,7 @@
         "size-limit": "^7.0.3",
         "ts-node": "^10.4.0",
         "ts-node-dev": "^1.1.8",
+        "tsconfig-paths-webpack-plugin": "^3.5.2",
         "tslib": "^2.3.1",
         "typescript": "^4.5.2"
     },

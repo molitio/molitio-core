@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StripesSvg } from './StripesSvg';
+import { StripesSvg } from 'ui-svg';
 
 export const StripedBackground: React.FC = ({ children }) => {
     const style = createUseStyles({

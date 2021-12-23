@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react';
 
-import { CirclePattern } from '../../index';
-import { CirclePatternProps } from '../../index';
+import { CirclePattern, CirclePatternProps } from 'circle-pattern';
 
 const storyArgs: CirclePatternProps = {
     data: {

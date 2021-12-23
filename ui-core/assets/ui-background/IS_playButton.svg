@@ -26,18 +26,32 @@
      showgrid="false"
      units="pt"
      lock-margins="true"
-     inkscape:zoom="2.2550038"
-     inkscape:cx="62.305883"
-     inkscape:cy="141.46318"
-     inkscape:window-width="1920"
-     inkscape:window-height="942"
-     inkscape:window-x="1440"
-     inkscape:window-y="34"
+     inkscape:zoom="1.0427454"
+     inkscape:cx="122.27337"
+     inkscape:cy="151.52308"
+     inkscape:window-width="1312"
+     inkscape:window-height="762"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      inkscape:snap-object-midpoints="true" />
   <defs
      id="defs1274">
+    <marker
+       style="overflow:visible;"
+       id="Arrow1Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt;"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path40697" />
+    </marker>
     <inkscape:path-effect
        effect="powerstroke"
        id="path-effect40165"
@@ -55,9 +69,10 @@
        end_linecap_type="zerowidth" />
   </defs>
   <g
-     inkscape:label="Layer 1"
+     inkscape:label="Reference"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     style="display:none">
     <image
        width="50.799999"
        height="50.799999"
@@ -174,27 +189,39 @@ TkSuQmCC
        id="image1520"
        x="10.462916"
        y="10.234127" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="playButtonCircle"
+     style="display:inline">
     <circle
-       style="fill:#ffff00;fill-opacity:0.870588;stroke-width:0.332773"
+       style="fill:#f6c339;fill-opacity:1;stroke:none;stroke-width:1.76389;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path1774"
        cx="35.277779"
        cy="35.277779"
        r="31.75" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="playButtonTriangle"
+     style="display:inline">
     <path
        sodipodi:type="star"
-       style="fill:#363636;fill-opacity:0.870588"
+       style="display:inline;fill:#0b0b0a;fill-opacity:1;stroke:#0b0b0a;stroke-width:21.909;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98;paint-order:markers fill stroke"
        id="path39911"
        inkscape:flatsided="true"
        sodipodi:sides="3"
        sodipodi:cx="-241.24129"
        sodipodi:cy="35.476658"
-       inkscape:transform-center-x="0"
-       inkscape:transform-center-y="0"
-       transform="matrix(0.26458333,0,0,0.26458333,99.106202,25.891246)"
-       sodipodi:r1="62.155384" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.527461px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 27,21 27,48 51,36 Z"
-       id="path40200" />
+       transform="matrix(0.17486938,0,0,0.17486938,77.463493,29.073997)"
+       sodipodi:r1="62.155384"
+       sodipodi:r2="0"
+       sodipodi:arg1="0"
+       sodipodi:arg2="0"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -179.0859,35.476658 -93.23308,53.828141 V -18.351484 Z" />
   </g>
 </svg>

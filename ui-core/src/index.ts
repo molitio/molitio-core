@@ -2,8 +2,9 @@
 ui-nav-menu
 */
 
-export { NavMenuComponent, NavSegmentComponent } from './ui-nav-menu';
-export type { NavSegmentProps, NavMenuComponentProps } from './ui-nav-menu/';
+    export { NavMenuComponent, NavSegmentComponent } from './ui-nav-menu';
+    export type { NavSegmentProps, NavMenuComponentProps } from './ui-nav-menu/';
+
 
 /*
 ui-core-models
@@ -37,13 +38,13 @@ radio-page
 */
 
 export { RadioPage } from './ui-page-radio';
-export type { RadioPageProps} from './ui-page-radio';
+export type { RadioPageProps } from './ui-page-radio';
 
 /*
 ui-background
 */
 
-export { StripedBackground } from './ui-background';
+/* export { StripedBackground } from './ui-background'; */
 
 /*
 style-context

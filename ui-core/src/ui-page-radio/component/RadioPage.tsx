@@ -1,7 +1,8 @@
 import React from 'react';
 import { RadioPageProps } from '../interface/RadioPageProps';
 import { createUseStyles } from 'react-jss';
-import { StripedBackground } from '../../ui-background';
+import { StripedBackground } from 'ui-background';
+import { PlayButtonSvg } from 'ui-svg';
 
 export const RadioPage: React.FC<RadioPageProps> = ({ data }: RadioPageProps) => {
     console.log(typeof data);
@@ -35,6 +36,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ data }: RadioPageProps) =>
             <StripedBackground>
                 {data.playUrl}
                 <h1>Show content</h1>
+                <PlayButtonSvg />
             </StripedBackground>
         </main>
     );
