@@ -1,31 +1,60 @@
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const path = require('path');
+import type { StorybookConfig } from '@storybook/react/types';
 
-module.exports = {
-    stories: ['../src/**/*.stories.@(tsx|mdx)'],
-    addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
-    // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
-    typescript: {
-        check: true, // type-check stories during Storybook build
-        checkOptions: {},
-        reactDocgen: 'react-docgen-typescript',
-        reactDocgenTypescriptOptions: {
-            shouldExtractLiteralValuesFromEnum: true,
-            propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+const config: StorybookConfig = {
+    stories: ['../src/*.stories.tsx'],
+    logLevel: 'debug',
+    addons: [
+        '@storybook/addon-essentials',
+        '@storybook/addon-storysource',
+        '@storybook/addon-storyshots',
+        '@storybook/addon-a11y',
+        {
+            name: '@storybook/preset-typescript',
+            options: {
+                tsLoaderOptions: {
+                    configFile: path.resolve(__dirname, '../tsconfig.json'),
+                },
+                tsDocgenLoaderOptions: {
+                    tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
+                },
+                forkTsCheckerWebpackPluginOptions: {
+                    colors: true, // disables built-in colors in logger messages
+                },
+            },
         },
-        webpackFinal: async (config) => {
-            config.resolve.plugins = [
-                ...(config.resolve.plugins || []),
-                new TsconfigPathsPlugin({
-                    extensions: config.resolve.extensions,
-                }),
-            ];
-            config.resolve.modules = [
-                ...(config.resolve.modules || []),
-                path.resolve(__dirname, 'src'),
-                path.resolve(__dirname, 'node_modules'),
-            ];
-            config.resolve.extensions.push('.ts', '.tsx');
-            return config;
+    ],
+    webpackFinal: (config) => {
+        return {
+            ...config,
+            resolve: {
+                ...config.resolve,
+                modules: [path.resolve(__dirname, '..', 'src'), 'node_modules'],
+                fallback: {
+                    assert: require.resolve('assert-browserify/'),
+                },
+            },
+        };
+    },
+    typescript: {
+        check: true,
+        checkOptions: {},
+        reactDocgenTypescriptOptions: {
+            propFilter: (prop) => ['label', 'disabled'].includes(prop.name),
         },
     },
+    core: {
+        builder: 'webpack5',
+        channelOptions: { allowFunction: false, maxDepth: 10 },
+    },
+    features: {
+        postcss: false,
+        // modernInlineRender: true,
+        storyStoreV7: !global.navigator?.userAgent?.match?.('jsdom'),
+        buildStoriesJson: true,
+        babelModeV7: true,
+    },
+    framework: '@storybook/react',
 };
+
+module.exports = config;

@@ -1,6 +1,6 @@
 {
     // see https://www.typescriptlang.org/tsconfig to better understand tsconfigs
-    "include": ["src", ".storybook"],
+    "include": ["src", ".storybook/main.ts"],
     "exclude": ["node_modules", "build", "example", "rollup.config.js"],
     "compilerOptions": {
         "target": "es5",
@@ -14,8 +14,8 @@
         "declaration": true,
         "declarationDir": ".",
         "sourceMap": true,
-        "rootDir": "src",
-        "baseUrl": ".",
+        "rootDir": ".",
+        "baseUrl": "src",
         "paths": {
             "*": ["*"]
         },

@@ -1,4 +1,4 @@
 *.map
 *.spec.*
-SetupPackage.*
+packageBuilder.*
 version.txt
