@@ -1,5 +1,5 @@
 {
-    "include": ["src", ".storybook"],
+    "include": ["src/**/*", ".storybook/**/*"],
     "exclude": ["node_modules", "build", "example", "rollup.config.js"],
     "compilerOptions": {
         "target": "ES6",
@@ -15,6 +15,9 @@
         "sourceMap": true,
         "rootDir": ".",
         "baseUrl": "src",
+         "paths": {
+            "cicrle-pattern": ["./src/circle-pattern"]
+        },
         "strict": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,

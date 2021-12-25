@@ -1,7 +1,7 @@
-import { createStyles, makeStyles } from '@material-ui/core';
 import React from 'react';
 import { IStyleContext } from '../interface/IStyleContext';
-import { ClassNameMap } from '@material-ui/styles';
+import { createUseStyles } from 'react-jss';
+import { Classes } from 'jss';
 
 export const getStyles = () => {
     /* const useStyles = makeStyles(() =>
@@ -23,12 +23,12 @@ export const getStyles = () => {
 
     const componentStyle = useStyles(); */
 
-    return new Map<string, ClassNameMap<string>>([['nav-menu', {}]]);
+    return new Map<string, Classes<string>>([['nav-menu', {}]]);
     // return new Map<string, ClassNameMap<string>>();
 };
 
 export const styleDefault = () => {
-    const useStyles = makeStyles(() => createStyles({}));
+    const useStyles = createUseStyles({});
     const style = useStyles();
     return style;
 };
