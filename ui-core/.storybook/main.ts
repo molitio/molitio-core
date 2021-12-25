@@ -1,8 +1,8 @@
-const path = require('path');
 import type { StorybookConfig } from '@storybook/react/types';
+import path from 'path';
 
 const config: StorybookConfig = {
-    stories: ['../src/*.stories.tsx'],
+    stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
     logLevel: 'debug',
     addons: [
         '@storybook/addon-essentials',
@@ -18,12 +18,18 @@ const config: StorybookConfig = {
                 tsDocgenLoaderOptions: {
                     tsconfigPath: path.resolve(__dirname, '../tsconfig.json'),
                 },
-                forkTsCheckerWebpackPluginOptions: {
-                    colors: true, // disables built-in colors in logger messages
-                },
             },
         },
     ],
+    typescript: {
+        check: true,
+        checkOptions: {},
+        reactDocgen: 'react-docgen-typescript',
+        reactDocgenTypescriptOptions: {
+            shouldExtractLiteralValuesFromEnum: true,
+            propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+        },
+    },
     webpackFinal: (config) => {
         return {
             ...config,
@@ -36,13 +42,6 @@ const config: StorybookConfig = {
             },
         };
     },
-    typescript: {
-        check: true,
-        checkOptions: {},
-        reactDocgenTypescriptOptions: {
-            propFilter: (prop) => ['label', 'disabled'].includes(prop.name),
-        },
-    },
     core: {
         builder: 'webpack5',
         channelOptions: { allowFunction: false, maxDepth: 10 },
@@ -53,8 +52,8 @@ const config: StorybookConfig = {
         storyStoreV7: !global.navigator?.userAgent?.match?.('jsdom'),
         buildStoriesJson: true,
         babelModeV7: true,
+        warnOnLegacyHierarchySeparator: false,
     },
     framework: '@storybook/react',
 };
-
 module.exports = config;
