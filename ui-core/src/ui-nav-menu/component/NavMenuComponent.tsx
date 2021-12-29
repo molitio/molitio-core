@@ -11,10 +11,8 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ data }: NavM
 
     React.useEffect(() => {
         setMenuPages(new Map([...(data.pageCollection ?? new Map<string, TNavPage>())]));
-        console.log(data.pageCollection);
     }, []);
 
-    //console.log(JSON.stringify(StyleContext));
     const styleContext = React.useContext(StyleContext);
 
     const stylePelda = {

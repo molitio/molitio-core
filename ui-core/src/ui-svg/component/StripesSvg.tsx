@@ -1,15 +1,14 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { SvgComponentProps } from './interface/SvgComponentProps';
 
-export const StripesSvg: React.FC = () => {
-    const isBackground = true;
-
-    const bckg = {
-        background: {
-            position: 'fixed',
-            height: '100%',
-            width: '100%',
-            zIndex: -90,
+export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
+    const style = createUseStyles({
+        svg: {
+            position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
+            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions.height,
+            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions.width,
+            pointerEvents: 'auto',
         },
         backgroundStripes: {
             '& rect:hover': {
@@ -17,46 +16,12 @@ export const StripesSvg: React.FC = () => {
                 strokeWidth: 2,
                 stroke: 'yellow',
             },
-            '& #stripes': {
-                fill: 'aqua',
-            },
         },
-    };
-
-    const fixedWidth = {
-        background: {
-            position: 'relative',
-            height: '500px',
-            width: '500px',
-        },
-        backgroundStripes: {
-            '& rect:hover': {
-                fill: 'transparent',
-                strokeWidth: 2,
-                stroke: 'yellow',
-            },
-            '& #stripes': {
-                fill: 'aqua',
-            },
-        },
-    };
-
-    /*      
-            margin: 0,
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundColor: 'transparent',
-  
-            zIndex: -90,
-            width: '100vw',
-            height: '100vh', */
-
-    const style = createUseStyles(isBackground ? { ...bckg } : { ...fixedWidth }).apply({});
+    }).apply({});
 
     return (
         <svg
-            className={style.background}
+            className={style.svg}
             preserveAspectRatio="xMidYMid slice"
             id="stripe-background_a"
             version="1.1"

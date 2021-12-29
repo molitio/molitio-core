@@ -5,27 +5,27 @@ import { StripedBackground } from 'ui-background';
 import { PlayButtonSvg } from 'ui-svg';
 
 export const RadioPage: React.FC<RadioPageProps> = ({ data }: RadioPageProps) => {
-    console.log(typeof data);
     const useStyles = createUseStyles({
         pageContainer: {
+            width: '100vw',
+            height: '100vh',
             margin: 0,
+            pointerEvents: 'none',
+        },
+        content: {
+            top: 0,
+            position: 'relative',
+            zIndex: 100,
         },
         pageTitle: {
             border: '1px solid blue',
         },
-        pageBackground: {
-            margin: 0,
-            position: 'fixed',
-            backgroundColor: 'transparent',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            minHeight: '100vh',
-            minWidth: '100vw',
-            zIndex: -90,
-            backgroundImage: `url(${data.backgroundImage})`,
-            width: '100vw',
-            height: '100vh',
+        playButton: {
+            width: '50vw',
+            height: '50vh',
+            marginTop: '20vh',
+            marginLeft: 'auto',
+            marginRight: 'auto',
         },
     });
 
@@ -33,11 +33,14 @@ export const RadioPage: React.FC<RadioPageProps> = ({ data }: RadioPageProps) =>
 
     return (
         <main className={style.pageContainer}>
-            <StripedBackground>
+            <StripedBackground />
+            <div className={style.content}>
                 {data.playUrl}
-                <h1>Show content</h1>
-                <PlayButtonSvg />
-            </StripedBackground>
+                <h1 className={style.pageTitle}>Show content</h1>
+                <div className={style.playButton}>
+                    <PlayButtonSvg dimensions={{ width: '100%', height: '100%' }} />
+                </div>
+            </div>
         </main>
     );
 };

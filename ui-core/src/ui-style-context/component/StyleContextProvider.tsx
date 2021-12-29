@@ -10,8 +10,6 @@ export const StyleContextProvider: React.FC<StyleContextProviderProps> = ({ chil
         setStyleMap(getStyles());
     }, []);
 
-    // console.log(JSON.stringify(styleMap));
-
     //value={{ styleMap: styleMap ?? new Map<string, ClassNameMap<string>>() }}
 
     return (

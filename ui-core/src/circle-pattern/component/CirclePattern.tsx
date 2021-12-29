@@ -33,12 +33,9 @@ export const CirclePattern: React.FC<CirclePatternProps> = ({ data }: CirclePatt
         circleBuilder.push(centerCircle);
 
         for (let i = 0; i < 6; i++) {
-            console.log(i);
             const cornerGrad = i * 60;
             const point = findPoint(centerCircle.x, centerCircle.y, centerCircle.rad, cornerGrad);
             const circle = new Circle(point.x, point.y, rad);
-            console.log(circle.x);
-            console.log(circle.y);
             circleBuilder.push(circle);
         }
 
