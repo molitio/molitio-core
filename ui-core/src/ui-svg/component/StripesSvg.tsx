@@ -37,7 +37,7 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                         x="-7.1054e-15"
                         width="100%"
                         height="100%"
-                        fill="#2b2b2b"
+                        fill="#363636"
                         fillRule="evenodd"
                         strokeWidth="14.547"
                     />
@@ -45,7 +45,7 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                 <g
                     id="stripes"
                     className={style.backgroundStripes}
-                    fill="#363636"
+                    fill="#2b2b2b"
                     fillOpacity=".87059"
                     fillRule="evenodd"
                     strokeWidth=".6404"
