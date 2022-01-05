@@ -1,4 +1,4 @@
 export type TPageTag = {
-    tag: string;
+    pageName: string;
     theme: string;
 };

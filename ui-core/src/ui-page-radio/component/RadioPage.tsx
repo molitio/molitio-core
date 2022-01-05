@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 import { StripedBackground } from 'ui-background';
 import { PlayButtonSvg } from 'ui-svg';
 
-export const RadioPage: React.FC<RadioPageProps> = ({ data }: RadioPageProps) => {
+export const RadioPage: React.FC<RadioPageProps> = ({ ...props }: RadioPageProps) => {
     const useStyles = createUseStyles({
         pageContainer: {
             width: '100vw',
@@ -35,7 +35,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ data }: RadioPageProps) =>
         <main className={style.pageContainer}>
             <StripedBackground />
             <div className={style.content}>
-                {data.playUrl}
+                {props.radio.playUrl}
                 <h1 className={style.pageTitle}>Show content</h1>
                 <div className={style.playButton}>
                     <PlayButtonSvg dimensions={{ width: '100%', height: '100%' }} />

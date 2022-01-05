@@ -19,15 +19,15 @@ const findPoint = (cx: number, cy: number, rad: number, cornerGrad: number) => {
     return { x: nx, y: ny };
 };
 
-export const CirclePattern: React.FC<CirclePatternProps> = ({ data }: CirclePatternProps) => {
+export const CirclePattern: React.FC<CirclePatternProps> = ({ ...props }: CirclePatternProps) => {
     const [circles, setCircles] = useState<Circle[]>([]);
 
     useEffect(() => {
         setCircles(createPattern());
-    }, [data.r]);
+    }, [props.r]);
 
     const createPattern = () => {
-        const rad = data.r;
+        const rad = props.r;
         const centerCircle = new Circle(400, 400, rad);
         const circleBuilder: Circle[] = [];
         circleBuilder.push(centerCircle);

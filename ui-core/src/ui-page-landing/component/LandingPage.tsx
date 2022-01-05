@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-export const LandingPage: React.FC = ({ children }) => {
+export const LandingPage: React.FC = ({ ...props }) => {
     const useStyles = createUseStyles({
         landing: {
             display: 'flex',
@@ -36,7 +36,7 @@ export const LandingPage: React.FC = ({ children }) => {
     const style = useStyles();
     return (
         <div className={style.landing}>
-            <div className={style.pageContent}>{children}</div>
+            <div className={style.pageContent}>{props.children}</div>
         </div>
     );
 };

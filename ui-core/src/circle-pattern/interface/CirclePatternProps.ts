@@ -1,5 +1,3 @@
 export interface CirclePatternProps {
-    data: {
-        r: number;
-    };
+    r: number;
 }
