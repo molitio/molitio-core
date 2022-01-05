@@ -14,7 +14,7 @@ const fillAssets = () => {
 };
 
 const storyArgs: RadioPageProps = {
-    data: {
+    radio: {
         playUrl:
             'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',
         assetUrls: fillAssets(),
