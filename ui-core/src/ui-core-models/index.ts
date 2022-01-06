@@ -13,4 +13,5 @@ tags
 */
 
 export { UniversalRadioTags } from './tags/RadioPage/UniversalRadioTags';
+export { AudioPreloadTags } from './tags/RadioPage/AudioPreloadTags';
 export { StyleContextTags } from './tags/StyleContext/StyleContextTags';
