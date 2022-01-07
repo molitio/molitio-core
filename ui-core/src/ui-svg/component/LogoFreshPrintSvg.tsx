@@ -3,12 +3,24 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from './interface/SvgComponentProps';
 
 export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
+
+    const style = createUseStyles({
+        svg: {
+            position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'absolute',
+            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions.height,
+            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions.width,
+            pointerEvents: 'none',
+            top:'85vh',
+        },
+    }).apply({});
+
     return (
         <svg
             id="svg"
+            className={style.svg}
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="400"
+            width="80"
             height="404.9382716049383"
             viewBox="0, 0, 400,404.9382716049383"
         >
@@ -19,7 +31,7 @@ export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = ({ ...props }) => 
                     stroke="none"
                     fill="#6f6f6f"
                     fill-rule="evenodd"
-                ></path>
+                />
             </g>
         </svg>
     );
