@@ -3,6 +3,7 @@ import { RadioPageProps } from '../interface/RadioPageProps';
 import { createUseStyles } from 'react-jss';
 import { StripedBackground } from 'ui-background';
 import { LogoFreshPrintSvg, PlayButtonSvg } from 'ui-svg';
+import { AudioPlayer } from './AudioPlayer';
 
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }: RadioPageProps) => {
     const useStyles = createUseStyles({
@@ -34,6 +35,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }: RadioPageProps
     return (
         <main className={style.pageContainer}>
             <StripedBackground />
+            <AudioPlayer src={props.radio.playUrl} />
             <div className={style.content}>
                 {props.radio.playUrl}
                 <h1 className={style.pageTitle}>Show content</h1>

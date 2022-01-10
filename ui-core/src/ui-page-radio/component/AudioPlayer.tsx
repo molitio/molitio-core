@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { AudioPlayerProps } from '../interface/AudioPlayerProps';
 
 export const AudioPlayer: React.FC<AudioPlayerProps> = ({ ...props }) => {
-    return <audio src={props.src} ></audio>;
+    const playerRef = useRef<HTMLAudioElement>(null);
+
+   // props.togglePlayPause();
+
+    const togglePlayPause = () => {
+        playerRef.current?.play();
+    };
+
+    return <audio src={props.src} ref={playerRef}></audio>;
 };
 
 /* 
+    src: string;
+    preload: AudioPreloadTags;
+    togleAutoPlay: () => void;
+    togglePlayPause: () => void;
+    toggleLoop: () => void;
+    toggleMute: () => void;
+
+
+
  	Value 	Description
 autoplay 	autoplay 	Specifies that the audio will start playing as soon as it is ready
 controls 	controls 	Specifies that audio controls should be displayed (such as a play/pause button etc)
