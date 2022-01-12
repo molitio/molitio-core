@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from './interface/SvgComponentProps';
+import { PlayerContext } from 'media-player-context';
 
 export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
-    const [playPauseToggle, setPlayPauseToggle] = useState(true);
+    const [playPauseToggle, setPlayPauseToggle] = React.useState(false);
+
+    const playerContext = React.useContext(PlayerContext);
+
+    React.useEffect(() => {
+        const togglePlayPause = () => {
+            playerContext.isPlaying = !playerContext.isPlaying;
+            console.log(`play button: ${playerContext.isPlaying}`);
+        };
+        togglePlayPause();
+    }, [playPauseToggle]);
 
     const style = createUseStyles({
         svg: {
@@ -32,7 +43,6 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     }).apply({});
 
     const togglePlayPause = () => {
-        console.log(playPauseToggle);
         setPlayPauseToggle(!playPauseToggle);
     };
 

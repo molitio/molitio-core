@@ -4,6 +4,7 @@ import { createUseStyles } from 'react-jss';
 import { StripedBackground } from 'ui-background';
 import { LogoFreshPrintSvg, PlayButtonSvg } from 'ui-svg';
 import { AudioPlayer } from './AudioPlayer';
+import { PlayerContext, PlayerContextProvider } from 'media-player-context';
 
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }: RadioPageProps) => {
     const useStyles = createUseStyles({
@@ -35,15 +36,17 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }: RadioPageProps
     return (
         <main className={style.pageContainer}>
             <StripedBackground />
-            <AudioPlayer src={props.radio.playUrl} />
-            <div className={style.content}>
-                {props.radio.playUrl}
-                <h1 className={style.pageTitle}>Show content</h1>
-                <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
-                <div className={style.playButton}>
-                    <PlayButtonSvg dimensions={{ width: '100%', height: '100%' }} />
+            <PlayerContextProvider>
+                <AudioPlayer src={props.radio.playUrl} />
+                <div className={style.content}>
+                    {props.radio.playUrl}
+                    <h1 className={style.pageTitle}>Show content</h1>
+                    <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
+                    <div className={style.playButton}>
+                        <PlayButtonSvg dimensions={{ width: '100%', height: '100%' }} />
+                    </div>
                 </div>
-            </div>
+            </PlayerContextProvider>
         </main>
     );
 };

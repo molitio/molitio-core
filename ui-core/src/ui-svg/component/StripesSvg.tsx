@@ -1,5 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { YellowHighlight } from 'ui-style-context';
 import { SvgComponentProps } from './interface/SvgComponentProps';
 
 export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
@@ -12,9 +13,7 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
         },
         backgroundStripes: {
             '& rect:hover': {
-                fill: 'transparent',
-                strokeWidth: 2,
-                stroke: 'yellow',
+                ...YellowHighlight,
             },
         },
     }).apply({});

@@ -1,14 +1,21 @@
+import { PlayerContext } from 'media-player-context';
 import React, { useRef } from 'react';
 import { AudioPlayerProps } from '../interface/AudioPlayerProps';
 
 export const AudioPlayer: React.FC<AudioPlayerProps> = ({ ...props }) => {
     const playerRef = useRef<HTMLAudioElement>(null);
 
-   // props.togglePlayPause();
+    // props.togglePlayPause();
 
-    const togglePlayPause = () => {
-        playerRef.current?.play();
-    };
+    const playerContext = React.useContext(PlayerContext);
+
+    React.useEffect(() => {
+        const togglePlayPause = () => {
+            playerContext.isPlaying ? playerRef.current?.play() : playerRef.current?.pause();
+            console.log(`audio player: ${playerContext.isPlaying}`);
+        };
+        togglePlayPause();
+    }, [playerContext.isPlaying]);
 
     return <audio src={props.src} ref={playerRef}></audio>;
 };
