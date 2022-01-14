@@ -5,15 +5,6 @@ import { PlayerContext } from 'media-player-context';
 
 export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     const playerContext = React.useContext(PlayerContext);
-    const [playPauseToggle, setPlayPauseToggle] = React.useState(playerContext.isPlaying);
-
-    React.useEffect(() => {
-        const effect = () => {
-            playerContext.setIsPlaying(playPauseToggle);
-            console.log(`play button: ${playerContext.isPlaying}`);
-        };
-        effect();
-    }, [playPauseToggle]);
 
     const style = createUseStyles({
         svg: {
@@ -42,7 +33,7 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     }).apply({});
 
     const togglePlayPause = () => {
-        setPlayPauseToggle(!playPauseToggle);
+        playerContext.setIsPlaying(!playerContext.isPlaying);
     };
 
     return (
@@ -60,7 +51,10 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             <g id="ctrl-play-circle-g" className={style.circle}>
                 <circle id="ctrl-play-circle" cx="35.278" cy="35.278" r="31.75" fill="#f6c339" />
             </g>
-            <g id="ctrl-play-triangle-g" className={`${style.play} ${playPauseToggle ? style.visible : style.hidden}`}>
+            <g
+                id="ctrl-play-triangle-g"
+                className={`${style.play} ${playerContext.isPlaying ? style.hidden : style.visible}`}
+            >
                 <path
                     id="ctrl-play-triangle"
                     transform="matrix(.17487 0 0 .17487 77.463 29.074)"
@@ -73,7 +67,10 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                 />
             </g>
 
-            <g id="ctrl-pause-path-g" className={`${style.pause} ${playPauseToggle ? style.hidden : style.visible}`}>
+            <g
+                id="ctrl-pause-path-g"
+                className={`${style.pause} ${playerContext.isPlaying ? style.visible : style.hidden}`}
+            >
                 <path
                     id="ctrl-pause-path-1"
                     fill="none"

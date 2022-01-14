@@ -15,18 +15,14 @@ export const PlayerContextProvider: React.FC = ({ children }) => {
 
     useEffect(() => {
         const effect = () => {
-            // setIsPlaying(!isPlaying);
             setPlayerState({ ...playerState, isPlaying: isPlaying });
-            console.log(`player isPlaying: ${playerState.isPlaying}`);
         };
         effect();
     }, [isPlaying]);
 
     useEffect(() => {
         const effect = () => {
-            //  setVolume(volume);
             setPlayerState({ ...playerState, volume: volume });
-            console.log(`set volume: ${playerState.volume}`);
         };
         effect();
     }, [volume]);

@@ -6,11 +6,8 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ ...props }) => {
     const playerContext = React.useContext(PlayerContext);
     const playerRef = useRef<HTMLAudioElement>(null);
 
-    // props.togglePlayPause();
-
     React.useEffect(() => {
         const effect = () => {
-            console.log(`audio player: ${playerContext.isPlaying}`);
             playerContext.isPlaying ? playerRef.current?.play() : playerRef.current?.pause();
         };
         effect();
