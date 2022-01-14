@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RadioPageProps } from '../interface/RadioPageProps';
 import { createUseStyles } from 'react-jss';
 import { StripedBackground } from 'ui-background';
@@ -7,6 +7,8 @@ import { AudioPlayer } from './AudioPlayer';
 import { PlayerContext, PlayerContextProvider } from 'media-player-context';
 
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }: RadioPageProps) => {
+    const playerState = useState(PlayerContext);
+
     const useStyles = createUseStyles({
         pageContainer: {
             width: '100vw',

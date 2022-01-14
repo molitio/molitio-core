@@ -4,16 +4,15 @@ import { SvgComponentProps } from './interface/SvgComponentProps';
 import { PlayerContext } from 'media-player-context';
 
 export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
-    const [playPauseToggle, setPlayPauseToggle] = React.useState(false);
-
     const playerContext = React.useContext(PlayerContext);
+    const [playPauseToggle, setPlayPauseToggle] = React.useState(playerContext.isPlaying);
 
     React.useEffect(() => {
-        const togglePlayPause = () => {
-            playerContext.isPlaying = !playerContext.isPlaying;
+        const effect = () => {
+            playerContext.setIsPlaying(playPauseToggle);
             console.log(`play button: ${playerContext.isPlaying}`);
         };
-        togglePlayPause();
+        effect();
     }, [playPauseToggle]);
 
     const style = createUseStyles({
