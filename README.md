@@ -16,7 +16,7 @@
 ### Project topology
   - ui-core: user interface component library, mainly should be interconnected with other internal modules (frontend <-> graphql <-> back end) for heavy utilization of contexts based state management. it should be implemented in a way that a component tree can be constructed, and its snapshot state can be captured, including every data piece, and svg vector data. 
     
-    svg components: static and programatic <svg></svg> components, the programatic should be presenting a calculated capturable state. 
+    svg components: static and programatic <svg></svg> components, the programatic should be presenting a calculated capturable state rendered and captured from a view server.
 
 
 ## Mission

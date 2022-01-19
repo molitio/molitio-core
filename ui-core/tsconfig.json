@@ -1,5 +1,5 @@
 {
-    "include": ["src/**/*", ".storybook/**/*"],
+    "include": ["src/**/*", ".storybook/**/*", "sb-example"],
     "exclude": ["node_modules", "build", "example", "rollup.config.js"],
     "compilerOptions": {
         "target": "ES6",
