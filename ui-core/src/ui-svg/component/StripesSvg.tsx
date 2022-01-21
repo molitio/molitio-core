@@ -1,9 +1,10 @@
 import React from 'react';
-import { createUseStyles } from 'react-jss';
-import { YellowHighlight } from 'ui-style-context';
+import { createUseStyles, useTheme } from 'react-jss';
+import { IThemeContext } from 'ui-theme-context';
 import { SvgComponentProps } from './interface/SvgComponentProps';
 
 export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
+    const theme = useTheme<IThemeContext>();
     const style = createUseStyles({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
@@ -12,8 +13,9 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             pointerEvents: 'auto',
         },
         backgroundStripes: {
+            fill: theme.backgroundColor,
             '& rect:hover': {
-                ...YellowHighlight,
+                ...(theme?.interactiveHighlight ?? ''),
             },
         },
     }).apply({});

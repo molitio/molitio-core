@@ -2,6 +2,7 @@ import { Story, Meta } from '@storybook/react';
 
 import { RadioPage, RadioPageProps } from 'ui-page-radio';
 import { UniversalRadioTags } from 'ui-core-models';
+import { ThemeProps } from 'ui-theme-context';
 
 const fillAssets = () => {
     const assetsCollection = new Map<string, string>();
@@ -13,7 +14,8 @@ const fillAssets = () => {
     return assetsCollection;
 };
 
-const storyArgs: RadioPageProps = {
+const storyArgs: RadioPageProps & ThemeProps = {
+    themeName: 'storybookTheme01',
     radio: {
         playUrl:
             'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',

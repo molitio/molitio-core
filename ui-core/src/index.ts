@@ -26,13 +26,6 @@ ui-page-landing
 export { LandingPage } from './ui-page-landing';
 
 /*
-circle-pattern 
-*/
-
-export { CirclePattern } from './circle-pattern';
-export type { CirclePatternProps } from './circle-pattern';
-
-/*
 radio-page
 */
 
@@ -46,6 +39,6 @@ ui-background
 /* export { StripedBackground } from './ui-background'; */
 
 /*
-style-context
+theme-context
 */
-export type { StyleContextProviderProps } from './ui-style-context';
+export type { ThemeContextProviderProps } from './ui-theme-context';

@@ -1,5 +1,5 @@
-import { TUniversalRadio } from "ui-core-models";
+import { TUniversalRadio } from 'ui-core-models';
 
 export interface RadioPageProps {
-    radio: TUniversalRadio
+    radio: TUniversalRadio;
 }

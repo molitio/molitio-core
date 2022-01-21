@@ -1,35 +1,46 @@
 import { Story, Meta } from '@storybook/react';
 
-import { NavMenuComponentProps } from '../../index';
+import { NavMenuComponentProps, TNavSegment } from '../../index';
 import { NavMenuComponent } from '../../index';
 
-const storyArgs: NavMenuComponentProps = {
-    data: {
-        pageCollectionTag: 'basicNavMenu01',
+import { NavSegmentComponent } from '../../index';
+import { NavSegmentProps } from '../../index';
+
+const navSegmentArgs: TNavSegment[] = [
+    {
+        pathSegment: '/first',
+        itemName: 'first',
+        navSegments: [
+            {
+                pathSegment: '/first',
+                itemName: 'first',
+                navSegments: [
+                    {
+                        pathSegment: '/secound',
+                        itemName: 'secound',
+                        navSegments: [
+                            {
+                                pathSegment: '/third',
+                                itemName: 'third',
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+];
+
+const navMenuArgs: NavMenuComponentProps = {
+    pageCollection: {
+        tag: 'basicNavMenu01',
         pageCollection: new Map([
             [
                 'idtag',
                 {
                     pageName: 'about page',
                     pathSegment: '/about',
-                    menuItems: [
-                        {
-                            pathSegment: '/first',
-                            itemName: 'first',
-                            menuItems: [
-                                {
-                                    pathSegment: '/secound',
-                                    itemName: 'secound',
-                                    menuItems: [
-                                        {
-                                            pathSegment: '/third',
-                                            itemName: 'third',
-                                        },
-                                    ],
-                                },
-                            ],
-                        },
-                    ],
+                    navSegments: navSegmentArgs,
                 },
             ],
         ]),
@@ -40,15 +51,24 @@ const meta: Meta = {
     title: 'molitio-core/Components/Nav Menu',
     component: NavMenuComponent,
     args: {
-        ...storyArgs,
+        ...navMenuArgs,
     },
 };
 
 export default meta;
 
-const Template: Story<NavMenuComponentProps> = (args) => <NavMenuComponent {...args} />;
+const NavMenuTemplate: Story<NavMenuComponentProps> = (args) => <NavMenuComponent {...args} />;
 
-export const NavMenuStory = Template.bind({});
+export const NavMenuStory = NavMenuTemplate.bind({});
 NavMenuStory.args = {
-    ...storyArgs,
+    ...navMenuArgs,
+};
+
+const NavSegmentTemplate: Story<NavSegmentProps> = (args) => <NavSegmentComponent {...args} />;
+
+export const NavSegmentStory = NavSegmentTemplate.bind({});
+NavSegmentStory.args = {
+    navSegment: {
+        ...navSegmentArgs[0],
+    },
 };

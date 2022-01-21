@@ -3,8 +3,8 @@ import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
 import { TNavPage, StyleContextTags } from '../../ui-core-models';
 import { PageTag } from '../../ui-common';
-import { StyleContext, StyleContextProvider } from '../../ui-style-context';
-import { createUseStyles } from 'react-jss';
+import { IThemeContext, ThemeContextProvider } from '../../ui-theme-context';
+import { createUseStyles, useTheme } from 'react-jss';
 
 export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: NavMenuComponentProps) => {
     const [menuPages, setMenuPages] = React.useState<Map<string, TNavPage>>(new Map<string, TNavPage>());
@@ -13,36 +13,27 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
         setMenuPages(new Map([...(props.pageCollection.pageCollection ?? new Map<string, TNavPage>())]));
     }, []);
 
-    const styleContext = React.useContext(StyleContext);
+    const theme = useTheme();
 
-    const stylePelda = {
-        pelda: { color: 'grey', backgroundColor: 'lightgreen' },
-    };
-
-    const useStyles = createUseStyles({
+    const style = createUseStyles({
         pageTitle: {
-            ...stylePelda.pelda,
             border: '1px solid blue',
         },
         itemText: {
             color: 'black',
         },
         pageBackground: {
-            backgroundColor: styleContext.styleMap.get(StyleContextTags.THEME_BACKGROUND_IMAGE),
+            backgroundColor: theme.backgroundColor,
         },
-    });
-
-    const componentStyle = useStyles();
-
-    // const navMenuStyle = styleContext.styleMap.get('nav-menu') ?? styleDefault();
+    }).apply({});
 
     return (
         <nav>
             <PageTag tag={{ pageName: 'testPage01', theme: 'defaultThemeName' }} />
 
-            <StyleContextProvider>
+            <ThemeContextProvider themeName="storybookTheme01">
                 <div>
-                    <label className={componentStyle.pageTitle}> {props.pageCollection.tag} </label>
+                    <label className={style.pageTitle}> {props.pageCollection.tag} </label>
                     {Array.from(menuPages).map((page) => (
                         <div key={page[0]}>
                             <span>{page[1].pageName}</span>
@@ -54,7 +45,7 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
                         </div>
                     ))}
                 </div>
-            </StyleContextProvider>
+            </ThemeContextProvider>
         </nav>
     );
 };
