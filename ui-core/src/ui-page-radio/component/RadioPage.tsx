@@ -6,6 +6,8 @@ import { LogoFreshPrintSvg, PlayButtonSvg } from 'ui-svg';
 import { AudioPlayer } from './AudioPlayer';
 import { PlayerContext, PlayerContextProvider } from 'media-player-context';
 import { ThemeContextProvider, ThemeProps } from 'ui-theme-context';
+import { ComponentGroup } from 'ui-common';
+import { ComponentGroupTags } from 'ui-core-models';
 
 export const RadioPage: React.FC<RadioPageProps & ThemeProps> = ({ ...props }) => {
     const playerState = useState(PlayerContext);
@@ -42,7 +44,13 @@ export const RadioPage: React.FC<RadioPageProps & ThemeProps> = ({ ...props }) =
                 <div className={style.content}>
                     {props.radio.playUrl}
                     <h1 className={style.pageTitle}>Show content</h1>
-                    <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
+                    <ComponentGroup groupingType={ComponentGroupTags.GRID}>
+                        <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
+                        <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
+                        <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
+                        <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
+                        <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
+                    </ComponentGroup>
                     <div className={style.playButton}>
                         <PlayButtonSvg dimensions={{ width: '100%', height: '100%' }} />
                     </div>

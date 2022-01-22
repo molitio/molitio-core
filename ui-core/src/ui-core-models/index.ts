@@ -16,6 +16,8 @@ export { UniversalRadioTags } from './tags/RadioPage/UniversalRadioTags';
 export { AudioPreloadTags } from './tags/RadioPage/AudioPreloadTags';
 export { ThemeContextTags } from './tags/ThemeContext/ThemeContextTags';
 export { ThemeNameTags } from './tags/ThemeContext/ThemeNameTags';
+export { ComponentGroupTags } from './tags/Common/ComponentGroupTags';
+
 
 /* 
 enums
