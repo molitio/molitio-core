@@ -1,16 +1,41 @@
-import { YellowHighlight } from 'ui-theme-context';
+import { ThemeNameTags } from 'ui-core-models';
+import { OrangeHighlight, YellowHighlight } from 'ui-theme-context';
 import { IThemeContext } from '../interface/IThemeContext';
 
-export const getThemes = () => {
+export const getThemes = async (): Promise<Map<string, IThemeContext>> => {
     //TODO: connect to backend
-
-    return new Map<string, IThemeContext>([
-        ['storybookTheme01', {
-            themeName: 'testTheme01', backgroundColor: 'black', interactiveHighlight: {
-            ...YellowHighlight
-        } }],
+    const themeMap = new Map<string, IThemeContext>([
+        [
+            ThemeNameTags.BLACK_YELLOW,
+            {
+                themeName: 'testTheme01',
+                primary: '#f6c339',
+                secondary: 'black',
+                backgroundColor: '#363636',
+                secondaryBackgroundColor: '#2b2b2b',
+                interactiveHighlight: {
+                    ...YellowHighlight,
+                },
+            },
+        ],
+        [
+            ThemeNameTags.TEAM_JAMAICA,
+            {
+                themeName: 'testTheme02',
+                primary: 'orange',
+                secondary: 'lightyellow',
+                backgroundColor: 'yellow',
+                secondaryBackgroundColor: 'green',
+                interactiveHighlight: {
+                    ...OrangeHighlight,
+                },
+            },
+        ],
     ]);
+
+    //console.log(`theme store themes: ${JSON.stringify(themeMap.entries().next())}, map size: ${themeMap.size}`);
+
+    return new Promise((resolve, reject) => {
+        resolve(themeMap);
+    });
 };
-
-
-

@@ -15,9 +15,6 @@
         "sourceMap": true,
         "rootDir": ".",
         "baseUrl": "src",
-         "paths": {
-            "cicrle-pattern": ["./src/circle-pattern"]
-        },
         "strict": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,

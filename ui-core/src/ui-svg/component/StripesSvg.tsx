@@ -1,24 +1,31 @@
 import React from 'react';
-import { createUseStyles, useTheme } from 'react-jss';
+import { createUseStyles } from 'react-jss';
 import { IThemeContext } from 'ui-theme-context';
 import { SvgComponentProps } from './interface/SvgComponentProps';
 
 export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
-    const theme = useTheme<IThemeContext>();
-    const style = createUseStyles({
+    //const theme = useTheme<IThemeContext>();
+    const style = createUseStyles((theme: IThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
             height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions.height,
             width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions.width,
             pointerEvents: 'auto',
         },
-        backgroundStripes: {
-            fill: theme.backgroundColor,
+        stripes: {
+            '& rect': {
+                fill: theme.secondaryBackgroundColor,
+            },
             '& rect:hover': {
-                ...(theme?.interactiveHighlight ?? ''),
+                ...theme.interactiveHighlight,
             },
         },
-    }).apply({});
+        stripesBackground: {
+            '& rect': {
+                fill: theme.backgroundColor,
+            },
+        },
+    })).apply({});
 
     return (
         <svg
@@ -33,7 +40,7 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                 <rect x="0" y="0" width="100%" height="100%" />
             </clipPath>
             <g width="100px" height="100px">
-                <g>
+                <g className={style.stripesBackground}>
                     <rect
                         x="-7.1054e-15"
                         width="100%"
@@ -45,7 +52,7 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                 </g>
                 <g
                     id="stripes"
-                    className={style.backgroundStripes}
+                    className={style.stripes}
                     fill="#2b2b2b"
                     fillOpacity=".87059"
                     fillRule="evenodd"

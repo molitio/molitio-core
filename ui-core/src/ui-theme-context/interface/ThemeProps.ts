@@ -1,3 +1,5 @@
+import { ThemeNameTags } from 'ui-core-models';
+
 export interface ThemeProps {
-    themeName?: string;
+    themeName: ThemeNameTags.BLACK_YELLOW | ThemeNameTags.TEAM_JAMAICA;
 }

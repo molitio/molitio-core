@@ -11,7 +11,7 @@ ui-core-models
 
 export type { TNavSegment, TNavPage, TNavPageCollection, TPageTag, TUniversalRadio } from './ui-core-models';
 
-export { UniversalRadioTags, StyleContextTags } from './ui-core-models';
+export { UniversalRadioTags } from './ui-core-models';
 
 /* 
 ui-common

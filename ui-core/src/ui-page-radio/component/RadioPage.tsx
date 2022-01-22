@@ -36,20 +36,18 @@ export const RadioPage: React.FC<RadioPageProps & ThemeProps> = ({ ...props }) =
 
     return (
         <main className={style.pageContainer}>
-            <ThemeContextProvider themeName={props.themeName}>
-                <StripedBackground />
-                <PlayerContextProvider>
-                    <AudioPlayer src={props.radio.playUrl} />
-                    <div className={style.content}>
-                        {props.radio.playUrl}
-                        <h1 className={style.pageTitle}>Show content</h1>
-                        <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
-                        <div className={style.playButton}>
-                            <PlayButtonSvg dimensions={{ width: '100%', height: '100%' }} />
-                        </div>
+            <StripedBackground />
+            <PlayerContextProvider>
+                <AudioPlayer src={props.radio.playUrl} />
+                <div className={style.content}>
+                    {props.radio.playUrl}
+                    <h1 className={style.pageTitle}>Show content</h1>
+                    <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
+                    <div className={style.playButton}>
+                        <PlayButtonSvg dimensions={{ width: '100%', height: '100%' }} />
                     </div>
-                </PlayerContextProvider>
-            </ThemeContextProvider>
+                </div>
+            </PlayerContextProvider>
         </main>
     );
 };

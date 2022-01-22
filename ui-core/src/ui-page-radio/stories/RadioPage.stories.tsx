@@ -1,8 +1,8 @@
 import { Story, Meta } from '@storybook/react';
 
 import { RadioPage, RadioPageProps } from 'ui-page-radio';
-import { UniversalRadioTags } from 'ui-core-models';
-import { ThemeProps } from 'ui-theme-context';
+import { ThemeNameTags, UniversalRadioTags } from 'ui-core-models';
+import { ThemeContextProvider, ThemeProps } from 'ui-theme-context';
 
 const fillAssets = () => {
     const assetsCollection = new Map<string, string>();
@@ -15,7 +15,7 @@ const fillAssets = () => {
 };
 
 const storyArgs: RadioPageProps & ThemeProps = {
-    themeName: 'storybookTheme01',
+    themeName: ThemeNameTags.BLACK_YELLOW,
     radio: {
         playUrl:
             'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',
@@ -28,11 +28,24 @@ const storyArgs: RadioPageProps & ThemeProps = {
 const meta: Meta = {
     title: 'molitio-core/Pages/Radio Page',
     component: RadioPage,
+    argTypes: {
+        table: {
+            summary: 'ThemeNameTags',
+            defaultValue: { summary: `${ThemeNameTags.BLACK_YELLOW}` },
+        },
+        themeName: {
+            control: { type: 'select', options: [ThemeNameTags.BLACK_YELLOW, ThemeNameTags.TEAM_JAMAICA] },
+        },
+    },
 };
 
 export default meta;
 
-const Template: Story<RadioPageProps> = (args) => <RadioPage {...args} />;
+const Template: Story<RadioPageProps & ThemeProps> = (args) => (
+    <ThemeContextProvider themeName={args.themeName}>
+        <RadioPage {...args} />
+    </ThemeContextProvider>
+);
 
 export const RadioPageStory = Template.bind({});
 RadioPageStory.args = {

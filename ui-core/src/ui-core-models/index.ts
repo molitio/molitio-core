@@ -14,7 +14,8 @@ tags
 
 export { UniversalRadioTags } from './tags/RadioPage/UniversalRadioTags';
 export { AudioPreloadTags } from './tags/RadioPage/AudioPreloadTags';
-export { StyleContextTags } from './tags/StyleContext/StyleContextTags';
+export { ThemeContextTags } from './tags/ThemeContext/ThemeContextTags';
+export { ThemeNameTags } from './tags/ThemeContext/ThemeNameTags';
 
 /* 
 enums
