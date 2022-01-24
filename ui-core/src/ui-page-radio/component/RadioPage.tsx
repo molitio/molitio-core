@@ -43,17 +43,16 @@ export const RadioPage: React.FC<RadioPageProps & ThemeProps> = ({ ...props }) =
                 <AudioPlayer src={props.radio.playUrl} />
                 <div className={style.content}>
                     {props.radio.playUrl}
-                    <h1 className={style.pageTitle}>Show content</h1>
-                    <ComponentGroup groupingType={ComponentGroupTags.GRID}>
+                    <div className={style.playButton}>
+                        <PlayButtonSvg dimensions={{ width: '100%', height: '100%' }} />
+                    </div>
+                    <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX}>
                         <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
                         <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
                         <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
                         <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
                         <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
                     </ComponentGroup>
-                    <div className={style.playButton}>
-                        <PlayButtonSvg dimensions={{ width: '100%', height: '100%' }} />
-                    </div>
                 </div>
             </PlayerContextProvider>
         </main>

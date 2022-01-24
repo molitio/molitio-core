@@ -4,6 +4,21 @@ import { IThemeContext } from '../interface/IThemeContext';
 
 export const getThemes = async (): Promise<Map<string, IThemeContext>> => {
     //TODO: connect to backend
+    const commonStyles = {
+        gridGroup: {
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr 1fr',
+        },
+        verticalGroup: {
+            display: 'flex',
+            flexDirection: 'column',
+        },
+        horizontalGroup: {
+            display: 'flex',
+            flexDirection: 'row',
+        },
+    };
+
     const themeMap = new Map<string, IThemeContext>([
         [
             ThemeNameTags.BLACK_YELLOW,
@@ -13,9 +28,11 @@ export const getThemes = async (): Promise<Map<string, IThemeContext>> => {
                 secondary: 'black',
                 backgroundColor: '#363636',
                 secondaryBackgroundColor: '#2b2b2b',
+
                 interactiveHighlight: {
                     ...YellowHighlight,
                 },
+                ...commonStyles,
             },
         ],
         [
@@ -29,6 +46,7 @@ export const getThemes = async (): Promise<Map<string, IThemeContext>> => {
                 interactiveHighlight: {
                     ...OrangeHighlight,
                 },
+                ...commonStyles,
             },
         ],
     ]);

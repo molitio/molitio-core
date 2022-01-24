@@ -2,41 +2,29 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { ComponentGroupProps } from 'ui-common/interface/ComponentGroupProps';
 import { ComponentGroupTags } from 'ui-core-models';
+import { IThemeContext } from 'ui-theme-context';
 
 export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
-    const [position, setPositioning] = React.useState({});
-
-    React.useEffect(() => {
-        const positioning = () => {
+    const style = createUseStyles((theme: IThemeContext) => ({
+        position: () => {
             switch (props.groupingType) {
                 case ComponentGroupTags.GRID:
                     return {
-                        display: 'grid',
+                        ...theme.gridGroup,
                     };
-                    break;
                 case ComponentGroupTags.VERTICAL_FLEX:
                     return {
-                        display: 'flex',
-                        flexDirection: 'column',
+                        ...theme.verticalGroup,
                     };
-                    break;
                 case ComponentGroupTags.HORIZONTAL_FLEX:
                     return {
-                        display: 'flex',
-                        flexDirection: 'row',
+                        ...theme.horizontalGroup,
                     };
-                    break;
-
                 default:
                     return {};
-                    break;
             }
-        };
-        setPositioning(positioning());
-    }, [props.groupingType]);
+        },
+    })).apply({});
 
-    const style = createUseStyles({
-        position: { ...position, width: '30vw', height: '30vh' },
-    }).apply({});
     return <div className={style.position}>{props.children}</div>;
 };
