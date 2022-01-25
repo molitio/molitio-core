@@ -1,16 +1,17 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { IThemeContext } from 'ui-theme-context';
 import { NavSegmentProps } from '../interface/NavSegmentProps';
 
 export const NavSegmentComponent: React.FC<NavSegmentProps> = ({ ...props }: NavSegmentProps) => {
-    const useStyles = createUseStyles({
+    const useStyles = createUseStyles((theme: IThemeContext) => ({
         itemText: {
-            color: 'black',
+            color: theme.primary,
         },
         itemBackground: {
-            backgroundColor: 'blue',
+            backgroundColor: theme.backgroundColor,
         },
-    });
+    }));
 
     const componentStyle = useStyles();
 

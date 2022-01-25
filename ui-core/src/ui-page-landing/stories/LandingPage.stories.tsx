@@ -15,4 +15,6 @@ const Template: Story = () => (
 );
 
 export const LandingPageStory = Template.bind({});
-LandingPageStory.args = {};
+LandingPageStory.parameters = {
+    controls: { hideNoControlsWarning: true },
+};
