@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { RadioPageProps } from '../interface/RadioPageProps';
 import { createUseStyles } from 'react-jss';
 import { StripedBackground } from 'ui-background';
 import { LogoFreshPrintSvg, PlayButtonSvg } from 'ui-svg';
 import { AudioPlayer } from './AudioPlayer';
-import { PlayerContext, PlayerContextProvider } from 'media-player-context';
-import { ThemeContextProvider, ThemeProps } from 'ui-theme-context';
+import { PlayerContextProvider } from 'media-player-context';
+import { ThemeProps } from 'ui-theme-context';
 import { ComponentGroup } from 'ui-common';
 import { ComponentGroupTags } from 'ui-core-models';
 
 export const RadioPage: React.FC<RadioPageProps & ThemeProps> = ({ ...props }) => {
-    const playerState = useState(PlayerContext);
-
     const style = createUseStyles({
         pageContainer: {
             width: '100vw',

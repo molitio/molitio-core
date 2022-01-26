@@ -23,10 +23,16 @@ export default [
     {
         input: 'src/ui-page-radio/component/RadioPage.tsx',
         plugins: [
+            tsPlugin({ tsconfig: './tsconfig.json', sourceMap: true }),
             commonjs(),
             resolve(),
             image(),
-            tsPlugin({ tsconfig: './tsconfig.json', sourceMap: true }),
+            babel({
+                extensions,
+                babelHelpers: 'bundled',
+                include: ['src/**/*'],
+                exclude: 'node_modules/**',
+            }),
             replace({
                 'process.env.NODE_ENV': JSON.stringify('production'),
                 __buildDate__: () => JSON.stringify(new Date()),
