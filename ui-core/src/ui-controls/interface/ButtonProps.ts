@@ -1,6 +1,6 @@
 import { StyleVariant } from 'ui-core-models';
 
 export interface ButtonProps {
-    customText?: string;
+    label?: string;
     styleVariant: StyleVariant;
 }

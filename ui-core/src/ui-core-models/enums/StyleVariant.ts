@@ -1,5 +1,5 @@
 export enum StyleVariant {
-    RECTANGLE,
-    ROUNDED,
-    CHOPED_CORNER,
+    RECTANGLE = 'Rectangle',
+    ROUNDED = 'Rounded',
+    CHOPED_CORNER = 'Choped',
 }
