@@ -23,7 +23,7 @@ export default [
     {
         input: 'src/ui-page-radio/component/RadioPage.tsx',
         plugins: [
-            tsPlugin({ tsconfig: './tsconfig.json', sourceMap: true }),
+            tsPlugin({ tsconfig: './tsconfig.json' }),
             commonjs(),
             resolve(),
             image(),
@@ -46,6 +46,7 @@ export default [
                 name: packageJson.iife.radioPage,
                 file: packageJson.iife.radioPage,
                 format: 'iife',
+                sourcemap: true,
                 globals,
             },
         ],

@@ -8,22 +8,49 @@ import { NavMenuComponent } from '../../index';
 import { NavSegmentComponent } from '../../index';
 import { NavSegmentProps } from '../../index';
 
-const navSegmentArgs: TNavSegment[] = [
+const servicesPageArgs: TNavSegment[] = [
     {
-        pathSegment: '/first',
-        itemName: 'first',
+        pathSegment: '/services',
+        itemName: 'Services',
         navSegments: [
             {
-                pathSegment: '/first',
-                itemName: 'first',
+                pathSegment: '/web',
+                itemName: 'web',
+            },
+            {
+                pathSegment: '/design',
+                itemName: 'design',
+            },
+        ],
+    },
+];
+
+const aboutPageArgs: TNavSegment[] = [
+    {
+        pathSegment: '/about',
+        itemName: 'about',
+        navSegments: [
+            {
+                pathSegment: '/team',
+                itemName: 'team',
                 navSegments: [
                     {
-                        pathSegment: '/secound',
-                        itemName: 'secound',
+                        pathSegment: '/sanyi',
+                        itemName: 'Sanyi',
                         navSegments: [
                             {
-                                pathSegment: '/third',
-                                itemName: 'third',
+                                pathSegment: '/motivation',
+                                itemName: 'mission',
+                            },
+                        ],
+                    },
+                    {
+                        pathSegment: '/Peti',
+                        itemName: 'Peti',
+                        navSegments: [
+                            {
+                                pathSegment: '/motivation',
+                                itemName: 'mission',
                             },
                         ],
                     },
@@ -36,13 +63,29 @@ const navSegmentArgs: TNavSegment[] = [
 const navMenuArgs: NavMenuComponentProps & ThemeProps = {
     pageCollection: {
         tag: 'basicNavMenu01',
+        siteDisplayName: 'Test Site',
         pageCollection: new Map([
             [
-                'idtag',
+                'aboutIdTag',
                 {
-                    pageName: 'about page',
+                    pageName: 'About',
                     pathSegment: '/about',
-                    navSegments: navSegmentArgs,
+                    navSegments: servicesPageArgs,
+                },
+            ],
+            [
+                'servicesIdTag',
+                {
+                    pageName: 'Services',
+                    pathSegment: '/services',
+                    navSegments: aboutPageArgs,
+                },
+            ],
+            [
+                'contactIdTag',
+                {
+                    pageName: 'Contact',
+                    pathSegment: '/contact',
                 },
             ],
         ]),
@@ -85,6 +128,6 @@ const NavSegmentTemplate: Story<NavSegmentProps & ThemeProps> = (args) => (
 export const NavSegmentStory = NavSegmentTemplate.bind({});
 NavSegmentStory.args = {
     navSegment: {
-        ...navSegmentArgs[0],
+        ...servicesPageArgs[0],
     },
 };
