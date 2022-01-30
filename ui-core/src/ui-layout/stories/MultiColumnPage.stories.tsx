@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import { CenterDisplay, Logo } from 'ui-common';
+import { Logo } from 'ui-common';
 import { LayoutColumn, MultiColumnLayout } from 'ui-layout';
 import { MultiColumnPage } from 'ui-page-landing';
 import { CircleGradientHighlightSvg } from 'ui-svg';

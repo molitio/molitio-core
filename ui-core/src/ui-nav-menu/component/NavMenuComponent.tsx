@@ -1,11 +1,9 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
 import { TNavPage } from '../../ui-core-models';
-import { PageTag } from '../../ui-common';
 import { IThemeContext } from '../../ui-theme-context';
 import { createUseStyles } from 'react-jss';
-//import './style.css';
 
 export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: NavMenuComponentProps) => {
     const [menuPages, setMenuPages] = React.useState<Map<string, TNavPage>>(new Map<string, TNavPage>());

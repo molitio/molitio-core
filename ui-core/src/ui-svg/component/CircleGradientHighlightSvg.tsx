@@ -23,6 +23,12 @@ export const CircleGradientHighlightSvg: React.FC<SvgComponentProps> = ({ ...pro
             paintOrder: 'markers fill stroke',
         },
         content: {},
+        gradientColors: {
+            fill: theme.backgroundColor,
+        },
+        secondaryGradientColors: {
+            fill: theme.secondaryBackgroundColor,
+        },
     })).apply({});
 
     return (
@@ -54,7 +60,7 @@ export const CircleGradientHighlightSvg: React.FC<SvgComponentProps> = ({ ...pro
                     width="800"
                     height="800"
                     fill="url(#gradient-fill)"
-                    opacity=".9"
+                    opacity=".5"
                 />
             </g>
             <foreignObject x="200" y="200" width="400" height="400">
