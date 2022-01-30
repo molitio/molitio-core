@@ -15,7 +15,7 @@ function main() {
     delete sourceObj['devDependencies'];
     delete sourceObj['workspaces'];
 
-    sourceObj.main = sourceObj.main.replace('src/index.ts', 'index.js');
+    sourceObj.main = sourceObj.main.replace('build/index.ts', 'index.js');
     sourceObj.module = sourceObj.module.replace('build/', '');
     sourceObj.typings = sourceObj.typings.replace('build/', '');
     sourceObj.bundle.esm = sourceObj.bundle.esm.replace('build/', '');

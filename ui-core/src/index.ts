@@ -3,7 +3,7 @@ ui-nav-menu
 */
 
 export { NavMenuComponent, NavSegmentComponent } from './ui-nav-menu';
-export type { NavSegmentProps, NavMenuComponentProps } from './ui-nav-menu/';
+export type { NavSegmentProps, NavMenuComponentProps } from './ui-nav-menu';
 
 /*
 ui-core-models

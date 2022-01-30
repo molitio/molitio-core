@@ -57,7 +57,6 @@ export default [
             tsPlugin({ tsconfig: './tsconfig.json' }),
             peerDepsExternal(),
             resolve(),
-            commonjs(),
             buble(),
             sizes(),
             babel({
@@ -66,6 +65,7 @@ export default [
                 include: ['src/**/*'],
                 exclude: 'node_modules/**',
             }),
+            commonjs(),
             replace({
                 'process.env.NODE_ENV': JSON.stringify('production'),
                 __buildDate__: () => JSON.stringify(new Date()),

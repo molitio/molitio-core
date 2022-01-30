@@ -16,9 +16,9 @@
         "url": "https://github.com/molitio/molitio-core/issues"
     },
     "homepage": "https://github.com/molitio/molitio-core#readme",
-    "main": "src/index.ts",
+    "main": "build/index.ts",
     "module": "build/index.es.js",
-    "typings": "build/types/index.d.ts",
+    "typings": "build/index.d.ts",
     "bundle": {
         "esm": "build/bundle/index.esm.js",
         "umd": "build/bundle/index.umd.js"
