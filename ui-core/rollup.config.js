@@ -1,6 +1,7 @@
 import babel from '@rollup/plugin-babel';
-import tsPlugin from '@rollup/plugin-typescript';
+import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import buble from 'rollup-plugin-buble';
@@ -23,16 +24,22 @@ export default [
     {
         input: 'src/ui-page-radio/component/RadioPage.tsx',
         plugins: [
-            tsPlugin({ tsconfig: './tsconfig.json' }),
-            commonjs(),
-            resolve(),
-            image(),
+            nodeResolve(),
             babel({
-                extensions,
+                extensions: [...extensions],
                 babelHelpers: 'bundled',
                 include: ['src/**/*'],
                 exclude: 'node_modules/**',
             }),
+            typescript({
+                tsconfig: './tsconfig.json',
+                outDir: './build',
+                declaration: true,
+                declarationDir: './build',
+                declarationMap: true,
+            }),
+            commonjs(),
+            image(),
             replace({
                 'process.env.NODE_ENV': JSON.stringify('production'),
                 __buildDate__: () => JSON.stringify(new Date()),
@@ -54,18 +61,24 @@ export default [
     {
         input: 'src/index.ts',
         plugins: [
-            tsPlugin({ tsconfig: './tsconfig.json' }),
             peerDepsExternal(),
-            resolve(),
-            buble(),
-            sizes(),
+            nodeResolve(),
+            commonjs(),
+            typescript({
+                tsconfig: './tsconfig.json',
+                outDir: './build',
+                declaration: true,
+                declarationDir: './build',
+                declarationMap: true,
+            }),
             babel({
-                extensions,
+                extensions: [...extensions],
                 babelHelpers: 'bundled',
-                include: ['src/**/*'],
+                include: ['src'],
                 exclude: 'node_modules/**',
             }),
-            commonjs(),
+            buble(),
+            sizes(),
             replace({
                 'process.env.NODE_ENV': JSON.stringify('production'),
                 __buildDate__: () => JSON.stringify(new Date()),
@@ -82,8 +95,10 @@ export default [
                 format: 'esm',
                 exports: 'named',
                 globals,
-                sourcemap: true,
                 plugins: [],
+                preserveModules: true,
+                preserveModulesRoot: 'src',
+                sourcemap: true,
             },
             //bundled esm
             {
@@ -93,6 +108,9 @@ export default [
                 exports: 'named',
                 globals,
                 sourcemap: true,
+                preserveModules: true,
+                preserveModulesRoot: 'src',
+                sourcemap: true,
                 plugins: [],
             },
             //unbundled cjs
@@ -101,6 +119,8 @@ export default [
                 file: packageJson.main,
                 format: 'cjs',
                 globals,
+                preserveModules: true,
+                preserveModulesRoot: 'src',
                 sourcemap: true,
                 plugins: [],
             },
@@ -111,10 +131,13 @@ export default [
                 format: 'umd',
                 globals,
                 sourcemap: true,
+                preserveModules: true,
+                preserveModulesRoot: 'src',
+                sourcemap: true,
                 plugins: [],
             },
         ],
 
-        external: Object.keys(globals),
+        external: ['react', 'reactDom'],
     },
 ];

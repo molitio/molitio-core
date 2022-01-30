@@ -18,7 +18,7 @@ export const Logo: React.FC<LogoProps> = ({ ...props }: LogoProps) => {
         dimensions: {
             width: LargeLogoDimensions.width,
             height: LargeLogoDimensions.height,
-            opacity: '0.7'
+            opacity: '0.7',
         },
     }).apply({});
     return <img className={`${style.center} ${style.dimensions}`} src={props.url} />;

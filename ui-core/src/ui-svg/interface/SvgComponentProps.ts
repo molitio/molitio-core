@@ -1,5 +1,5 @@
-import { ShapeDimensions } from "./ShapeDimensions";
+import { ShapeDimensions } from './ShapeDimensions';
 
 export interface SvgComponentProps {
-    dimensions: ShapeDimensions | 'FULLSCREEN' 
+    dimensions: ShapeDimensions | 'FULLSCREEN';
 }

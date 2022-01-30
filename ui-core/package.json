@@ -16,12 +16,12 @@
         "url": "https://github.com/molitio/molitio-core/issues"
     },
     "homepage": "https://github.com/molitio/molitio-core#readme",
-    "main": "build/index.ts",
-    "module": "build/index.es.js",
-    "typings": "build/index.d.ts",
+    "main": "build/index.js",
+    "module": "build/esm/index.js",
+    "typings": "index.d.ts",
     "bundle": {
-        "esm": "build/bundle/index.esm.js",
-        "umd": "build/bundle/index.umd.js"
+        "esm": "build/bundle/esm/index.js",
+        "umd": "build/bundle/umd/index.js"
     },
     "iife": {
         "radioPage": "build/iife/molitio-radio-page.js"
@@ -60,7 +60,7 @@
         }
     ],
     "scripts": {
-        "prebuild": "npm run clean",
+        "prebuild": "npm run clean && prettier --write src/",
         "build": "rollup --config",
         "postbuild": "node packageBuilder",
         "build:watch": "rollup --config --watch",
@@ -126,6 +126,7 @@
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-sizes": "^1.0.4",
         "rollup-plugin-svg": "^2.0.0",
+        "rollup-plugin-typescript2": "^0.31.1",
         "size-limit": "^7.0.3",
         "ts-loader": "^9.2.6",
         "ts-node": "^10.4.0",

@@ -1,4 +1,4 @@
-import { SVGAttributes } from "react";
+import { SVGAttributes } from 'react';
 
 declare module 'react' {
     interface SVGProps<T> extends SVGAttributes<T>, ClassAttributes<T> {

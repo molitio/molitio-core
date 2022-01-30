@@ -19,7 +19,7 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             cursor: 'pointer',
         },
         circle: {
-            fill: theme.primary ?? "red",
+            fill: theme.primary ?? 'red',
         },
         controlColoring: {
             fill: theme.secondary,

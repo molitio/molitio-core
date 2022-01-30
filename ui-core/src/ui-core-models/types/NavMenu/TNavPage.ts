@@ -1,4 +1,4 @@
-import { TNavSegment } from "./TNavSegment";
+import { TNavSegment } from './TNavSegment';
 
 export type TNavPage = {
     pageName: string;

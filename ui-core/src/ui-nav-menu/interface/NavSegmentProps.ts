@@ -1,4 +1,4 @@
-import { TNavSegment } from "ui-core-models";
+import { TNavSegment } from 'ui-core-models';
 
 export interface NavSegmentProps {
     navSegment: TNavSegment;

@@ -3,7 +3,6 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 
 export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
-
     const style = createUseStyles({
         svg: {
             /* position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'absolute', */

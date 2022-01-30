@@ -1,5 +1,5 @@
-import { ComponentGroupTags } from "ui-core-models";
+import { ComponentGroupTags } from 'ui-core-models';
 
 export interface ComponentGroupProps {
-    groupingType:ComponentGroupTags;
-}; 
+    groupingType: ComponentGroupTags;
+}
