@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { IThemeContext } from 'ui-theme-context';
-import { SvgComponentProps } from './interface/SvgComponentProps';
+import { SvgComponentProps } from '../interface/SvgComponentProps';
 
 export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     //const theme = useTheme<IThemeContext>();

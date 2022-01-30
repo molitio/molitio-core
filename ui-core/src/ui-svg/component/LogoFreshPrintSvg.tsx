@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { SvgComponentProps } from './interface/SvgComponentProps';
+import { SvgComponentProps } from '../interface/SvgComponentProps';
 
 export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
 
@@ -20,8 +20,8 @@ export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = ({ ...props }) => 
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             width="80"
-            height="404.9382716049383"
-            viewBox="0, 0, 400,404.9382716049383"
+            height="400"
+            viewBox="0, 0, 400,400"
         >
             <g id="svgg">
                 <path

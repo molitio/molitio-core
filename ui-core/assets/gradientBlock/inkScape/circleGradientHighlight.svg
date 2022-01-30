@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="600pt"
+   height="800pt"
+   viewBox="0 0 211.66668 282.22222"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   sodipodi:docname="circleGradientHighlight.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="pt"
+     inkscape:zoom="0.48729658"
+     inkscape:cx="674.12745"
+     inkscape:cy="516.1128"
+     inkscape:window-width="1312"
+     inkscape:window-height="769"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2013">
+      <stop
+         style="stop-color:#2b2e73;stop-opacity:0.01176471"
+         offset="0"
+         id="stop2009" />
+      <stop
+         style="stop-color:#000423;stop-opacity:0.80000001"
+         offset="1"
+         id="stop2011" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2013"
+       id="radialGradient2239"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.5027738,-0.01026069,0.00910357,1.3333022,-53.948867,-45.957871)"
+       cx="104.74741"
+       cy="141.11111"
+       fx="104.74741"
+       fy="141.11111"
+       r="105.83334" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="circleGradient">
+    <rect
+       style="fill:url(#radialGradient2239);stroke:none;stroke-width:4.03299;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke;fill-opacity:1;opacity:0.6"
+       id="rect1009"
+       width="211.66667"
+       height="282.22223"
+       x="-1.0859232"
+       y="0" />
+  </g>
+</svg>

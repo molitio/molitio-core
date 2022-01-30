@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { SvgComponentProps } from './interface/SvgComponentProps';
+import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { PlayerContext } from 'media-player-context';
 import { IThemeContext } from 'ui-theme-context';
 

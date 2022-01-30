@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { IThemeContext } from 'ui-theme-context';
 import { NavSegmentProps } from '../interface/NavSegmentProps';
-import './style.css';
+//import './style.css';
 
 export const NavSegmentComponent: React.FC<NavSegmentProps> = ({ ...props }: NavSegmentProps) => {
     const useStyles = createUseStyles((theme: IThemeContext) => ({

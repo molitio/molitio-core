@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CirclePatternProps } from './interface/CirclePatternProps';
+import { CirclePatternProps } from '../interface/CirclePatternProps';
 
 class Circle {
     x: number;
