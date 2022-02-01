@@ -1,6 +1,6 @@
 {
     "name": "@molitio/ui-core",
-    "version": "0.5.0-alpha.0",
+    "version": "0.5.4-alpha.0",
     "author": "molitio foundation",
     "description": "Universal reusable React UI Components",
     "license": "CC0-1.0",
@@ -16,18 +16,18 @@
         "url": "https://github.com/molitio/molitio-core/issues"
     },
     "homepage": "https://github.com/molitio/molitio-core#readme",
-    "main": "build/index.js",
-    "module": "build/esm/index.js",
-    "typings": "index.d.ts",
+    "main": "dist/index.js",
+    "module": "dist/esm/index.js",
+    "typings": "dist/types/index.d.ts",
     "bundle": {
-        "esm": "build/bundle/esm/index.js",
-        "umd": "build/bundle/umd/index.js"
+        "esm": "dist/bundle/esm/index.js",
+        "umd": "dist/bundle/umd/index.js"
     },
     "iife": {
-        "radioPage": "build/iife/molitio-radio-page.js"
+        "radioPage": "dist/iife/molitio-radio-page.js"
     },
     "files": [
-        "build"
+        "dist"
     ],
     "engines": {
         "node": ">=12"
@@ -39,23 +39,23 @@
     },
     "size-limit": [
         {
-            "path": "build/index.js",
+            "path": "dist/index.js",
             "limit": "10 KB"
         },
         {
-            "path": "build/index.es.js",
+            "path": "dist/esm/index.js",
             "limit": "10 KB"
         },
         {
-            "path": "build/bundle/index.esm.js",
+            "path": "dist/bundle/esm/index.js",
             "limit": "10 KB"
         },
         {
-            "path": "build/bundle/index.umd.js",
+            "path": "dist/bundle/umd/index.js",
             "limit": "10 KB"
         },
         {
-            "path": "build/types/index.d.ts",
+            "path": "dist/types/index.d.ts",
             "limit": "10 KB"
         }
     ],

@@ -15,19 +15,19 @@ function main() {
     delete sourceObj['devDependencies'];
     delete sourceObj['workspaces'];
 
-    sourceObj.main = sourceObj.main.replace('build/index.ts', 'index.js');
-    sourceObj.module = sourceObj.module.replace('build/', '');
-    sourceObj.typings = sourceObj.typings.replace('build/', '');
-    sourceObj.bundle.esm = sourceObj.bundle.esm.replace('build/', '');
-    sourceObj.bundle.umd = sourceObj.bundle.umd.replace('build/', '');
-    sourceObj.iife.radioPage = sourceObj.iife.radioPage.replace('build/', '');
+    sourceObj.main = sourceObj.main.replace('dist/index.ts', 'index.js');
+    sourceObj.module = sourceObj.module.replace('dist/', '');
+    sourceObj.typings = sourceObj.typings.replace('dist/', '');
+    sourceObj.bundle.esm = sourceObj.bundle.esm.replace('dist/', '');
+    sourceObj.bundle.umd = sourceObj.bundle.umd.replace('dist/', '');
+    sourceObj.iife.radioPage = sourceObj.iife.radioPage.replace('dist/', '');
 
-    fs.writeFileSync(__dirname + '/build/package.json', Buffer.from(JSON.stringify(sourceObj, null, 2), 'utf-8'));
-    fs.writeFileSync(__dirname + '/build/version.txt', Buffer.from(sourceObj.version, 'utf-8'));
+    fs.writeFileSync(__dirname + '/dist/package.json', Buffer.from(JSON.stringify(sourceObj, null, 2), 'utf-8'));
+    fs.writeFileSync(__dirname + '/dist/version.txt', Buffer.from(sourceObj.version, 'utf-8'));
 
-    fs.copyFileSync(__dirname + '/LICENSE', __dirname + '/build/LICENSE');
-    fs.copyFileSync(__dirname + '/README.md', __dirname + '/build/README.md');
-    fs.copyFileSync(__dirname + '/.npmignore', __dirname + '/build/.npmignore');
+    fs.copyFileSync(__dirname + '/LICENSE', __dirname + '/dist/LICENSE');
+    fs.copyFileSync(__dirname + '/README.md', __dirname + '/dist/README.md');
+    fs.copyFileSync(__dirname + '/.npmignore', __dirname + '/dist/.npmignore');
 }
 
 main();

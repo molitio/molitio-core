@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ThemeContextProviderProps } from '../interface/ThemeContextProviderProps';
 import { getThemes } from '../store/ThemeContextStore';
-import { IThemeContext } from 'ui-theme-context';
+import { IThemeContext } from '../interface/IThemeContext';
 import { ThemeProvider } from 'react-jss';
 
 export const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ ...props }) => {

@@ -24,19 +24,18 @@ export default [
     {
         input: 'src/ui-page-radio/component/RadioPage.tsx',
         plugins: [
-            nodeResolve(),
             babel({
                 extensions: [...extensions],
                 babelHelpers: 'bundled',
                 include: ['src/**/*'],
                 exclude: 'node_modules/**',
             }),
+            nodeResolve(),
             typescript({
                 tsconfig: './tsconfig.json',
-                outDir: './build',
+                outDir: './dist',
                 declaration: true,
-                declarationDir: './build',
-                declarationMap: true,
+                declarationDir: './dist',
             }),
             commonjs(),
             image(),
@@ -61,16 +60,22 @@ export default [
     {
         input: 'src/index.ts',
         plugins: [
-            peerDepsExternal(),
+            babel({
+                extensions: [...extensions],
+                babelHelpers: 'bundled',
+                include: ['src'],
+                exclude: 'node_modules/**',
+            }),
             nodeResolve(),
             commonjs(),
             typescript({
                 tsconfig: './tsconfig.json',
-                outDir: './build',
+                outDir: '.',
                 declaration: true,
-                declarationDir: './build',
+                declarationDir: '.',
                 declarationMap: true,
             }),
+            peerDepsExternal(),
             babel({
                 extensions: [...extensions],
                 babelHelpers: 'bundled',
@@ -95,9 +100,6 @@ export default [
                 format: 'esm',
                 exports: 'named',
                 globals,
-                plugins: [],
-                preserveModules: true,
-                preserveModulesRoot: 'src',
                 sourcemap: true,
             },
             //bundled esm
@@ -108,10 +110,6 @@ export default [
                 exports: 'named',
                 globals,
                 sourcemap: true,
-                preserveModules: true,
-                preserveModulesRoot: 'src',
-                sourcemap: true,
-                plugins: [],
             },
             //unbundled cjs
             {
@@ -119,10 +117,6 @@ export default [
                 file: packageJson.main,
                 format: 'cjs',
                 globals,
-                preserveModules: true,
-                preserveModulesRoot: 'src',
-                sourcemap: true,
-                plugins: [],
             },
             //bundled umd
             {
@@ -131,10 +125,6 @@ export default [
                 format: 'umd',
                 globals,
                 sourcemap: true,
-                preserveModules: true,
-                preserveModulesRoot: 'src',
-                sourcemap: true,
-                plugins: [],
             },
         ],
 

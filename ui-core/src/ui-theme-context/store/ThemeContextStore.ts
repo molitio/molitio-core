@@ -1,5 +1,5 @@
 import { ThemeNameTags } from 'ui-core-models';
-import { OrangeHighlight, YellowHighlight } from 'ui-theme-context';
+import { OrangeHighlight, YellowHighlight } from '../styles/SvgBorderHighLights';
 import { IThemeContext } from '../interface/IThemeContext';
 
 export const getThemes = async (): Promise<Map<string, IThemeContext>> => {
