@@ -114,6 +114,7 @@ lib
 build
 deploy
 storybook-build
+.rollup.cache
 
 # Dev Keys
 *.pem

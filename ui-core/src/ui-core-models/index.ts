@@ -1,6 +1,6 @@
 /* 
-types
-*/
+    types
+    */
 
 export type { TNavSegment } from './types/NavMenu/TNavSegment';
 export type { TNavPage } from './types/NavMenu/TNavPage';
@@ -9,8 +9,8 @@ export type { TPageTag } from './types/PageTag/TPageTag';
 export type { TUniversalRadio } from './types/UniversalRadio/TUniversalRadio';
 
 /* 
-tags
-*/
+   tags
+   */
 
 export { UniversalRadioTags } from './tags/RadioPage/UniversalRadioTags';
 export { AudioPreloadTags } from './tags/RadioPage/AudioPreloadTags';

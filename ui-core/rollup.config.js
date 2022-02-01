@@ -2,7 +2,6 @@ import babel from '@rollup/plugin-babel';
 import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import buble from 'rollup-plugin-buble';
 import sizes from 'rollup-plugin-sizes';
@@ -36,6 +35,8 @@ export default [
                 outDir: './dist',
                 declaration: true,
                 declarationDir: './dist',
+                declarationMap: true,
+                outputToFilesystem: true,
             }),
             commonjs(),
             image(),
@@ -52,7 +53,6 @@ export default [
                 name: packageJson.iife.radioPage,
                 file: packageJson.iife.radioPage,
                 format: 'iife',
-                sourcemap: true,
                 globals,
             },
         ],
@@ -100,7 +100,6 @@ export default [
                 format: 'esm',
                 exports: 'named',
                 globals,
-                sourcemap: true,
             },
             //bundled esm
             {
@@ -109,7 +108,6 @@ export default [
                 format: 'esm',
                 exports: 'named',
                 globals,
-                sourcemap: true,
             },
             //unbundled cjs
             {
@@ -124,7 +122,6 @@ export default [
                 file: packageJson.bundle.umd,
                 format: 'umd',
                 globals,
-                sourcemap: true,
             },
         ],
 
