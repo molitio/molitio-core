@@ -28,7 +28,6 @@ const storyArgs: RadioPageProps & StyledThemeProps = {
             <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
             <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
             <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
-            <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
         </ComponentGroup>,
     ],
 };
