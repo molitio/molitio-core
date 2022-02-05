@@ -1,6 +1,6 @@
 {
     "name": "@molitio/ui-core",
-    "version": "0.5.5-alpha.0",
+    "version": "0.6.1-alpha.0",
     "author": "molitio foundation",
     "description": "Universal reusable React UI Components",
     "license": "CC0-1.0",
@@ -18,7 +18,7 @@
     "homepage": "https://github.com/molitio/molitio-core#readme",
     "main": "dist/index.js",
     "module": "dist/esm/index.js",
-    "typings": "dist/types/index.d.ts",
+    "typings": "dist/index.d.ts",
     "bundle": {
         "esm": "dist/bundle/esm/index.js",
         "umd": "dist/bundle/umd/index.js"
@@ -124,6 +124,7 @@
         "rollup": "^2.60.1",
         "rollup-plugin-buble": "^0.19.8",
         "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-scss": "^3.0.0",
         "rollup-plugin-sizes": "^1.0.4",
         "rollup-plugin-svg": "^2.0.0",
         "rollup-plugin-typescript2": "^0.31.1",

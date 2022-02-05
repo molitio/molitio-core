@@ -16,16 +16,10 @@ ui-common
 export * from './ui-common';
 
 /* 
-ui-page-landing
+ui-page
 */
 
-export * from './ui-page-landing';
-
-/*
-radio-page
-*/
-
-export * from './ui-page-radio';
+export * from './ui-page';
 
 /*
 ui-background
@@ -36,4 +30,8 @@ export * from './ui-background';
 /*
 theme-context
 */
-export * from './ui-theme-context';
+export * from './ui-context';
+/*
+ui-svg
+*/
+export * from './ui-svg';

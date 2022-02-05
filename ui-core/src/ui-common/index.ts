@@ -1,8 +1,38 @@
-export { PageTag } from './component/PageTag';
-export { CenterDisplay } from './component/CenterDisplay';
-export { Logo } from './component/Logo';
-export { ComponentGroup } from './component/ComponentGroup';
+/*
+page tag to identify individual pages
+*/
 
-export type { PageTagProps } from './interface/PageTagProps';
-export type { LogoProps } from './interface/LogoProps';
-export type { ComponentGroupProps } from './interface/ComponentGroupProps';
+export { PageTag } from './components/PageTag';
+export type { PageTagProps } from './interfaces/PageTagProps';
+
+/*
+global style
+*/
+export { AppShell } from './components/AppShell';
+
+/*
+content positioning
+*/
+
+export { CenterDisplay } from './components/CenterDisplay';
+
+/*
+branding 
+*/
+
+export { Logo } from './components/Logo';
+export type { LogoProps } from './interfaces/LogoProps';
+
+/*
+grouping
+*/
+
+export { ComponentGroup } from './components/ComponentGroup';
+export type { ComponentGroupProps } from './interfaces/ComponentGroupProps';
+
+/*
+media
+*/
+
+export { AudioPlayer } from './components/AudioPlayer';
+export type { AudioPlayerProps } from './interfaces/AudioPlayerProps';

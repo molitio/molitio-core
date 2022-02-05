@@ -1,9 +1,9 @@
 import React from 'react';
+import { createUseStyles } from 'react-jss';
 import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
-import { TNavPage } from '../../ui-core-models';
-import { IThemeContext } from '../../ui-theme-context';
-import { createUseStyles } from 'react-jss';
+import { TNavPage } from 'ui-core-models';
+import { StyledThemeContext } from 'ui-context';
 
 export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: NavMenuComponentProps) => {
     const [menuPages, setMenuPages] = React.useState<Map<string, TNavPage>>(new Map<string, TNavPage>());
@@ -12,7 +12,7 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
         setMenuPages(new Map([...(props.pageCollection.pageCollection ?? new Map<string, TNavPage>())]));
     }, []);
 
-    const style = createUseStyles((theme: IThemeContext) => ({
+    const style = createUseStyles((theme: StyledThemeContext) => ({
         nav: {
             /*  backgroundColor: theme.backgroundColor, */
             backgroundColor: 'DodgerBlue',
@@ -88,6 +88,17 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
   display: none;
 } */
     })).apply({});
+
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    /*  function myFunction() {
+         let myTopnav = document.getElementById('myTopnav');
+        if (myTopnav.className === 'topnav') {
+            myTopnav.className += ' responsive';
+        } else {
+            myTopnav.className = 'topnav';
+        }
+    }
+ */
 
     return (
         <nav className={style.nav}>

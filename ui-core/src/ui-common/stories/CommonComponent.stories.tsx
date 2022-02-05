@@ -2,9 +2,9 @@ import { Story, Meta } from '@storybook/react';
 import { CenterDisplay, ComponentGroup, ComponentGroupProps } from 'ui-common';
 import { ComponentGroupTags, ThemeNameTags } from 'ui-core-models';
 import { LogoFreshPrintSvg } from 'ui-svg';
-import { ThemeContextProvider, ThemeProps } from 'ui-theme-context';
+import { StyledThemeContextProvider, StyledThemeProps } from 'ui-context';
 
-const navMenuArgs: ComponentGroupProps & ThemeProps = {
+const navMenuArgs: ComponentGroupProps & StyledThemeProps = {
     groupingType: ComponentGroupTags.HORIZONTAL_FLEX,
     themeName: ThemeNameTags.BLACK_YELLOW,
 };
@@ -31,8 +31,8 @@ const meta: Meta = {
 
 export default meta;
 
-const ComponentGroupTemplate: Story<ComponentGroupProps & ThemeProps> = (args) => (
-    <ThemeContextProvider themeName={args.themeName}>
+const ComponentGroupTemplate: Story<ComponentGroupProps & StyledThemeProps> = (args) => (
+    <StyledThemeContextProvider themeName={args.themeName}>
         <CenterDisplay>
             {console.log(`inside storybook props: ${args.groupingType}`)}
             <ComponentGroup {...args}>
@@ -42,7 +42,7 @@ const ComponentGroupTemplate: Story<ComponentGroupProps & ThemeProps> = (args) =
                 <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
             </ComponentGroup>
         </CenterDisplay>
-    </ThemeContextProvider>
+    </StyledThemeContextProvider>
 );
 
 export const ComponentGroupStory = ComponentGroupTemplate.bind({});

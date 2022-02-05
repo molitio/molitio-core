@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
-import { IThemeContext } from 'ui-theme-context';
+import { StyledThemeContext } from 'ui-context';
 
 export interface SvgEmbeddedHtmlProps {
     xmlns: string;
@@ -12,7 +12,7 @@ export const SvgEmbeddedHtml: React.FC<SvgEmbeddedHtmlProps> = ({ ...props }) =>
 };
 
 export const CircleGradientHighlightSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
-    const style = createUseStyles((theme: IThemeContext) => ({
+    const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
             height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions.height,

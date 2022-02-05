@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/react';
 import { Logo } from 'ui-common';
 import { LayoutColumn, MultiColumnLayout } from 'ui-layout';
-import { MultiColumnPage } from 'ui-page-landing';
+import { MultiColumnPage } from 'ui-page';
 import { CircleGradientHighlightSvg } from 'ui-svg';
 
 const meta: Meta = {

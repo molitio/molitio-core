@@ -15,9 +15,9 @@ function main() {
     delete sourceObj['devDependencies'];
     delete sourceObj['workspaces'];
 
-    sourceObj.main = sourceObj.main.replace('dist/index.js', 'index.js');
+    sourceObj.main = sourceObj.main.replace('dist/', '');
     sourceObj.module = sourceObj.module.replace('dist/', '');
-    sourceObj.typings = sourceObj.typings.replace('', '');
+    sourceObj.typings = sourceObj.typings.replace('dist/', '');
     sourceObj.bundle.esm = sourceObj.bundle.esm.replace('dist/', '');
     sourceObj.bundle.umd = sourceObj.bundle.umd.replace('dist/', '');
     sourceObj.iife.radioPage = sourceObj.iife.radioPage.replace('dist/', '');

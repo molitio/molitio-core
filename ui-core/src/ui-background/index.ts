@@ -1,1 +1,5 @@
-export { StripedBackground } from './component/StripedBackground';
+/*
+striped svg background
+*/
+
+export { StripedBackground } from './components/StripedBackground';

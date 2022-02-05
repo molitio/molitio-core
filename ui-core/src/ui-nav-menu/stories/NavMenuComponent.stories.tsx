@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react';
 import { ThemeNameTags } from 'ui-core-models';
-import { ThemeContextProvider, ThemeProps } from 'ui-theme-context';
+import { StyledThemeContextProvider, StyledThemeProps } from 'ui-context';
 
 import { TNavSegment } from 'ui-core-models';
 
@@ -58,7 +58,7 @@ const aboutPageArgs: TNavSegment[] = [
     },
 ];
 
-const navMenuArgs: NavMenuComponentProps & ThemeProps = {
+const navMenuArgs: NavMenuComponentProps & StyledThemeProps = {
     pageCollection: {
         tag: 'basicNavMenu01',
         siteDisplayName: 'Test Site',
@@ -106,10 +106,10 @@ const meta: Meta = {
 
 export default meta;
 
-const NavMenuTemplate: Story<NavMenuComponentProps & ThemeProps> = (args) => (
-    <ThemeContextProvider themeName={args.themeName}>
+const NavMenuTemplate: Story<NavMenuComponentProps & StyledThemeProps> = (args) => (
+    <StyledThemeContextProvider themeName={args.themeName}>
         <NavMenuComponent {...args} />
-    </ThemeContextProvider>
+    </StyledThemeContextProvider>
 );
 
 export const NavMenuStory = NavMenuTemplate.bind({});
@@ -117,10 +117,10 @@ NavMenuStory.args = {
     ...navMenuArgs,
 };
 
-const NavSegmentTemplate: Story<NavSegmentProps & ThemeProps> = (args) => (
-    <ThemeContextProvider themeName={args.themeName}>
+const NavSegmentTemplate: Story<NavSegmentProps & StyledThemeProps> = (args) => (
+    <StyledThemeContextProvider themeName={args.themeName}>
         <NavSegmentComponent {...args} />;
-    </ThemeContextProvider>
+    </StyledThemeContextProvider>
 );
 
 export const NavSegmentStory = NavSegmentTemplate.bind({});

@@ -1,13 +1,13 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
-import { PlayerContext } from 'media-player-context';
-import { IThemeContext } from 'ui-theme-context';
+import { AudioPlayerContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-context';
 
 export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
-    const playerContext = React.useContext(PlayerContext);
+    const playerContext = React.useContext(AudioPlayerContext);
 
-    const style = createUseStyles((theme: IThemeContext) => ({
+    const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
             height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions.height,
@@ -19,7 +19,7 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             cursor: 'pointer',
         },
         circle: {
-            fill: theme.primary ?? 'red',
+            fill: theme.primary,
         },
         controlColoring: {
             fill: theme.secondary,
@@ -41,11 +41,10 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
         <svg
             id="ctrl-play"
             className={style.svg}
+            preserveAspectRatio="xMidYMid meet"
             onClick={() => togglePlayPause()}
-            width="200pt"
-            height="200pt"
             version="1.1"
-            viewBox="0 0 70.556 70.556"
+            viewBox="0 0 100 100"
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
@@ -53,23 +52,24 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                 <circle
                     id="ctrl-play-circle"
                     className={style.circle}
-                    cx="35.278"
-                    cy="35.278"
-                    r="31.75"
+                    cx="50"
+                    cy="50"
+                    r="50"
+                    stroke="#0b0b0a"
+                    strokeWidth="1"
                     fill="#f6c339"
                 />
             </g>
             <g id="ctrl-play-triangle-g" className={`${playerContext.isPlaying ? style.hidden : style.visible}`}>
-                <path
+                <polygon
                     id="ctrl-play-triangle"
                     className={style.controlColoring}
-                    transform="matrix(.17487 0 0 .17487 77.463 29.074)"
-                    d="m-179.09 35.477-93.233 53.828v-107.66z"
+                    points="38,30 72,50 38,70"
                     fill="#0b0b0a"
-                    stroke="#0b0b0a"
                     strokeLinejoin="round"
                     strokeOpacity="1"
-                    strokeWidth="21.909"
+                    stroke="#0b0b0a"
+                    strokeWidth="5"
                 />
             </g>
 
@@ -83,9 +83,9 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                     strokeMiterlimit="4"
                     strokeLinejoin="miter"
                     strokeLinecap="round"
-                    strokeWidth="5"
+                    strokeWidth="10"
                     stroke="#000000"
-                    d="m 30,25.1 v 20"
+                    d="m 42,30 v 40"
                 />
                 <path
                     id="ctrl-pause-path-2"
@@ -96,9 +96,9 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                     strokeMiterlimit="4"
                     strokeLinejoin="miter"
                     strokeLinecap="round"
-                    strokeWidth="5"
+                    strokeWidth="10"
                     stroke="#000000"
-                    d="m 40,25.1 v 20"
+                    d="m 58,30 v 40"
                 />
             </g>
         </svg>

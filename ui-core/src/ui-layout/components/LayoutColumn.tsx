@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { DevHighlight } from 'ui-theme-context';
+import { DevHighlight } from 'ui-context';
 
 export const LayoutColumn: React.FC = ({ ...props }) => {
     const style = createUseStyles({

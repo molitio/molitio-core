@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { StyleVariant } from 'ui-core-models';
-import { IThemeContext } from 'ui-theme-context';
+import { StyledThemeContext } from 'ui-context';
 import { ButtonProps } from '../interface/ButtonProps';
 
 export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLDivElement>> = ({ ...props }) => {
@@ -26,7 +26,7 @@ export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLDivElement>
         }
     };
 
-    const style = createUseStyles((theme: IThemeContext) => ({
+    const style = createUseStyles((theme: StyledThemeContext) => ({
         buttonStyle: {
             padding: '8px',
             backgroundColor: theme.primary,

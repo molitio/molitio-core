@@ -1,11 +1,11 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { IThemeContext } from 'ui-theme-context';
+import { StyledThemeContext } from 'ui-context';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 
 export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     //const theme = useTheme<IThemeContext>();
-    const style = createUseStyles((theme: IThemeContext) => ({
+    const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
             height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions.height,
@@ -13,6 +13,8 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             pointerEvents: 'auto',
         },
         stripes: {
+            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions.width,
+            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions.height,
             '& rect': {
                 fill: theme.secondaryBackgroundColor,
             },
@@ -21,6 +23,8 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             },
         },
         stripesBackground: {
+            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions.width,
+            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions.height,
             '& rect': {
                 fill: theme.backgroundColor,
             },
@@ -36,10 +40,10 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             viewBox="0 0 1920 1080"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <clipPath id="myClip">
+            <clipPath id="clipToViewBox">
                 <rect x="0" y="0" width="100%" height="100%" />
             </clipPath>
-            <g width="100px" height="100px">
+            <g clipPath="url(#clipToViewBox)">
                 <g className={style.stripesBackground}>
                     <rect
                         x="-7.1054e-15"
@@ -57,8 +61,7 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                     fillOpacity=".87059"
                     fillRule="evenodd"
                     strokeWidth=".6404"
-                    clipPath="url(#myClip)"
-                >
+                    >
                     <rect
                         id="stripe-background_c"
                         transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
@@ -66,7 +69,7 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                         y="635.7"
                         width="1578.7"
                         height="94.453"
-                    />
+                        />
                     <rect
                         id="stripe-background_d"
                         transform="matrix(.68342 .73002 -.68342 .73002 0 0)"

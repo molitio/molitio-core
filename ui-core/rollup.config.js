@@ -7,6 +7,7 @@ import buble from 'rollup-plugin-buble';
 import sizes from 'rollup-plugin-sizes';
 import replace from '@rollup/plugin-replace';
 import image from '@rollup/plugin-image';
+import scss from 'rollup-plugin-scss';
 
 const packageJson = require('./package.json');
 
@@ -21,13 +22,13 @@ const globals = {
 
 export default [
     {
-        input: 'src/ui-page-radio/component/RadioPage.tsx',
+        input: 'src/ui-page/radio-page/components/RadioPage.tsx',
         plugins: [
             babel({
                 extensions: [...extensions],
                 babelHelpers: 'bundled',
                 include: ['src/**/*'],
-                exclude: 'node_modules/**',
+                exclude: ['node_modules/**', '**/*.stories.tsx'],
             }),
             nodeResolve(),
             typescript({
@@ -39,6 +40,10 @@ export default [
                 outputToFilesystem: true,
             }),
             commonjs(),
+            scss({
+                output: './dist/style.css',
+                failOnError: true,
+            }),
             image(),
             replace({
                 'process.env.NODE_ENV': JSON.stringify('production'),
@@ -64,7 +69,7 @@ export default [
                 extensions: [...extensions],
                 babelHelpers: 'bundled',
                 include: ['src'],
-                exclude: 'node_modules/**',
+                exclude: ['node_modules/**', '**/*.stories.tsx'],
             }),
             nodeResolve(),
             commonjs(),
@@ -74,6 +79,7 @@ export default [
                 declaration: true,
                 declarationDir: '.',
                 declarationMap: true,
+                outputToFilesystem: true,
             }),
             peerDepsExternal(),
             babel({
@@ -81,6 +87,10 @@ export default [
                 babelHelpers: 'bundled',
                 include: ['src'],
                 exclude: 'node_modules/**',
+            }),
+            scss({
+                output: './dist/style.css',
+                failOnError: true,
             }),
             buble(),
             sizes(),

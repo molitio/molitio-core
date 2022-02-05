@@ -1,11 +1,11 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { IThemeContext } from 'ui-theme-context';
+import { StyledThemeContext } from 'ui-context';
 import { NavSegmentProps } from '../interface/NavSegmentProps';
 //import './style.css';
 
 export const NavSegmentComponent: React.FC<NavSegmentProps> = ({ ...props }: NavSegmentProps) => {
-    const useStyles = createUseStyles((theme: IThemeContext) => ({
+    const useStyles = createUseStyles((theme: StyledThemeContext) => ({
         itemText: {
             color: theme.primary,
         },

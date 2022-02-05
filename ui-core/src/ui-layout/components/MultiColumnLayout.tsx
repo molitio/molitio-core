@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { MultiColumnLayoutProps } from 'ui-layout';
-import { DevHighlight } from 'ui-theme-context';
+import { DevHighlight } from 'ui-context';
 
 export const MultiColumnLayout: React.FC<MultiColumnLayoutProps> = ({ ...props }) => {
     const style = createUseStyles({
