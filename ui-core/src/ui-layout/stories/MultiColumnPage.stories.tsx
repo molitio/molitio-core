@@ -23,7 +23,10 @@ const Template: Story = () => (
                             </LayoutColumn>,
                             <LayoutColumn>
                                 <CircleGradientHighlightSvg dimensions={{ width: '100%', height: '100%' }}>
-                                    <Logo url="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/nest-media-ui/nestmedia_logo_final_one_900.png" />
+                                    <Logo
+                                        url="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/nest-media-ui/nestmedia_logo_final_one_900.png"
+                                        opacity={0.8}
+                                    />
                                 </CircleGradientHighlightSvg>
                             </LayoutColumn>,
                             <LayoutColumn>

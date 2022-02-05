@@ -61,7 +61,7 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                     fillOpacity=".87059"
                     fillRule="evenodd"
                     strokeWidth=".6404"
-                    >
+                >
                     <rect
                         id="stripe-background_c"
                         transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
@@ -69,7 +69,7 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                         y="635.7"
                         width="1578.7"
                         height="94.453"
-                        />
+                    />
                     <rect
                         id="stripe-background_d"
                         transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
