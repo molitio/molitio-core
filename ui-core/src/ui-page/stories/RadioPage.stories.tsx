@@ -36,10 +36,6 @@ const meta: Meta = {
     title: 'molitio-core/Pages/Radio Page',
     component: RadioPage,
     argTypes: {
-        table: {
-            summary: 'ThemeNameTags',
-            defaultValue: { summary: `${ThemeNameTags.BLACK_YELLOW}` },
-        },
         themeName: {
             control: { type: 'select', options: [ThemeNameTags.BLACK_YELLOW, ThemeNameTags.TEAM_JAMAICA] },
         },
