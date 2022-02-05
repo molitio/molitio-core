@@ -19,7 +19,7 @@ const storyArgs: RadioPageProps & StyledThemeProps = {
             url={
                 'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_new_logo2.svg'
             }
-            opacity={0.8}
+            opacity={0.9}
         />
     ),
     socialButtons: [
