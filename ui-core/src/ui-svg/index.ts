@@ -1,7 +1,20 @@
-export { FlatColorSvg } from './component/FlatColorSvg';
-export { PlayButtonSvg } from './component/PlayButtonSvg';
-export { StripesSvg } from './component/StripesSvg';
-export { LogoFreshPrintSvg } from './component/LogoFreshPrintSvg';
-export { CircleGradientHighlightSvg } from './component/CircleGradientHighlightSvg';
-export { CirclePattern } from './component/CirclePattern';
-export type { CirclePatternProps } from './interface/CirclePatternProps';
+/*
+branding
+*/
+
+export { LogoFreshPrintSvg } from './branding/components/LogoFreshPrintSvg';
+export { LogoSenseRadioSvg } from './branding/components/LogoSenseRadioSvg';
+
+/*
+common  
+*/
+
+export { FlatColorSvg } from './common/component/FlatColorSvg';
+export { PlayButtonSvg } from './common/component/PlayButtonSvg';
+export { StripesSvg } from './common/component/StripesSvg';
+export { CircleGradientHighlightSvg } from './common/component/CircleGradientHighlightSvg';
+export { CirclePattern } from './common/component/CirclePattern';
+export { SvgEmbeddedHtml } from './common/component/SvgEmbeddedHtml';
+export { SpeakerBackgroundSvg } from './common/component/SpeakerBackgroundSvg';
+export type { CirclePatternProps } from './common/interface/CirclePatternProps';
+export type { SvgEmbeddedHtmlProps } from './common/interface/SvgEmbeddedHtmlProps';

@@ -2,8 +2,8 @@ import { Story, Meta } from '@storybook/react';
 import { RadioPage, RadioPageProps } from 'ui-page';
 import { ComponentGroupTags, ThemeNameTags } from 'ui-core-models';
 import { StyledThemeProps } from 'ui-context';
-import { LogoFreshPrintSvg, PlayButtonSvg } from 'ui-svg';
-import { ComponentGroup, AppShell, Logo } from 'ui-common';
+import { LogoFreshPrintSvg, LogoSenseRadioSvg, PlayButtonSvg, SpeakerBackgroundSvg } from 'ui-svg';
+import { ComponentGroup, AppShell } from 'ui-common';
 import { StripedBackground } from 'ui-background';
 
 const storyArgs: RadioPageProps & StyledThemeProps = {
@@ -12,16 +12,14 @@ const storyArgs: RadioPageProps & StyledThemeProps = {
         playUrl:
             'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',
     },
-    playButton: <PlayButtonSvg dimensions={{ width: '30vw', height: '30vh' }} />,
-    background: <StripedBackground />,
-    logo: (
-        <Logo
-            url={
-                'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_new_logo2.svg'
-            }
-            opacity={0.9}
-        />
+    playButton: (
+        <SpeakerBackgroundSvg
+            dimensions={{ width: '60vw' }}
+            centerItem={<PlayButtonSvg dimensions={{ width: '5vw'}} />}
+        ></SpeakerBackgroundSvg>
     ),
+    background: <StripedBackground />,
+    logo: <LogoSenseRadioSvg dimensions={{ width: '30vw' }} />,
     socialButtons: [
         <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX}>
             <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />

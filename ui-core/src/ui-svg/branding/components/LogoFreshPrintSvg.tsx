@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { SvgComponentProps } from '../interface/SvgComponentProps';
+import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 
 export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     const style = createUseStyles({
