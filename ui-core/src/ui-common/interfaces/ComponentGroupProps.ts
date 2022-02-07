@@ -4,4 +4,6 @@ import { ShapeDimensions } from 'ui-svg';
 export interface ComponentGroupProps {
     groupingType: ComponentGroupTags;
     dimensions?: ShapeDimensions;
+    itemGap?: string;
+    itemPadding?: string;
 }

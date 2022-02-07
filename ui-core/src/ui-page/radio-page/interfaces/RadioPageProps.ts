@@ -6,4 +6,5 @@ export interface RadioPageProps {
     logo?: JSX.Element;
     socialButtons?: JSX.Element[];
     radio: TUniversalRadio;
+    pageFooter?: JSX.Element;
 }

@@ -15,22 +15,34 @@ export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
                 case ComponentGroupTags.GRID:
                     return {
                         ...theme.gridGroup,
+                        gap: props.itemGap,
+                        padding: props.itemPadding,
                     };
                 case ComponentGroupTags.VERTICAL_FLEX:
                     return {
                         ...theme.verticalGroup,
+                        gap: props.itemGap,
+                        justifyContent: 'center',
+                        //border: '3px dashed purple',
                         '& > *': {
+                            //border: '3px dashed purple',
                             flex: 1,
                             width: props.dimensions?.width,
+                            padding: props.itemPadding,
                         },
                     };
                 case ComponentGroupTags.HORIZONTAL_FLEX:
                     return {
                         ...theme.horizontalGroup,
+                        gap: props.itemGap,
+                        //border: '3px dashed purple',
                         justifyContent: 'center',
+                        alignItems: 'center',
                         '& > *': {
+                            //border: '3px dashed purple',
                             flex: 1,
                             height: props.dimensions?.height,
+                            padding: props.itemPadding,
                         },
                     };
                 default:

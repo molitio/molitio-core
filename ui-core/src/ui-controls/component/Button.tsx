@@ -6,12 +6,12 @@ import { ButtonProps } from '../interface/ButtonProps';
 
 export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLDivElement>> = ({ ...props }) => {
     let buttonStyleRounded = {
-        border: '1px solid blue',
+        border: 0,
         borderRadius: '16px',
         cursor: 'pointer',
     };
     let buttonStyleRectangle = {
-        border: '1px solid blue',
+        border: 0,
         cursor: 'pointer',
     };
 

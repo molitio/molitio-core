@@ -7,7 +7,8 @@ export const StripedBackground: React.FC = () => {
         componentContainer: {
             position: 'fixed',
             height: '100vh',
-            width: '100vw',
+            minWidth: '100%',
+            zIndex: -100,
             pointerEvents: 'none',
         },
     }).apply({});

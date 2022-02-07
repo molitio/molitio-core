@@ -1,7 +1,9 @@
-html {
+* {
     margin: 0;
     padding: 0;
-    font-size: 17px;
+}
+html {
+    font-size: 16px;
 }
 @media (max-width: 900px) {
     html {
@@ -12,4 +14,9 @@ html {
     html {
         font-size: 13px;
     }
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
 }
