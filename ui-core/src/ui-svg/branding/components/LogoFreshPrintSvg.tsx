@@ -6,8 +6,8 @@ export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = ({ ...props }) => 
     const style = createUseStyles({
         svg: {
             /* position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'absolute', */
-            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions.width,
+            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height,
+            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width,
             pointerEvents: 'none',
         },
     }).apply({});

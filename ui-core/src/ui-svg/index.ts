@@ -18,3 +18,4 @@ export { SvgEmbeddedHtml } from './common/component/SvgEmbeddedHtml';
 export { SpeakerBackgroundSvg } from './common/component/SpeakerBackgroundSvg';
 export type { CirclePatternProps } from './common/interface/CirclePatternProps';
 export type { SvgEmbeddedHtmlProps } from './common/interface/SvgEmbeddedHtmlProps';
+export type { ShapeDimensions } from './common/interface/ShapeDimensions';

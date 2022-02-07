@@ -14,20 +14,20 @@ const storyArgs: RadioPageProps & StyledThemeProps = {
     },
     playButton: (
         <SpeakerBackgroundSvg
-            dimensions={{ width: '60vw' }}
-            centerItem={<PlayButtonSvg dimensions={{ width: '5vw'}} />}
+            dimensions={{ height: '74vh' }}
+            centerItem={<PlayButtonSvg dimensions={{ height: '25%' }} />}
         ></SpeakerBackgroundSvg>
     ),
-    background: <StripedBackground />,
-    logo: <LogoSenseRadioSvg dimensions={{ width: '30vw' }} />,
+    logo: <LogoSenseRadioSvg dimensions={{ height: '16vh' }} />,
     socialButtons: [
-        <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX}>
-            <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
-            <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
-            <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
-            <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
+        <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} dimensions={{ height: '1rem' }}>
+            <LogoFreshPrintSvg dimensions={{ width: '100%' }} />
+            <LogoFreshPrintSvg dimensions={{ width: '100%' }} />
+            <LogoFreshPrintSvg dimensions={{ width: '100%' }} />
+            <LogoFreshPrintSvg dimensions={{ width: '100%' }} />
         </ComponentGroup>,
     ],
+    background: <StripedBackground />,
 };
 
 const meta: Meta = {

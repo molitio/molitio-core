@@ -17,7 +17,7 @@ export const RadioPage: React.FC<RadioPageProps & StyledThemeProps> = ({ ...prop
         logo: {
             position: 'absolute',
             top: '10vh',
-            left: '10vw',
+            left: '16vw',
             /*     width: '30vw',
             height: '20vh', */
             border: '1px solid purple',
@@ -28,19 +28,19 @@ export const RadioPage: React.FC<RadioPageProps & StyledThemeProps> = ({ ...prop
                 /* border: '3px solid purple', */
             },
         },
+        pageHeader: {},
         socialButtons: {
             position: 'absolute',
             top: '10vh',
-            right: '0vw',
-            width: '40vw',
+            right: '16vw',
             zIndex: 90,
             '& > *': {
-                top: 0,
+                /*   top: 0,
                 left: 0,
-                position: 'relative',
                 height: '100%',
-                width: '100%',
-                /* border: '3px solid purple', */
+                position: 'relative', 
+                width: '100%', */
+                border: '3px solid purple',
             },
         },
         contentContainer: {
@@ -59,8 +59,10 @@ export const RadioPage: React.FC<RadioPageProps & StyledThemeProps> = ({ ...prop
 
     return (
         <main className={style.pageContainer}>
-            <div className={style.logo}>{props.logo}</div>
-            <div className={style.socialButtons}>{props.socialButtons}</div>
+            <div className={style.pageHeader}>
+                <div className={style.logo}>{props.logo}</div>
+                <div className={style.socialButtons}>{props.socialButtons}</div>
+            </div>
             <div className={style.contentContainer}>
                 <div className={style.content}>
                     <AudioPlayerContextProvider>

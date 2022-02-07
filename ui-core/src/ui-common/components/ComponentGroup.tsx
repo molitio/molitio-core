@@ -6,6 +6,10 @@ import { StyledThemeContext } from 'ui-context';
 
 export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
     const style = createUseStyles((theme: StyledThemeContext) => ({
+        dimensions: {
+            width: props.dimensions?.width,
+            height: props.dimensions?.height,
+        },
         position: () => {
             switch (props.groupingType) {
                 case ComponentGroupTags.GRID:
@@ -19,13 +23,21 @@ export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
                 case ComponentGroupTags.HORIZONTAL_FLEX:
                     return {
                         ...theme.horizontalGroup,
+                        alignItems: 'center',
+                        '& > *': {
+                            //flex: 1,
+                        },
                     };
                 default:
                     return {};
             }
         },
-        backGroundStyle: { backgroundColor: theme.backgroundColor },
+        backGroundStyle: {
+            backgroundColor: 'rgba(0, 0, 0, 0.0)',
+
+            /* backgroundColor: theme.backgroundColor */
+        },
     })).apply({});
 
-    return <div className={`${style.position}${style.backGroundStyle}`}>{props.children}</div>;
+    return <div className={`${style.position} ${style.backGroundStyle} ${style.dimensions}`}>{props.children}</div>;
 };

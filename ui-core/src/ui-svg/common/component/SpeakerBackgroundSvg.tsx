@@ -8,8 +8,8 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
     const style = createUseStyles({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
-            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions.width,
+            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height,
+            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width,
             pointerEvents: 'none',
            /*  border: '1px solid purple', */
         },
