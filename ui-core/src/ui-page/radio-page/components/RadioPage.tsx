@@ -11,48 +11,51 @@ export const RadioPage: React.FC<RadioPageProps & StyledThemeProps> = ({ ...prop
             width: '100vw',
             height: '100vh',
             position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
             margin: 0,
             pointerEvents: 'none',
         },
-        logo: {
-            position: 'absolute',
-            top: '10vh',
-            left: '16vw',
-            /*     width: '30vw',
-            height: '20vh', */
-            border: '1px solid purple',
+        pageHeader: {
+            display: 'flex',
             zIndex: 90,
             '& > *': {
-                height: '100%',
-                width: '100%',
-                /* border: '3px solid purple', */
+           /*      border: '1px solid purple', */
             },
         },
-        pageHeader: {},
+        logo: {
+            paddingTop: '10vh',
+            paddingLeft: '10vw',
+            /*     width: '30vw',
+            height: '20vh', */
+            /* zIndex: 90, */
+            '& > *': {
+                /*        height: '100%',
+                width: '100%', */
+            },
+        },
+        spacer: {
+            flex: 1,
+        },
         socialButtons: {
-            position: 'absolute',
-            top: '10vh',
-            right: '16vw',
-            zIndex: 90,
+            paddingTop: '10vh',
+            paddingRight: '10vw',
             '& > *': {
                 /*   top: 0,
                 left: 0,
                 height: '100%',
                 position: 'relative', 
                 width: '100%', */
-                border: '3px solid purple',
             },
         },
         contentContainer: {
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
+            flex: 1,
             alignItems: 'center',
             justifyContent: 'center',
             display: 'flex',
         },
         content: {
-            marginTop: '10vh',
+            marginTop: '-10vh',
             zIndex: 100,
         },
     }).apply({});
@@ -61,6 +64,7 @@ export const RadioPage: React.FC<RadioPageProps & StyledThemeProps> = ({ ...prop
         <main className={style.pageContainer}>
             <div className={style.pageHeader}>
                 <div className={style.logo}>{props.logo}</div>
+                <div className={style.spacer}></div>
                 <div className={style.socialButtons}>{props.socialButtons}</div>
             </div>
             <div className={style.contentContainer}>

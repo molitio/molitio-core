@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import { RadioPage, RadioPageProps } from 'ui-page';
 import { ComponentGroupTags, ThemeNameTags } from 'ui-core-models';
 import { StyledThemeProps } from 'ui-context';
-import { LogoFreshPrintSvg, LogoSenseRadioSvg, PlayButtonSvg, SpeakerBackgroundSvg } from 'ui-svg';
+import { LogoSenseRadioSvg, PlayButtonSvg, SocialButtonsSvg, SpeakerBackgroundSvg } from 'ui-svg';
 import { ComponentGroup, AppShell } from 'ui-common';
 import { StripedBackground } from 'ui-background';
 
@@ -20,11 +20,8 @@ const storyArgs: RadioPageProps & StyledThemeProps = {
     ),
     logo: <LogoSenseRadioSvg dimensions={{ height: '16vh' }} />,
     socialButtons: [
-        <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} dimensions={{ height: '1rem' }}>
-            <LogoFreshPrintSvg dimensions={{ width: '100%' }} />
-            <LogoFreshPrintSvg dimensions={{ width: '100%' }} />
-            <LogoFreshPrintSvg dimensions={{ width: '100%' }} />
-            <LogoFreshPrintSvg dimensions={{ width: '100%' }} />
+        <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} dimensions={{ height: '8vh', width: '24vw' }}>
+            <SocialButtonsSvg />
         </ComponentGroup>,
     ],
     background: <StripedBackground />,

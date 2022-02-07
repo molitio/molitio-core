@@ -5,10 +5,11 @@ import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     const style = createUseStyles({
         svg: {
-            /* position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'absolute', */
-            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width,
+            position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
+            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
+            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
             pointerEvents: 'none',
+           // border: '1px solid yellow',
         },
     }).apply({});
 
@@ -18,8 +19,8 @@ export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = ({ ...props }) => 
             className={style.svg}
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            width="80"
-            height="400"
+            width="100"
+            height="100"
             viewBox="0, 0, 400,400"
         >
             <g id="svgg">

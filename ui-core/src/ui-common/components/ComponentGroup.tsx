@@ -6,9 +6,9 @@ import { StyledThemeContext } from 'ui-context';
 
 export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
     const style = createUseStyles((theme: StyledThemeContext) => ({
-        dimensions: {
-            width: props.dimensions?.width,
+        container: {
             height: props.dimensions?.height,
+            width: props.dimensions?.width,
         },
         position: () => {
             switch (props.groupingType) {
@@ -19,13 +19,18 @@ export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
                 case ComponentGroupTags.VERTICAL_FLEX:
                     return {
                         ...theme.verticalGroup,
+                        '& > *': {
+                            flex: 1,
+                            width: props.dimensions?.width,
+                        },
                     };
                 case ComponentGroupTags.HORIZONTAL_FLEX:
                     return {
                         ...theme.horizontalGroup,
-                        alignItems: 'center',
+                        justifyContent: 'center',
                         '& > *': {
-                            //flex: 1,
+                            flex: 1,
+                            height: props.dimensions?.height,
                         },
                     };
                 default:
@@ -39,5 +44,5 @@ export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
         },
     })).apply({});
 
-    return <div className={`${style.position} ${style.backGroundStyle} ${style.dimensions}`}>{props.children}</div>;
+    return <div className={`${style.container} ${style.position} ${style.backGroundStyle}`}>{props.children}</div>;
 };

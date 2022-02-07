@@ -4,6 +4,8 @@ branding
 
 export { LogoFreshPrintSvg } from './branding/components/LogoFreshPrintSvg';
 export { LogoSenseRadioSvg } from './branding/components/LogoSenseRadioSvg';
+export { SocialButtonsSvg } from './branding/components/SocialButtonsSvg';
+
 
 /*
 common  
