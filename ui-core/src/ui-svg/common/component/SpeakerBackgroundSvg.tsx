@@ -46,9 +46,9 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
                 gradientTransform="rotate(90 50.5 50.501)"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop id="playc" stop-color="#858181" offset="0" />
-                <stop id="playd" stop-color="#2A2A2A" offset=".2781" />
-                <stop id="playe" stop-color="#2A2A2A" offset="1" />
+                <stop id="playc" stopColor="#858181" offset="0" />
+                <stop id="playd" stopColor="#2A2A2A" offset=".2781" />
+                <stop id="playe" stopColor="#2A2A2A" offset="1" />
             </linearGradient>
             <circle id="playf" className={style.st1} cx="50" cy="50" r="36.2" />
             <linearGradient
@@ -60,9 +60,9 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
                 gradientTransform="rotate(-90 49.499 50.5)"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop id="playg" stop-color="#858181" offset="0" />
-                <stop id="playh" stop-color="#2A2A2A" offset=".2781" />
-                <stop id="playi" stop-color="#2A2A2A" offset="1" />
+                <stop id="playg" stopColor="#858181" offset="0" />
+                <stop id="playh" stopColor="#2A2A2A" offset=".2781" />
+                <stop id="playi" stopColor="#2A2A2A" offset="1" />
             </linearGradient>
             <circle id="playj" className={style.st2} cx="50" cy="50" r="31.2" />
             <circle id="playk" className={style.st0} cx="50" cy="50" r="25.6" />

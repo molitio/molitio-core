@@ -20,17 +20,17 @@ export const SocialButtonsSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             id="playa"
             width="400pt"
             height="100pt"
-            clip-rule="evenodd"
-            fill-rule="evenodd"
-            image-rendering="optimizeQuality"
-            shape-rendering="geometricPrecision"
-            text-rendering="geometricPrecision"
+            clipRule="evenodd"
+            fillRule="evenodd"
+            imageRendering="optimizeQuality"
+            shapeRendering="geometricPrecision"
+            textRendering="geometricPrecision"
             version="1.1"
             viewBox="0 0 400 100"
             xmlns="http://www.w3.org/2000/svg"
         >
             <defs id="playb"></defs>
-            <g id="playd" stroke-width="2.8779">
+            <g id="playd" strokeWidth="2.8779">
                 <path
                     id="playe"
                     className={style.fil0}

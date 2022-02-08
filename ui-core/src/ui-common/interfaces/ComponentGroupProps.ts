@@ -6,4 +6,6 @@ export interface ComponentGroupProps {
     dimensions?: ShapeDimensions;
     itemGap?: string;
     itemPadding?: string;
+    fontColor?: string;
+    fontSize?: string;
 }

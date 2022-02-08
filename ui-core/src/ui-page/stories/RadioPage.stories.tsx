@@ -2,7 +2,15 @@ import { Story, Meta } from '@storybook/react';
 import { RadioPage, RadioPageProps } from 'ui-page';
 import { ComponentGroupTags, StyleVariant, ThemeNameTags } from 'ui-core-models';
 import { StyledThemeProps } from 'ui-context';
-import { LogoFreshPrintSvg, LogoSenseRadioSvg, PlayButtonSvg, SocialButtonsSvg, SpeakerBackgroundSvg } from 'ui-svg';
+import {
+    LogoFreshPrintSvg,
+    LogoLedArtSvg,
+    LogoNestMediaSvg,
+    LogoSenseRadioSvg,
+    PlayButtonSvg,
+    SocialButtonsSvg,
+    SpeakerBackgroundSvg,
+} from 'ui-svg';
 import { ComponentGroup, AppShell } from 'ui-common';
 import { StripedBackground } from 'ui-background';
 import { Button } from 'ui-controls';
@@ -33,14 +41,26 @@ const storyArgs: RadioPageProps & StyledThemeProps = {
             itemPadding="15px"
         >
             <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX}>
-                <LogoFreshPrintSvg dimensions={{ height: '10vh' }} />
-                <LogoFreshPrintSvg dimensions={{ height: '10vh' }} />
-                <LogoFreshPrintSvg dimensions={{ height: '10vh' }} />
+                <LogoFreshPrintSvg dimensions={{ height: '8vh' }} />
+                <LogoLedArtSvg dimensions={{ height: '8vh' }} />
+                <LogoNestMediaSvg dimensions={{ height: '8vh' }} />
             </ComponentGroup>
-            <ComponentGroup groupingType={ComponentGroupTags.VERTICAL_FLEX}>
-                <span>egy</span>
-                <span>ketto</span>
-                <span>harom</span>
+            <ComponentGroup
+                groupingType={ComponentGroupTags.VERTICAL_FLEX}
+                fontColor="#6D6E72"
+                fontSize="0.8rem"
+                itemPadding="2px"
+            >
+                <span>
+                    Tel/Viber: +36 30 277 3939
+                    <br />
+                    Email: hello@radiosense.hu
+                </span>
+                <span>
+                    © 2021 Radio Sense Hungary. All rights reserved.
+                    <br />
+                    by nestmedia
+                </span>
             </ComponentGroup>
             <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} itemPadding="1rem">
                 <Button styleVariant={StyleVariant.ROUNDED}>egy</Button>

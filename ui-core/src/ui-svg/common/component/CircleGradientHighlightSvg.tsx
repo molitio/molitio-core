@@ -8,8 +8,8 @@ export const CircleGradientHighlightSvg: React.FC<SvgComponentProps> = ({ ...pro
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
-            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions.width,
+            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height,
+            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width,
             pointerEvents: 'none',
         },
         gradientRect: {
@@ -39,9 +39,9 @@ export const CircleGradientHighlightSvg: React.FC<SvgComponentProps> = ({ ...pro
         >
             <defs id="gradient-defs">
                 <radialGradient id="gradient-fill" cx="400" cy="400" r="420" gradientUnits="userSpaceOnUse">
-                    <stop id="gradient-stop-0" stop-color="black" stop-opacity=".0" offset="0" />
-                    {/*  <stop id="gradient-stop-1" stop-color="cyan" stop-opacity=".9" offset="42%" /> */}
-                    <stop id="gradient-stop-2" stop-color="black" stop-opacity=".9" offset="100%" />
+                    <stop id="gradient-stop-0" stopColor="black" stop-opacity=".0" offset="0" />
+                    {/*  <stop id="gradient-stop-1" stopColor="cyan" stop-opacity=".9" offset="42%" /> */}
+                    <stop id="gradient-stop-2" stopColor="black" stop-opacity=".9" offset="100%" />
                 </radialGradient>
             </defs>
             <g id="rect-0">

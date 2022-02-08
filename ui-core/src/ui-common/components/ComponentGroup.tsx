@@ -16,13 +16,18 @@ export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
                     return {
                         ...theme.gridGroup,
                         gap: props.itemGap,
+                        color: props.fontColor,
+                        fontSize: props.fontSize,
                         padding: props.itemPadding,
                     };
                 case ComponentGroupTags.VERTICAL_FLEX:
                     return {
                         ...theme.verticalGroup,
                         gap: props.itemGap,
+                        color: props.fontColor,
+                        fontSize: props.fontSize,
                         justifyContent: 'center',
+                        alignContent: 'center',
                         //border: '3px dashed purple',
                         '& > *': {
                             //border: '3px dashed purple',
@@ -35,8 +40,11 @@ export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
                     return {
                         ...theme.horizontalGroup,
                         gap: props.itemGap,
+                        color: props.fontColor,
+                        fontSize: props.fontSize,
                         //border: '3px dashed purple',
                         justifyContent: 'center',
+                        textAlign: 'center',
                         alignItems: 'center',
                         '& > *': {
                             //border: '3px dashed purple',
