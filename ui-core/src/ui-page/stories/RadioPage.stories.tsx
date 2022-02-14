@@ -85,7 +85,7 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<RadioPageProps & StyledThemeProps> = (args) => (
-    <AppShell themeName={ThemeNameTags.BLACK_YELLOW}>
+    <AppShell themeName={ThemeNameTags.BLACK_YELLOW} applyGlobalStyleRules>
         <RadioPage {...args}></RadioPage>
     </AppShell>
 );

@@ -2,6 +2,52 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AppShellProps } from '../interfaces/AppShellProps';
 import { StyledThemeContextProvider } from 'ui-context';
+/* 
+const defaultStyles = {
+        '@global': {
+        '*': {
+            margin: 0,
+            padding: 0,
+            boxSizing: 'border-box',
+        },
+        html: {
+            fontSize: '16px',
+            overflowY: 'hidden',
+            overflowX: 'hidden',
+        },
+        '@media (max-width: 900px)': {
+            html: {
+                fontSize: '15px',
+            },
+        },
+        '@media (max-width: 400px)': {
+            html: {
+                fontSize: '13px',
+            },
+        },
+        body: {
+            width: '100%',
+            minHeight: '100vh',
+        },
+    },
+    '@global': {
+        '*': {
+        },
+        html: {
+        },
+        '@media (max-width: 900px)': {
+            html: {
+            },
+        },
+        '@media (max-width: 400px)': {
+            html: {
+            },
+        },
+        body: {
+        },
+    }, 
+};
+*/
 
 const globalStyles = {
     '@global': {
@@ -29,28 +75,20 @@ const globalStyles = {
             width: '100%',
             minHeight: '100vh',
         },
+    },
+};
 
-        'body::-webkit-scrollbar': {
-            /*               width: '7px', */
-        },
-        '::-webkit-scrollbar': {
-            /*             '-webkit-appearance': 'none',
-                        width: '7px', */
-        },
-        '::-webkit-scrollbar-thumb': {
-            /*        borderRadius: '4px',
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        '-webkit-box-shadow': '0 0 1px rgba(255, 255, 255, 0.5)', */
-        },
+const shellMain = {
+    shellMain: {
+        border: '3px dashed purple',
     },
 };
 
 export const AppShell: React.FC<AppShellProps> = ({ ...props }) => {
+    const styleOverrides = props.applyGlobalStyleRules ? globalStyles : {};
     const classes = createUseStyles({
-        shellMain: {
-            border: '3px dashed purple',
-        },
-        ...globalStyles,
+        ...shellMain,
+        ...styleOverrides,
     }).apply({});
 
     //Implement content tree, be able to define content sections
