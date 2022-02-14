@@ -16,7 +16,7 @@ export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = ({ ...props }) => 
 
     return (
         <svg
-            id="playa"
+            id="logo-fressprint"
             className={style.svg}
             clipRule="evenodd"
             fillRule="evenodd"

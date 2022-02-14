@@ -28,7 +28,7 @@ export const LogoSenseRadioSvg: React.FC<SvgComponentProps> = ({ ...props }) => 
     }).apply({});
 
     return (
-        <svg id="playa" className={style.svg} version="1.1" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+        <svg id="logo-senseradio" className={style.svg} version="1.1" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
             <polygon
                 id="playc"
                 className={style.st0}

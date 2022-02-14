@@ -4,10 +4,10 @@ import { StyleVariant } from 'ui-core-models';
 import { StyledThemeContext } from 'ui-context';
 import { ButtonProps } from '../interface/ButtonProps';
 
-export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLDivElement>> = ({ ...props }) => {
+export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = ({ ...props }) => {
     let buttonStyleRounded = {
         border: 0,
-        borderRadius: '16px',
+        borderRadius: '6px',
         cursor: 'pointer',
     };
     let buttonStyleRectangle = {
@@ -28,7 +28,7 @@ export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLDivElement>
 
     const style = createUseStyles((theme: StyledThemeContext) => ({
         buttonStyle: {
-            padding: '8px',
+            padding: props.padding,
             backgroundColor: theme.primary,
             color: theme.secondary,
             ...getVariantStyle(),

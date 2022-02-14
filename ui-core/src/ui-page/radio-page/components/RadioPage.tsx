@@ -18,15 +18,20 @@ export const RadioPage: React.FC<RadioPageProps & StyledThemeProps> = ({ ...prop
             zIndex: 90,
         },
         logo: {
-            paddingTop: '6vh',
-            paddingLeft: '10vw',
+            paddingTop: '4vh',
+            paddingLeft: '8vw',
         },
         spacer: {
             flex: 1,
         },
         socialButtons: {
-            paddingTop: '6vh',
-            paddingRight: '10vw',
+            paddingTop: '4vh',
+            paddingRight: '8vw',
+            display: 'flex',
+            justifyContent: 'flex-end',
+            '& > *': {
+                // border: '1px dashed purple',
+            },
         },
         contentContainer: {
             flex: 1,
@@ -39,13 +44,21 @@ export const RadioPage: React.FC<RadioPageProps & StyledThemeProps> = ({ ...prop
             zIndex: 100,
         },
         pageFooter: {
+            display: 'flex',
             zIndex: 90,
+            minHeight: '12vh',
             backgroundColor: theme.backgroundColor,
+            '& > *': {
+                flex: 1,
+                marginTop: '0.8rem',
+                marginLeft: '10vw',
+                marginRight: '10vw',
+            },
         },
     })).apply({});
 
     return (
-        <main className={style.pageContainer}>
+        <div className={style.pageContainer}>
             <div className={style.pageHeader}>
                 <div className={style.logo}>{props.logo}</div>
                 <div className={style.spacer}></div>
@@ -61,6 +74,6 @@ export const RadioPage: React.FC<RadioPageProps & StyledThemeProps> = ({ ...prop
             </div>
             <div className={style.pageFooter}>{props.pageFooter}</div>
             {props.background}
-        </main>
+        </div>
     );
 };

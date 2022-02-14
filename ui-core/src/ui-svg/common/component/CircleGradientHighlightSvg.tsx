@@ -35,7 +35,7 @@ export const CircleGradientHighlightSvg: React.FC<SvgComponentProps> = ({ ...pro
             viewBox="0 0 800 800"
             /*  viewBox="0 0 600 800" */
             xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
+            xmlnsXlink="http://www.w3.org/2000/xlink"
         >
             <defs id="gradient-defs">
                 <radialGradient id="gradient-fill" cx="400" cy="400" r="420" gradientUnits="userSpaceOnUse">
@@ -56,9 +56,11 @@ export const CircleGradientHighlightSvg: React.FC<SvgComponentProps> = ({ ...pro
                     opacity=".5"
                 />
             </g>
-            <foreignObject x="200" y="200" width="400" height="400">
-                <SvgEmbeddedHtml xmlns="http://www.w3.org/1999/xhtml">{props.children}</SvgEmbeddedHtml>
-            </foreignObject>
+            <g>
+                <SvgEmbeddedHtml x="200" y="200" width="400" height="400">
+                    {props.children}
+                </SvgEmbeddedHtml>
+            </g>
         </svg>
     );
 };

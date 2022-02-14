@@ -26,8 +26,8 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
                 themeName: 'testTheme01',
                 primary: '#f6c339',
                 secondary: 'black',
-                backgroundColor: '#363636',
-                secondaryBackgroundColor: '#2b2b2b',
+                backgroundColor: '#2b2b2b',
+                secondaryBackgroundColor: '#363636',
 
                 interactiveHighlight: {
                     ...YellowHighlight,

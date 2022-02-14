@@ -9,5 +9,5 @@ export const MultiColumnPage: React.FC<MultiColumnPageProps> = ({ ...props }) =>
         },
     }).apply({});
 
-    return <main className={style.pageBackground}>{props.pageSections.map((section) => section.element)}</main>;
+    return <div className={style.pageBackground}>{props.pageSections.map((section) => section.element)}</div>;
 };

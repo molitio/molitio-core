@@ -17,9 +17,8 @@ export const SocialButtonsSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
 
     return (
         <svg
-            id="playa"
-            width="400pt"
-            height="100pt"
+            id="logo-socialbuttons"
+            className={style.svg}
             clipRule="evenodd"
             fillRule="evenodd"
             imageRendering="optimizeQuality"
@@ -29,7 +28,6 @@ export const SocialButtonsSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             viewBox="0 0 400 100"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <defs id="playb"></defs>
             <g id="playd" strokeWidth="2.8779">
                 <path
                     id="playe"

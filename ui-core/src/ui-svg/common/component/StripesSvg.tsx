@@ -8,13 +8,13 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
-            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions.width,
+            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height,
+            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width,
             pointerEvents: 'auto',
         },
         stripes: {
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions.width,
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions.height,
+            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
+            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
             '& rect': {
                 fill: theme.secondaryBackgroundColor,
             },
@@ -23,8 +23,8 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             },
         },
         stripesBackground: {
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions.width,
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions.height,
+            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
+            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
             '& rect': {
                 fill: theme.backgroundColor,
             },

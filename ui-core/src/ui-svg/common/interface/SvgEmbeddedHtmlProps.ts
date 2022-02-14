@@ -1,3 +1,6 @@
 export interface SvgEmbeddedHtmlProps {
-    xmlns: string;
+    x: string;
+    y: string;
+    height: string;
+    width: string;
 }

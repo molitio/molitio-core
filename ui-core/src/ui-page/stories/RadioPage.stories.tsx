@@ -5,6 +5,7 @@ import { StyledThemeProps } from 'ui-context';
 import {
     LogoFreshPrintSvg,
     LogoLedArtSvg,
+    LogoListenNowSvg,
     LogoNestMediaSvg,
     LogoSenseRadioSvg,
     PlayButtonSvg,
@@ -23,22 +24,19 @@ const storyArgs: RadioPageProps & StyledThemeProps = {
     },
     playButton: (
         <SpeakerBackgroundSvg
-            dimensions={{ height: '64vh' }}
-            centerItem={<PlayButtonSvg dimensions={{ height: '25%' }} />}
+            dimensions={{ height: '300pt', width: '300pt' }}
+            playAreaIcon={<LogoListenNowSvg dimensions={{ height: '8pt', width: '20pt' }} />}
+            centerItem={<PlayButtonSvg dimensions={{ height: '20pt', width: '40pt' }} />}
         ></SpeakerBackgroundSvg>
     ),
-    logo: <LogoSenseRadioSvg dimensions={{ height: '14vh' }} />,
-    socialButtons: [
-        <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} dimensions={{ height: '6vh', width: '24vw' }}>
-            <SocialButtonsSvg />
-        </ComponentGroup>,
-    ],
+    logo: <LogoSenseRadioSvg dimensions={{ height: '6rem' }} />,
+    socialButtons: <SocialButtonsSvg dimensions={{ height: '3rem' }} />,
     background: <StripedBackground />,
     pageFooter: (
         <ComponentGroup
             groupingType={ComponentGroupTags.HORIZONTAL_FLEX}
-            dimensions={{ height: '12vh' }}
-            itemPadding="15px"
+            dimensions={{ height: '10vh' }}
+            itemPadding="0.8rem"
         >
             <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX}>
                 <LogoFreshPrintSvg dimensions={{ height: '8vh' }} />
@@ -49,7 +47,7 @@ const storyArgs: RadioPageProps & StyledThemeProps = {
                 groupingType={ComponentGroupTags.VERTICAL_FLEX}
                 fontColor="#6D6E72"
                 fontSize="0.8rem"
-                itemPadding="2px"
+                itemPadding="0.2rem"
             >
                 <span>
                     Tel/Viber: +36 30 277 3939
@@ -62,9 +60,13 @@ const storyArgs: RadioPageProps & StyledThemeProps = {
                     by nestmedia
                 </span>
             </ComponentGroup>
-            <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} itemPadding="1rem">
-                <Button styleVariant={StyleVariant.ROUNDED}>egy</Button>
-                <Button styleVariant={StyleVariant.ROUNDED}>ketto</Button>
+            <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} itemGap="1rem">
+                <Button styleVariant={StyleVariant.ROUNDED} padding="0.5rem">
+                    MYONLINE RADIO
+                </Button>
+                <Button styleVariant={StyleVariant.ROUNDED} padding="0.5rem">
+                    ONLINE STREAM
+                </Button>
             </ComponentGroup>
         </ComponentGroup>
     ),

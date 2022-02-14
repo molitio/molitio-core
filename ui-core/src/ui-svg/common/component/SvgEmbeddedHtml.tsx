@@ -1,8 +1,16 @@
 import React from 'react';
 import { SvgEmbeddedHtmlProps } from '../interface/SvgEmbeddedHtmlProps';
 
-export const SvgEmbeddedHtml: React.FC<SvgEmbeddedHtmlProps & React.HTMLAttributes<HTMLDivElement>> = ({
-    ...props
-}) => {
-    return <div {...props}>{props.children}</div>;
+export const SvgEmbeddedHtml: React.FC<
+    SvgEmbeddedHtmlProps & React.HTMLAttributes<HTMLDivElement> & React.HTMLAttributes<SVGElement>
+> = ({ ...props }) => {
+    const xmlProps = {
+        xmlns: 'http://www.w3.org/2000/xhtml',
+        xmlnsXlink: 'http://www.w3.org/2000/xlink',
+    };
+    return (
+        <foreignObject x={props.x} y={props.y} width={props.width} height={props.height}>
+            <div {...xmlProps}>{props.children}</div>
+        </foreignObject>
+    );
 };

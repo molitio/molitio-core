@@ -7,6 +7,7 @@ export { LogoSenseRadioSvg } from './branding/components/LogoSenseRadioSvg';
 export { LogoLedArtSvg } from './branding/components/LogoLedArtSvg';
 export { LogoNestMediaSvg } from './branding/components/LogoNestMediaSvg';
 export { SocialButtonsSvg } from './branding/components/SocialButtonsSvg';
+export { LogoListenNowSvg } from './branding/components/LogoListenNowSvg';
 
 /*
 common  

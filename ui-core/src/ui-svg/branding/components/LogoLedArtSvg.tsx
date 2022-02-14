@@ -15,7 +15,7 @@ export const LogoLedArtSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
 
     return (
         <svg
-            id="playa"
+            id="logo-ledart"
             className={style.svg}
             clipRule="evenodd"
             fillRule="evenodd"

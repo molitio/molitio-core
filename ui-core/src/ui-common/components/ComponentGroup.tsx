@@ -24,6 +24,7 @@ export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
                     return {
                         ...theme.verticalGroup,
                         gap: props.itemGap,
+                        padding: props.itemPadding,
                         color: props.fontColor,
                         fontSize: props.fontSize,
                         justifyContent: 'center',
@@ -40,6 +41,7 @@ export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
                     return {
                         ...theme.horizontalGroup,
                         gap: props.itemGap,
+                        padding: props.itemPadding,
                         color: props.fontColor,
                         fontSize: props.fontSize,
                         //border: '3px dashed purple',

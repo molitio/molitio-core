@@ -20,10 +20,10 @@ export const MultiColumnLayout: React.FC<MultiColumnLayoutProps> = ({ ...props }
     }).apply({});
 
     return (
-        <main className={`${style.landing}`}>
+        <div className={`${style.landing}`}>
             {props.layoutColumns.map((layoutColumn) => (
                 <div className={`${style.pageColumn} ${style.devHighlight}`}>{layoutColumn}</div>
             ))}
-        </main>
+        </div>
     );
 };

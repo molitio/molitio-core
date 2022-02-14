@@ -16,6 +16,11 @@ ui-common
 export * from './ui-common';
 
 /* 
+ui-controls
+*/
+export * from './ui-controls';
+
+/* 
 ui-page
 */
 
@@ -31,6 +36,7 @@ export * from './ui-background';
 theme-context
 */
 export * from './ui-context';
+
 /*
 ui-svg
 */
