@@ -16,6 +16,7 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
         horizontalGroup: {
             display: 'flex',
             flexDirection: 'row',
+            border: '3px dashed orange'
         },
     };
 
@@ -23,6 +24,7 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
         [
             ThemeNameTags.BLACK_YELLOW,
             {
+                ...commonStyles,
                 themeName: 'testTheme01',
                 primary: '#f6c339',
                 secondary: 'black',
@@ -32,12 +34,12 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
                 interactiveHighlight: {
                     ...YellowHighlight,
                 },
-                ...commonStyles,
             },
         ],
         [
             ThemeNameTags.TEAM_JAMAICA,
             {
+                ...commonStyles,
                 themeName: 'testTheme02',
                 primary: 'orange',
                 secondary: 'lightyellow',
@@ -46,7 +48,6 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
                 interactiveHighlight: {
                     ...OrangeHighlight,
                 },
-                ...commonStyles,
             },
         ],
     ]);

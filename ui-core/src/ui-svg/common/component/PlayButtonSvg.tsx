@@ -10,8 +10,8 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
+            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto',
+            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto',
             pointerEvents: 'none',
         },
         playButton: {

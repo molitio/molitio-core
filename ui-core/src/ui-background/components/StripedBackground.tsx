@@ -4,8 +4,11 @@ import { StripesSvg } from 'ui-svg';
 
 export const StripedBackground: React.FC = () => {
     const style = createUseStyles({
-        componentContainer: {
+        backgroundContainer: {
+            top: 0,
+            left: 0,
             position: 'fixed',
+
             height: '100vh',
             minWidth: '100%',
             zIndex: -100,
@@ -14,7 +17,7 @@ export const StripedBackground: React.FC = () => {
     }).apply({});
 
     return (
-        <div className={style.componentContainer}>
+        <div className={style.backgroundContainer}>
             <StripesSvg dimensions={'FULLSCREEN'} />
         </div>
     );

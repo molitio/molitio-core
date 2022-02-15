@@ -13,14 +13,9 @@ import {
     SocialButtonsSvg,
     SpeakerBackgroundSvg,
 } from 'ui-svg';
-import { ComponentGroup, AppShell, AppShellProps } from 'ui-common';
+import { ComponentGroup, AppShell } from 'ui-common';
 import { StripedBackground } from 'ui-background';
 import { Button } from 'ui-controls';
-
-const storyArgs: AppShellProps & StyledThemeProps = {
-    themeName: ThemeNameTags.BLACK_YELLOW,
-    applyGlobalStyleRules: true,
-};
 
 const meta: Meta = {
     title: 'molitio-core/Pages/Radio Page',
@@ -34,10 +29,9 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<RadioPageProps & StyledThemeProps> = (args) => (
-    <AppShell {...args}>
+const Template: Story<RadioPageProps & StyledThemeProps> = () => (
+    <AppShell themeName={ThemeNameTags.BLACK_YELLOW} applyGlobalStyleRules>
         <RadioPage
-            themeName={storyArgs.themeName}
             radio={{
                 playUrl:
                     'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',
@@ -46,7 +40,7 @@ const Template: Story<RadioPageProps & StyledThemeProps> = (args) => (
                 <SpeakerBackgroundSvg
                     dimensions={{ height: '300pt', width: '300pt' }}
                     playAreaIcon={<LogoListenNowSvg dimensions={{ height: '8pt', width: '20pt' }} />}
-                    centerItem={<PlayButtonSvg dimensions={{ height: '20pt', width: '40pt' }} />}
+                    centerItem={<PlayButtonSvg dimensions={{ height: '24pt', width: '40pt' }} />}
                 ></SpeakerBackgroundSvg>
             }
             logo={<LogoSenseRadioSvg dimensions={{ height: '80pt' }} />}
@@ -55,7 +49,7 @@ const Template: Story<RadioPageProps & StyledThemeProps> = (args) => (
             pageFooter={
                 <ComponentGroup
                     groupingType={ComponentGroupTags.HORIZONTAL_FLEX}
-                    dimensions={{ height: '10vh' }}
+                    dimensions={{ height: '12vh' }}
                     itemPadding="0.8rem"
                 >
                     <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX}>
@@ -63,27 +57,15 @@ const Template: Story<RadioPageProps & StyledThemeProps> = (args) => (
                         <LogoLedArtSvg dimensions={{ height: '8vh' }} />
                         <LogoNestMediaSvg dimensions={{ height: '8vh' }} />
                     </ComponentGroup>
-                    <ComponentGroup
-                        groupingType={ComponentGroupTags.VERTICAL_FLEX}
-                        fontColor="#6D6E72"
-                        fontSize="0.8rem"
-                        itemPadding="0.2rem"
-                    >
-                        {
-                            <>
-                                <span>
-                                    Tel/Viber: +36 30 277 3939
-                                    <br />
-                                    Email: hello@radiosense.hu
-                                </span>
-                                <span>
-                                    © 2021 Radio Sense Hungary. All rights reserved.
-                                    <br />
-                                    by nestmedia
-                                </span>
-                            </>
-                        }
-                    </ComponentGroup>
+                    <span>
+                        Tel/Viber: +36 30 277 3939
+                        <br />
+                        Email: hello@radiosense.hu
+                        <br />
+                        © 2021 Radio Sense Hungary. All rights reserved.
+                        <br />
+                        by nestmedia
+                    </span>
                     <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} itemGap="1rem">
                         <Button styleVariant={StyleVariant.ROUNDED} padding="0.5rem">
                             MYONLINE RADIO
@@ -99,6 +81,4 @@ const Template: Story<RadioPageProps & StyledThemeProps> = (args) => (
 );
 
 export const RadioPageStory = Template.bind({});
-RadioPageStory.args = {
-    ...storyArgs,
-};
+RadioPageStory.args = {};

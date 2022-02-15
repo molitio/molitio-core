@@ -58,6 +58,7 @@ const globalStyles = {
         },
         html: {
             fontSize: '16px',
+            fontFamily: 'Open Sans',
             overflowY: 'hidden',
             overflowX: 'hidden',
         },
@@ -92,6 +93,16 @@ export const AppShell: React.FC<AppShellProps> = ({ ...props }) => {
     }).apply({});
 
     //Implement content tree, be able to define content sections
+    //Implement possibly multiple font family [] prop option
+
+    const head = document.querySelector('head');
+    const fontFamily = document.createElement('link');
+
+    fontFamily.type = 'text/css';
+    fontFamily.rel = 'stylesheet';
+    fontFamily.href = 'https://fonts.googleapis.com/css?family=Open Sans';
+    head?.appendChild(fontFamily);
+
     return (
         <main className={classes.shellMain}>
             <StyledThemeContextProvider themeName={props.themeName}>{props.children}</StyledThemeContextProvider>

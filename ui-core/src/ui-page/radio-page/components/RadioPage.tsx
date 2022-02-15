@@ -2,13 +2,13 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AudioPlayer } from 'ui-common';
 import { AudioPlayerContextProvider, StyledThemeContext } from 'ui-context';
-import { StyledThemeProps } from 'ui-context';
 import { RadioPageProps } from '../interfaces/RadioPageProps';
 
-export const RadioPage: React.FC<RadioPageProps & StyledThemeProps> = ({ ...props }) => {
+export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
     const style = createUseStyles((theme: StyledThemeContext) => ({
-        pageContainer: {
-            minHeight: '100vh',
+        pageContainer: {},
+        pageContentContainer: {
+            minHeight: 'calc(100vh - 6px)',
             display: 'flex',
             flexDirection: 'column',
             pointerEvents: 'none',
@@ -35,44 +35,45 @@ export const RadioPage: React.FC<RadioPageProps & StyledThemeProps> = ({ ...prop
         },
         contentContainer: {
             flex: 1,
+            display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            display: 'flex',
         },
         content: {
             marginTop: '-10vh',
-            zIndex: 100,
+            //  zIndex: 100,
+            //alignSelf: 'stretch',
         },
         pageFooter: {
             display: 'flex',
-            zIndex: 90,
+            //zIndex: 90,
             minHeight: '12vh',
             backgroundColor: theme.backgroundColor,
             '& > *': {
                 flex: 1,
                 marginTop: '0.8rem',
-                marginLeft: '10vw',
-                marginRight: '10vw',
+                marginLeft: '8vw',
+                marginRight: '8vw',
             },
         },
     })).apply({});
 
     return (
         <div className={style.pageContainer}>
-            <div className={style.pageHeader}>
-                <div className={style.logo}>{props.logo}</div>
-                <div className={style.spacer}></div>
-                <div className={style.socialButtons}>{props.socialButtons}</div>
-            </div>
-            <div className={style.contentContainer}>
-                <div className={style.content}>
+            <div className={style.pageContentContainer}>
+                <div className={style.pageHeader}>
+                    <div className={style.logo}>{props.logo}</div>
+                    <div className={style.spacer}></div>
+                    <div className={style.socialButtons}>{props.socialButtons}</div>
+                </div>
+                <div className={style.contentContainer}>
                     <AudioPlayerContextProvider>
                         <AudioPlayer src={props.radio.playUrl} />
-                        {props.playButton}
+                        <div className={style.content}>{props.playButton}</div>
                     </AudioPlayerContextProvider>
                 </div>
+                <div className={style.pageFooter}>{props.pageFooter}</div>
             </div>
-            <div className={style.pageFooter}>{props.pageFooter}</div>
             {props.background}
         </div>
     );

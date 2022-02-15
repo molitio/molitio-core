@@ -8,6 +8,7 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
     const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto';
     const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto';
 
+    console.log(`componentHeight: ${componentHeight}, componentWidth: ${componentWidth}`);
     const style = createUseStyles({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
@@ -16,26 +17,51 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
             pointerEvents: 'none',
             /*  border: '1px solid purple', */
         },
-        st0: { fill: '#2A2A2A' },
-        st1: { fill: 'url(#SVGID_1_)' },
-        st2: { fill: 'url(#SVGID_2_)' },
+        st0: {
+            height: componentHeight,
+            width: componentWidth,
+            fill: '#2A2A2A',
+        },
+        st1: {
+            height: componentHeight,
+            width: componentWidth,
+            fill: 'url(#SVGID_1_)',
+        },
+        st2: {
+            height: componentHeight,
+            width: componentWidth,
+            fill: 'url(#SVGID_2_)',
+        },
         centerItem: {
+            width: '100%',
+            height: '100%',
+            //width: componentWidth,
+            //height: componentHeight,
             position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             zIndex: 90,
 
             /* border: '1px solid purple', */
             '& > *': {
+                flex: 1,
                 minWidth: 0,
                 minHeight: 0,
             },
         },
         centerItemLabel: {
-            marginTop: '-8%',
+            marginTop: '-5%',
             position: 'absolute',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
+        },
+        embededContent: {
+            width: '100%',
+            height: '100%',
+            position: 'absolute',
         },
     }).apply({});
 
@@ -77,16 +103,15 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
             </linearGradient>
             <circle id="playj" className={style.st2} cx="50" cy="50" r="31.2" />
             <circle id="playk" className={style.st0} cx="50" cy="50" r="25.6" />
-            <g preserveAspectRatio="xMidYMid meet">
-                <SvgEmbeddedHtml x="0" y="0" height={componentHeight} width={componentWidth}>
-                    <div className={style.centerItem}>
-                        <div className={style.centerItemLabel}>
-                            {props.playAreaIcon}
-                            {props.centerItem}
-                        </div>
+            {/* <SvgEmbeddedHtml x="0" y="0" height={componentHeight} width={componentWidth}> */}
+            <SvgEmbeddedHtml x="0" y="0" height={'100%'} width={'100%'} className={style.embededContent}>
+                <div className={style.centerItem}>
+                    <div className={style.centerItemLabel}>
+                        {props.playAreaIcon}
+                        {props.centerItem}
                     </div>
-                </SvgEmbeddedHtml>
-            </g>
+                </div>
+            </SvgEmbeddedHtml>
         </svg>
     );
 };

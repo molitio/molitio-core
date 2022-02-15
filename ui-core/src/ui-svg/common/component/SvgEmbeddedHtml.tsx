@@ -10,7 +10,9 @@ export const SvgEmbeddedHtml: React.FC<
     };
     return (
         <foreignObject x={props.x} y={props.y} width={props.width} height={props.height}>
-            <div {...xmlProps}>{props.children}</div>
+            <div {...xmlProps} className={props.className}>
+                {props.children}
+            </div>
         </foreignObject>
     );
 };
