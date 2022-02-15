@@ -81,7 +81,7 @@ const globalStyles = {
 
 const shellMain = {
     shellMain: {
-        border: '3px dashed purple',
+        border: '0px dashed purple',
     },
 };
 

@@ -16,7 +16,6 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
         horizontalGroup: {
             display: 'flex',
             flexDirection: 'row',
-            border: '3px dashed orange'
         },
     };
 
@@ -28,6 +27,8 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
                 themeName: 'testTheme01',
                 primary: '#f6c339',
                 secondary: 'black',
+                primaryFontColor: 'white',
+                secondaryFontColor: 'yellow',
                 backgroundColor: '#2b2b2b',
                 secondaryBackgroundColor: '#363636',
 
@@ -43,6 +44,8 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
                 themeName: 'testTheme02',
                 primary: 'orange',
                 secondary: 'lightyellow',
+                primaryFontColor: 'white',
+                secondaryFontColor: 'yellow',
                 backgroundColor: 'yellow',
                 secondaryBackgroundColor: 'green',
                 interactiveHighlight: {

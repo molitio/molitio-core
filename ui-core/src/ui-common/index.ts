@@ -37,3 +37,8 @@ media
 
 export { AudioPlayer } from './components/AudioPlayer';
 export type { AudioPlayerProps } from './interfaces/AudioPlayerProps';
+
+/* 
+typography
+*/
+export { SpanBlock } from './components/SpanBlock';

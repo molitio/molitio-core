@@ -2,6 +2,8 @@ export interface StyledThemeContext {
     themeName?: string;
     primary?: string;
     secondary?: string;
+    primaryFontColor?: string;
+    secondaryFontColor?: string;
     backgroundColor?: string;
     secondaryBackgroundColor?: string;
     interactiveHighlight?: { fill: string; strokeWidth: number; stroke: string };

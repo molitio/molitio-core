@@ -13,7 +13,7 @@ import {
     SocialButtonsSvg,
     SpeakerBackgroundSvg,
 } from 'ui-svg';
-import { ComponentGroup, AppShell } from 'ui-common';
+import { ComponentGroup, AppShell, SpanBlock } from 'ui-common';
 import { StripedBackground } from 'ui-background';
 import { Button } from 'ui-controls';
 
@@ -38,7 +38,7 @@ const Template: Story<RadioPageProps & StyledThemeProps> = () => (
             }}
             playButton={
                 <SpeakerBackgroundSvg
-                    dimensions={{ height: '300pt', width: '300pt' }}
+                    dimensions={{ height: '420pt', width: '420pt' }}
                     playAreaIcon={<LogoListenNowSvg dimensions={{ height: '8pt', width: '20pt' }} />}
                     centerItem={<PlayButtonSvg dimensions={{ height: '24pt', width: '40pt' }} />}
                 ></SpeakerBackgroundSvg>
@@ -57,7 +57,7 @@ const Template: Story<RadioPageProps & StyledThemeProps> = () => (
                         <LogoLedArtSvg dimensions={{ height: '8vh' }} />
                         <LogoNestMediaSvg dimensions={{ height: '8vh' }} />
                     </ComponentGroup>
-                    <span>
+                    <SpanBlock>
                         Tel/Viber: +36 30 277 3939
                         <br />
                         Email: hello@radiosense.hu
@@ -65,7 +65,7 @@ const Template: Story<RadioPageProps & StyledThemeProps> = () => (
                         © 2021 Radio Sense Hungary. All rights reserved.
                         <br />
                         by nestmedia
-                    </span>
+                    </SpanBlock>
                     <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} itemGap="1rem">
                         <Button styleVariant={StyleVariant.ROUNDED} padding="0.5rem">
                             MYONLINE RADIO
