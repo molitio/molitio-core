@@ -9,6 +9,7 @@ export type { PageTagProps } from './interfaces/PageTagProps';
 global style
 */
 export { AppShell } from './components/AppShell';
+export type { AppShellProps } from './interfaces/AppShellProps';
 
 /*
 content positioning
