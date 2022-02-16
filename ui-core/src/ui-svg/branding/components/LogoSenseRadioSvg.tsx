@@ -6,8 +6,8 @@ export const LogoSenseRadioSvg: React.FC<SvgComponentProps> = ({ ...props }) => 
     const style = createUseStyles({
         svg: {
             /* position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'absolute', */
-            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width,
+            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
+            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
             pointerEvents: 'none',
         },
         st0: {
@@ -28,7 +28,7 @@ export const LogoSenseRadioSvg: React.FC<SvgComponentProps> = ({ ...props }) => 
     }).apply({});
 
     return (
-        <svg id="logo-senseradio" className={style.svg} version="1.1" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+        <svg id="logo-senseradio" className={style.svg} version="1.1" viewBox="0 0 400 800" xmlns="http://www.w3.org/2000/svg">
             <polygon
                 id="playc"
                 className={style.st0}

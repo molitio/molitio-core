@@ -26,7 +26,7 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
                 ...commonStyles,
                 themeName: 'testTheme01',
                 primary: '#f6c339',
-                secondary: 'black',
+                secondary: '#2a2a2a',
                 primaryFontColor: 'white',
                 secondaryFontColor: '#6d6e72',
                 backgroundColor: '#2b2b2b',

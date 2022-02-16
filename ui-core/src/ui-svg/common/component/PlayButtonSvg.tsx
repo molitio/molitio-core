@@ -64,11 +64,9 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                 <polygon
                     id="ctrl-play-triangle"
                     className={style.controlColoring}
-                    points="38,30 72,50 38,70"
-                    fill="#0b0b0a"
+                    points="42,34 68,50 42,66"
                     strokeLinejoin="round"
                     strokeOpacity="1"
-                    stroke="#0b0b0a"
                     strokeWidth="5"
                 />
             </g>

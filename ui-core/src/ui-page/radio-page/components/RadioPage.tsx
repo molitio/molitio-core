@@ -8,7 +8,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
     const style = createUseStyles((theme: StyledThemeContext) => ({
         pageContainer: {},
         pageContentContainer: {
-            minHeight: 'calc(100vh - 6px)',
+            minHeight: 'calc(100vh - 1px)',
             display: 'flex',
             flexDirection: 'column',
             pointerEvents: 'none',
@@ -18,14 +18,14 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             zIndex: 90,
         },
         logo: {
-            paddingTop: '4vh',
+            paddingTop: '5vh',
             paddingLeft: '8vw',
         },
         spacer: {
             flex: 1,
         },
         socialButtons: {
-            paddingTop: '4vh',
+            paddingTop: '5vh',
             paddingRight: '8vw',
             display: 'flex',
             justifyContent: 'flex-end',
@@ -40,7 +40,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             justifyContent: 'center',
         },
         content: {
-            marginTop: '-10vh',
+            marginTop: '-15vh',
             //  zIndex: 100,
             //alignSelf: 'stretch',
         },

@@ -73,7 +73,7 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
             },
         },
         centerItemLabel: {
-            marginTop: '-5%',
+            marginTop: '-12%',
             position: 'absolute',
             display: 'flex',
             flexDirection: 'column',

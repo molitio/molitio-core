@@ -38,26 +38,26 @@ const Template: Story<RadioPageProps & StyledThemeProps> = () => (
             }}
             playButton={
                 <SpeakerBackgroundSvg
-                    dimensions={{ height: '360pt', width: '360pt' }}
+                    dimensions={{ height: '330pt', width: '330pt' }}
                     playAreaIcon={<LogoListenNowSvg dimensions={{ height: '8pt', width: '20pt' }} />}
-                    centerItem={<PlayButtonSvg dimensions={{ height: '24pt', width: '40pt' }} />}
+                    centerItem={<PlayButtonSvg dimensions={{ height: '16pt', width: '16pt' }} />}
                 ></SpeakerBackgroundSvg>
             }
-            logo={<LogoSenseRadioSvg dimensions={{ height: '80pt' }} />}
-            socialButtons={<SocialButtonsSvg dimensions={{ height: '40pt' }} />}
+            logo={<LogoSenseRadioSvg dimensions={{ height: '116pt', width: '232pt' }} />}
+            socialButtons={<SocialButtonsSvg dimensions={{ height: '26pt' }} />}
             background={<StripedBackground />}
             pageFooter={
                 <ComponentGroup
                     groupingType={ComponentGroupTags.HORIZONTAL_FLEX}
-                    dimensions={{ height: '12vh' }}
+                    dimensions={{ height: '14vh' }}
                     itemPadding="0.8rem"
                 >
                     <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX}>
-                        <LogoFreshPrintSvg dimensions={{ height: '8vh' }} />
-                        <LogoLedArtSvg dimensions={{ height: '8vh' }} />
-                        <LogoNestMediaSvg dimensions={{ height: '8vh' }} />
+                        <LogoFreshPrintSvg dimensions={{ height: '6vh' }} />
+                        <LogoLedArtSvg dimensions={{ height: '6vh' }} />
+                        <LogoNestMediaSvg dimensions={{ height: '6vh' }} />
                     </ComponentGroup>
-                    <SpanBlock rem={0.7} color={'secondary'}>
+                    <SpanBlock rem={0.6} color={'secondary'}>
                         Tel/Viber: +36 30 277 3939
                         <br />
                         Email: hello@radiosense.hu
