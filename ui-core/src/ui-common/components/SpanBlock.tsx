@@ -1,15 +1,14 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { TypographyProps } from '../interfaces/TypographyProps';
 import { StyledThemeContext } from 'ui-context';
 
-export const LargeLogoDimensions = {
-    width: '300px',
-    height: '300px',
-};
-
-export const SpanBlock: React.FC = ({ ...props }) => {
+export const SpanBlock: React.FC<TypographyProps> = ({ ...props }) => {
     const style = createUseStyles((theme: StyledThemeContext) => ({
-        spanBlock: { color: theme.primaryFontColor },
+        spanBlock: {
+            color: props?.color && props?.color === 'primary' ? theme.primaryFontColor : theme.secondaryFontColor,
+            fontSize: `${props.rem}rem`,
+        },
     })).apply({});
 
     return <span className={`${style.spanBlock} `}> {props.children}</span>;

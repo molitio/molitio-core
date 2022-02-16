@@ -5,8 +5,8 @@ import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { SvgEmbeddedHtml } from './SvgEmbeddedHtml';
 
 export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementProps> = ({ ...props }) => {
-    const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto';
-    const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto';
+    const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'max-content';
+    const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'max-content';
 
     console.log(`SpeakerBackgroundSvg - componentHeight: ${componentHeight}, componentWidth: ${componentWidth}`);
     const style = createUseStyles({
@@ -90,7 +90,7 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
     return (
         <svg
             version="1.1"
-            id="Audio_speaker"
+            id="speaker-background"
             x="0px"
             y="0px"
             viewBox="0 0 100 100"

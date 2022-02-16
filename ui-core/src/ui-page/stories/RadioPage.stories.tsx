@@ -38,7 +38,7 @@ const Template: Story<RadioPageProps & StyledThemeProps> = () => (
             }}
             playButton={
                 <SpeakerBackgroundSvg
-                    dimensions={{ height: '420pt', width: '420pt' }}
+                    dimensions={{ height: '360pt', width: '360pt' }}
                     playAreaIcon={<LogoListenNowSvg dimensions={{ height: '8pt', width: '20pt' }} />}
                     centerItem={<PlayButtonSvg dimensions={{ height: '24pt', width: '40pt' }} />}
                 ></SpeakerBackgroundSvg>
@@ -57,7 +57,7 @@ const Template: Story<RadioPageProps & StyledThemeProps> = () => (
                         <LogoLedArtSvg dimensions={{ height: '8vh' }} />
                         <LogoNestMediaSvg dimensions={{ height: '8vh' }} />
                     </ComponentGroup>
-                    <SpanBlock>
+                    <SpanBlock rem={0.7} color={'secondary'}>
                         Tel/Viber: +36 30 277 3939
                         <br />
                         Email: hello@radiosense.hu

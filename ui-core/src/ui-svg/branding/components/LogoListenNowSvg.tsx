@@ -16,7 +16,7 @@ export const LogoListenNowSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
 
     return (
         <svg
-            id="Audio_speaker"
+            id="logo-listen-now"
             className={style.svg}
             version="1.1"
             viewBox="0 0 240 100"
