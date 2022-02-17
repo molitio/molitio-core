@@ -40,10 +40,10 @@ const Template: Story<RadioPageProps & StyledThemeProps> = () => (
                 <SpeakerBackgroundSvg
                     dimensions={{ height: '330pt', width: '330pt' }}
                     playAreaIcon={<LogoListenNowSvg dimensions={{ height: '8pt', width: '20pt' }} />}
-                    centerItem={<PlayButtonSvg dimensions={{ height: '16pt', width: '16pt' }} />}
+                    centerItem={<PlayButtonSvg dimensions={{ height: '160t', width: '16pt' }} />}
                 ></SpeakerBackgroundSvg>
             }
-            logo={<LogoSenseRadioSvg dimensions={{ height: '116pt', width: '232pt' }} />}
+            logo={<LogoSenseRadioSvg dimensions={{ height: '62pt', width: '124pt' }} />}
             socialButtons={<SocialButtonsSvg dimensions={{ height: '26pt' }} />}
             background={<StripedBackground />}
             pageFooter={

@@ -5,10 +5,12 @@ import { AudioPlayerContextProvider, StyledThemeContext } from 'ui-context';
 import { RadioPageProps } from '../interfaces/RadioPageProps';
 
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
+    const headerTopMargin = '4vh';
+    const headerSideMargin = '10vw';
     const style = createUseStyles((theme: StyledThemeContext) => ({
         pageContainer: {},
         pageContentContainer: {
-            minHeight: 'calc(100vh - 1px)',
+            minHeight: 'calc(100vh)',
             display: 'flex',
             flexDirection: 'column',
             pointerEvents: 'none',
@@ -18,17 +20,17 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             zIndex: 90,
         },
         logo: {
-            paddingTop: '5vh',
-            paddingLeft: '8vw',
+            paddingTop: headerTopMargin,
+            paddingLeft: headerSideMargin,
         },
         spacer: {
             flex: 1,
         },
         socialButtons: {
-            paddingTop: '5vh',
-            paddingRight: '8vw',
+            paddingTop: headerTopMargin,
+            paddingRight: headerSideMargin,
             display: 'flex',
-            justifyContent: 'flex-end',
+            //justifyContent: 'flex-end',
             '& > *': {
                 // border: '1px dashed purple',
             },

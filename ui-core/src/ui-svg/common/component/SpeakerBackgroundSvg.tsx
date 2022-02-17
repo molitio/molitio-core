@@ -58,41 +58,31 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
         stopColor5: {
             stopColor: '#939393',
         },
-        centerItem: {
-            width: '100%',
-            height: '100%',
+        embededContent: {
+            width: componentWidth,
+            height: componentHeight,
             position: 'relative',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 90,
-            '& > *': {
-                flex: 1,
-                minWidth: 0,
-                minHeight: 0,
-            },
-        },
-        centerItemLabel: {
             marginTop: '-12%',
-            position: 'absolute',
+        },
+        centerItem: {
+            border: '3px dashed purple',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
+            /*       top: '400px',
+            left: '500px', */
+            zIndex: 90,
+            '& > *': {},
         },
-        embededContent: {
-            width: '100%',
-            height: '100%',
-            position: 'absolute',
-        },
+        centerItemLabel: {},
     }).apply({});
 
     return (
+        /*      <div className={style.}> */
         <svg
             version="1.1"
             id="speaker-background"
-            x="0px"
-            y="0px"
+            x="0"
+            y="0"
             viewBox="0 0 100 100"
             xmlSpace="preserve"
             className={style.svg}
@@ -232,14 +222,15 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
                 d="M 43.6,81.3 C 25.9,77.9 14.4,60.8 17.6,43.2 c 0,0.1 0,0.2 -0.1,0.3 -3.4,17.8 8.1,35 25.9,38.4 17.8,3.4 35,-8.2 38.4,-25.9 0,-0.1 0,-0.2 0.1,-0.3 -3.6,17.6 -20.7,29 -38.3,25.6 z"
                 id="path898"
             />
-            <SvgEmbeddedHtml x="0" y="0" height={'100%'} width={'100%'} className={style.embededContent}>
-                <div className={style.centerItem}>
-                    <div className={style.centerItemLabel}>
+            <g className={style.embededContent}>
+                <SvgEmbeddedHtml x="0" y="0" height={'100%'} width={'100%'}>
+                    <div className={style.centerItem}>
                         {props.playAreaIcon}
                         {props.centerItem}
                     </div>
-                </div>
-            </SvgEmbeddedHtml>
+                </SvgEmbeddedHtml>
+            </g>
         </svg>
+        /*  </div> */
     );
 };
