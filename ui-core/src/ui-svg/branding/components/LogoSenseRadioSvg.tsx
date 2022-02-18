@@ -5,8 +5,6 @@ import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 export const LogoSenseRadioSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     const style = createUseStyles({
         svg: {
-            //border: '3px dashed purple',
-            /* position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'absolute', */
             height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
             width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
             pointerEvents: 'none',
@@ -29,19 +27,6 @@ export const LogoSenseRadioSvg: React.FC<SvgComponentProps> = ({ ...props }) => 
     }).apply({});
 
     return (
-        /*         <svg
-            id="logo-senseradio"
-            className={style.svg}
-            preserveAspectRatio="xMidYMid meet"
-            version="1.1"
-            viewBox="0 0 400 800"
-            xmlns="http://www.w3.org/2000/svg"
-        
-            <style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
-              .st1{fill-rule:evenodd;clip-rule:evenodd;fill:#2A2A2A;}
-              .st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFC82F;}</style>
-        
-            > */
         <svg
             className={style.svg}
             preserveAspectRatio="xMidYMid meet"

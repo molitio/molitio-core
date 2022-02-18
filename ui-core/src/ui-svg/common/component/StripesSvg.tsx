@@ -1,20 +1,25 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { StyledThemeContext } from 'ui-context';
+import { StripesSvgProps } from '../interface/StripesSvgProps';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 
-export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
-    //const theme = useTheme<IThemeContext>();
+export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...props }) => {
+    const rotationAngle = props.rotationAngle ?? 45;
+    const fillOpacity = props.fillOpacity ?? 0.87059;
+    const stripeLength = props.stripeLength ?? 1578.7;
+    const stripeHeight = props.stripeHeight ?? 74.453;
+    const componentWidth = props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width;
+    const componentHeight = props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height;
+
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
-            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width,
+            height: componentHeight,
+            width: componentWidth,
             pointerEvents: 'auto',
         },
         stripes: {
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
             '& rect': {
                 fill: theme.secondaryBackgroundColor,
             },
@@ -23,8 +28,6 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             },
         },
         stripesBackground: {
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
             '& rect': {
                 fill: theme.backgroundColor,
             },
@@ -41,7 +44,7 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             xmlns="http://www.w3.org/2000/svg"
         >
             <clipPath id="clipToViewBox">
-                <rect x="0" y="0" width="100%" height="100%" />
+                <rect x="0" y="0" width="1920" height="1080" />
             </clipPath>
             <g clipPath="url(#clipToViewBox)">
                 <g className={style.stripesBackground}>
@@ -58,121 +61,121 @@ export const StripesSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
                     id="stripes"
                     className={style.stripes}
                     fill="#2b2b2b"
-                    fillOpacity=".87059"
+                    fillOpacity={fillOpacity}
                     fillRule="evenodd"
                     strokeWidth=".6404"
                 >
                     <rect
                         id="stripe-background_c"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="-733.07"
                         y="635.7"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_d"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="-572.12"
                         y="474.75"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_e"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="-411.16"
                         y="313.79"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_f"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="-250.21"
                         y="152.84"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_g"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="-89.251"
                         y="-8.1171"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_h"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="232.66"
                         y="-330.03"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_i"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="71.704"
                         y="-169.07"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_j"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="393.61"
                         y="-490.98"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_k"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="715.52"
                         y="-812.89"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_l"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="554.57"
                         y="-651.94"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_m"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="876.48"
                         y="-973.85"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_n"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="1037.4"
                         y="-1134.8"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_o"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="1198.4"
                         y="-1295.8"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                     <rect
                         id="stripe-background_p"
-                        transform="matrix(.68342 .73002 -.68342 .73002 0 0)"
+                        transform={`rotate(${rotationAngle})`}
                         x="1359.3"
                         y="-1456.7"
-                        width="1578.7"
-                        height="94.453"
+                        width={`${stripeLength}`}
+                        height={`${stripeHeight}`}
                     />
                 </g>
             </g>

@@ -46,11 +46,12 @@ export const ComponentGroup: React.FC<ComponentGroupProps> = ({ ...props }) => {
                         fontSize: props.fontSize,
                         //border: '3px dashed purple',
                         justifyContent: 'center',
+                        alignContent: 'center',
                         textAlign: 'center',
-                        alignItems: 'center',
                         '& > *': {
                             //border: '3px dashed purple',
                             flex: 1,
+                            alignItems: 'center',
                             height: props.dimensions?.height,
                             padding: props.itemPadding,
                         },

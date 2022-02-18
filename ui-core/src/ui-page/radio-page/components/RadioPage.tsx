@@ -6,7 +6,7 @@ import { RadioPageProps } from '../interfaces/RadioPageProps';
 
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
     const headerTopMargin = '4vh';
-    const headerSideMargin = '10vw';
+    const headerSideMargin = '12vw';
     const style = createUseStyles((theme: StyledThemeContext) => ({
         pageContainer: {},
         pageContentContainer: {
@@ -42,18 +42,18 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             justifyContent: 'center',
         },
         content: {
-            marginTop: '-15vh',
+            marginTop: '-20vh',
             //  zIndex: 100,
             //alignSelf: 'stretch',
         },
         pageFooter: {
             display: 'flex',
             //zIndex: 90,
-            minHeight: '12vh',
+            minHeight: '10vh',
             backgroundColor: theme.backgroundColor,
             '& > *': {
                 flex: 1,
-                marginTop: '0.8rem',
+                //marginTop: '0.8rem',
                 marginLeft: '8vw',
                 marginRight: '8vw',
             },

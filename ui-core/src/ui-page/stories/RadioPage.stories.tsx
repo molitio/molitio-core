@@ -1,10 +1,12 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { RadioPage, RadioPageProps } from 'ui-page';
-import { ComponentGroupTags, StyleVariant, ThemeNameTags } from 'ui-core-models';
+import { ComponentGroupTags, ThemeNameTags } from 'ui-core-models';
 import { StyledThemeProps } from 'ui-context';
 import {
+    LogoAppStoreSvg,
     LogoFreshPrintSvg,
+    LogoGooglePlaySvg,
     LogoLedArtSvg,
     LogoListenNowSvg,
     LogoNestMediaSvg,
@@ -15,7 +17,6 @@ import {
 } from 'ui-svg';
 import { ComponentGroup, AppShell, SpanBlock } from 'ui-common';
 import { StripedBackground } from 'ui-background';
-import { Button } from 'ui-controls';
 
 const meta: Meta = {
     title: 'molitio-core/Pages/Radio Page',
@@ -38,41 +39,44 @@ const Template: Story<RadioPageProps & StyledThemeProps> = () => (
             }}
             playButton={
                 <SpeakerBackgroundSvg
-                    dimensions={{ height: '330pt', width: '330pt' }}
+                    dimensions={{ height: '68vh', width: '68vw' }}
                     playAreaIcon={<LogoListenNowSvg dimensions={{ height: '8pt', width: '20pt' }} />}
                     centerItem={<PlayButtonSvg dimensions={{ height: '160t', width: '16pt' }} />}
                 ></SpeakerBackgroundSvg>
             }
-            logo={<LogoSenseRadioSvg dimensions={{ height: '62pt', width: '124pt' }} />}
-            socialButtons={<SocialButtonsSvg dimensions={{ height: '26pt' }} />}
+            logo={<LogoSenseRadioSvg dimensions={{ height: '50pt', width: '100pt' }} />}
+            socialButtons={
+                <SocialButtonsSvg
+                    dimensions={{ height: '22pt' }}
+                    facebookUrl="https://facebook.com"
+                    instagramUrl="https://instagram.com"
+                    youtubeUrl="https://youtube.com"
+                    externalUrl="https://google.com"
+                />
+            }
             background={<StripedBackground />}
             pageFooter={
-                <ComponentGroup
-                    groupingType={ComponentGroupTags.HORIZONTAL_FLEX}
-                    dimensions={{ height: '14vh' }}
-                    itemPadding="0.8rem"
-                >
+                <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} dimensions={{ height: '14vh' }}>
                     <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX}>
-                        <LogoFreshPrintSvg dimensions={{ height: '6vh' }} />
+                        <LogoFreshPrintSvg dimensions={{ height: '8vh' }} />
                         <LogoLedArtSvg dimensions={{ height: '6vh' }} />
-                        <LogoNestMediaSvg dimensions={{ height: '6vh' }} />
+                        <LogoNestMediaSvg dimensions={{ height: '8vh' }} />
                     </ComponentGroup>
-                    <SpanBlock rem={0.6} color={'secondary'}>
-                        Tel/Viber: +36 30 277 3939
-                        <br />
-                        Email: hello@radiosense.hu
-                        <br />
-                        © 2021 Radio Sense Hungary. All rights reserved.
-                        <br />
-                        by nestmedia
-                    </SpanBlock>
-                    <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} itemGap="1rem">
-                        <Button styleVariant={StyleVariant.ROUNDED} padding="0.5rem">
-                            MYONLINE RADIO
-                        </Button>
-                        <Button styleVariant={StyleVariant.ROUNDED} padding="0.5rem">
-                            ONLINE STREAM
-                        </Button>
+                    <ComponentGroup groupingType={ComponentGroupTags.VERTICAL_FLEX}>
+                        <SpanBlock rem={0.5} color={'secondary'} marginTop={'1rem'} maxContent>
+                            Tel/Viber: +36 30 277 3939
+                            <br />
+                            Email: hello@radiosense.hu
+                        </SpanBlock>
+                        <SpanBlock rem={0.4} color={'secondary'} marginTop={'0rem'} maxContent>
+                            © 2022 Radio Sense Hungary. All rights reserved.
+                            <br />
+                            Created by nestmedia
+                        </SpanBlock>
+                    </ComponentGroup>
+                    <ComponentGroup groupingType={ComponentGroupTags.HORIZONTAL_FLEX} itemGap="0.5rem">
+                        <LogoGooglePlaySvg dimensions={{ height: '6vh' }} opacity={0.8} />
+                        <LogoAppStoreSvg dimensions={{ height: '6vh' }} opacity={0.8} />
                     </ComponentGroup>
                 </ComponentGroup>
             }

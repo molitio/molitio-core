@@ -30,6 +30,7 @@ export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonEleme
         buttonStyle: {
             padding: props.padding,
             backgroundColor: theme.primary,
+            fontSize: props?.fontSize,
             color: theme.secondary,
             ...getVariantStyle(),
         },
