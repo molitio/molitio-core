@@ -15,5 +15,5 @@ export const SpanBlock: React.FC<TypographyProps> = ({ ...props }) => {
         },
     })).apply({});
 
-    return <span className={`${style.spanBlock} `}> {props.children}</span>;
+    return <p className={`${style.spanBlock} `}> {props.children}</p>;
 };

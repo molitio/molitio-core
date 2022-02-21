@@ -1,0 +1,17 @@
+<svg id="ctrl-play" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/2000/xlink">
+    <g id="ctrl-play-circle-g">
+        <circle id="ctrl-play-circle" cx="50" cy="50" r="48" />
+    </g>
+    <g id="ctrl-play-triangle-g">
+        <polygon id="ctrl-play-triangle" points="42,34 68,50 42,66" strokeLinejoin="round" strokeOpacity="1"
+            strokeWidth="5" />
+    </g>
+
+    <g id="ctrl-pause-path-g">
+        <path id="ctrl-pause-path-1" fill="none" strokeOpacity="1" strokeDasharray="none" strokeMiterlimit="4"
+            strokeLinejoin="miter" strokeLinecap="round" strokeWidth="10" stroke="#000000" d="m 42,30 v 40" />
+        <path id="ctrl-pause-path-2" fill="none" strokeOpacity="1" strokeDasharray="none" strokeMiterlimit="4"
+            strokeLinejoin="miter" strokeLinecap="round" strokeWidth="10" stroke="#000000" d="m 58,30 v 40" />
+    </g>
+</svg>

@@ -1,12 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { EmbededElementProps } from '../interface/EmbededElementProps';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
-import { SvgEmbeddedHtml } from './SvgEmbeddedHtml';
 
-export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementProps> = ({ ...props }) => {
-    const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'max-content';
-    const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'max-content';
+export const SpeakerBackgroundSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
+    const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto';
+    const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto';
 
     const style = createUseStyles({
         svg: {
@@ -56,31 +54,17 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
         stopColor5: {
             stopColor: '#939393',
         },
-        embededContent: {},
-        centerItem: {
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 90,
-            '& > *': {},
-        },
-        centerItemLabel: {},
     }).apply({});
 
     return (
         <svg
             version="1.1"
             id="speaker-background"
-            x="0"
-            y="0"
             viewBox="0 0 100 100"
             xmlSpace="preserve"
             className={style.svg}
             xmlns="http://www.w3.org/2000/svg"
         >
-            <defs id="defs903" />
-
             <circle className={style.st0} cx="50" cy="50" r="45.099998" id="circle826" />
             <linearGradient
                 id="SVGID_1_"
@@ -213,12 +197,6 @@ export const SpeakerBackgroundSvg: React.FC<SvgComponentProps & EmbededElementPr
                 d="M 43.6,81.3 C 25.9,77.9 14.4,60.8 17.6,43.2 c 0,0.1 0,0.2 -0.1,0.3 -3.4,17.8 8.1,35 25.9,38.4 17.8,3.4 35,-8.2 38.4,-25.9 0,-0.1 0,-0.2 0.1,-0.3 -3.6,17.6 -20.7,29 -38.3,25.6 z"
                 id="path898"
             />
-            <SvgEmbeddedHtml x="0" y="28" height={'100'} width={'100'} className={style.embededContent}>
-                <div className={style.centerItem}>
-                    {props.playAreaIcon}
-                    {props.centerItem}
-                </div>
-            </SvgEmbeddedHtml>
         </svg>
     );
 };

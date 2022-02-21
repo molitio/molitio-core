@@ -140,5 +140,8 @@
     "workspaces": [
         "src",
         ".storybook"
-    ]
+    ],
+    "dependencies": {
+        "@storybook/addon-a11y": "^6.4.19"
+    }
 }

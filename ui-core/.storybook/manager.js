@@ -8,7 +8,7 @@ addons.setConfig({
     panelPosition: 'bottom',
     enableShortcuts: true,
     isToolshown: true,
-    theme: themes.light,
+    theme: themes.dark,
     selectedPanel: undefined,
     initialActive: 'sidebar',
     sidebar: {

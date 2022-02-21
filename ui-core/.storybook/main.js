@@ -3,7 +3,7 @@ const path = require('path');
 
 module.exports = {
     stories: ['../src/**/*.stories.*'],
-    addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/theming'],
+    addons: ['@storybook/addon-links', '@storybook/addon-essentials', '@storybook/theming', '@storybook/addon-a11y'],
     webpackFinal: async (config) => {
         if (!config.resolve) {
             config.resolve = {};

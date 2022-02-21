@@ -15,6 +15,8 @@ export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...p
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
+            top: 0,
+            left: 0,
             height: componentHeight,
             width: componentWidth,
             pointerEvents: 'auto',

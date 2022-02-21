@@ -1,8 +1,11 @@
 import { TUniversalRadio } from 'ui-core-models';
 
 export interface RadioPageProps {
-    playButton: JSX.Element;
-    background: JSX.Element;
+    playerElement?: JSX.Element;
+    playButton?: JSX.Element;
+    playButtonTopLogo?: JSX.Element;
+    playButtonBackground?: JSX.Element;
+    background?: JSX.Element;
     logo?: JSX.Element;
     socialButtons?: JSX.Element;
     radio: TUniversalRadio;

@@ -9,8 +9,8 @@ export const StripedBackground: React.FC = () => {
             left: 0,
             position: 'fixed',
 
-            height: '100vh',
-            minWidth: '100%',
+            height: '100%',
+            width: '100%',
             zIndex: -100,
             pointerEvents: 'none',
         },

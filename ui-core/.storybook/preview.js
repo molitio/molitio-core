@@ -7,6 +7,7 @@ export const parameters = {
         },
     },
     layout: 'fullscreen',
+    controls: { expanded: true },
     backgrounds: {
         values: [{ name: 'Transparent', value: 'rgba(0, 0, 0, 0.0)' }],
     },

@@ -10,16 +10,21 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             //position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'max-content',
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'max-content',
+            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? '100%',
+            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? '100%',
             pointerEvents: 'none',
+            preserveAspectRatio: 'xMidYMid meet',
+            //border: '3px dashed green',
         },
         playButton: {
             pointerEvents: 'auto',
             cursor: 'pointer',
         },
         circle: {
-            fill: theme.primary,
+            //fill: theme.primary,
+            stroke: '#0b0b0a',
+            strokeWidth: '1',
+            fill: '#f6c339',
         },
         controlColoring: {
             fill: theme.secondary,
@@ -41,7 +46,7 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
         <svg
             id="ctrl-play"
             className={style.svg}
-            preserveAspectRatio="xMidYMid meet"
+            //preserveAspectRatio="xMidYMid meet"
             onClick={() => togglePlayPause()}
             version="1.1"
             viewBox="0 0 100 100"
@@ -49,16 +54,7 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             xmlnsXlink="http://www.w3.org/2000/xlink"
         >
             <g id="ctrl-play-circle-g" className={style.playButton}>
-                <circle
-                    id="ctrl-play-circle"
-                    className={style.circle}
-                    cx="50"
-                    cy="50"
-                    r="48"
-                    stroke="#0b0b0a"
-                    strokeWidth="1"
-                    fill="#f6c339"
-                />
+                <circle id="ctrl-play-circle" className={style.circle} cx="50" cy="50" r="48" />
             </g>
             <g id="ctrl-play-triangle-g" className={`${playerContext.isPlaying ? style.hidden : style.visible}`}>
                 <polygon

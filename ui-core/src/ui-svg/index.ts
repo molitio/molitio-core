@@ -22,6 +22,7 @@ export { CircleGradientHighlightSvg } from './common/component/CircleGradientHig
 export { CirclePattern } from './common/component/CirclePattern';
 export { SvgEmbeddedHtml } from './common/component/SvgEmbeddedHtml';
 export { SpeakerBackgroundSvg } from './common/component/SpeakerBackgroundSvg';
+export { SpeakerBackgroundPlayerSvg } from './common/component/SpeakerBackgroundPlayerSvg';
 export type { CirclePatternProps } from './common/interface/CirclePatternProps';
 export type { SvgEmbeddedHtmlProps } from './common/interface/SvgEmbeddedHtmlProps';
 export type { ShapeDimensions } from './common/interface/ShapeDimensions';

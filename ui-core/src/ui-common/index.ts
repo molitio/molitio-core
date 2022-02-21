@@ -18,6 +18,11 @@ content positioning
 export { CenterDisplay } from './components/CenterDisplay';
 
 /*
+page pageSections
+*/
+export { DefaultFooter } from './components/DefaultFooter';
+
+/*
 branding 
 */
 
