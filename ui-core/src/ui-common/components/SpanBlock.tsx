@@ -11,6 +11,7 @@ export const SpanBlock: React.FC<TypographyProps> = ({ ...props }) => {
             color: props?.color && props?.color === 'primary' ? theme.primaryFontColor : theme.secondaryFontColor,
             fontSize: `${props.rem}rem`,
             marginTop: props?.marginTop,
+            align: props.center ? 'center' : 'inherit',
             ...maxContentSpacing,
         },
     })).apply({});

@@ -7,9 +7,9 @@ import { RadioPageProps } from '../interfaces/RadioPageProps';
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
     const headerItemSpacingTop = '2em';
     const headerItemSpacingSide = '6em';
-    //const controlsAreaHightAndWidth = 'calc((60vh + 60vw) / 2)';
-    const controlsAreaHight = '60vh';
-    const controlsAreaWidth = '60vh';
+    const playerWidthAndHeightSM = '80vw';
+    const playerWidthAndHeightLG = '70vw';
+    const playerWidthAndHeightWIDE = '60vh';
 
     const style = createUseStyles((theme: StyledThemeContext) => ({
         pageContainer: {
@@ -40,9 +40,9 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                 left: `10vw`,
             },
             '& > *': {
-                height: '6em',
+                height: '4em',
                 '@media (max-width: 900px)': {
-                    height: '5em',
+                    height: '3em',
                 },
             },
         },
@@ -52,13 +52,10 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             top: headerItemSpacingTop,
             right: headerItemSpacingSide,
             '@media (max-width: 900px)': {
-                //border: '3px dashed pink',
                 width: 'max-content',
                 height: 'max-content',
                 position: 'fixed',
-                //bottom: headerItemSpacingTop,
                 top: '93vh',
-                //right: headerItemSpacingSide,
                 left: 0,
                 right: 0,
                 marginLeft: 'auto',
@@ -66,84 +63,35 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             },
         },
         content: {
-            //border: '3px dashed purple',
             flex: 1,
             flexWrap: 'nowrap',
             position: 'relative',
-            marginTop: '4em',
+
             left: 0,
             right: 0,
             marginLeft: 'auto',
             marginRight: 'auto',
-            width: controlsAreaWidth,
-            height: controlsAreaHight,
-            '@media (max-width: 900px)': {
-                // height: `calc(${controlsAreaHight} / 3) * 2)`,
-                marginTop: '7em',
-                //justifyContent: 'flex-end',
-                '& > *': {
-                    // border: '1px dashed purple',
-                },
-            },
-            '@media (max-height: 400px)': {
-                height: `calc(${controlsAreaHight} / 2)`,
-            },
-            //  zIndex: 100,
-            //alignSelf: 'stretch',
         },
         player: {
-            width: controlsAreaWidth,
-            height: controlsAreaHight,
-            border: '3px dashed purple',
-        },
-/*         playControls: {
-            //border: '3px dashed orange',
-            zIndex: 90,
-            //top: '4vh',
-            position: 'relative',
-            left: 0,
-            right: 0,
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignContent: 'center',
-        },
-        playButtonTopLogo: {
-            //border: '3px dashed azure',
-            marginTop: '15vh',
-            width: '5em',
-            alignSelf: 'center',
-        },
-        playButton: {
-            // border: '3px dashed yellow',
-            width: '15vh',
-            alignSelf: 'center',
-        }, 
-        playControlsBackground: {
-            //border: '3px dashed white',
-            position: 'absolute',
-            top: 0,
-            zIndex: 80,
-            width: controlsAreaWidth,
-            height: controlsAreaHight,
-        },*/
-        pageFooter: {
-            //border: '3px dashed red',
-            zIndex: 80,
-            //display: 'flex',
-
-            //zIndex: 90,
-            minHeight: '10vh',
-            //justifySelf: 'flex-end',
-            backgroundColor: theme.backgroundColor,
-            //backgroundColor: 'black',
-            '& > *': {
-                //flex: 1,
-                //marginTop: '0.8rem',
-                //marginLeft: '8vw',
-                //marginRight: '8vw',
+            width: playerWidthAndHeightWIDE,
+            height: playerWidthAndHeightWIDE,
+            marginTop: '4em',
+            '@media (max-width: 900px)': {
+                width: playerWidthAndHeightLG,
+                height: playerWidthAndHeightLG,
+                marginTop: '7em',
             },
+            '@media (max-width: 500px)': {
+                marginTop: '6em',
+                width: playerWidthAndHeightSM,
+                height: playerWidthAndHeightSM,
+            },
+        },
+
+        pageFooter: {
+            zIndex: 80,
+            minHeight: '10vh',
+            backgroundColor: theme.backgroundColor,
         },
     })).apply({});
 

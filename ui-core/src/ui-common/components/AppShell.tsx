@@ -22,7 +22,7 @@ const globalStyles = {
                 fontSize: '14px',
             },
         },
-        '@media (max-width: 400px)': {
+        '@media (max-width: 500px)': {
             html: {
                 fontSize: '12px',
             },
@@ -46,7 +46,11 @@ export const AppShell: React.FC<AppShellProps> = ({ ...props }) => {
     const [selectedTheme, setSelectedTheme] = React.useState<ThemeNameTags>();
 
     React.useEffect(() => {
-        setSelectedTheme(props.themeName);
+        const effect = async () => {
+            setSelectedTheme(props.themeName);
+            console.warn(`selected theme changed to: ${props.themeName}`);
+        };
+        effect();
     }, [props.themeName]);
 
     const styleOverrides = props.applyGlobalStyleRules ? globalStyles : {};

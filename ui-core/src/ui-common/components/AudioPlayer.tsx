@@ -7,13 +7,17 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ ...props }) => {
     const playerRef = useRef<HTMLAudioElement>(null);
 
     React.useEffect(() => {
-        const effect = () => {
-            playerContext.isPlaying ? playerRef.current?.play() : playerRef.current?.pause();
+        const effect = async () => {
+            playerContext.isPlaying ? await playerRef.current?.play() : playerRef.current?.pause();
         };
         effect();
     }, [playerContext]);
 
-    return <audio src={props.src} ref={playerRef}></audio>;
+    return (
+        <audio id="audio-player-main" ref={playerRef} tabIndex={0}>
+            <source src={props.src} type="audio/mpeg" />
+        </audio>
+    );
 };
 
 /* 

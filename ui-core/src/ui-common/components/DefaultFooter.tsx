@@ -8,6 +8,7 @@ export const DefaultFooter: React.FC<DefaultFooterProps> = ({ ...props }) => {
         content: {
             display: 'flex',
             justifyContent: 'center',
+            marginTop: '0.2em',
             backgroundColor: theme.backgroundColor,
             '@media (max-width: 900px)': {
                 visibility: 'hidden',
@@ -22,6 +23,7 @@ export const DefaultFooter: React.FC<DefaultFooterProps> = ({ ...props }) => {
         centerColumnElements: {
             display: 'flex',
             flexDirection: 'column',
+            textAlign: 'center',
             justifyContent: 'center',
             '& > *': {
                 textAlign: 'center',

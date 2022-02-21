@@ -3,4 +3,5 @@ export interface TypographyProps {
     color?: 'primary' | 'secondary';
     marginTop?: string;
     maxContent?: boolean;
+    center?: boolean;
 }
