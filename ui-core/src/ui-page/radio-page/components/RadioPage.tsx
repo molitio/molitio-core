@@ -87,9 +87,20 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                 height: playerWidthAndHeightSM,
             },
         },
-
-        pageFooter: {
+        externalBackgroundEffect: {
             zIndex: 80,
+            visibility: props.externalBackgroundEffect ? 'visible' : 'hidden',
+            backgroundImage: `url(${props.externalBackgroundEffect})`,
+            position: 'fixed',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            minHeight: '100vh',
+            minWidth: '100vw',
+            pointerEvents: 'none',
+        },
+        pageFooter: {
+            zIndex: 70,
             minHeight: '10vh',
             backgroundColor: theme.backgroundColor,
         },
@@ -101,6 +112,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             <div className={style.pageContainer}>
                 <div className={style.logo}>{props.logo}</div>
                 <div className={style.socialButtons}>{props.socialButtons}</div>
+                {props.externalBackgroundEffect ? <div className={style.externalBackgroundEffect} /> : null}
                 <div className={style.contentContainer}>
                     <div className={style.content}>
                         <div className={style.player}>

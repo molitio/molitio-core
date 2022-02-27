@@ -14,7 +14,13 @@ export const LogoNestMediaSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     }).apply({});
 
     return (
-        <svg id="logo-nestmedia" className={style.svg} version="1.0" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <svg
+            id="logo-nestmedia"
+            className={style.svg}
+            version="1.0"
+            viewBox="0 0 400 400"
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <path
                 id="playb"
                 className={style.fil0}

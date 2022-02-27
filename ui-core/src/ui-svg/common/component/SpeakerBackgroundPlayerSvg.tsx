@@ -106,7 +106,7 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
             x="0px"
             y="0px"
             viewBox="0 0 100 100"
-            xmlSpace="preserve"
+            preserveAspectRatio="xMidYMid slice"
             className={style.svg}
             xmlns="http://www.w3.org/2000/svg"
         >

@@ -1,20 +1,16 @@
 import React from 'react';
-import { Story, Meta, ComponentStory } from '@storybook/react';
-import { RadioPage, RadioPageProps } from 'ui-page';
-import { ComponentGroupTags, ThemeNameTags } from 'ui-core-models';
-import { StyledThemeProps } from 'ui-context';
+import { Meta, ComponentStory } from '@storybook/react';
+import { RadioPage } from 'ui-page';
+import { ThemeNameTags } from 'ui-core-models';
 import {
     LogoAppStoreSvg,
     LogoFreshPrintSvg,
     LogoGooglePlaySvg,
     LogoLedArtSvg,
-    LogoListenNowSvg,
     LogoNestMediaSvg,
     LogoSenseRadioSvg,
-    PlayButtonSvg,
     SocialButtonsSvg,
     SpeakerBackgroundPlayerSvg,
-    SpeakerBackgroundSvg,
 } from 'ui-svg';
 import { AppShell, SpanBlock, DefaultFooter } from 'ui-common';
 import { StripedBackground } from 'ui-background';
@@ -55,6 +51,7 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
                 />
             }
             background={<StripedBackground />}
+            externalBackgroundEffect="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_effect.webp"
             pageFooter={
                 <DefaultFooter
                     leftColumnElements={[

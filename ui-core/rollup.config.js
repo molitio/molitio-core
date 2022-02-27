@@ -29,21 +29,6 @@ export default [
                 babelHelpers: 'bundled',
                 include: ['src/**/*'],
                 exclude: ['node_modules/**', '**/*.stories.tsx'],
-                presets: [
-                    {
-                        targets: {
-                            browsers: '> 0.5%, ie >= 11',
-                        },
-                        modules: false,
-                        spec: true,
-                        useBuiltIns: 'usage',
-                        forceAllTransforms: true,
-                        corejs: {
-                            version: 3,
-                            proposals: false,
-                        },
-                    },
-                ],
             }),
             nodeResolve(),
             typescript({
@@ -85,21 +70,6 @@ export default [
                 babelHelpers: 'bundled',
                 include: ['src'],
                 exclude: ['node_modules/**', '**/*.stories.tsx'],
-                presets: [
-                    {
-                        targets: {
-                            browsers: '> 0.5%, ie >= 11',
-                        },
-                        modules: false,
-                        spec: true,
-                        useBuiltIns: 'usage',
-                        forceAllTransforms: true,
-                        corejs: {
-                            version: 3,
-                            proposals: false,
-                        },
-                    },
-                ],
             }),
             nodeResolve(),
             commonjs(),

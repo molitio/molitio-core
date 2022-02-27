@@ -16,6 +16,7 @@ export const DefaultFooter: React.FC<DefaultFooterProps> = ({ ...props }) => {
         },
         leftColumnElements: {
             display: 'flex',
+            gap: '0.5em',
             justifyContent: 'flex-end',
             alignItems: 'center',
             marginRight: '3em',
@@ -31,6 +32,7 @@ export const DefaultFooter: React.FC<DefaultFooterProps> = ({ ...props }) => {
         },
         rightColumnElements: {
             marginLeft: '3em',
+            gap: '0.5em',
             display: 'flex',
             justifyContent: 'flex-start',
             alignItems: 'center',
