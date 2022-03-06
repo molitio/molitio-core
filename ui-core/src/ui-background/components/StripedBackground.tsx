@@ -1,10 +1,12 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { StripedBackgroundProps } from '../interfaces/StripedBackgroundProps';
 import { StripesSvg } from 'ui-svg';
 
-export const StripedBackground: React.FC = () => {
+export const StripedBackground: React.FC<StripedBackgroundProps> = ({ ...props }) => {
     const style = createUseStyles({
         backgroundContainer: {
+            border: '3px dashed purple',
             top: 0,
             left: 0,
             position: 'fixed',
@@ -18,7 +20,7 @@ export const StripedBackground: React.FC = () => {
 
     return (
         <div className={style.backgroundContainer}>
-            <StripesSvg dimensions={'FULLSCREEN'} />
+            <StripesSvg dimensions={'FULLSCREEN'} backgroundImageSrc={props.backgroundEffectSrc} />
         </div>
     );
 };

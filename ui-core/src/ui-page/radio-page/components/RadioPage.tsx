@@ -13,85 +13,62 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
 
     const style = createUseStyles((theme: StyledThemeContext) => ({
         pageContainer: {
-            top: 0,
-            left: 0,
             zIndex: 100,
-            height: '100vh',
-            width: '100vw',
-            position: 'relative',
+            //position: 'relative',
             '& * ': {
-                zIndex: 50,
+                zIndex: 60,
             },
         },
         contentContainer: {
-            position: 'relative',
-            height: '100%',
-            width: '100%',
+            /*    position: 'relative',
+            height: '100vh',
+            width: '100vw',
             display: 'flex',
             flexDirection: 'column',
-            pointerEvents: 'none',
+            pointerEvents: 'none', */
         },
         logo: {
             position: 'fixed',
             top: headerItemSpacingTop,
             left: headerItemSpacingSide,
             zIndex: 100,
-            '@media (max-width: 900px)': {
-                left: `10vw`,
-            },
-            '& > *': {
-                height: '4em',
-                '@media (max-width: 900px)': {
-                    height: '3em',
-                },
-            },
         },
         socialButtons: {
             position: 'fixed',
             zIndex: 100,
+            width: 'max-content',
+            height: 'max-content',
             top: headerItemSpacingTop,
             right: headerItemSpacingSide,
-            '@media (max-width: 900px)': {
-                width: 'max-content',
-                height: 'max-content',
-                position: 'fixed',
-                top: '93vh',
-                left: 0,
-                right: 0,
-                marginLeft: 'auto',
-                marginRight: 'auto',
-            },
+            bottom: 'auto',
         },
         content: {
             flex: 1,
             flexWrap: 'nowrap',
-            position: 'relative',
-
-            left: 0,
+            height: '100vh',
+            minHeight: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            '& > *': {
+                //flexBasis: 'auto',
+            },
+            /*      left: 0,
             right: 0,
             marginLeft: 'auto',
-            marginRight: 'auto',
+            marginRight: 'auto', */
         },
         player: {
             width: playerWidthAndHeightWIDE,
             height: playerWidthAndHeightWIDE,
-            marginTop: '4em',
-            '@media (max-width: 900px)': {
-                width: playerWidthAndHeightLG,
-                height: playerWidthAndHeightLG,
-                marginTop: '7em',
-            },
-            '@media (max-width: 500px)': {
-                marginTop: '6em',
-                width: playerWidthAndHeightSM,
-                height: playerWidthAndHeightSM,
-            },
+            marginTop: '-4em',
         },
         externalBackgroundEffect: {
+            position: 'fixed',
             zIndex: 80,
             visibility: props.externalBackgroundEffect ? 'visible' : 'hidden',
             backgroundImage: `url(${props.externalBackgroundEffect})`,
-            position: 'fixed',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
@@ -101,8 +78,81 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
         },
         pageFooter: {
             zIndex: 70,
-            minHeight: '10vh',
+            position: 'fixed',
+            width: '100vw',
+            bottom: 0,
+            height: '5em',
             backgroundColor: theme.backgroundColor,
+        },
+        '@media (max-width: 1400px)': {},
+        '@media (max-width: 1200px)': {
+            logo: {
+                left: `calc(${headerItemSpacingSide} + 1em)`,
+                '& > *': {
+                    height: '5em',
+                },
+            },
+        },
+        '@media (max-width: 992px)': {
+            logo: {
+                left: `calc(${headerItemSpacingSide} - 1em)`,
+                '& > *': {
+                    height: '4em',
+                },
+            },
+            socialButtons: {
+                position: 'fixed',
+                top: 'auto',
+                bottom: '0.8em',
+                left: 0,
+                right: 0,
+                marginLeft: 'auto',
+                marginRight: 'auto',
+            },
+            player: {
+                maxWidth: playerWidthAndHeightLG,
+                maxHeight: playerWidthAndHeightLG,
+                // marginTop: '7em',
+            },
+            pageFooter: {
+                '& > *': {
+                    visibility: 'hidden',
+                },
+            },
+        },
+        '@media (max-width: 768px)': {
+            logo: {
+                left: `calc(${headerItemSpacingSide} - 1.5em)`,
+                '& > *': {
+                    height: '4em',
+                },
+            },
+        },
+        '@media (max-width: 576px)': {
+            logo: {
+                left: `calc(${headerItemSpacingSide} - 4em)`,
+                '& > *': {
+                    height: '3em',
+                },
+            },
+            player: {
+                //marginTop: '10em',
+                width: playerWidthAndHeightSM,
+                height: playerWidthAndHeightSM,
+            },
+        },
+        '@media (orientation: landscape)': {
+            logo: {
+                left: `calc(${headerItemSpacingSide} - 1em)`,
+                '& > *': {
+                    height: '4em',
+                },
+            },
+            player: {
+                //marginTop: '10em',
+                width: playerWidthAndHeightWIDE,
+                height: playerWidthAndHeightWIDE,
+            },
         },
     })).apply({});
 
@@ -112,7 +162,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             <div className={style.pageContainer}>
                 <div className={style.logo}>{props.logo}</div>
                 <div className={style.socialButtons}>{props.socialButtons}</div>
-                {props.externalBackgroundEffect ? <div className={style.externalBackgroundEffect} /> : null}
+                {/* {props.externalBackgroundEffect ? <div className={style.externalBackgroundEffect} /> : null} */}
                 <div className={style.contentContainer}>
                     <div className={style.content}>
                         <div className={style.player}>

@@ -17,27 +17,42 @@ const globalStyles = {
             overflowY: 'hidden',
             overflowX: 'hidden',
         },
-        '@media (max-width: 900px)': {
+        '@media (max-width: 1400px)': {
+            html: {
+                fontSize: '20px',
+            },
+        },
+        '@media (max-width: 1200px)': {
+            html: {
+                fontSize: '18px',
+            },
+        },
+        '@media (max-width: 992px)': {
+            html: {
+                fontSize: '16px',
+            },
+        },
+        '@media (max-width: 768px)': {
             html: {
                 fontSize: '14px',
             },
         },
-        '@media (max-width: 500px)': {
+        '@media (max-width: 576px)': {
             html: {
                 fontSize: '12px',
             },
         },
         body: {
-            width: '100%',
-            minHeight: '100vh',
+            /*  width: '100vw',
+            minHeight: '100vh', */
         },
     },
 };
 
 const shellMain = {
     shellMain: {
-        height: '100vh',
-        width: '100vw',
+        /*      height: '100vh',
+        width: '100vw', */
         border: '0px dashed purple',
     },
 };

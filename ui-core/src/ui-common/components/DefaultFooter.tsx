@@ -10,9 +10,6 @@ export const DefaultFooter: React.FC<DefaultFooterProps> = ({ ...props }) => {
             justifyContent: 'center',
             marginTop: '0.2em',
             backgroundColor: theme.backgroundColor,
-            '@media (max-width: 900px)': {
-                visibility: 'hidden',
-            },
         },
         leftColumnElements: {
             display: 'flex',

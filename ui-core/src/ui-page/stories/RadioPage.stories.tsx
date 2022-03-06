@@ -40,18 +40,24 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
                     'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',
             }}
             playerElement={<SpeakerBackgroundPlayerSvg />}
-            logo={<LogoSenseRadioSvg />}
+            logo={<LogoSenseRadioSvg dimensions={{ height: '5em' }} />}
             socialButtons={
                 <SocialButtonsSvg
-                    dimensions={{ height: '22pt' }}
+                    dimensions={{ height: '2em' }}
                     facebookUrl="https://facebook.com"
                     instagramUrl="https://instagram.com"
                     youtubeUrl="https://youtube.com"
                     externalUrl="https://google.com"
                 />
             }
-            background={<StripedBackground />}
-            externalBackgroundEffect="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_effect.webp"
+            background={
+                <StripedBackground
+                    backgroundEffectSrc={
+                        'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_effect.webp'
+                    }
+                />
+            }
+            //externalBackgroundEffect="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_effect.webp"
             pageFooter={
                 <DefaultFooter
                     leftColumnElements={[
