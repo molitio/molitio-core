@@ -2,6 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AudioPlayer } from 'ui-common';
 import { AudioPlayerContextProvider, StyledThemeContext } from 'ui-context';
+import { AudioPreloadTags } from 'ui-core-models';
 import { RadioPageProps } from '../interfaces/RadioPageProps';
 
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
@@ -79,12 +80,20 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
         pageFooter: {
             zIndex: 70,
             position: 'fixed',
-            width: '100vw',
+            left: 0,
             bottom: 0,
+            width: 'calc(env(safe-area-inset-left, 0px) + 100% + env(safe-area-inset-right, 0px))',
             height: '5em',
             backgroundColor: theme.backgroundColor,
         },
-        '@media (max-width: 1400px)': {},
+        '@media (max-width: 1400px)': {
+            logo: {
+                left: `calc(${headerItemSpacingSide} + 1em)`,
+                '& > *': {
+                    height: '5em',
+                },
+            },
+        },
         '@media (max-width: 1200px)': {
             logo: {
                 left: `calc(${headerItemSpacingSide} + 1em)`,
@@ -141,7 +150,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                 height: playerWidthAndHeightSM,
             },
         },
-        '@media (orientation: landscape)': {
+        '@media (orientation: landscape) and (max-height: 576px)': {
             logo: {
                 left: `calc(${headerItemSpacingSide} - 1em)`,
                 '& > *': {
@@ -168,7 +177,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                         <div className={style.player}>
                             <AudioPlayerContextProvider>
                                 {props.playerElement}
-                                <AudioPlayer src={props.radio.playUrl} />
+                                <AudioPlayer src={props.radio.playUrl} preload={AudioPreloadTags.NONE} />
                             </AudioPlayerContextProvider>
                         </div>
                     </div>

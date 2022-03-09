@@ -12,6 +12,14 @@ export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...p
     const componentWidth = props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width;
     const componentHeight = props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height;
 
+    const [backgroundEffectImage, setBackgroundEffectImage] = React.useState<JSX.Element | undefined>(undefined);
+
+    React.useEffect(() => {
+        setBackgroundEffectImage(() => {
+            return <image href={props.backgroundImageSrc}></image>;
+        });
+    }, [props.backgroundImageSrc]);
+
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
@@ -39,7 +47,7 @@ export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...p
     return (
         <svg
             className={style.svg}
-            preserveAspectRatio="xMaxYMin slice"
+            preserveAspectRatio="xMaxYMax slice"
             id="stripe-background_a"
             version="1.1"
             viewBox="0 0 1920 1080"
@@ -180,10 +188,8 @@ export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...p
                         height={`${stripeHeight}`}
                     />
                 </g>
-                <g>
-                    {props.backgroundImageSrc ? (
-                        <image href={props.backgroundImageSrc} width="1920" height="1080" />
-                    ) : null}
+                <g width="1920" height="1080">
+                    {backgroundEffectImage ?? undefined}
                 </g>
             </g>
         </svg>

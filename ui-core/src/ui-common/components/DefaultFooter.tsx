@@ -34,6 +34,12 @@ export const DefaultFooter: React.FC<DefaultFooterProps> = ({ ...props }) => {
             justifyContent: 'flex-start',
             alignItems: 'center',
         },
+        '@media (max-width: 1400px)': {},
+        '@media (max-width: 1200px)': {},
+        '@media (max-width: 992px)': {},
+        '@media (max-width: 768px)': {},
+        '@media (max-width: 576px)': {},
+        '@media (orientation: landscape)': {},
     })).apply({});
 
     return (

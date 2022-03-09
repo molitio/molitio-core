@@ -14,7 +14,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ ...props }) => {
     }, [playerContext]);
 
     return (
-        <audio id="audio-player-main" ref={playerRef} tabIndex={0}>
+        <audio id="audio-player-main" ref={playerRef} tabIndex={0} preload={props.preload}>
             <source src={props.src} type="audio/mpeg" />
         </audio>
     );
