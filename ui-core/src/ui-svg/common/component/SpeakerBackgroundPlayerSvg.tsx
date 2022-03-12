@@ -13,6 +13,8 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
             height: componentHeight,
             width: componentWidth,
             pointerEvents: 'none',
+            position: 'relative',
+            zIndex: 60,
         },
         listenNowSvg: {
             width: '30%',
@@ -22,6 +24,7 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
             width: '30%',
             height: '30%',
             display: 'hidden',
+            zIndex: 100,
         },
 
         st0: {

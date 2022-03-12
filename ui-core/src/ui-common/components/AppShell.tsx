@@ -12,7 +12,7 @@ const globalStyles = {
             boxSizing: 'border-box',
         },
         html: {
-            fontSize: '18px',
+            fontSize: '20px',
             fontFamily: 'Open Sans',
             overflowY: 'hidden',
             overflowX: 'hidden',
@@ -28,22 +28,22 @@ const globalStyles = {
         },
         '@media (max-width: 1200px)': {
             html: {
-                fontSize: '18px',
+                fontSize: '20px',
             },
         },
         '@media (max-width: 992px)': {
             html: {
-                fontSize: '16px',
+                fontSize: '20px',
             },
         },
         '@media (max-width: 768px)': {
             html: {
-                fontSize: '14px',
+                fontSize: '20px',
             },
         },
         '@media (max-width: 576px)': {
             html: {
-                fontSize: '12px',
+                fontSize: '20px',
             },
         },
         body: {

@@ -6,11 +6,9 @@ import { StripesSvg } from 'ui-svg';
 export const StripedBackground: React.FC<StripedBackgroundProps> = ({ ...props }) => {
     const style = createUseStyles({
         backgroundContainer: {
-            border: '3px dashed purple',
             top: 0,
             left: 0,
             position: 'fixed',
-
             height: '100%',
             width: '100%',
             zIndex: -100,

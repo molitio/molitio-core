@@ -8,6 +8,7 @@ import { RadioPageProps } from '../interfaces/RadioPageProps';
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
     const headerItemSpacingTop = '2em';
     const headerItemSpacingSide = '6em';
+    const playerWidthAndHeightMicro = '8em';
     const playerWidthAndHeightSM = '80vw';
     const playerWidthAndHeightLG = '70vw';
     const playerWidthAndHeightWIDE = '60vh';
@@ -15,8 +16,8 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
     const style = createUseStyles((theme: StyledThemeContext) => ({
         pageContainer: {
             zIndex: 100,
-            //position: 'relative',
             '& * ': {
+                position: 'relative',
                 zIndex: 60,
             },
         },
@@ -137,6 +138,22 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                 },
             },
         },
+        '@media (max-width: 576px) and (max-height: 576px)': {
+            logo: {
+                bottom: 'auto',
+                top: '0.2em',
+                left: '0.2em',
+                '& > *': {
+                    height: '1em',
+                },
+            },
+            socialButtons: {
+                position: 'fixed',
+                top: 'auto',
+                bottom: '0.8em',
+                right: '1em',
+            },
+        },
         '@media (max-width: 576px)': {
             logo: {
                 left: `calc(${headerItemSpacingSide} - 4em)`,
@@ -145,22 +162,48 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                 },
             },
             player: {
-                //marginTop: '10em',
                 width: playerWidthAndHeightSM,
                 height: playerWidthAndHeightSM,
             },
         },
-        '@media (orientation: landscape) and (max-height: 576px)': {
+        '@media (max-width: 200px) or (max-height: 200px)': {
             logo: {
-                left: `calc(${headerItemSpacingSide} - 1em)`,
+                bottom: '0.1em',
+                top: 'auto',
+                left: '0.5em',
                 '& > *': {
-                    height: '4em',
+                    height: '1em',
                 },
             },
             player: {
-                //marginTop: '10em',
+                marginTop: '-1em',
+                width: playerWidthAndHeightMicro,
+                height: playerWidthAndHeightMicro,
+            },
+            pageFooter: {
+                height: '1em',
+            },
+            socialButtons: {
+                display: 'none',
+            },
+        },
+        '@media (orientation: landscape) and (min-height: 200px) and (max-height: 576px)': {
+            logo: {
+                left: '1em',
+                '& > *': {
+                    height: '3em',
+                },
+            },
+            player: {
                 width: playerWidthAndHeightWIDE,
                 height: playerWidthAndHeightWIDE,
+            },
+            pageFooter: {
+                height: '3em',
+            },
+            socialButtons: {
+                height: '2em',
+                bottom: '0.6em',
             },
         },
     })).apply({});
@@ -171,7 +214,6 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             <div className={style.pageContainer}>
                 <div className={style.logo}>{props.logo}</div>
                 <div className={style.socialButtons}>{props.socialButtons}</div>
-                {/* {props.externalBackgroundEffect ? <div className={style.externalBackgroundEffect} /> : null} */}
                 <div className={style.contentContainer}>
                     <div className={style.content}>
                         <div className={style.player}>
@@ -181,8 +223,8 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                             </AudioPlayerContextProvider>
                         </div>
                     </div>
-                    <div className={style.pageFooter}>{props.pageFooter}</div>
                 </div>
+                <div className={style.pageFooter}>{props.pageFooter}</div>
             </div>
         </>
     );

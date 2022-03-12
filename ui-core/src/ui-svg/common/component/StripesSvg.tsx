@@ -47,7 +47,7 @@ export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...p
     return (
         <svg
             className={style.svg}
-            preserveAspectRatio="xMaxYMax slice"
+            preserveAspectRatio="xMidYMid slice"
             id="stripe-background_a"
             version="1.1"
             viewBox="0 0 1920 1080"

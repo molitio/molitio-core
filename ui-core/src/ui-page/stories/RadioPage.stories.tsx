@@ -61,9 +61,9 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
             pageFooter={
                 <DefaultFooter
                     leftColumnElements={[
-                        <LogoFreshPrintSvg dimensions={{ height: '4em' }} />,
-                        <LogoLedArtSvg dimensions={{ height: '4em' }} />,
-                        <LogoNestMediaSvg dimensions={{ height: '4em' }} />,
+                        <LogoFreshPrintSvg dimensions={{ height: '2em' }} />,
+                        <LogoLedArtSvg dimensions={{ height: '2em' }} />,
+                        <LogoNestMediaSvg dimensions={{ height: '2em' }} />,
                     ]}
                     centerColumnElements={[
                         <SpanBlock rem={0.7} color={'secondary'} marginTop={'0.2rem'} center>
@@ -79,12 +79,12 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
                     ]}
                     rightColumnElements={[
                         <LogoGooglePlaySvg
-                            dimensions={{ height: '3em' }}
+                            dimensions={{ height: '2em' }}
                             opacity={0.8}
                             linkUrl="https://play.google.com/store"
                         />,
                         <LogoAppStoreSvg
-                            dimensions={{ height: '3em' }}
+                            dimensions={{ height: '2em' }}
                             opacity={0.8}
                             linkUrl="https://www.apple.com/app-store/"
                         />,
