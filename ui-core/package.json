@@ -60,6 +60,8 @@
         }
     ],
     "scripts": {
+        "prepublish": "npm run build",
+        "publish": "npm publish ./dist",
         "prebuild": "npm run clean && prettier --write src/",
         "build": "rollup --config",
         "postbuild": "node packageBuilder",
