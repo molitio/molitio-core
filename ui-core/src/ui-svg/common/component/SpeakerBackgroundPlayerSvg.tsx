@@ -25,8 +25,32 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
             height: '30%',
             display: 'hidden',
             zIndex: 100,
+            pointerEvents: 'auto',
+            cursor: 'pointer',
         },
+        '@keyframes pulseLoad': {
+            '0%': {
+                opacity: 0.4,
+                strokeWidth: 2,
+                boxShadow: '0 0 0 0 rgba(0, 0, 0, 0.7)',
+            },
 
+            '70% ': {
+                opacity: 0.8,
+                strokeWidth: 8,
+                boxShadow: '0 0 0 10px rgba(0, 0, 0, 0)',
+            },
+
+            '100%': {
+                opacity: 1,
+                strokeWidth: 5,
+                boxShadow: '0 0 0 0 rgba(0, 0, 0, 0)',
+            },
+        },
+        playerButtonPulse: {
+            stroke: '3px dashed purple',
+            animation: '$pulseLoad 2s ease-in-out 0s infinite alternate;',
+        },
         st0: {
             fill: '#2A2A2A',
         },
@@ -306,18 +330,27 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
                     </g>
                     <g
                         id="ctrl-play-triangle-g"
-                        className={`${playerContext.isPlaying ? style.hidden : style.visible}`}
+                        className={`${
+                            playerContext.isPlaying && !playerContext.isLoading ? style.hidden : style.visible
+                        }`}
                     >
                         <polygon
                             id="ctrl-play-triangle"
-                            className={style.controlColoring}
-                            points="42,34 68,50 42,66 "
+                            points="42,34 68,50 42,66"
+                            className={`${style.controlColoring} ${
+                                playerContext.isPlaying && playerContext.isLoading ? style.playerButtonPulse : ''
+                            }`}
                             strokeLinejoin="round"
                             strokeOpacity="1"
                             strokeWidth="5"
                         />
                     </g>
-                    <g id="ctrl-pause-path-g" className={`${playerContext.isPlaying ? style.visible : style.hidden}`}>
+                    <g
+                        id="ctrl-pause-path-g"
+                        className={`${
+                            playerContext.isPlaying && !playerContext.isLoading ? style.visible : style.hidden
+                        }`}
+                    >
                         <path
                             id="ctrl-pause-path-1"
                             className={style.controlColoring}

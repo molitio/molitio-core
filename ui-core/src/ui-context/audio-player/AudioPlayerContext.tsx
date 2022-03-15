@@ -3,6 +3,8 @@ import { AudioPlayerState } from 'ui-context/audio-player/interface/AudioPlayerS
 
 export const AudioPlayerContext = React.createContext<AudioPlayerState>({
     isPlaying: false,
+    isLoading: false,
     volume: 0,
     setIsPlaying: () => {},
+    setIsLoading: () => {},
 });

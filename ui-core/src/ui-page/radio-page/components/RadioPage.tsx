@@ -2,7 +2,6 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AudioPlayer } from 'ui-common';
 import { AudioPlayerContextProvider, StyledThemeContext } from 'ui-context';
-import { AudioPreloadTags } from 'ui-core-models';
 import { RadioPageProps } from '../interfaces/RadioPageProps';
 
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
@@ -20,14 +19,6 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                 position: 'relative',
                 zIndex: 60,
             },
-        },
-        contentContainer: {
-            /*    position: 'relative',
-            height: '100vh',
-            width: '100vw',
-            display: 'flex',
-            flexDirection: 'column',
-            pointerEvents: 'none', */
         },
         logo: {
             position: 'fixed',
@@ -53,13 +44,6 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            '& > *': {
-                //flexBasis: 'auto',
-            },
-            /*      left: 0,
-            right: 0,
-            marginLeft: 'auto',
-            marginRight: 'auto', */
         },
         player: {
             width: playerWidthAndHeightWIDE,
@@ -214,12 +198,12 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             <div className={style.pageContainer}>
                 <div className={style.logo}>{props.logo}</div>
                 <div className={style.socialButtons}>{props.socialButtons}</div>
-                <div className={style.contentContainer}>
+                <div>
                     <div className={style.content}>
                         <div className={style.player}>
                             <AudioPlayerContextProvider>
                                 {props.playerElement}
-                                <AudioPlayer src={props.radio.playUrl} preload={AudioPreloadTags.NONE} />
+                                <AudioPlayer src={props.radio.playUrl} preload={props.radio.preload} />
                             </AudioPlayerContextProvider>
                         </div>
                     </div>

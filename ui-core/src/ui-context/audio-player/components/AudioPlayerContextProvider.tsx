@@ -4,13 +4,16 @@ import { AudioPlayerContext } from '../AudioPlayerContext';
 
 export const AudioPlayerContextProvider: React.FC = ({ children }) => {
     const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
-    const [volume, setVolume] = React.useState<number>(90);
+    const [isLoading, setIsLoading] = React.useState<boolean>(false);
+    const [volume, setVolume] = React.useState<number>(0);
 
     const [playerState, setPlayerState] = React.useState<AudioPlayerState>({
         isPlaying: false,
-        volume: 100,
+        isLoading: false,
+        volume: 0,
         setIsPlaying: setIsPlaying,
         setVolume: setVolume,
+        setIsLoading: setIsLoading,
     });
 
     React.useEffect(() => {
@@ -19,6 +22,13 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
         };
         effect();
     }, [isPlaying]);
+
+    React.useEffect(() => {
+        const effect = () => {
+            setPlayerState({ ...playerState, isLoading: isLoading });
+        };
+        effect();
+    }, [isLoading]);
 
     React.useEffect(() => {
         const effect = () => {

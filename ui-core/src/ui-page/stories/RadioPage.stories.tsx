@@ -36,8 +36,9 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
     <AppShell {...args}>
         <RadioPage
             radio={{
-                playUrl:
-                    'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',
+                playUrl: 'https://stream1.virtualisan.net/prx/4800/stream.mp3',
+                //'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',
+                preload: 'auto',
             }}
             playerElement={<SpeakerBackgroundPlayerSvg />}
             logo={<LogoSenseRadioSvg dimensions={{ height: '5em' }} />}
@@ -80,12 +81,12 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
                     rightColumnElements={[
                         <LogoGooglePlaySvg
                             dimensions={{ height: '2em' }}
-                            opacity={0.8}
+                            opacity={0}
                             linkUrl="https://play.google.com/store"
                         />,
                         <LogoAppStoreSvg
                             dimensions={{ height: '2em' }}
-                            opacity={0.8}
+                            opacity={0}
                             linkUrl="https://www.apple.com/app-store/"
                         />,
                     ]}

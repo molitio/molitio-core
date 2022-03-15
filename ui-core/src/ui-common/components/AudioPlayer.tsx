@@ -1,42 +1,59 @@
+import React from 'react';
 import { AudioPlayerContext } from 'ui-context';
-import React, { useRef } from 'react';
 import { AudioPlayerProps } from '../interfaces/AudioPlayerProps';
+import { createUseStyles } from 'react-jss';
 
 export const AudioPlayer: React.FC<AudioPlayerProps> = ({ ...props }) => {
     const playerContext = React.useContext(AudioPlayerContext);
-    const playerRef = useRef<HTMLAudioElement>(null);
+    const playerRef = React.useRef<HTMLAudioElement>(null);
+
+    const style = createUseStyles({
+        visibilityHidden: {
+            visibility: 'hidden',
+        },
+    }).apply({});
 
     React.useEffect(() => {
         const effect = async () => {
-            playerContext.isPlaying ? await playerRef.current?.play() : playerRef.current?.pause();
+            if (playerRef.current) {
+                playerRef.current.onloadstart = () => {
+                    playerContext.setIsLoading(true);
+                };
+                playerRef.current.onloadeddata = () => {
+                    playerContext.setIsLoading(false);
+                };
+            }
         };
         effect();
-    }, [playerContext]);
+        console.log(`playerContext.isLoading: ${playerContext.isLoading}`);
+        console.log(`playerContext.volume: ${playerContext.volume}`);
+    }, []);
+
+    React.useEffect(() => {
+        playerContext.volume = 1;
+        const effect = async () => {
+            if (playerContext.isPlaying && playerRef.current) {
+                playerRef.current.volume = playerContext.volume;
+                await playerRef.current?.play();
+            } else if (!playerContext.isPlaying && playerRef.current) {
+                playerRef.current.volume = 0;
+                playerRef.current?.pause();
+            }
+        };
+        effect();
+    }, [playerContext.isPlaying]);
 
     return (
-        <audio id="audio-player-main" ref={playerRef} tabIndex={0} preload={props.preload}>
+        <audio
+            id="audio-player-main"
+            controls
+            ref={playerRef}
+            tabIndex={0}
+            preload={props.preload}
+            className={style.visibilityHidden}
+        >
             <source src={props.src} type="audio/mpeg" />
+            <a href={props.src}>ˇ</a>;
         </audio>
     );
 };
-
-/* 
-    src: string;
-    preload: AudioPreloadTags;
-    togleAutoPlay: () => void;
-    togglePlayPause: () => void;
-    toggleLoop: () => void;
-    toggleMute: () => void;
-
-
-
- 	Value 	Description
-autoplay 	autoplay 	Specifies that the audio will start playing as soon as it is ready
-controls 	controls 	Specifies that audio controls should be displayed (such as a play/pause button etc)
-loop 	loop 	Specifies that the audio will start over again, every time it is finished
-muted 	muted 	Specifies that the audio output should be muted
-preload 	auto
-metadata
-none 	Specifies if and how the author thinks the audio should be loaded when the page loads
-src 	URL 	Specifies the URL of the audio file
- */
