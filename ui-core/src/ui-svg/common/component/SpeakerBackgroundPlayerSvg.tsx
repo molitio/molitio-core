@@ -1,13 +1,41 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AudioPlayerContext, StyledThemeContext } from 'ui-context';
+import { DeviceContext } from 'ui-context';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 
 export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto';
     const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto';
 
+    const deviceContext = React.useContext(DeviceContext);
+    const playButtonRef = React.useRef<SVGGElement>(null);
+
+    React.useEffect(() => {
+        const effect = async () => {
+            if (playButtonRef.current) {
+                const playButtonCurrent = playButtonRef.current;
+
+                switch (deviceContext.device) {
+                    case 'ios':
+                    case 'android':
+                        playButtonRef.current.ontouchend = () => {
+                            togglePlayPause();
+                        };
+                        break;
+                    default:
+                        playButtonCurrent.onclick = () => {
+                            togglePlayPause();
+                        };
+                        break;
+                }
+            }
+        };
+        effect();
+    }, []);
+
     const playerContext = React.useContext(AudioPlayerContext);
+
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
             height: componentHeight,
@@ -323,7 +351,7 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
                     />
                 </g>
             </g>
-            <g id="playButton" className={style.displayInline} onClick={() => togglePlayPause()}>
+            <g id="playButton" className={style.displayInline} ref={playButtonRef}>
                 <g id="g1262" transform="matrix(0.25,0,0,0.25,37.5,37.5)" className={style.displayInline}>
                     <g id="ctrl-play-circle-g" className={style.playButton}>
                         <circle id="ctrl-play-circle" cx="50" cy="50" r="48" className={style.circle} />

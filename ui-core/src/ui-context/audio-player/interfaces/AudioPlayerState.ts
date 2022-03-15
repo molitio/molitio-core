@@ -6,5 +6,5 @@ export interface AudioPlayerState {
     volume: number;
     setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
     setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-    setVolume?: React.Dispatch<React.SetStateAction<number>>;
+    setVolume: React.Dispatch<React.SetStateAction<number>>;
 }

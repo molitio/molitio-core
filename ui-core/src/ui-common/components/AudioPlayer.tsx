@@ -9,38 +9,46 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ ...props }) => {
 
     const style = createUseStyles({
         visibilityHidden: {
-            visibility: 'hidden',
+            visibility: 'visible',
+            pointerEvents: 'auto',
         },
     }).apply({});
 
     React.useEffect(() => {
         const effect = async () => {
             if (playerRef.current) {
-                playerRef.current.onloadstart = () => {
-                    playerContext.setIsLoading(true);
-                };
-                playerRef.current.onloadeddata = () => {
+                playerRef.current.onloadstart = () => {};
+                playerRef.current.oncanplay = () => {
                     playerContext.setIsLoading(false);
                 };
             }
         };
         effect();
-        console.log(`playerContext.isLoading: ${playerContext.isLoading}`);
-        console.log(`playerContext.volume: ${playerContext.volume}`);
     }, []);
 
-    React.useEffect(() => {
-        playerContext.volume = 1;
-        const effect = async () => {
-            if (playerContext.isPlaying && playerRef.current) {
+    const playAudio = async () => {
+        if (playerRef.current) {
+            if (playerContext.isPlaying) {
+                playerContext.setIsLoading(true);
+                console.log(`isPlaying: ${playerContext.isPlaying}`);
+                //playerRef.current.muted = false;
+                playerContext.setVolume(1);
                 playerRef.current.volume = playerContext.volume;
-                await playerRef.current?.play();
-            } else if (!playerContext.isPlaying && playerRef.current) {
-                playerRef.current.volume = 0;
-                playerRef.current?.pause();
+                console.log('starting play');
+                await playerRef.current.play();
+            } else if (!playerContext.isPlaying) {
+                playerRef.current.muted = true;
+                playerRef.current.pause();
+                playerRef.current.load();
             }
+        }
+    };
+
+    React.useEffect(() => {
+        const effect = async () => {
+            await playAudio();
+            effect();
         };
-        effect();
     }, [playerContext.isPlaying]);
 
     return (
@@ -51,9 +59,10 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ ...props }) => {
             tabIndex={0}
             preload={props.preload}
             className={style.visibilityHidden}
+            // src={props.src}
         >
             <source src={props.src} type="audio/mpeg" />
-            <a href={props.src}>ˇ</a>;
+            <a href={props.src}>{props.src}</a>
         </audio>
     );
 };

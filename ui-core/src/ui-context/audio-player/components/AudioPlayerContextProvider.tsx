@@ -1,6 +1,6 @@
 import React from 'react';
-import { AudioPlayerState } from '../interface/AudioPlayerState';
-import { AudioPlayerContext } from '../AudioPlayerContext';
+import { AudioPlayerState } from '../interfaces/AudioPlayerState';
+import { AudioPlayerContext } from './AudioPlayerContext';
 
 export const AudioPlayerContextProvider: React.FC = ({ children }) => {
     const [isPlaying, setIsPlaying] = React.useState<boolean>(false);

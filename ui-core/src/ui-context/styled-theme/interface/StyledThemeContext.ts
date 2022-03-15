@@ -1,5 +1,8 @@
+import { TDeviceTypes } from 'ui-core-models';
+
 export interface StyledThemeContext {
     themeName?: string;
+    deviceType?: TDeviceTypes;
     primary?: string;
     secondary?: string;
     primaryFontColor?: string;

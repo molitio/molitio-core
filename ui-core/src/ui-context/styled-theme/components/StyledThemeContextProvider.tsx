@@ -22,6 +22,7 @@ export const StyledThemeContextProvider: React.FC<StyledThemeContextProviderProp
     React.useEffect(() => {
         const effect = async () => {
             const theme = themeMap.get(props.themeName ?? 'default') ?? {};
+            theme.deviceType = props.deviceType;
             if (theme) {
                 setSelectedTheme(theme);
             }

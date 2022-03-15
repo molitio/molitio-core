@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { AppShellProps } from '../interfaces/AppShellProps';
 import { StyledThemeContextProvider } from 'ui-context';
 import { ThemeNameTags } from 'ui-core-models';
+import { DeviceContextProvider } from 'ui-context/device/components/DeviceContextProvider';
 
 const globalStyles = {
     '@global': {
@@ -68,7 +69,7 @@ export const AppShell: React.FC<AppShellProps> = ({ ...props }) => {
     React.useEffect(() => {
         const effect = async () => {
             setSelectedTheme(props.themeName);
-            console.warn(`selected theme changed to: ${props.themeName}`);
+            //console.warn(`selected theme changed to: ${props.themeName}`);
         };
         effect();
     }, [props.themeName]);
@@ -91,7 +92,9 @@ export const AppShell: React.FC<AppShellProps> = ({ ...props }) => {
 
     return (
         <main className={classes.shellMain}>
-            <StyledThemeContextProvider themeName={selectedTheme}>{props.children}</StyledThemeContextProvider>
+            <DeviceContextProvider>
+                <StyledThemeContextProvider themeName={selectedTheme}>{props.children}</StyledThemeContextProvider>
+            </DeviceContextProvider>
         </main>
     );
 };

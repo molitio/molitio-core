@@ -7,6 +7,7 @@ export type { TNavPage } from './types/NavMenu/TNavPage';
 export type { TNavPageCollection } from './types/NavMenu/TNavPageCollection';
 export type { TPageTag } from './types/PageTag/TPageTag';
 export type { TUniversalRadio } from './types/UniversalRadio/TUniversalRadio';
+export type { TDeviceTypes } from './types/DefaultTheme/TDeviceTypes';
 
 /* 
    tags
