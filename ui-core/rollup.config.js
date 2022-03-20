@@ -8,6 +8,7 @@ import sizes from 'rollup-plugin-sizes';
 import replace from '@rollup/plugin-replace';
 import image from '@rollup/plugin-image';
 import scss from 'rollup-plugin-scss';
+import json from '@rollup/plugin-json';
 
 const packageJson = require('./package.json');
 
@@ -24,6 +25,8 @@ export default [
     {
         input: 'src/ui-page/radio-page/components/RadioPage.tsx',
         plugins: [
+            peerDepsExternal(),
+            json(),
             babel({
                 extensions: [...extensions],
                 babelHelpers: 'bundled',
@@ -65,6 +68,8 @@ export default [
     {
         input: 'src/index.ts',
         plugins: [
+            peerDepsExternal(),
+            json(),
             babel({
                 extensions: [...extensions],
                 babelHelpers: 'bundled',
@@ -81,12 +86,11 @@ export default [
                 declarationMap: true,
                 outputToFilesystem: true,
             }),
-            peerDepsExternal(),
             scss({
                 output: './dist/style.css',
                 failOnError: true,
             }),
-            buble(),
+            buble({ transforms: { forOf: false } }),
             sizes(),
             replace({
                 'process.env.NODE_ENV': JSON.stringify('production'),

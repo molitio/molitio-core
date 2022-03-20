@@ -1,40 +1,22 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AudioPlayerContext, StyledThemeContext } from 'ui-context';
-import { DeviceContext } from 'ui-context';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 
 export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto';
     const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto';
 
-    const deviceContext = React.useContext(DeviceContext);
+    const playerContext = React.useContext(AudioPlayerContext);
+
     const playButtonRef = React.useRef<SVGGElement>(null);
 
-    React.useEffect(() => {
-        const effect = async () => {
-            if (playButtonRef.current) {
-                const playButtonCurrent = playButtonRef.current;
+    playerContext.setPlayButtonRef(playButtonRef);
 
-                switch (deviceContext.device) {
-                    case 'ios':
-                    case 'android':
-                        playButtonRef.current.ontouchend = () => {
-                            togglePlayPause();
-                        };
-                        break;
-                    default:
-                        playButtonCurrent.onclick = () => {
-                            togglePlayPause();
-                        };
-                        break;
-                }
-            }
-        };
+    React.useEffect(() => {
+        const effect = async () => {};
         effect();
     }, []);
-
-    const playerContext = React.useContext(AudioPlayerContext);
 
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
@@ -149,10 +131,6 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
             display: 'inline',
         },
     })).apply({});
-
-    const togglePlayPause = () => {
-        playerContext.setIsPlaying(!playerContext.isPlaying);
-    };
 
     return (
         <svg
@@ -359,14 +337,14 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
                     <g
                         id="ctrl-play-triangle-g"
                         className={`${
-                            playerContext.isPlaying && !playerContext.isLoading ? style.hidden : style.visible
+                            playerContext.isMuted  ? style.visible : style.hidden
                         }`}
                     >
                         <polygon
                             id="ctrl-play-triangle"
                             points="42,34 68,50 42,66"
                             className={`${style.controlColoring} ${
-                                playerContext.isPlaying && playerContext.isLoading ? style.playerButtonPulse : ''
+                                playerContext.isMuted && playerContext.isLoading ? style.playerButtonPulse : ''
                             }`}
                             strokeLinejoin="round"
                             strokeOpacity="1"
@@ -376,7 +354,7 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
                     <g
                         id="ctrl-pause-path-g"
                         className={`${
-                            playerContext.isPlaying && !playerContext.isLoading ? style.visible : style.hidden
+                            !playerContext.isMuted && !playerContext.isLoading ? style.visible : style.hidden
                         }`}
                     >
                         <path
