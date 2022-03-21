@@ -38,7 +38,7 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
             radio={{
                 playUrl: 'https://stream1.virtualisan.net/prx/4800/live.mp3',
                 //playUrl: 'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',
-                preload: 'none',
+                preload: 'auto',
             }}
             playerElement={<SpeakerBackgroundPlayerSvg />}
             logo={<LogoSenseRadioSvg dimensions={{ height: '5em' }} />}

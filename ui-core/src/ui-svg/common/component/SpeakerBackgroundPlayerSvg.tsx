@@ -11,12 +11,15 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
 
     const playButtonRef = React.useRef<SVGGElement>(null);
 
-    playerContext.setPlayButtonRef(playButtonRef);
-
-    React.useEffect(() => {
-        const effect = async () => {};
+    //playerContext.playButtonRef = playButtonRef;
+    /*     React.useEffect(() => {
+        const effect = () => {
+            if (playButtonRef.current) {
+               // playerContext.setPlayButtonRef(playButtonRef.current);
+            }
+        };
         effect();
-    }, []);
+    }, [playButtonRef.current]); */
 
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
@@ -329,17 +332,16 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
                     />
                 </g>
             </g>
-            <g id="playButton" className={style.displayInline} ref={playButtonRef}>
+            <g
+                id="playButton"
+                className={style.displayInline}
+                //  ref={playButtonRef}
+            >
                 <g id="g1262" transform="matrix(0.25,0,0,0.25,37.5,37.5)" className={style.displayInline}>
                     <g id="ctrl-play-circle-g" className={style.playButton}>
                         <circle id="ctrl-play-circle" cx="50" cy="50" r="48" className={style.circle} />
                     </g>
-                    <g
-                        id="ctrl-play-triangle-g"
-                        className={`${
-                            playerContext.isMuted  ? style.visible : style.hidden
-                        }`}
-                    >
+                    <g id="ctrl-play-triangle-g" className={`${playerContext.isMuted ? style.visible : style.hidden}`}>
                         <polygon
                             id="ctrl-play-triangle"
                             points="42,34 68,50 42,66"

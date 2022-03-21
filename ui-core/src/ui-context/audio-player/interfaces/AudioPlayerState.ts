@@ -1,16 +1,16 @@
 import React from 'react';
 
 export interface AudioPlayerState {
-    playerRef: React.RefObject<HTMLAudioElement> | undefined;
-    playButtonRef: React.RefObject<HTMLElement | SVGElement> | undefined;
+    playerRef?: React.RefObject<HTMLAudioElement> | undefined;
+    playButtonRef?: HTMLElement | SVGElement | undefined;
     isPlaying: boolean;
-    isLoading: boolean;
     isMuted: boolean;
-    volume: number;
-    setPlayerRef: React.Dispatch<React.SetStateAction<React.RefObject<HTMLAudioElement> | undefined>>;
-    setPlayButtonRef: React.Dispatch<React.SetStateAction<React.RefObject<HTMLElement | SVGElement> | undefined>>;
-    setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
-    setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-    setIsMuted: React.Dispatch<React.SetStateAction<boolean>>;
-    setVolume: React.Dispatch<React.SetStateAction<number>>;
+    volume?: number;
+    isLoading: boolean;
+    setPlayerRef: (ref: React.RefObject<HTMLAudioElement> | undefined) => void;
+    setPlayButtonRef?: React.Dispatch<React.SetStateAction<HTMLElement | SVGElement> | undefined>;
+    setIsPlaying?: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsLoading: (ev: Event) => void;
+    setIsMuted?: React.Dispatch<React.SetStateAction<boolean>>;
+    setVolume?: React.Dispatch<React.SetStateAction<number>>;
 }

@@ -14,21 +14,21 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ ...props }) => {
         },
     }).apply({});
 
-    React.useEffect(() => {
+    // playerContext.playerRef = playerRef;
+/*     React.useEffect(() => {
         const effect = async () => {
             if (playerRef.current) {
                 playerContext.setPlayerRef(playerRef);
             }
         };
         effect();
-    }, []);
+    }, [playerRef.current]); */
 
     return (
         <audio
             id="audio-player-main"
             controls
-            ref={playerRef}
-            tabIndex={0}
+            //ref={playerRef}
             preload={props.preload}
             className={style.visibilityHidden}
         >

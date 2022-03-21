@@ -8,7 +8,7 @@ export const DeviceContextProvider: React.FC = ({ children }) => {
         device: 'web',
     });
 
-    React.useEffect(() => {
+/*     React.useEffect(() => {
         const effect = async () => {
             const deviceDetector = new DeviceDetector();
             const userAgent = window.navigator.userAgent;
@@ -34,7 +34,7 @@ export const DeviceContextProvider: React.FC = ({ children }) => {
             console.log(`device: ${JSON.stringify(detectedDevice)}`);
         };
         effect();
-    }, []);
+    }, []); */
 
     return <DeviceContext.Provider value={device}>{children}</DeviceContext.Provider>;
 };
