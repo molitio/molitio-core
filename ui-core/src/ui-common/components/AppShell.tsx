@@ -91,10 +91,12 @@ export const AppShell: React.FC<AppShellProps> = ({ ...props }) => {
     head?.appendChild(fontFamily);
 
     return (
-        <main className={classes.shellMain}>
-            <DeviceContextProvider>
-                <StyledThemeContextProvider themeName={selectedTheme}>{props.children}</StyledThemeContextProvider>
-            </DeviceContextProvider>
-        </main>
+        <React.StrictMode>
+            <main className={classes.shellMain}>
+                <DeviceContextProvider>
+                    <StyledThemeContextProvider themeName={selectedTheme}>{props.children}</StyledThemeContextProvider>
+                </DeviceContextProvider>
+            </main>
+        </React.StrictMode>
     );
 };

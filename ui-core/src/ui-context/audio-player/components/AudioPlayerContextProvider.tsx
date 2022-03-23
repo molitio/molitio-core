@@ -4,10 +4,13 @@ import { DeviceContext } from '../../device/components/DeviceContext';
 import { AudioPlayerState } from '../../audio-player/interfaces/AudioPlayerState';
 
 export enum AudioPlayerStateActionType {
-    IS_PLAYING = 'isPlaying',
-    IS_LOADING = 'isLoading',
-    IS_MUTED = 'isMuted',
+    TOGGLE_PLAYING = 'togglePlaying',
+    TOGGLE_LOADING = 'toggleLoading',
+    TOGGLE_MUTED = 'toggleMuted',
     SET_PLAYER_REF = 'setPlayerRef',
+    SET_PLAY_BUTTON_REF = 'setPlayButtonRef',
+    START_PLAYING = 'startPlaying',
+    STOP_PLAYING = 'stopPlaying',
 }
 interface AudioPlayerStateAction {
     type: AudioPlayerStateActionType;
@@ -15,189 +18,138 @@ interface AudioPlayerStateAction {
 }
 
 export const AudioPlayerContextProvider: React.FC = ({ children }) => {
+    const deviceContext = React.useContext(DeviceContext);
     const playerStateReducer = (state: AudioPlayerState, action: AudioPlayerStateAction): AudioPlayerState => {
         const { type: actionType, payload } = action;
         switch (actionType) {
-            case AudioPlayerStateActionType.IS_LOADING:
+            case AudioPlayerStateActionType.TOGGLE_LOADING:
                 return {
                     ...state,
-                    isLoading: payload.isLoading,
+                    ...payload,
                 };
-            case AudioPlayerStateActionType.IS_PLAYING:
-                if (state.playerRef?.current) {
-                    console.log(`isPlaying & current`);
-                    //state.playerRef.current.play();
-                    return {
-                        ...state,
-                        isPlaying: payload.isPlaying,
-                    };
-                } else {
+            case AudioPlayerStateActionType.TOGGLE_PLAYING:
+                if (!state.playerRef) {
                     return state;
                 }
-            case AudioPlayerStateActionType.IS_MUTED:
-                if (state.playerRef?.current) {
-                    //  state.playerRef.current.muted = payload.isMuted;
-                    return {
-                        ...state,
-                        isMuted: payload.isMuted,
-                    };
+                console.log(`payload isMuted: ${payload.isMuted} isPlaying: ${payload.isPlaying}`);
+                console.log(`state  isMuted: ${state.isMuted} isPlaying: ${state.isPlaying}`);
+
+                if (payload.isPlaying) {
+                    state.playerRef.muted = false;
+                    state.playerRef.play();
                 } else {
-                    return state;
+                    state.playerRef.muted = true;
+                    state.playerRef.pause();
+                    state.playerRef.load();
                 }
+
+                state.isMuted = !payload.isPlaying;
+                state.isPlaying = payload.isPlaying;
+
+                return {
+                    ...state,
+                };
             case AudioPlayerStateActionType.SET_PLAYER_REF:
-                if (payload.playerRef?.current) {
-                    /*     payload.playerRef.current.onloadstart = toggleLoading;
-                    payload.playerRef.current.oncanplay = toggleLoading; */
+                if (!payload.playerRef) {
+                    return state;
+                }
+                payload.playerRef.onloadstart = loadStarted;
+                payload.playerRef.oncanplay = loadedContent;
+                payload.isMuted = payload.playerRef.muted;
+                return {
+                    ...state,
+                    ...payload,
+                };
+            case AudioPlayerStateActionType.SET_PLAY_BUTTON_REF:
+                if (!payload.playButtonRef) {
+                    return state;
+                }
+                switch (deviceContext.device) {
+                    case 'ios':
+                    case 'android':
+                        payload.playButtonRef.ontouchstart = onTogglePlayEvent;
+                        break;
+                    default:
+                        payload.playButtonRef.onclick = onTogglePlayEvent;
+                        break;
                 }
                 return {
                     ...state,
-                    //playerRef: payload.playerRef,
+                    ...payload,
                 };
+            /*   case AudioPlayerStateActionType.START_PLAYING:
+                if (!state.playerRef) {
+                    return state;
+                }
+                state.playerRef.play();
+                return state;
+            case AudioPlayerStateActionType.STOP_PLAYING:
+                if (!state.playerRef) {
+                    return state;
+                }
+                state.playerRef.pause();
+                state.playerRef.load();
+                return state;
+                 */
             default:
                 return state;
         }
     };
 
-    const deviceContext = React.useContext(DeviceContext);
-    //const [playerRef, setPlayerRef] = React.useState<React.RefObject<HTMLAudioElement> | undefined>(undefined);
-    const [playButtonRef, setPlayButtonRef] = React.useState<HTMLElement | SVGElement | undefined>(undefined);
-
-    const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
-    //const [isLoading, setIsLoading] = React.useState<boolean>(false);
-    const [isMuted, setIsMuted] = React.useState<boolean>(false);
-    const [volume, setVolume] = React.useState<number>(0);
-
-    const setPlayerRef = (ref: React.RefObject<HTMLAudioElement> | undefined) => {
+    const setPlayerRef = (ref: HTMLAudioElement | null) => {
         dispatch({ type: AudioPlayerStateActionType.SET_PLAYER_REF, payload: { ...playerState, playerRef: ref } });
     };
 
-    const toggleLoading = (ev: Event) => {
-        ev.preventDefault();
-        console.log(`context on load: ${playerState.isLoading}`);
+    const setPlayButtonRef = (ref: HTMLElement | SVGElement | SVGGElement | null) => {
         dispatch({
-            type: AudioPlayerStateActionType.IS_LOADING,
-            payload: { ...playerState, isLoading: !playerState.isLoading },
+            type: AudioPlayerStateActionType.SET_PLAY_BUTTON_REF,
+            payload: { ...playerState, playButtonRef: ref },
         });
     };
 
-    const [{ ...playerState }, dispatch] = React.useReducer(playerStateReducer, {
-        isPlaying: true,
-        isMuted: true,
-        isLoading: false,
-        setIsLoading: toggleLoading,
-        setPlayerRef: setPlayerRef,
-    });
-
-    /*  isPlaying,
-                  isLoading: true,
-        isMuted: true,
-        volume: 0,
-        setPlayerRef: setPlayerRef,
-        setPlayButtonRef: setPlayButtonRef,
-        setIsPlaying: setIsPlaying,
-        setVolume: setVolume,
-        setIsMuted: setIsMuted,
-        setIsLoading: setIsLoading, */
-
-    /*  React.useEffect(() => {
-        const effect = async () => {
-            console.log('player state changed');
-        };
-        effect();
-    }, [playerState.isMuted]); */
-
-  /*   React.useEffect(() => {
-        const effect = async () => {
-            console.log(`dispatch: ${AudioPlayerStateActionType.IS_PLAYING}`);
-            dispatch({
-                type: AudioPlayerStateActionType.IS_PLAYING,
-                payload: { ...playerState, isPlaying: isPlaying },
-            });
-        };
-        effect();
-    }, [isPlaying]); */
-
-    /*  React.useEffect(() => {
-        const effect = () => {
-            // setPlayerState({ ...playerState, isLoading: isLoading });
-        };
-        effect();
-    }, [isLoading]);
- */
- /*    React.useEffect(() => {
-        const effect = () => {
-            console.log(`context isMuted: ${isMuted}`);
-
-            dispatch({
-                type: AudioPlayerStateActionType.IS_MUTED,
-                payload: { ...playerState, isMuted: isMuted },
-            });
-        };
-
-        effect();
-    }, [isMuted]); */
-
-    /*     React.useEffect(() => {
-        const effect = () => {
-            if (playerRef) {
-                playerRef.volume = volume.valueOf();
-                //setPlayerRef(playerRef);
-                //setPlayerState({ ...playerState, volume: volume });
-            } else {
-                console.log('volume: no playerRef');
-            }
-        };
-        effect();
-    }, [volume]);
- */
-
-    // playerState.setIsLoading(!isLoading);
-
-    /*    React.useEffect(() => {
-        const effect = async () => {
-                  if (playerRef) {
-                // console.log('context starting play');
-                //  setPlayerState({ ...playerState, playerRef: playerRef });
-            } else {
-                console.log('playerRef: no playerRef');
-            } 
-        };
-
-        effect();
-    }, []);
- */
-    const onStartEvent = (e: TouchEvent | MouseEvent) => {
-        e.preventDefault();
-        //console.log(`onStartEvent: ${isMuted}`);
-        // playerState.setIsMuted(!isMuted);
+    const loadStarted = () => {
+        dispatch({
+            type: AudioPlayerStateActionType.TOGGLE_LOADING,
+            payload: { ...playerState, isLoading: true },
+        });
     };
 
-    /* React.useEffect(() => {
-        const effect = async () => {
-            if (playButtonRef) {
-                switch (deviceContext.device) {
-                    case 'ios':
-                    case 'android':
-                        console.log('listen only on touchstart');
-                        playButtonRef.onclick = () => {};
-                        playButtonRef.ontouchstart = onStartEvent;
-                        break;
-                    default:
-                        console.log('listen only on onclick');
-                        playButtonRef.ontouchstart = () => {};
-                        playButtonRef.onclick = onStartEvent;
-                        break;
-                }
-                //setPlayButtonRef(playButtonRef);
-                //setPlayerState({ ...playerState, playButtonRef: playButtonRef });
-                //setPlayerState({ ...playerState });
-            } else {
-                console.log('playButtonRef: no playButtonRef');
-            }
-        };
+    const loadedContent = () => {
+        dispatch({
+            type: AudioPlayerStateActionType.TOGGLE_LOADING,
+            payload: { ...playerState, isLoading: false },
+        });
+    };
 
-        effect();
-    }, []); */
+    const onTogglePlayEvent = (ev: TouchEvent | MouseEvent) => {
+        ev.preventDefault();
+        console.log(`onTogglePlayEvent: playerState.isPlaying: ${playerState.isPlaying}`);
+        if (!playerState.playerRef) {
+            return;
+        }
+
+        if (!playerState.isPlaying) {
+            dispatch({
+                type: AudioPlayerStateActionType.TOGGLE_PLAYING,
+                payload: { ...playerState, isPlaying: true },
+            });
+            //   dispatch({ type: AudioPlayerStateActionType.START_PLAYING, payload: { ...playerState } });
+        } else {
+            dispatch({
+                type: AudioPlayerStateActionType.TOGGLE_PLAYING,
+                payload: { ...playerState, isPlaying: false },
+            });
+            //  dispatch({ type: AudioPlayerStateActionType.STOP_PLAYING, payload: { ...playerState } });
+        }
+    };
+
+    const [{ ...playerState }, dispatch] = React.useReducer(playerStateReducer, {
+        isPlaying: false,
+        isMuted: true,
+        isLoading: false,
+        setPlayerRef: setPlayerRef,
+        setPlayButtonRef: setPlayButtonRef,
+    });
 
     return <AudioPlayerContext.Provider value={playerState}>{children}</AudioPlayerContext.Provider>;
 };

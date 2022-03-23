@@ -18,7 +18,11 @@ export const StripedBackground: React.FC<StripedBackgroundProps> = ({ ...props }
 
     return (
         <div className={style.backgroundContainer}>
-            <StripesSvg dimensions={'FULLSCREEN'} backgroundImageSrc={props.backgroundEffectSrc} />
+            <StripesSvg
+                dimensions={'FULLSCREEN'}
+                embededImageSrc={props.backgroundEffectSrc}
+                highlightStripes={props.highlightStripes}
+            />
         </div>
     );
 };

@@ -39,7 +39,7 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     })).apply({});
 
     const togglePlayPause = () => {
-        playerContext.setIsPlaying(!playerContext.isPlaying);
+        //playerContext.setIsPlaying(!playerContext.isPlaying);
     };
 
     return (

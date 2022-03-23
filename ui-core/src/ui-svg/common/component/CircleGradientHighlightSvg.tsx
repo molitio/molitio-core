@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { StyledThemeContext } from 'ui-context';
-import { SvgEmbeddedHtml } from './SvgEmbeddedHtml';
+import { EmbededHtml } from './EmbededHtml';
 
 export const CircleGradientHighlightSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
     const style = createUseStyles((theme: StyledThemeContext) => ({
@@ -57,9 +57,9 @@ export const CircleGradientHighlightSvg: React.FC<SvgComponentProps> = ({ ...pro
                 />
             </g>
             <g>
-                <SvgEmbeddedHtml x="200" y="200" width="400" height="400">
+                <EmbededHtml x="200" y="200" width="400" height="400">
                     {props.children}
-                </SvgEmbeddedHtml>
+                </EmbededHtml>
             </g>
         </svg>
     );

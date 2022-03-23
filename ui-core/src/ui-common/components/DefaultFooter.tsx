@@ -8,12 +8,12 @@ export const DefaultFooter: React.FC<DefaultFooterProps> = ({ ...props }) => {
         content: {
             display: 'flex',
             justifyContent: 'center',
-            marginTop: '0.2em',
+            marginTop: '0.5em',
             backgroundColor: theme.backgroundColor,
         },
         leftColumnElements: {
             display: 'flex',
-            gap: '0.5em',
+            gap: '1em',
             justifyContent: 'flex-end',
             alignItems: 'center',
             marginRight: '3em',

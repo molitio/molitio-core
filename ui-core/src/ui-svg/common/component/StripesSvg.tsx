@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { StyledThemeContext } from 'ui-context';
 import { StripesSvgProps } from '../interface/StripesSvgProps';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
+import { EmbededImage } from './EmbededImage';
 
 export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...props }) => {
     const rotationAngle = props.rotationAngle ?? 45;
@@ -11,14 +12,6 @@ export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...p
     const stripeHeight = props.stripeHeight ?? 74.453;
     const componentWidth = props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width;
     const componentHeight = props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height;
-
-    const [backgroundEffectImage, setBackgroundEffectImage] = React.useState<JSX.Element | undefined>(undefined);
-
-    React.useEffect(() => {
-        setBackgroundEffectImage(() => {
-            return <image href={props.backgroundImageSrc}></image>;
-        });
-    }, [props.backgroundImageSrc]);
 
     const style = createUseStyles((theme: StyledThemeContext) => ({
         svg: {
@@ -33,9 +26,11 @@ export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...p
             '& rect': {
                 fill: theme.secondaryBackgroundColor,
             },
-            '& rect:hover': {
-                ...theme.interactiveHighlight,
-            },
+            '& rect:hover': props.highlightStripes
+                ? {
+                      ...theme.interactiveHighlight,
+                  }
+                : '',
         },
         stripesBackground: {
             '& rect': {
@@ -56,7 +51,7 @@ export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...p
             <clipPath id="clipToViewBox">
                 <rect x="0" y="0" width="1920" height="1080" />
             </clipPath>
-            <g clipPath="url(#clipToViewBox)">
+            <g clipPath="url(#clipToViewBox)" width="1920" height="1080">
                 <g className={style.stripesBackground}>
                     <rect
                         x="-7.1054e-15"
@@ -189,7 +184,14 @@ export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...p
                     />
                 </g>
                 <g width="1920" height="1080">
-                    {backgroundEffectImage ?? undefined}
+                    {props.embededImageSrc ? (
+                        <EmbededImage
+                            embededImageSrc={props.embededImageSrc}
+                            dimensions={{ width: '1920', height: '1080' }}
+                        />
+                    ) : (
+                        ''
+                    )}
                 </g>
             </g>
         </svg>

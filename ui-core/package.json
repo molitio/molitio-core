@@ -1,6 +1,6 @@
 {
     "name": "@molitio/ui-core",
-    "version": "0.10.3-alpha.0",
+    "version": "0.10.11-alpha.0",
     "author": "molitio foundation",
     "description": "Universal reusable React UI Components",
     "license": "CC0-1.0",
@@ -71,7 +71,7 @@
         "size": "size-limit",
         "analyze": "size-limit --why",
         "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 4242 --no-manager-cache",
-        "build-storybook": "mkdir ./storybook-build && cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true build-storybook -o ./storybook-build --docs",
+        "build-storybook": "rm -rf ./storybook-build && mkdir ./storybook-build && cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true build-storybook -o ./storybook-build --docs",
         "debug": "cross-env NODE_OPTIONS=--inspect-brk STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 4242",
         "clean": "rm -rf build"
     },

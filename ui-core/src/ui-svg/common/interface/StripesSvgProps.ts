@@ -3,5 +3,5 @@ export interface StripesSvgProps {
     fillOpacity?: number;
     stripeLength?: number;
     stripeHeight?: number;
-    backgroundImageSrc?: string;
+    highlightStripes?: boolean;
 }

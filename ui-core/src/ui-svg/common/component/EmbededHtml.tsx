@@ -1,9 +1,7 @@
 import React from 'react';
 import { SvgEmbeddedHtmlProps } from '../interface/SvgEmbeddedHtmlProps';
 
-export const SvgEmbeddedHtml: React.FC<SvgEmbeddedHtmlProps & React.HTMLAttributes<HTMLDivElement>> = ({
-    ...props
-}) => {
+export const EmbededHtml: React.FC<SvgEmbeddedHtmlProps & React.HTMLAttributes<HTMLDivElement>> = ({ ...props }) => {
     const xmlProps = {
         xmlns: 'http://www.w3.org/2000/xhtml',
     };

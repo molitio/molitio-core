@@ -8,8 +8,4 @@ export const AudioPlayerContext = React.createContext<AudioPlayerState>({
     volume: 0,
     setPlayerRef: () => {},
     setPlayButtonRef: () => {},
-    setIsPlaying: () => {},
-    setIsLoading: () => {},
-    setIsMuted: () => {},
-    setVolume: () => {},
 });

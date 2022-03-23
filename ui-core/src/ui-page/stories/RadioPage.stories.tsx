@@ -15,6 +15,9 @@ import {
 import { AppShell, SpanBlock, DefaultFooter } from 'ui-common';
 import { StripedBackground } from 'ui-background';
 
+const embededImageSource =
+    'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_effect.png';
+
 const meta: Meta = {
     title: 'molitio-core/Pages/Radio Page',
     component: RadioPage,
@@ -36,11 +39,16 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
     <AppShell {...args}>
         <RadioPage
             radio={{
-                playUrl: 'https://stream1.virtualisan.net/prx/4800/live.mp3',
-                //playUrl: 'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',
+                mediaSource: {
+                    sourceUrl: 'https://stream1.virtualisan.net/prx/4800/live.mp3',
+                    mediaType: 'audio/mpeg',
+                },
+                //  alternativePlayUrl: 'https://stream1.virtualisan.net/prx/4800/stream.mp3',
+                // playUrl:
+                //   'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/audio-store/chill-abstract-12099.mp3',
                 preload: 'auto',
             }}
-            playerElement={<SpeakerBackgroundPlayerSvg />}
+            playerElement={<SpeakerBackgroundPlayerSvg embededImageSrc={embededImageSource} />}
             logo={<LogoSenseRadioSvg dimensions={{ height: '5em' }} />}
             socialButtons={
                 <SocialButtonsSvg
@@ -51,25 +59,16 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
                     externalUrl="https://google.com"
                 />
             }
-            background={
-                <StripedBackground
-                    backgroundEffectSrc={
-                        'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_effect.webp'
-                    }
-                />
-            }
-            //externalBackgroundEffect="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_effect.webp"
+            background={<StripedBackground backgroundEffectSrc={embededImageSource} />}
             pageFooter={
                 <DefaultFooter
                     leftColumnElements={[
-                        <LogoFreshPrintSvg dimensions={{ height: '2em' }} />,
-                        <LogoLedArtSvg dimensions={{ height: '2em' }} />,
-                        <LogoNestMediaSvg dimensions={{ height: '2em' }} />,
+                        <LogoFreshPrintSvg dimensions={{ height: '2.5em' }} />,
+                        <LogoLedArtSvg dimensions={{ height: '2.5em' }} />,
+                        <LogoNestMediaSvg dimensions={{ height: '2.5em' }} />,
                     ]}
                     centerColumnElements={[
                         <SpanBlock rem={0.7} color={'secondary'} marginTop={'0.2rem'} center>
-                            Tel/Viber: +36 30 277 3939
-                            <br />
                             Email: hello@radiosense.hu
                         </SpanBlock>,
                         <SpanBlock rem={0.5} color={'secondary'} marginTop={'0.1rem'} center>

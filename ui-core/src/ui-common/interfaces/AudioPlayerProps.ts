@@ -1,4 +1,3 @@
-export interface AudioPlayerProps {
-    src: string;
-    preload: 'none' | 'auto' | 'metadata';
-}
+import { TUniversalRadio } from 'ui-core-models';
+
+export interface AudioPlayerProps extends TUniversalRadio {}

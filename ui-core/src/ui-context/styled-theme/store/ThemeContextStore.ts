@@ -55,8 +55,6 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
         ],
     ]);
 
-    //console.log(`theme store themes: ${JSON.stringify(themeMap.entries().next())}, map size: ${themeMap.size}`);
-
     return new Promise((resolve, reject) => {
         try {
             resolve(themeMap);

@@ -203,7 +203,21 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                         <div className={style.player}>
                             <AudioPlayerContextProvider>
                                 {props.playerElement}
-                                <AudioPlayer src={props.radio.playUrl} preload={props.radio.preload} />
+                                <AudioPlayer
+                                    mediaSource={{
+                                        sourceUrl: props.radio.mediaSource.sourceUrl,
+                                        mediaType: props.radio.mediaSource.mediaType,
+                                    }}
+                                    alternativeMediaSource={{
+                                        sourceUrl: props.radio.alternativeMediaSource?.sourceUrl
+                                            ? props.radio.alternativeMediaSource.sourceUrl
+                                            : '',
+                                        mediaType: props.radio.alternativeMediaSource?.mediaType
+                                            ? props.radio.alternativeMediaSource.mediaType
+                                            : 'audio/mpeg',
+                                    }}
+                                    preload={props.radio.preload}
+                                />
                             </AudioPlayerContextProvider>
                         </div>
                     </div>
