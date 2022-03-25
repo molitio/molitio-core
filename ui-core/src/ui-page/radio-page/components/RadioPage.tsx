@@ -75,7 +75,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             logo: {
                 left: `calc(${headerItemSpacingSide} + 1em)`,
                 '& > *': {
-                    height: '5em',
+                    height: '7em',
                 },
             },
         },
@@ -83,7 +83,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             logo: {
                 left: `calc(${headerItemSpacingSide} + 1em)`,
                 '& > *': {
-                    height: '5em',
+                    height: '6em',
                 },
             },
         },
@@ -91,7 +91,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             logo: {
                 left: `calc(${headerItemSpacingSide} - 1em)`,
                 '& > *': {
-                    height: '4em',
+                    height: '5em',
                 },
             },
             socialButtons: {
@@ -110,25 +110,26 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             },
             pageFooter: {
                 '& > *': {
+                    height: '3em',
                     visibility: 'hidden',
                 },
             },
         },
         '@media (max-width: 768px)': {
             logo: {
-                left: `calc(${headerItemSpacingSide} - 1.5em)`,
+                left: `calc(${headerItemSpacingSide} - 0em)`,
                 '& > *': {
-                    height: '4em',
+                    height: '5em',
                 },
             },
         },
         '@media (max-width: 576px) and (max-height: 576px)': {
             logo: {
                 bottom: 'auto',
-                top: '0.2em',
-                left: '0.2em',
+                top: '1em',
+                left: '2em',
                 '& > *': {
-                    height: '1em',
+                    height: '2em',
                 },
             },
             socialButtons: {
@@ -140,9 +141,9 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
         },
         '@media (max-width: 576px)': {
             logo: {
-                left: `calc(${headerItemSpacingSide} - 4em)`,
+                left: `calc(${headerItemSpacingSide} - 2em)`,
                 '& > *': {
-                    height: '3em',
+                    height: '4em',
                 },
             },
             player: {

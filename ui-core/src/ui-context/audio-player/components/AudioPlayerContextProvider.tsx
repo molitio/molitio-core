@@ -9,8 +9,6 @@ export enum AudioPlayerStateActionType {
     TOGGLE_MUTED = 'toggleMuted',
     SET_PLAYER_REF = 'setPlayerRef',
     SET_PLAY_BUTTON_REF = 'setPlayButtonRef',
-    START_PLAYING = 'startPlaying',
-    STOP_PLAYING = 'stopPlaying',
 }
 interface AudioPlayerStateAction {
     type: AudioPlayerStateActionType;
@@ -23,18 +21,15 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
         const { type: actionType, payload } = action;
         switch (actionType) {
             case AudioPlayerStateActionType.TOGGLE_LOADING:
-                console.log(`toggle loading state isLoading: ${payload.isLoading}`);
                 return {
                     ...state,
-                    isLoading: payload.isLoading,
+                    isLoading: !state.isLoading,
                 };
             case AudioPlayerStateActionType.TOGGLE_PLAYING:
                 if (!state.playerRef) {
                     return state;
                 }
-                console.log(`payload isMuted: ${payload.isMuted} isPlaying: ${payload.isPlaying}`);
 
-                console.log(`state  isMuted: ${state.isMuted} isPlaying: ${state.isPlaying}`);
                 const updatedState = {
                     ...state,
                     isMuted: state.isPlaying,
@@ -44,19 +39,12 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
                 if (updatedState.playerRef) {
                     updatedState.playerRef.muted = updatedState.isMuted;
                     if (!state.isPlaying) {
-                        console.log('___playing');
                         updatedState.playerRef.play();
                     } else {
-                        console.log('___stopping');
                         updatedState.playerRef.pause();
                         updatedState.playerRef.load();
                     }
                 }
-
-                console.log(
-                    `updatedState  isMuted: ${updatedState.isMuted} isPlaying: ${updatedState.isPlaying}, playerRef.muted: ${updatedState?.playerRef?.muted}`,
-                );
-
                 return updatedState;
             case AudioPlayerStateActionType.SET_PLAYER_REF:
                 if (!payload.playerRef) {
@@ -87,20 +75,6 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
                     ...state,
                     playButtonRef: payload.playButtonRef,
                 };
-            /*   case AudioPlayerStateActionType.START_PLAYING:
-                if (!state.playerRef) {
-                    return state;
-                }
-                state.playerRef.play();
-                return state;
-            case AudioPlayerStateActionType.STOP_PLAYING:
-                if (!state.playerRef) {
-                    return state;
-                }
-                state.playerRef.pause();
-                state.playerRef.load();
-                return state;
-                 */
             default:
                 return state;
         }
@@ -120,20 +94,19 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
     const loadStarted = () => {
         dispatch({
             type: AudioPlayerStateActionType.TOGGLE_LOADING,
-            payload: { ...playerState, isLoading: true },
+            payload: { ...playerState },
         });
     };
 
     const loadedContent = () => {
         dispatch({
             type: AudioPlayerStateActionType.TOGGLE_LOADING,
-            payload: { ...playerState, isLoading: false },
+            payload: { ...playerState },
         });
     };
 
     const onTogglePlayEvent = (ev: TouchEvent | MouseEvent) => {
         ev.preventDefault();
-        console.log(`onTogglePlayEvent: playerState.isPlaying: ${playerState.isPlaying}`);
         if (!playerState.playerRef) {
             return;
         }
@@ -143,13 +116,11 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
                 type: AudioPlayerStateActionType.TOGGLE_PLAYING,
                 payload: { ...playerState },
             });
-            //   dispatch({ type: AudioPlayerStateActionType.START_PLAYING, payload: { ...playerState } });
         } else {
             dispatch({
                 type: AudioPlayerStateActionType.TOGGLE_PLAYING,
                 payload: { ...playerState },
             });
-            //  dispatch({ type: AudioPlayerStateActionType.STOP_PLAYING, payload: { ...playerState } });
         }
     };
 
