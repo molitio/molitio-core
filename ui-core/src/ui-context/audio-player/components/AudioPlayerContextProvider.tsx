@@ -23,32 +23,41 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
         const { type: actionType, payload } = action;
         switch (actionType) {
             case AudioPlayerStateActionType.TOGGLE_LOADING:
+                console.log(`toggle loading state isLoading: ${payload.isLoading}`);
                 return {
                     ...state,
-                    ...payload,
+                    isLoading: payload.isLoading,
                 };
             case AudioPlayerStateActionType.TOGGLE_PLAYING:
                 if (!state.playerRef) {
                     return state;
                 }
                 console.log(`payload isMuted: ${payload.isMuted} isPlaying: ${payload.isPlaying}`);
-                console.log(`state  isMuted: ${state.isMuted} isPlaying: ${state.isPlaying}`);
 
-                if (payload.isPlaying) {
-                    state.playerRef.muted = false;
-                    state.playerRef.play();
-                } else {
-                    state.playerRef.muted = true;
-                    state.playerRef.pause();
-                    state.playerRef.load();
+                console.log(`state  isMuted: ${state.isMuted} isPlaying: ${state.isPlaying}`);
+                const updatedState = {
+                    ...state,
+                    isMuted: state.isPlaying,
+                    isPlaying: !state.isPlaying,
+                };
+
+                if (updatedState.playerRef) {
+                    updatedState.playerRef.muted = updatedState.isMuted;
+                    if (!state.isPlaying) {
+                        console.log('___playing');
+                        updatedState.playerRef.play();
+                    } else {
+                        console.log('___stopping');
+                        updatedState.playerRef.pause();
+                        updatedState.playerRef.load();
+                    }
                 }
 
-                state.isMuted = !payload.isPlaying;
-                state.isPlaying = payload.isPlaying;
+                console.log(
+                    `updatedState  isMuted: ${updatedState.isMuted} isPlaying: ${updatedState.isPlaying}, playerRef.muted: ${updatedState?.playerRef?.muted}`,
+                );
 
-                return {
-                    ...state,
-                };
+                return updatedState;
             case AudioPlayerStateActionType.SET_PLAYER_REF:
                 if (!payload.playerRef) {
                     return state;
@@ -58,7 +67,8 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
                 payload.isMuted = payload.playerRef.muted;
                 return {
                     ...state,
-                    ...payload,
+                    playerRef: payload.playerRef,
+                    isMuted: payload.playerRef.muted,
                 };
             case AudioPlayerStateActionType.SET_PLAY_BUTTON_REF:
                 if (!payload.playButtonRef) {
@@ -75,7 +85,7 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
                 }
                 return {
                     ...state,
-                    ...payload,
+                    playButtonRef: payload.playButtonRef,
                 };
             /*   case AudioPlayerStateActionType.START_PLAYING:
                 if (!state.playerRef) {
@@ -131,19 +141,19 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
         if (!playerState.isPlaying) {
             dispatch({
                 type: AudioPlayerStateActionType.TOGGLE_PLAYING,
-                payload: { ...playerState, isPlaying: true },
+                payload: { ...playerState },
             });
             //   dispatch({ type: AudioPlayerStateActionType.START_PLAYING, payload: { ...playerState } });
         } else {
             dispatch({
                 type: AudioPlayerStateActionType.TOGGLE_PLAYING,
-                payload: { ...playerState, isPlaying: false },
+                payload: { ...playerState },
             });
             //  dispatch({ type: AudioPlayerStateActionType.STOP_PLAYING, payload: { ...playerState } });
         }
     };
 
-    const [{ ...playerState }, dispatch] = React.useReducer(playerStateReducer, {
+    const [playerState, dispatch] = React.useReducer(playerStateReducer, {
         isPlaying: false,
         isMuted: true,
         isLoading: false,
