@@ -9,11 +9,12 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
     const headerItemSpacingSide = '6em';
     const playerWidthAndHeightMicro = '8em';
     const playerWidthAndHeightSM = '80vw';
-    const playerWidthAndHeightLG = '70vw';
+    const playerWidthAndHeightLG = '60vw';
     const playerWidthAndHeightWIDE = '60vh';
 
     const style = createUseStyles((theme: StyledThemeContext) => ({
         pageContainer: {
+            top: 'calc(env(safe-area-inset-top, 0))',
             zIndex: 100,
             '& * ': {
                 position: 'relative',
@@ -24,7 +25,11 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             position: 'fixed',
             top: headerItemSpacingTop,
             left: headerItemSpacingSide,
+            right: 'auto',
             zIndex: 100,
+            '& > *': {
+                height: '5em',
+            },
         },
         socialButtons: {
             position: 'fixed',
@@ -66,8 +71,8 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             zIndex: 70,
             position: 'fixed',
             left: 0,
-            bottom: 0,
-            width: 'calc(env(safe-area-inset-left, 0px) + 100% + env(safe-area-inset-right, 0px))',
+            bottom: 'calc(env(safe-area-inset-bottom, 0))',
+            width: 'calc(env(safe-area-inset-left, 0) + 100% + env(safe-area-inset-right, 0))',
             height: '5em',
             backgroundColor: theme.backgroundColor,
         },
@@ -75,7 +80,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             logo: {
                 left: `calc(${headerItemSpacingSide} + 1em)`,
                 '& > *': {
-                    height: '7em',
+                    height: '5em',
                 },
             },
         },
@@ -83,13 +88,16 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             logo: {
                 left: `calc(${headerItemSpacingSide} + 1em)`,
                 '& > *': {
-                    height: '6em',
+                    height: '5em',
                 },
             },
         },
         '@media (max-width: 992px)': {
             logo: {
-                left: `calc(${headerItemSpacingSide} - 1em)`,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                marginRight: 'auto',
+                marginLeft: 'auto',
                 '& > *': {
                     height: '5em',
                 },
@@ -106,31 +114,40 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             player: {
                 maxWidth: playerWidthAndHeightLG,
                 maxHeight: playerWidthAndHeightLG,
-                // marginTop: '7em',
             },
             pageFooter: {
-                '& > *': {
-                    height: '3em',
+                height: '4em',
+                '& :nth-of-type(n+1)': {
                     visibility: 'hidden',
                 },
             },
         },
         '@media (max-width: 768px)': {
             logo: {
-                left: `calc(${headerItemSpacingSide} - 0em)`,
-                '& > *': {
-                    height: '5em',
-                },
+                '& > *': {},
+            },
+            player: {
+                width: playerWidthAndHeightLG,
+                height: playerWidthAndHeightLG,
             },
         },
-        '@media (max-width: 576px) and (max-height: 576px)': {
+        '@media (max-height: 768px)': {
             logo: {
-                bottom: 'auto',
-                top: '1em',
-                left: '2em',
+                right: 'auto',
                 '& > *': {
-                    height: '2em',
+                    height: '4em',
                 },
+            },
+            player: {
+                width: playerWidthAndHeightWIDE,
+                height: playerWidthAndHeightWIDE,
+            },
+        },
+        '@media (max-width: 576px)': {
+            logo: {
+                top: '1em',
+                bottom: 'auto',
+                '& > *': {},
             },
             socialButtons: {
                 position: 'fixed',
@@ -138,24 +155,27 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                 bottom: '0.8em',
                 right: '1em',
             },
-        },
-        '@media (max-width: 576px)': {
-            logo: {
-                left: `calc(${headerItemSpacingSide} - 2em)`,
-                '& > *': {
-                    height: '4em',
-                },
-            },
             player: {
                 width: playerWidthAndHeightSM,
                 height: playerWidthAndHeightSM,
             },
         },
-        '@media (max-width: 200px) or (max-height: 200px)': {
+        '@media (max-height: 576px)': {
+            logo: {
+                '& > *': {
+                    height: '4em',
+                },
+            },
+            player: {
+                width: playerWidthAndHeightWIDE,
+                height: playerWidthAndHeightWIDE,
+            },
+        },
+        '@media ((max-width: 420px) or (max-height: 420px)) and (min-width: 992px)': {
             logo: {
                 bottom: '0.1em',
                 top: 'auto',
-                left: '0.5em',
+                left: '1em',
                 '& > *': {
                     height: '1em',
                 },
@@ -166,20 +186,20 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                 height: playerWidthAndHeightMicro,
             },
             pageFooter: {
-                height: '1em',
+                height: '0.5em',
             },
             socialButtons: {
                 display: 'none',
             },
         },
-        '@media (orientation: landscape) and (min-height: 200px) and (max-height: 576px)': {
+        '@media (orientation: landscape) and (max-height: 576px)': {
             logo: {
-                left: '1em',
                 '& > *': {
                     height: '3em',
                 },
             },
             player: {
+                marginTop: '2em',
                 width: playerWidthAndHeightWIDE,
                 height: playerWidthAndHeightWIDE,
             },
