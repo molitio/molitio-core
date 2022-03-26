@@ -203,8 +203,9 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                 height: playerWidthAndHeightWIDE,
             },
             pageFooter: {
-                height: '3em',
+                maxHeight: '4em',
             },
+
             socialButtons: {
                 height: '2em',
                 bottom: '0.6em',
