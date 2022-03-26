@@ -174,7 +174,6 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
         '@media ((max-width: 420px) or (max-height: 420px)) and (min-width: 992px)': {
             logo: {
                 bottom: '0.1em',
-                top: 'auto',
                 left: '1em',
                 '& > *': {
                     height: '1em',
