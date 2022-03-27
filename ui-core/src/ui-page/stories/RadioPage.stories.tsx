@@ -49,10 +49,10 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
                 preload: 'auto',
             }}
             playerElement={<SpeakerBackgroundPlayerSvg embededImageSrc={embededImageSource} />}
-            logo={<LogoSenseRadioSvg dimensions={{ height: '5em' }} />}
+            logo={<LogoSenseRadioSvg dimensions={{ height: '8em' }} />}
             socialButtons={
                 <SocialButtonsSvg
-                    dimensions={{ height: '2em' }}
+                    dimensions={{ height: '3em' }}
                     facebookUrl="https://facebook.com"
                     instagramUrl="https://instagram.com"
                     youtubeUrl="https://youtube.com"

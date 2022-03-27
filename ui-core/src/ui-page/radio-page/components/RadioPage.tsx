@@ -6,15 +6,15 @@ import { RadioPageProps } from '../interfaces/RadioPageProps';
 
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
     const headerItemSpacingTop = '2em';
-    const headerItemSpacingSide = '6em';
+    const headerItemSpacingSide = '12em';
     const playerWidthAndHeightMicro = '8em';
     const playerWidthAndHeightSM = '80vw';
-    const playerWidthAndHeightLG = '60vw';
+    const playerWidthAndHeightLG = '80vw';
     const playerWidthAndHeightWIDE = '60vh';
 
     const style = createUseStyles((theme: StyledThemeContext) => ({
         pageContainer: {
-            top: 'calc(env(safe-area-inset-top, 0))',
+            top: 'env(safe-area-inset-top, 0)',
             zIndex: 100,
             '& * ': {
                 position: 'relative',
@@ -28,7 +28,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             right: 'auto',
             zIndex: 100,
             '& > *': {
-                height: '5em',
+                //maxHeight: '5em',
             },
         },
         socialButtons: {
@@ -71,41 +71,100 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             zIndex: 70,
             position: 'fixed',
             left: 0,
-            bottom: 'calc(env(safe-area-inset-bottom, 0))',
+            bottom: 'env(safe-area-inset-bottom, 0)',
             width: 'calc(env(safe-area-inset-left, 0) + 100% + env(safe-area-inset-right, 0))',
             height: '5em',
             backgroundColor: theme.backgroundColor,
         },
-        '@media (max-width: 1400px)': {
+
+        '@media (orientation: landscape) and (max-width: 1400px)': {
             logo: {
-                left: `calc(${headerItemSpacingSide} + 1em)`,
+                left: `calc(${headerItemSpacingSide} - 2em)`,
+            },
+            socialButtons: {
+                right: `calc(${headerItemSpacingSide} - 2em)`,
+            },
+        },
+
+        '@media (orientation: landscape) and (max-width: 1200px)': {
+            logo: {
+                left: `calc(${headerItemSpacingSide} - 4em)`,
                 '& > *': {
-                    height: '5em',
+                    maxHeight: '8em',
+                },
+                socialButtons: {
+                    right: `calc(${headerItemSpacingSide} - 4em)`,
                 },
             },
         },
-        '@media (max-width: 1200px)': {
+
+        '@media (orientation: landscape) and (max-height: 992px)': {
             logo: {
-                left: `calc(${headerItemSpacingSide} + 1em)`,
+                left: '4em',
                 '& > *': {
-                    height: '5em',
+                    maxHeight: '7em',
+                },
+            },
+            socialButtons: {
+                right: '4em',
+                '& > *': {
+                    maxHeight: '2em',
+                },
+            },
+
+            pageFooter: {
+                maxHeight: '4em',
+                '& :nth-of-type(n+1)': {
+                    //visibility: 'hidden',
                 },
             },
         },
-        '@media (max-width: 992px)': {
+        '@media (orientation: landscape) and (max-height: 776px)': {
+            logo: {
+                left: '3em',
+                '& > *': {
+                    maxHeight: '6em',
+                },
+            },
+            socialButtons: {
+                right: '3em',
+                '& > *': {
+                    maxHeight: '2em',
+                },
+            },
+
+            pageFooter: {
+                maxHeight: '1em',
+                '& :nth-of-type(n+1)': {
+                    visibility: 'hidden',
+                },
+            },
+        },
+        '@media (orientation: landscape) and (max-height: 576px)': {
+            logo: {
+                top: '1em',
+                left: '3em',
+                '& > *': {
+                    maxHeight: '3em',
+                },
+            },
+            socialButtons: {
+                top: '1em',
+            },
+            player: {
+                marginTop: '1em',
+            },
+        },
+        '@media (orientation: portrait)': {
             logo: {
                 left: '50%',
                 transform: 'translateX(-50%)',
                 marginRight: 'auto',
                 marginLeft: 'auto',
-                '& > *': {
-                    height: '5em',
-                },
             },
             socialButtons: {
-                position: 'fixed',
                 top: 'auto',
-                bottom: '0.8em',
+                bottom: '0.1em',
                 left: 0,
                 right: 0,
                 marginLeft: 'auto',
@@ -116,99 +175,34 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                 maxHeight: playerWidthAndHeightLG,
             },
             pageFooter: {
-                height: '4em',
+                maxHeight: '3.5em',
                 '& :nth-of-type(n+1)': {
                     visibility: 'hidden',
                 },
             },
         },
-        '@media (max-width: 768px)': {
+        '@media (orientation: portrait) and (max-height: 992px)': {
             logo: {
-                '& > *': {},
-            },
-            player: {
-                width: playerWidthAndHeightLG,
-                height: playerWidthAndHeightLG,
-            },
-        },
-        '@media (max-height: 768px)': {
-            logo: {
-                right: 'auto',
                 '& > *': {
-                    height: '4em',
+                    maxHeight: '6em',
                 },
             },
             player: {
-                width: playerWidthAndHeightWIDE,
-                height: playerWidthAndHeightWIDE,
+                marginTop: '1em',
+                maxWidth: playerWidthAndHeightSM,
+                maxHeight: playerWidthAndHeightSM,
             },
         },
-        '@media (max-width: 576px)': {
-            logo: {
-                top: '1em',
-                bottom: 'auto',
-                '& > *': {},
-            },
-            socialButtons: {
-                position: 'fixed',
-                top: 'auto',
-                bottom: '0.8em',
-                right: '1em',
-            },
-            player: {
-                width: playerWidthAndHeightSM,
-                height: playerWidthAndHeightSM,
-            },
-        },
-        '@media (max-height: 576px)': {
+        '@media (orientation: portrait) and (max-height: 776px)': {
             logo: {
                 '& > *': {
-                    height: '4em',
+                    maxHeight: '5em',
                 },
             },
             player: {
-                width: playerWidthAndHeightWIDE,
-                height: playerWidthAndHeightWIDE,
-            },
-        },
-        '@media ((max-width: 420px) or (max-height: 420px)) and (min-width: 992px)': {
-            logo: {
-                bottom: '0.1em',
-                left: '1em',
-                '& > *': {
-                    height: '1em',
-                },
-            },
-            player: {
-                marginTop: '-1em',
-                width: playerWidthAndHeightMicro,
-                height: playerWidthAndHeightMicro,
-            },
-            pageFooter: {
-                height: '0.5em',
-            },
-            socialButtons: {
-                display: 'none',
-            },
-        },
-        '@media (orientation: landscape) and (max-height: 576px)': {
-            logo: {
-                '& > *': {
-                    height: '3em',
-                },
-            },
-            player: {
-                marginTop: '2em',
-                width: playerWidthAndHeightWIDE,
-                height: playerWidthAndHeightWIDE,
-            },
-            pageFooter: {
-                maxHeight: '4em',
-            },
-
-            socialButtons: {
-                height: '2em',
-                bottom: '0.6em',
+                marginTop: '1em',
+                maxWidth: playerWidthAndHeightSM,
+                maxHeight: playerWidthAndHeightSM,
             },
         },
     })).apply({});
