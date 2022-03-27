@@ -42,7 +42,7 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
                         updatedState.playerRef.play();
                     } else {
                         updatedState.playerRef.pause();
-                        updatedState.playerRef.load();
+                        //updatedState.playerRef.load();
                     }
                 }
                 return updatedState;
@@ -51,7 +51,11 @@ export const AudioPlayerContextProvider: React.FC = ({ children }) => {
                     return state;
                 }
                 payload.playerRef.onloadstart = loadStarted;
-                payload.playerRef.oncanplay = loadedContent;
+                if (deviceContext.device === 'ios') {
+                    payload.playerRef.onloadedmetadata = loadedContent;
+                } else {
+                    payload.playerRef.oncanplay = loadedContent;
+                }
                 payload.isMuted = payload.playerRef.muted;
                 return {
                     ...state,

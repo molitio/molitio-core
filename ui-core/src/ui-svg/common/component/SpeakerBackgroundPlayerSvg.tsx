@@ -333,7 +333,7 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
                         />
                     </g>
                 </g>
-                <g width="100" height="100" fill="#fff">
+                <g width="100" height="100">
                     {props.embededImageSrc ? (
                         <EmbededImage
                             embededImageSrc={props.embededImageSrc}

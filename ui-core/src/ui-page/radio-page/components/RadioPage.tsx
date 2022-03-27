@@ -7,14 +7,16 @@ import { RadioPageProps } from '../interfaces/RadioPageProps';
 export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
     const headerItemSpacingTop = '2em';
     const headerItemSpacingSide = '12em';
-    const playerWidthAndHeightMicro = '8em';
+    //const playerWidthAndHeightMicro = '8em';
     const playerWidthAndHeightSM = '80vw';
     const playerWidthAndHeightLG = '80vw';
     const playerWidthAndHeightWIDE = '60vh';
 
     const style = createUseStyles((theme: StyledThemeContext) => ({
         pageContainer: {
-            top: 'env(safe-area-inset-top, 0)',
+            top: 'env(safe-area-inset-top, 0px)',
+            left: 'env(safe-area-inset-left, 0px)',
+
             zIndex: 100,
             '& * ': {
                 position: 'relative',
@@ -71,8 +73,8 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             zIndex: 70,
             position: 'fixed',
             left: 0,
-            bottom: 'env(safe-area-inset-bottom, 0)',
-            width: 'calc(env(safe-area-inset-left, 0) + 100% + env(safe-area-inset-right, 0))',
+            bottom: 0,
+            width: 'calc(env(safe-area-inset-left, 0px) + 100% + env(safe-area-inset-right, 0px))',
             height: '5em',
             backgroundColor: theme.backgroundColor,
         },
@@ -114,9 +116,6 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
 
             pageFooter: {
                 maxHeight: '4em',
-                '& :nth-of-type(n+1)': {
-                    //visibility: 'hidden',
-                },
             },
         },
         '@media (orientation: landscape) and (max-height: 776px)': {
@@ -132,18 +131,10 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
                     maxHeight: '2em',
                 },
             },
-
-            pageFooter: {
-                maxHeight: '1em',
-                '& :nth-of-type(n+1)': {
-                    visibility: 'hidden',
-                },
-            },
         },
         '@media (orientation: landscape) and (max-height: 576px)': {
             logo: {
                 top: '1em',
-                left: '3em',
                 '& > *': {
                     maxHeight: '3em',
                 },
@@ -153,6 +144,12 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             },
             player: {
                 marginTop: '1em',
+            },
+            pageFooter: {
+                maxHeight: '1em',
+                '& :nth-of-type(n+1)': {
+                    visibility: 'hidden',
+                },
             },
         },
         '@media (orientation: portrait)': {
@@ -189,20 +186,26 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             },
             player: {
                 marginTop: '1em',
-                maxWidth: playerWidthAndHeightSM,
-                maxHeight: playerWidthAndHeightSM,
             },
         },
         '@media (orientation: portrait) and (max-height: 776px)': {
             logo: {
                 '& > *': {
-                    maxHeight: '5em',
+                    maxHeight: '4em',
                 },
             },
             player: {
                 marginTop: '1em',
                 maxWidth: playerWidthAndHeightSM,
                 maxHeight: playerWidthAndHeightSM,
+            },
+            socialButtons: {
+                '& > *': {
+                    maxHeight: '2em',
+                },
+            },
+            pageFooter: {
+                maxHeight: '3em',
             },
         },
     })).apply({});
