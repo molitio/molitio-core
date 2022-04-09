@@ -1,0 +1,11 @@
+.test-background{
+
+    background-color: beige;
+}
+
+.button-style-rounded{
+
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;   
+}
