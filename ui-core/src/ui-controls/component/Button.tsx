@@ -3,6 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { StyleVariant } from 'ui-core-models';
 import { StyledThemeContext } from 'ui-context';
 import { ButtonProps } from '../interface/ButtonProps';
+import styles from '../styles/button.module.scss';
 
 export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = ({ ...props }) => {
     let buttonStyleRounded = {
@@ -26,15 +27,20 @@ export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonEleme
         }
     };
 
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const regiStyle = createUseStyles((theme: StyledThemeContext) => ({
         buttonStyle: {
+            color: 'purple',
+            /*
             padding: props.padding,
-            backgroundColor: theme.primary,
+
             fontSize: props?.fontSize,
             color: theme.secondary,
-            ...getVariantStyle(),
+            ...getVariantStyle(), */
         },
     })).apply({});
 
-    return <button className={props.className ?? style.buttonStyle}>{props.label ?? props.children}</button>;
+    //return <button className={props.className ?? style.buttonStyle}>{props.label ?? props.children}</button>;
+    return (
+        <button className={`${regiStyle.buttonStyle} ${styles.testBackground}`}>{props.label ?? props.children}</button>
+    );
 };

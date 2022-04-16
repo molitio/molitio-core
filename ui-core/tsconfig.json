@@ -29,6 +29,7 @@
         "esModuleInterop": true,
         "skipLibCheck": false,
         "forceConsistentCasingInFileNames": true,
-        "noEmit": true
+        "noEmit": true,
+        "plugins": [{ "name": "typescript-plugin-css-modules" }]
     }
 }
