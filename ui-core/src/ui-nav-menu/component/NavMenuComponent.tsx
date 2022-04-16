@@ -4,6 +4,7 @@ import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
 import { TNavPage } from 'ui-core-models';
 import { StyledThemeContext } from 'ui-context';
+import styles from '../styles/NavMenu.module.scss';
 
 export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: NavMenuComponentProps) => {
     const [menuPages, setMenuPages] = React.useState<Map<string, TNavPage>>(new Map<string, TNavPage>());
@@ -101,7 +102,36 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
  */
 
     return (
-        <nav className={style.nav}>
+        <nav className={styles.navbar}>
+            <div className={styles.brandTitle}>
+                <img
+                    src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/nest-media-ui/nestmedia_logo_final_one_900.png"
+                    alt="nestMedia"
+                />
+            </div>
+            <a href="#" className={styles.toggleButton}>
+                <span className={styles.bar}></span>
+                <span className={styles.bar}></span>
+                <span className={styles.bar}></span>
+            </a>
+            <div className={styles.navbarLinks}>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        /* <nav className={style.nav}>
             <div className={style.brandSection}>
                 <a href="#home" id="home" className="active">
                     {'szép kép'}
@@ -120,6 +150,6 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
                     ))}
                 </ul>
             </div>
-        </nav>
+        </nav>  */
     );
 };

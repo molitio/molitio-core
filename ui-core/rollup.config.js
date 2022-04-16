@@ -87,6 +87,7 @@ export default [
                 outputToFilesystem: true,
             }),
             scss({
+                include: '**/*.module.scss',
                 output: './dist/style.css',
                 failOnError: true,
             }),
