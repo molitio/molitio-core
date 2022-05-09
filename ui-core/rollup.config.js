@@ -68,6 +68,14 @@ export default [
     {
         input: 'src/index.ts',
         plugins: [
+            typescript({
+                tsconfig: './tsconfig.json',
+                outDir: '.',
+                declaration: true,
+                declarationDir: '.',
+                declarationMap: true,
+                outputToFilesystem: true,
+            }),
             peerDepsExternal(),
             json(),
             babel({
@@ -78,14 +86,6 @@ export default [
             }),
             nodeResolve(),
             commonjs(),
-            typescript({
-                tsconfig: './tsconfig.json',
-                outDir: '.',
-                declaration: true,
-                declarationDir: '.',
-                declarationMap: true,
-                outputToFilesystem: true,
-            }),
             scss({
                 include: '**/*.module.scss',
                 output: './dist/style.css',
