@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 /* * {
   box-sizing: border-box;
@@ -27,14 +27,12 @@ body {
     margin-bottom: 0.3rem;
 }
 
-// TODO: fix for component isolation. - no generic tagnames
-/* 
 img {
     margin: 5px;
     width: 90px;
     filter: invert(99%) sepia(75%) saturate(3375%) hue-rotate(180deg) brightness(117%) contrast(102%);
 }
- */
+
 .navbarLinks ul {
     /* margin-right: 20px; */
     padding: 0;
