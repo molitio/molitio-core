@@ -1,0 +1,158 @@
+{
+    "name": "@molitio/ui-core",
+    "version": "0.11.4-alpha.0",
+    "author": "molitio foundation",
+    "description": "Universal reusable React UI Components",
+    "license": "CC0-1.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/molitio/molitio-core.git"
+    },
+    "keywords": [
+        "molitio",
+        "ui-core"
+    ],
+    "bugs": {
+        "url": "https://github.com/molitio/molitio-core/issues"
+    },
+    "homepage": "https://github.com/molitio/molitio-core#readme",
+    "main": "dist/index.js",
+    "module": "dist/esm/index.js",
+    "typings": "dist/index.d.ts",
+    "bundle": {
+        "esm": "dist/bundle/esm/index.js",
+        "umd": "dist/bundle/umd/index.js"
+    },
+    "iife": {
+        "radioPage": "dist/iife/molitio-radio-page.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "engines": {
+        "node": ">=12"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+        }
+    },
+    "size-limit": [
+        {
+            "path": "dist/index.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "dist/esm/index.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "dist/bundle/esm/index.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "dist/bundle/umd/index.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "dist/types/index.d.ts",
+            "limit": "10 KB"
+        }
+    ],
+    "scripts": {
+        "prepublish": "npm run build",
+        "publish": "npm publish ./dist",
+        "prebuild": "npm run clean && prettier --write src",
+        "build": "rollup --config",
+        "postbuild": "node packageBuilder",
+        "build:watch": "rollup --config --watch",
+        "lint": "eslint '*/**/*.{js,ts,tsx}'",
+        "lint-fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+        "size": "size-limit",
+        "analyze": "size-limit --why",
+        "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 4242 --no-manager-cache",
+        "build-storybook": "rm -rf ./storybook-build && mkdir ./storybook-build && cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true build-storybook -o ./storybook-build --docs",
+        "debug": "cross-env NODE_OPTIONS=--inspect-brk STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 4242",
+        "clean": "rm -rf build"
+    },
+    "peerDependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.16.0",
+        "@babel/core": "^7.16.0",
+        "@babel/plugin-transform-typescript": "^7.16.1",
+        "@babel/preset-env": "^7.16.4",
+        "@babel/preset-typescript": "^7.16.0",
+        "@fortawesome/fontawesome-svg-core": "^1.2.36",
+        "@fortawesome/free-solid-svg-icons": "^5.15.4",
+        "@fortawesome/react-fontawesome": "^0.1.16",
+        "@mdx-js/rollup": "^2.0.0-rc.2",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-commonjs": "^21.0.1",
+        "@rollup/plugin-image": "^2.1.1",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "^13.0.6",
+        "@rollup/plugin-replace": "^3.0.0",
+        "@rollup/plugin-typescript": "^8.3.0",
+        "@storybook/addon-actions": "^6.4.9",
+        "@storybook/addon-essentials": "^6.4.9",
+        "@storybook/addon-links": "^6.4.9",
+        "@storybook/addons": "^6.4.16",
+        "@storybook/builder-webpack5": "^6.4.9",
+        "@storybook/manager-webpack5": "^6.4.9",
+        "@storybook/preset-scss": "^1.0.3",
+        "@storybook/preset-typescript": "^3.0.0",
+        "@storybook/react": "^6.4.9",
+        "@storybook/theming": "^6.4.16",
+        "@types/jasmine": "^3.10.2",
+        "@types/node": "^16.11.10",
+        "@types/react": "^17.0.37",
+        "@types/react-dom": "^17.0.11",
+        "@typescript-eslint/eslint-plugin": "^5.4.0",
+        "@typescript-eslint/parser": "^5.4.0",
+        "babel-cli": "^6.26.0",
+        "babel-loader": "^8.2.3",
+        "babel-preset-latest": "^6.24.1",
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.7.1",
+        "device-detector-js": "^3.0.2",
+        "eslint": "^8.3.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-plugin-storybook": "^0.5.5",
+        "fork-ts-checker-webpack-plugin": "^6.5.0",
+        "husky": "^7.0.4",
+        "jasmine": "^3.10.0",
+        "node-sass": "^7.0.1",
+        "npm": "^8.7.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-jss": "^10.8.2",
+        "rollup": "^2.60.1",
+        "rollup-plugin-buble": "^0.19.8",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-sizes": "^1.0.4",
+        "rollup-plugin-svg": "^2.0.0",
+        "rollup-plugin-typescript2": "^0.31.1",
+        "sass-loader": "^12.6.0",
+        "size-limit": "^7.0.3",
+        "storybook-addon-sass-postcss": "^0.1.1",
+        "style-loader": "^3.3.1",
+        "ts-loader": "^9.2.6",
+        "ts-node": "^10.4.0",
+        "ts-node-dev": "^1.1.8",
+        "tsconfig-paths-webpack-plugin": "^3.5.2",
+        "tslib": "^2.3.1",
+        "typescript": "^4.5.2",
+        "typescript-plugin-css-modules": "^3.4.0"
+    },
+    "workspaces": [
+        "src",
+        ".storybook"
+    ],
+    "dependencies": {
+        "@storybook/addon-a11y": "^6.4.19",
+        "rollup-plugin-postcss": "^4.0.2"
+    }
+}

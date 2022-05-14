@@ -1,0 +1,36 @@
+<p class="mofo-address-p"> {{ formName }}</p>
+<div>
+  <form class="mofo-address-form" [formGroup]="moForm" (ngSubmit)="onSubmit()">
+    <label class="mofo-address-label">
+      <p class="mofo-address-p"> Country:</p>
+      <input type="text" formControlName="country" required />
+    </label>
+    <br />
+    <label class="mofo-address-label">
+      <p class="mofo-address-p"> City:</p>
+      <input type="text" formControlName="city" required />
+    </label>
+    <br />
+    <label class="mofo-address-label">
+      <p class="mofo-address-p"> Address 1:</p>
+      <input type="text" formControlName="address1" required />
+    </label>
+    <br />
+    <label class="mofo-address-label">
+      <p class="mofo-address-p"> Address 2:</p>
+      <input type="text" formControlName="address2" />
+    </label>
+    <br />
+    <label class="mofo-address-label">
+      <p class="mofo-address-p"> Zip:</p>
+      <input type="number" formControlName="zip" required />
+    </label>
+    <br />
+    <div>
+      <br />
+      <button class="mofo-address-button"  type="submit" [disabled]="!moForm.valid || submited">
+        <label class="mofo-address-label">Submit</label>
+    </button>
+</div>
+  </form>
+</div>

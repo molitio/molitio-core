@@ -1,0 +1,11 @@
+<svg id="playa" width="200pt" height="200pt" version="1.1" viewBox="0 0 70.556 70.556"
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="playd">
+        <circle id="playe" cx="35.278" cy="35.278" r="31.75" fill="#f6c339" />
+    </g>
+    <g id="playf">
+        <path id="playg" transform="matrix(.17487 0 0 .17487 77.463 29.074)" d="m-179.09 35.477-93.233 53.828v-107.66z"
+            fill="#0b0b0a" stroke="#0b0b0a" stroke-linejoin="round" stroke-opacity=".98" stroke-width="21.909"
+            style="paint-order:markers fill stroke" />
+    </g>
+</svg>

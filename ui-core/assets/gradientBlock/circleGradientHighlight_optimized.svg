@@ -1,0 +1,11 @@
+<svg id="playb" width="600pt" height="800pt" version="1.1" viewBox="0 0 211.67 282.22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs id="playc">
+  <radialGradient id="playa" cx="104.75" cy="141.11" r="105.83" gradientTransform="matrix(1.5028 -.010261 .0091036 1.3333 -53.949 -45.958)" gradientUnits="userSpaceOnUse">
+   <stop id="playd" stop-color="#2b2e73" stop-opacity=".011765" offset="0"/>
+   <stop id="playe" stop-color="#000423" stop-opacity=".8" offset="1"/>
+  </radialGradient>
+ </defs>
+ <g id="playf">
+  <rect id="playg" x="-1.0859" width="211.67" height="282.22" fill="url(#playa)" opacity=".6" style="paint-order:markers fill stroke"/>
+ </g>
+</svg>
