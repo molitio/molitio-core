@@ -7,8 +7,8 @@ import buble from 'rollup-plugin-buble';
 import sizes from 'rollup-plugin-sizes';
 import replace from '@rollup/plugin-replace';
 import image from '@rollup/plugin-image';
-import scss from 'rollup-plugin-scss';
 import json from '@rollup/plugin-json';
+import postcss from 'rollup-plugin-postcss';
 
 const packageJson = require('./package.json');
 
@@ -43,9 +43,10 @@ export default [
                 outputToFilesystem: true,
             }),
             commonjs(),
-            scss({
-                output: './dist/style.css',
-                failOnError: true,
+            postcss({
+                extract: false,
+                modules: true,
+                use: ['sass'],
             }),
             image(),
             replace({
@@ -67,6 +68,7 @@ export default [
     },
     {
         input: 'src/index.ts',
+
         plugins: [
             typescript({
                 tsconfig: './tsconfig.json',
@@ -86,10 +88,10 @@ export default [
             }),
             nodeResolve(),
             commonjs(),
-            scss({
-                include: '**/*.module.scss',
-                output: './dist/style.css',
-                failOnError: true,
+            postcss({
+                extract: true,
+                modules: true,
+                use: ['sass'],
             }),
             buble({ transforms: { forOf: false } }),
             sizes(),
@@ -101,6 +103,7 @@ export default [
             }),
             image(),
         ],
+
         output: [
             //unbundled esm
             {
