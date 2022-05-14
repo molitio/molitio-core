@@ -106,6 +106,7 @@
         "@storybook/preset-typescript": "^3.0.0",
         "@storybook/react": "^6.4.9",
         "@storybook/theming": "^6.4.16",
+        "@storybook/addon-a11y": "^6.4.19",
         "@types/jasmine": "^3.10.2",
         "@types/node": "^16.11.10",
         "@types/react": "^17.0.37",
@@ -153,7 +154,5 @@
         "src",
         ".storybook"
     ],
-    "dependencies": {
-        "@storybook/addon-a11y": "^6.4.19"
-    }
+    "dependencies": {}
 }

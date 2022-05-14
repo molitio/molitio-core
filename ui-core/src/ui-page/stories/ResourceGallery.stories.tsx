@@ -10,7 +10,7 @@ export default meta;
 
 const Template: Story = () => <ResourceGallery></ResourceGallery>;
 
-export const DefaultLandingPage = Template.bind({});
-DefaultLandingPage.parameters = {
+export const ResourceGalleryPage = Template.bind({});
+ResourceGalleryPage.parameters = {
     controls: { hideNoControlsWarning: true },
 };
