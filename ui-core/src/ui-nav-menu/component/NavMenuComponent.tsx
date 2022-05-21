@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
 import { NavSegmentComponent } from './NavSegmentComponent';
+import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
 import { TNavPage } from 'ui-core-models';
 import { StyledThemeContext } from 'ui-context';
 import styles from '../styles/NavMenuComponent.module.scss';
@@ -116,6 +116,30 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
             </a>
             <div className={styles.navbarLinks}>
                 <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        /* <nav className={style.nav}>
+            <div className={style.brandSection}>
+                <a href="#home" id="home" className="active">
+                    {'szép kép'}
+                </a>
+                <label className={style.siteDisplayName}> {props.pageCollection.siteDisplayName} </label>
+            </div>
+            <div className={style.pageCollection}>
+                <ul className={style.navUl}>
                     {Array.from(menuPages).map((page) => (
                         <div key={page[0]}>
                             <span className={style.pageTitle}>{page[1].pageName}</span>
@@ -126,6 +150,6 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
                     ))}
                 </ul>
             </div>
-        </nav>
+        </nav>  */
     );
 };
