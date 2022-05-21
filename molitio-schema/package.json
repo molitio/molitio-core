@@ -1,6 +1,6 @@
 {
-  "name": "@molitio/molitio-lib",
-  "version": "0.0.24",
+  "name": "@molitio/molitio-schema",
+  "version": "0.0.0-development",
   "description": "Universal resource distribution model library",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -16,7 +16,8 @@
     "pretest": "npm run lint",
     "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
     "test-nolint": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
-    "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test"
+    "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "moment": "^2.29.1"
@@ -29,6 +30,7 @@
     "eslint": "^7.20.0",
     "eslint-config-google": "^0.14.0",
     "jasmine": "^3.6.4",
+    "semantic-release": "^19.0.2",
     "ts-node": "^9.0.0",
     "ts-node-dev": "1.0.0-pre.63",
     "typescript": "^4.1.5"
@@ -41,7 +43,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/molitio/molitio-lib.git"
+    "url": "https://github.com/molitio/molitio-core.git",
+    "directory": "molitio-schema"
   },
   "license": "MIT"
 }
