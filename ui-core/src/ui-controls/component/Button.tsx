@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { StyleVariant } from 'ui-core-models';
 import { StyledThemeContext } from 'ui-context';
 import { ButtonProps } from '../interface/ButtonProps';
-import styles from '../styles/button.module.scss';
+import styles from '../styles/Button.module.scss';
 
 export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = ({ ...props }) => {
     let buttonStyleRounded = {
