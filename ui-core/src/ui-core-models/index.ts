@@ -21,7 +21,7 @@ export { ThemeNameTags } from './tags/ThemeContext/ThemeNameTags';
 export { ComponentGroupTags } from './tags/Common/ComponentGroupTags';
 
 /* 
-enums
+style
 */
 
-export { StyleVariant } from './enums/StyleVariant';
+export type { ButtonStyleVariant } from './types/StyleService/ButtonStyleVariant';
