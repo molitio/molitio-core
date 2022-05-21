@@ -1,7 +1,7 @@
-import { StyleVariant } from 'ui-core-models';
+import { ButtonStyleVariant } from 'ui-core-models';
 
 export interface ButtonProps {
-    styleVariant: StyleVariant;
+    styleVariant: ButtonStyleVariant;
     label?: string;
     padding?: string;
     fontSize?: string;
