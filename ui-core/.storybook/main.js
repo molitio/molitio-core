@@ -1,48 +1,32 @@
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-const path = require('path');
-
 module.exports = {
-    stories: ['../src/**/*.stories.*'],
-    //TODO: resolve issues with: '@storybook/addon-a11y
+    stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
     addons: [
         '@storybook/addon-links',
         '@storybook/addon-essentials',
-        '@storybook/theming',
-     /*    {
-            name: 'storybook-addon-sass-postcss',
-            options: {
-                postcssLoaderOptions: {
-                    implementation: require('postcss'),
-                },
-            },
-        }, */
-        {
-            name: '@storybook/preset-scss',
-            options: {
-                cssLoaderOptions: {
-                    modules: true,
-                   // localIdentName: '[name]__[local]--[hash:base64:5]',
-                },
-            },
-        },
+        '@storybook/addon-interactions',
+        '@storybook/preset-scss',
     ],
-    webpackFinal: async (config) => {
-        if (!config.resolve) {
-            config.resolve = {};
-        }
-
-        config.resolve.plugins = [...(config.resolve.plugins || []), new TsconfigPathsPlugin()];
-
-        /*      config.module.rules.push({
-            test: /\.scss$/,
-            use: ['style-loader', 'css-loader', 'sass-loader'],
-            include: path.resolve(__dirname, '../'),
-        }); */
-
-        return config;
-    },
     framework: '@storybook/react',
     core: {
-        builder: 'webpack5',
+        builder: '@storybook/builder-webpack5',
+    },
+    webpackFinal: async (config, { configType }) => {
+        // get index of css rule
+        const ruleCssIndex = config.module.rules.findIndex((rule) => rule.test.toString() === '/\\.css$/');
+
+        // map over the 'use' array of the css rule and set the 'module' option to true
+        config.module.rules[ruleCssIndex].use.map((item) => {
+            if (item.loader && item.loader.includes('/css-loader/')) {
+                item.options.modules = {
+                    mode: 'local',
+                    localIdentName:
+                        configType === 'PRODUCTION' ? '[local]__[hash:base64:5]' : '[name]__[local]__[hash:base64:5]',
+                };
+            }
+
+            return item;
+        });
+
+        return config;
     },
 };
