@@ -9,6 +9,7 @@ jobs:
         with:
           node-version: 16
       - run: npm run build
+        working-directory: ui-core
       - run: npm test
         working-directory: ui-core
       - uses: JS-DevTools/npm-publish@v1
