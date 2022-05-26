@@ -8,9 +8,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - run: build
-        working-directory: ui-core
+      - run: npm run build
       - run: npm test
+        working-directory: ui-core
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
