@@ -8,9 +8,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - run: npm run build
-        working-directory: ui-core
-      - run: npm test
+      - run: npm i && npm run build && npm test
         working-directory: ui-core
       - uses: JS-DevTools/npm-publish@v1
         with:
