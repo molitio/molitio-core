@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AppShellProps } from '../interfaces/AppShellProps';
 import { StyledThemeContextProvider } from 'ui-context';
-import { ThemeNameTags } from 'ui-core-models';
+import { ThemeNameTags, WithChildren } from 'ui-core-models';
 import { DeviceContextProvider } from 'ui-context/device/components/DeviceContextProvider';
 
 const globalStyles = {
@@ -63,7 +63,7 @@ const shellMain = {
     },
 };
 
-export const AppShell: React.FC<AppShellProps> = ({ ...props }) => {
+export const AppShell: React.FC<AppShellProps & WithChildren> = ({ ...props }) => {
     const [selectedTheme, setSelectedTheme] = React.useState<ThemeNameTags>();
 
     React.useEffect(() => {

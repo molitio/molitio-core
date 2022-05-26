@@ -1,9 +1,9 @@
 import React from 'react';
-import { TDeviceTypes } from 'ui-core-models';
+import { TDeviceTypes, WithChildren } from 'ui-core-models';
 import DeviceDetector from 'device-detector-js';
 import { DeviceContext } from './DeviceContext';
 
-export const DeviceContextProvider: React.FC = ({ children }) => {
+export const DeviceContextProvider: React.FC<WithChildren> = ({ children }) => {
     const [device, setDevice] = React.useState<TDeviceTypes>({
         device: 'web',
     });

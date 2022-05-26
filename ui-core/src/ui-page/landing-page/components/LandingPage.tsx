@@ -1,9 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { StyledThemeContext } from 'ui-context';
+import { WithChildren } from 'ui-core-models';
 import { LandingPageProps } from '../interfaces/LandingPageProps';
 
-export const LandingPage: React.FC<LandingPageProps> = ({ ...props }) => {
+export const LandingPage: React.FC<LandingPageProps & WithChildren> = ({ ...props }) => {
     const useStyles = createUseStyles((theme: StyledThemeContext) => ({
         landing: {
             display: 'flex',

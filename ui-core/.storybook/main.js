@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
     addons: [
@@ -5,28 +7,53 @@ module.exports = {
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
         '@storybook/preset-scss',
+        // module
+        /*         {
+            name: `@storybook/preset-scss`,
+            options: {
+                rule: {
+                    test: /\.module\.s[ca]ss$/,
+                },
+                cssLoaderOptions: {
+                    modules: {
+                        localIdentName: '[name]__[local]--[hash:base64:5]',
+                    },
+                },
+            },
+        }, */
     ],
     framework: '@storybook/react',
     core: {
         builder: '@storybook/builder-webpack5',
     },
-    webpackFinal: async (config, { configType }) => {
-        // get index of css rule
-        const ruleCssIndex = config.module.rules.findIndex((rule) => rule.test.toString() === '/\\.css$/');
-
-        // map over the 'use' array of the css rule and set the 'module' option to true
-        config.module.rules[ruleCssIndex].use.map((item) => {
-            if (item.loader && item.loader.includes('/css-loader/')) {
-                item.options.modules = {
-                    mode: 'local',
-                    localIdentName:
-                        configType === 'PRODUCTION' ? '[local]__[hash:base64:5]' : '[name]__[local]__[hash:base64:5]',
-                };
-            }
-
-            return item;
+    /*     webpackFinal: async (config) => {
+        config.module.rules.push({
+            test: /\.s(a|c)ss$/,
+            include: path.resolve(__dirname, '../'),
+            use: [
+                'style-loader',
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: {
+                            auto: true,
+                            localIdentName: '[name]__[local]--[hash:base64:5]',
+                        },
+                    },
+                },
+                'sass-loader',
+            ],
+        });
+        return config;
+    }, */
+    /*    webpackFinal: async (config) => {
+        // add SCSS support for CSS Modules
+        config.module.rules.push({
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader?modules&importLoaders', 'sass-loader'],
+            include: path.resolve(__dirname, '../'),
         });
 
         return config;
-    },
+    }, */
 };

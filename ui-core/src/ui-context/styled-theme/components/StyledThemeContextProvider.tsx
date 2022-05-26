@@ -3,8 +3,9 @@ import { StyledThemeContextProviderProps } from '../interface/StyledThemeContext
 import { getThemes } from '../store/ThemeContextStore';
 import { StyledThemeContext } from '../interface/StyledThemeContext';
 import { ThemeProvider } from 'react-jss';
+import { WithChildren } from 'ui-core-models';
 
-export const StyledThemeContextProvider: React.FC<StyledThemeContextProviderProps> = ({ ...props }) => {
+export const StyledThemeContextProvider: React.FC<StyledThemeContextProviderProps & WithChildren> = ({ ...props }) => {
     const [themeMap, setThemeMap] = React.useState(new Map<string, StyledThemeContext>());
     const [selectedTheme, setSelectedTheme] = React.useState<StyledThemeContext>({});
 

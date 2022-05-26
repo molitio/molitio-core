@@ -34,7 +34,7 @@ export default meta;
 const ComponentGroupTemplate: Story<ComponentGroupProps & StyledThemeProps> = (args) => (
     <StyledThemeContextProvider themeName={args.themeName}>
         <CenterDisplay>
-            {console.log(`inside storybook props: ${args.groupingType}`)}
+            <> {console.log(`inside storybook props: ${args.groupingType}`)}</>
             <ComponentGroup {...args}>
                 <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />
                 <LogoFreshPrintSvg dimensions={{ width: '50px', height: '50px' }} />

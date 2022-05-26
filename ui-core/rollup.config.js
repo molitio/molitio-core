@@ -3,7 +3,7 @@ import typescript from '@rollup/plugin-typescript';
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import buble from 'rollup-plugin-buble';
+import buble from '@rollup/plugin-buble';
 import sizes from 'rollup-plugin-sizes';
 import replace from '@rollup/plugin-replace';
 import image from '@rollup/plugin-image';
@@ -14,7 +14,7 @@ const packageJson = require('./package.json');
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const extensions = ['.ts', '.tsx', '.md', '.mdx', '.svg'];
+const extensions = ['.ts', '.tsx', '.md', '.mdx', '.svg', 'scss'];
 
 const globals = {
     react: 'React',
@@ -25,14 +25,6 @@ export default [
     {
         input: 'src/ui-page/radio-page/components/RadioPage.tsx',
         plugins: [
-            typescript({
-                tsconfig: './tsconfig.json',
-                outDir: './dist',
-                declaration: true,
-                declarationDir: './dist',
-                declarationMap: true,
-                outputToFilesystem: true,
-            }),
             peerDepsExternal(),
             json(),
             babel({
@@ -42,6 +34,14 @@ export default [
                 exclude: ['node_modules/**', '**/*.stories.tsx'],
             }),
             nodeResolve(),
+            typescript({
+                tsconfig: './tsconfig.json',
+                outDir: './dist',
+                declaration: true,
+                declarationDir: './dist',
+                declarationMap: true,
+                outputToFilesystem: true,
+            }),
             commonjs(),
             postcss({
                 extract: true,
@@ -69,14 +69,6 @@ export default [
     {
         input: 'src/index.ts',
         plugins: [
-            typescript({
-                tsconfig: './tsconfig.json',
-                outDir: '.',
-                declaration: true,
-                declarationDir: '.',
-                declarationMap: true,
-                outputToFilesystem: true,
-            }),
             peerDepsExternal(),
             json(),
             babel({
@@ -87,6 +79,14 @@ export default [
             }),
             nodeResolve(),
             commonjs(),
+            typescript({
+                tsconfig: './tsconfig.json',
+                outDir: '.',
+                declaration: true,
+                declarationDir: '.',
+                declarationMap: true,
+                outputToFilesystem: true,
+            }),
             postcss({
                 extract: true,
                 modules: true,
