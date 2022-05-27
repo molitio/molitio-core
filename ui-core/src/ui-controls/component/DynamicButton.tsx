@@ -3,9 +3,9 @@ import { createUseStyles } from 'react-jss';
 import { ButtonStyleVariant } from 'ui-core-models';
 import { ButtonProps } from '../interface/ButtonProps';
 import { getStyleVariantRules } from 'style-service';
-import styles from '../styles/Button.module.scss';
+import styles from '../styles/DynamicButton.module.scss';
 
-export const Button: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = ({ ...props }) => {
+export const DynamicButton: React.FC<ButtonProps & React.HTMLAttributes<HTMLButtonElement>> = ({ ...props }) => {
     const createStyleVariantRules = (variant: ButtonStyleVariant) => {
         return createUseStyles(() => ({
             buttonStyle: {

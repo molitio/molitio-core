@@ -2,7 +2,7 @@
 buttons
 */
 
-export { Button } from './component/Button';
+export { DynamicButton } from './component/DynamicButton';
 
 /*
 props

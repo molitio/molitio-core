@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react';
 import { CenterDisplay } from 'ui-common';
-import { Button } from 'ui-controls';
+import { DynamicButton } from 'ui-controls';
 import { ThemeNameTags } from 'ui-core-models';
 import { StyledThemeContextProvider } from 'ui-context';
 
@@ -10,7 +10,7 @@ const buttonArgs = {
 
 const meta: Meta = {
     title: 'molitio-core/Controls/Buttons',
-    component: Button,
+    component: DynamicButton,
     argTypes: {
         themeName: {
             control: { type: 'select', options: [ThemeNameTags.BLACK_YELLOW, ThemeNameTags.TEAM_JAMAICA] },
@@ -23,7 +23,7 @@ export default meta;
 const TemplateRounded: Story = (args) => (
     <StyledThemeContextProvider themeName={args.themeName}>
         <CenterDisplay>
-            <Button styleVariant="btn-rounded" label={`variant: btn-rounded`}></Button>
+            <DynamicButton styleVariant="btn-rounded" label={`variant: btn-rounded`}></DynamicButton>
         </CenterDisplay>
     </StyledThemeContextProvider>
 );
@@ -34,9 +34,9 @@ RoundedButton.args = { ...buttonArgs };
 const TemplateRectangle: Story = (args) => (
     <StyledThemeContextProvider themeName={args.themeName}>
         <CenterDisplay>
-            <Button styleVariant="btn-rectangle" label={`variant: btn-rectangle`}>
+            <DynamicButton styleVariant="btn-rectangle" label={`variant: btn-rectangle`}>
                 test text
-            </Button>
+            </DynamicButton>
         </CenterDisplay>
     </StyledThemeContextProvider>
 );
