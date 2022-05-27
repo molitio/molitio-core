@@ -73,7 +73,7 @@
         "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 4242 --no-manager-cache",
         "build-storybook": "rm -rf ./storybook-build && mkdir ./storybook-build && cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true build-storybook -o ./storybook-build --docs",
         "debug": "cross-env NODE_OPTIONS=--inspect-brk STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 4242",
-        "clean": "rm -rf build"
+        "clean": "rm -rf dist"
     },
     "peerDependencies": {
         "react": "^18.1.0",

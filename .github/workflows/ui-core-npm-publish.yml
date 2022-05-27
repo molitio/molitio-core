@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+    branches:
+      - "releases/**"
 
 jobs:
   publish:
@@ -11,7 +14,9 @@ jobs:
       - run: node --version
       - run: npm i
         working-directory: ui-core
-      - run: npm run publish && npm test
+      - run: npm run publish
+        working-directory: ui-core
+      - run: npm test
         working-directory: ui-core
       - uses: JS-DevTools/npm-publish@v1
         with:
