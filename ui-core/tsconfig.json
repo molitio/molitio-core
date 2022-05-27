@@ -16,7 +16,6 @@
         "rootDir": "src",
         "declarationDir": "dist",
         "declarationMap": true,
-        "sourceMap": false,
         "composite": true,
         "strict": true,
         "noImplicitReturns": true,

@@ -7,7 +7,7 @@ export type WithChildren<T = {}> = T & { children?: React.ReactNode | React.Reac
 export type { TNavSegment } from './types/NavMenu/TNavSegment';
 export type { TNavPage } from './types/NavMenu/TNavPage';
 export type { TNavPageCollection } from './types/NavMenu/TNavPageCollection';
-0;
+
 export type { TPageTag } from './types/PageTag/TPageTag';
 export type { TUniversalRadio } from './types/UniversalRadio/TUniversalRadio';
 export type { TDeviceTypes } from './types/DefaultTheme/TDeviceTypes';

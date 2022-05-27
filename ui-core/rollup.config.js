@@ -4,17 +4,17 @@ import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import buble from '@rollup/plugin-buble';
-import sizes from 'rollup-plugin-sizes';
+import size from 'rollup-plugin-size';
 import replace from '@rollup/plugin-replace';
 import image from '@rollup/plugin-image';
-import json from '@rollup/plugin-json';
 import postcss from 'rollup-plugin-postcss';
+import json from '@rollup/plugin-json';
 
 const packageJson = require('./package.json');
 
 const isProd = process.env.NODE_ENV === 'production';
 
-const extensions = ['.ts', '.tsx', '.md', '.mdx', '.svg', 'scss'];
+const extensions = ['.ts', '.tsx', '.md', '.mdx', '.svg'];
 
 const globals = {
     react: 'React',
@@ -26,7 +26,18 @@ export default [
         input: 'src/ui-page/radio-page/components/RadioPage.tsx',
         plugins: [
             peerDepsExternal(),
+            typescript({
+                tsconfig: './tsconfig.json',
+                outDir: './dist',
+                sourceMap: false,
+                declaration: true,
+                declarationDir: './dist',
+                declarationMap: true,
+                outputToFilesystem: true,
+                exclude: ['node_modules/**', '**/*.stories.tsx'],
+            }),
             json(),
+            commonjs(),
             babel({
                 extensions: [...extensions],
                 babelHelpers: 'bundled',
@@ -34,15 +45,6 @@ export default [
                 exclude: ['node_modules/**', '**/*.stories.tsx'],
             }),
             nodeResolve(),
-            typescript({
-                tsconfig: './tsconfig.json',
-                outDir: './dist',
-                declaration: true,
-                declarationDir: './dist',
-                declarationMap: true,
-                outputToFilesystem: true,
-            }),
-            commonjs(),
             postcss({
                 extract: true,
                 modules: true,
@@ -70,7 +72,18 @@ export default [
         input: 'src/index.ts',
         plugins: [
             peerDepsExternal(),
+            typescript({
+                tsconfig: './tsconfig.json',
+                outDir: '.',
+                sourceMap: false,
+                declaration: true,
+                declarationDir: '.',
+                declarationMap: true,
+                outputToFilesystem: true,
+                exclude: ['node_modules/**', '**/*.stories.tsx'],
+            }),
             json(),
+            commonjs(),
             babel({
                 extensions: [...extensions],
                 babelHelpers: 'bundled',
@@ -78,22 +91,13 @@ export default [
                 exclude: ['node_modules/**', '**/*.stories.tsx'],
             }),
             nodeResolve(),
-            commonjs(),
-            typescript({
-                tsconfig: './tsconfig.json',
-                outDir: '.',
-                declaration: true,
-                declarationDir: '.',
-                declarationMap: true,
-                outputToFilesystem: true,
-            }),
             postcss({
                 extract: true,
                 modules: true,
                 use: ['sass'],
             }),
             buble({ transforms: { forOf: false } }),
-            sizes(),
+            size(),
             replace({
                 'process.env.NODE_ENV': JSON.stringify('production'),
                 __buildDate__: () => JSON.stringify(new Date()),
