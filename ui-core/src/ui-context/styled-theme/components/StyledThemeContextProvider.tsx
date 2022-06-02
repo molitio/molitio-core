@@ -8,6 +8,14 @@ import { WithChildren } from 'ui-core-models';
 export const StyledThemeContextProvider: React.FC<StyledThemeContextProviderProps & WithChildren> = ({ ...props }) => {
     const [themeMap, setThemeMap] = React.useState(new Map<string, StyledThemeContext>());
     const [selectedTheme, setSelectedTheme] = React.useState<StyledThemeContext>({});
+    const [children, setChildren] = React.useState<React.ReactElement<any, any>>();
+
+    React.useEffect(() => {
+        const effect = async () => {
+            setChildren(props.children);
+        };
+        effect();
+    }, [props.children]);
 
     React.useEffect(() => {
         const effect = async () => {
@@ -32,5 +40,5 @@ export const StyledThemeContextProvider: React.FC<StyledThemeContextProviderProp
         effect();
     }, [themeMap, props.themeName]);
 
-    return <ThemeProvider theme={selectedTheme}>{props.children}</ThemeProvider>;
+    return <ThemeProvider theme={selectedTheme}>{children}</ThemeProvider>;
 };

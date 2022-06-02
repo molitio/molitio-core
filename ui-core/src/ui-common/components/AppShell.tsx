@@ -1,9 +1,9 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AppShellProps } from '../interfaces/AppShellProps';
-import { StyledThemeContextProvider } from 'ui-context';
+import { isClient } from '../services/Platform';
+import { StyledThemeContextProvider, DeviceContextProvider } from 'ui-context';
 import { ThemeNameTags, WithChildren } from 'ui-core-models';
-import { DeviceContextProvider } from 'ui-context/device/components/DeviceContextProvider';
 
 const globalStyles = {
     '@global': {
@@ -63,16 +63,23 @@ const shellMain = {
     },
 };
 
-export const AppShell: React.FC<AppShellProps & WithChildren> = ({ ...props }) => {
+export const AppShell: React.FunctionComponent<AppShellProps & WithChildren> = ({ ...props }) => {
     const [selectedTheme, setSelectedTheme] = React.useState<ThemeNameTags>();
+    const [children, setChildren] = React.useState<React.ReactElement<any, any>>();
 
     React.useEffect(() => {
         const effect = async () => {
             setSelectedTheme(props.themeName);
-            //console.warn(`selected theme changed to: ${props.themeName}`);
         };
         effect();
     }, [props.themeName]);
+
+    React.useEffect(() => {
+        const effect = async () => {
+            setChildren(props.children);
+        };
+        effect();
+    }, [props.children]);
 
     const styleOverrides = props.applyGlobalStyleRules ? globalStyles : {};
     const classes = createUseStyles({
@@ -83,20 +90,24 @@ export const AppShell: React.FC<AppShellProps & WithChildren> = ({ ...props }) =
     //Implement content tree, be able to define content sections
     //Implement possibly multiple font family [] prop option
 
-    const head = document.querySelector('head');
-    const fontFamily = document.createElement('link');
-    fontFamily.type = 'text/css';
-    fontFamily.rel = 'stylesheet';
-    fontFamily.href = 'https://fonts.googleapis.com/css?family=Open Sans';
-    head?.appendChild(fontFamily);
+    if (isClient()) {
+        const head = document.querySelector('head');
+        const fontFamily = document.createElement('link');
+        fontFamily.type = 'text/css';
+        fontFamily.rel = 'stylesheet';
+        fontFamily.href = 'https://fonts.googleapis.com/css?family=Open Sans';
+        head?.appendChild(fontFamily);
+    }
 
     return (
-        <React.StrictMode>
-            <main className={classes.shellMain}>
-                <DeviceContextProvider>
-                    <StyledThemeContextProvider themeName={selectedTheme}>{props.children}</StyledThemeContextProvider>
-                </DeviceContextProvider>
-            </main>
-        </React.StrictMode>
+        <div>
+            <React.StrictMode>
+                <main className={classes.shellMain}>
+                    <DeviceContextProvider>
+                        <StyledThemeContextProvider themeName={selectedTheme}>{children}</StyledThemeContextProvider>
+                    </DeviceContextProvider>
+                </main>
+            </React.StrictMode>
+        </div>
     );
 };

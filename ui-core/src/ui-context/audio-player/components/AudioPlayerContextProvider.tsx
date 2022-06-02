@@ -16,8 +16,17 @@ interface AudioPlayerStateAction {
     payload: AudioPlayerState;
 }
 
-export const AudioPlayerContextProvider: React.FC<WithChildren> = ({ children }) => {
+export const AudioPlayerContextProvider: React.FC<WithChildren> = ({ ...props }) => {
     const deviceContext = React.useContext(DeviceContext);
+
+    const [children, setChildren] = React.useState<React.ReactElement<any, any>>();
+    React.useEffect(() => {
+        const effect = async () => {
+            setChildren(props.children);
+        };
+        effect();
+    }, [props.children]);
+
     const playerStateReducer = (state: AudioPlayerState, action: AudioPlayerStateAction): AudioPlayerState => {
         const { type: actionType, payload } = action;
         switch (actionType) {

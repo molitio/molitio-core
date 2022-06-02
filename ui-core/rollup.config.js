@@ -46,7 +46,7 @@ export default [
             }),
             nodeResolve(),
             postcss({
-                extract: true,
+                extract: false,
                 modules: true,
                 use: ['sass'],
             }),
@@ -94,7 +94,7 @@ export default [
             }),
             nodeResolve(),
             postcss({
-                extract: true,
+                extract: false,
                 modules: true,
                 use: ['sass'],
             }),

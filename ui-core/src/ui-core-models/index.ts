@@ -1,4 +1,6 @@
-export type WithChildren<T = {}> = T & { children?: React.ReactNode | React.ReactNode[] };
+import React from 'react';
+
+export type WithChildren<T = {}> = T & { children?: React.ReactElement<any, any> };
 
 /* 
     types
