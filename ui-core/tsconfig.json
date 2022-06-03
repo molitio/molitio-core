@@ -1,12 +1,12 @@
 {
-    "include": ["src/**/*", "src/DynamicButton.test.tsx"],
+    "include": ["src/**/*", "src/DynamicButton.test.tsx", "__tests__"],
     "exclude": ["node_modules", "build", "dist", "example", "rollup.config.js", "**/*.spec.tsx"],
     "compilerOptions": {
         "target": "es5",
         "module": "es2020",
         "lib": ["dom", "dom.iterable", "esnext", "es6", "es2016", "es2017", "es2020"],
         "types": ["react", "node", "jest"],
-        "typeRoots": ["./src", "./tests"],
+        "typeRoots": ["./src"],
         "resolveJsonModule": false,
         "isolatedModules": true,
         "importHelpers": true,

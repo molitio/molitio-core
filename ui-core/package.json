@@ -76,7 +76,8 @@
         "debug": "cross-env NODE_OPTIONS=--inspect-brk STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 4242",
         "create-artifact": "mkdir .artifact && cd dist/ && npm pack --pack-destination ../.artifact && cd ..",
         "clean": "rm -rf dist && rm -rf .artifact",
-        "test": "jest"
+        "test": "jest",
+        "test:watch": "jest --watch"
     },
     "peerDependencies": {
         "react": "^18.1.0",
