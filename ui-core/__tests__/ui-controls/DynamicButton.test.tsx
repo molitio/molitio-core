@@ -6,14 +6,14 @@ import { describe, expect, it } from '@jest/globals';
 import { DynamicButton, DynamicButtonProps } from '../../src';
 /* import '@testing-library/jest-dom'; */
 
-function renderDynamicButton(props: Partial<DynamicButtonProps> = {}) {
+const renderDynamicButton = (props: Partial<DynamicButtonProps> = {}) => {
     const defaultProps: DynamicButtonProps = {
         styleVariant: 'btn-rounded',
         label: 'test button',
     };
 
     return render(<DynamicButton {...defaultProps} {...props}></DynamicButton>);
-}
+};
 
 describe('dynamic button works as expected', async () => {
     //const button = jest.spyOn(DynamicButton, 'propTypes');
