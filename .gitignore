@@ -119,3 +119,6 @@ storybook-build
 
 # Dev Keys
 *.pem
+
+# Testing
+.jest-test-results.json
