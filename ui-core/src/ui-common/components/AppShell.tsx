@@ -63,7 +63,7 @@ const shellMain = {
     },
 };
 
-export const AppShell: React.FunctionComponent<AppShellProps & WithChildren> = ({ ...props }) => {
+export const AppShell: React.FC<AppShellProps & WithChildren> = ({ ...props }) => {
     const [selectedTheme, setSelectedTheme] = React.useState<ThemeNameTags>();
     const [children, setChildren] = React.useState<React.ReactElement<any, any>>();
 
@@ -102,11 +102,11 @@ export const AppShell: React.FunctionComponent<AppShellProps & WithChildren> = (
     return (
         <div>
             <React.StrictMode>
-                <main className={classes.shellMain}>
+                <div className={classes.shellMain}>
                     <DeviceContextProvider>
                         <StyledThemeContextProvider themeName={selectedTheme}>{children}</StyledThemeContextProvider>
                     </DeviceContextProvider>
-                </main>
+                </div>
             </React.StrictMode>
         </div>
     );
