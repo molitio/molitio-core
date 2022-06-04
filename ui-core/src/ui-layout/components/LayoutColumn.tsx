@@ -1,8 +1,9 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { DevHighlight } from 'ui-context';
+import { WithChildren } from 'ui-core-models';
 
-export const LayoutColumn: React.FC = ({ ...props }) => {
+export const LayoutColumn: React.FC<WithChildren> = ({ ...props }) => {
     const style = createUseStyles({
         pageColumn: {
             height: '100%',

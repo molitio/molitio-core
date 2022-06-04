@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import { ResourceGallery } from '../resource-gallery/components/ResourceGallery';
+import { ResourceGallery } from '../resource-gallery/components/ResourceGalleryPage';
 
 const meta: Meta = {
     title: 'molitio-core/Pages/Resource Gallery',
@@ -8,7 +8,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story = () => <ResourceGallery></ResourceGallery>;
+const Template: Story = () => <ResourceGalleryPage></ResourceGalleryPage>;
 
 export const ResourceGalleryPage = Template.bind({});
 ResourceGalleryPage.parameters = {

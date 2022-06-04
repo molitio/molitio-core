@@ -47,3 +47,9 @@ export type { AudioPlayerProps } from './interfaces/AudioPlayerProps';
 typography
 */
 export { SpanBlock } from './components/SpanBlock';
+
+/*
+ service
+*/
+
+export { isClient } from './services/Platform';

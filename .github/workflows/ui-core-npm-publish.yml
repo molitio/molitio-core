@@ -1,16 +1,23 @@
-on: push
+on:
+  push:
+    branches:
+      - "releases/**"
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 12
-      - working-directory: /ui
-      - run: build
+          node-version: 16
+      - run: node --version
+      - run: npm i
+        working-directory: ui-core
+      - run: npm run publish
+        working-directory: ui-core
       - run: npm test
+        working-directory: ui-core
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}

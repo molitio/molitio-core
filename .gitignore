@@ -115,6 +115,10 @@ build
 deploy
 storybook-build
 .rollup.cache
+.artifact
 
 # Dev Keys
 *.pem
+
+# Testing
+.jest-test-results.json
