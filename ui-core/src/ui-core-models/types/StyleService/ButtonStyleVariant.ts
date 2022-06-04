@@ -1,4 +1,3 @@
-
 export type ButtonStyleVariant =
     | 'btn-rectangle'
     | 'btn-rounded'

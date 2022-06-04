@@ -2,6 +2,7 @@ import React from 'react';
 import { AudioPlayerContext } from '../components/AudioPlayerContext';
 import { DeviceContext } from '../../device/components/DeviceContext';
 import { AudioPlayerState } from '../../audio-player/interfaces/AudioPlayerState';
+import { WithChildren } from 'ui-core-models';
 
 export enum AudioPlayerStateActionType {
     TOGGLE_PLAYING = 'togglePlaying',
@@ -15,8 +16,17 @@ interface AudioPlayerStateAction {
     payload: AudioPlayerState;
 }
 
-export const AudioPlayerContextProvider: React.FC = ({ children }) => {
+export const AudioPlayerContextProvider: React.FC<WithChildren> = ({ ...props }) => {
     const deviceContext = React.useContext(DeviceContext);
+
+    const [children, setChildren] = React.useState<React.ReactElement<any, any>>();
+    React.useEffect(() => {
+        const effect = async () => {
+            setChildren(props.children);
+        };
+        effect();
+    }, [props.children]);
+
     const playerStateReducer = (state: AudioPlayerState, action: AudioPlayerStateAction): AudioPlayerState => {
         const { type: actionType, payload } = action;
         switch (actionType) {

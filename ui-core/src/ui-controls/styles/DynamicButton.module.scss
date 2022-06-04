@@ -9,12 +9,11 @@
 }
 
 .btnBasic {
-    
     border-style: none;
     box-sizing: border-box;
     cursor: pointer;
     display: inline-block;
-    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
@@ -32,9 +31,9 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     width: 100%;
-  }
-  
-  .btnBasic:hover,
-  .btnBasic:focus {
-    opacity: .75;
-  }
+}
+
+.btnBasic:hover,
+.btnBasic:focus {
+    opacity: 0.75;
+}

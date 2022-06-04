@@ -67,47 +67,12 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
         pageCollection: {
             alignSelf: 'flex-end',
         },
-
-        /* a {
- 
-}
-
-.topnav a:hover {
-  background-color: rgba(221, 221, 221, 0.133);
-}
-
-.topnav a.active {
-  padding: 15px 30px 5px 30px;
-  background-color:DodgerBlue;
-  color: #d3d3d3;
-}
-.topnav.responsive > * {
-  color: #d3d3d3;
-}
-.topnav .icon {
-  border-radius: 10px;
-  display: none;
-} */
     })).apply({});
-
-    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-    /*  function myFunction() {
-         let myTopnav = document.getElementById('myTopnav');
-        if (myTopnav.className === 'topnav') {
-            myTopnav.className += ' responsive';
-        } else {
-            myTopnav.className = 'topnav';
-        }
-    }
- */
 
     return (
         <nav className={styles.navbar}>
             <div className={styles.brandTitle}>
-                <img
-                    src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/nest-media-ui/nestmedia_logo_final_one_900.png"
-                    alt="nestMedia"
-                />
+                <img src="" alt="" />
             </div>
             <a href="#" className={styles.toggleButton}>
                 <span className={styles.bar}></span>
@@ -116,30 +81,6 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
             </a>
             <div className={styles.navbarLinks}>
                 <ul>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        /* <nav className={style.nav}>
-            <div className={style.brandSection}>
-                <a href="#home" id="home" className="active">
-                    {'szép kép'}
-                </a>
-                <label className={style.siteDisplayName}> {props.pageCollection.siteDisplayName} </label>
-            </div>
-            <div className={style.pageCollection}>
-                <ul className={style.navUl}>
                     {Array.from(menuPages).map((page) => (
                         <div key={page[0]}>
                             <span className={style.pageTitle}>{page[1].pageName}</span>
@@ -150,6 +91,6 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
                     ))}
                 </ul>
             </div>
-        </nav>  */
+        </nav>
     );
 };

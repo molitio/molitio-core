@@ -1,9 +1,9 @@
 import React from 'react';
-import { TDeviceTypes } from 'ui-core-models';
+import { TDeviceTypes, WithChildren } from 'ui-core-models';
 import DeviceDetector from 'device-detector-js';
 import { DeviceContext } from './DeviceContext';
 
-export const DeviceContextProvider: React.FC = ({ children }) => {
+export const DeviceContextProvider: React.FC<WithChildren> = ({ ...props }) => {
     const [device, setDevice] = React.useState<TDeviceTypes>({
         device: 'web',
     });
@@ -30,5 +30,5 @@ export const DeviceContextProvider: React.FC = ({ children }) => {
         effect();
     }, []);
 
-    return <DeviceContext.Provider value={device}>{children}</DeviceContext.Provider>;
+    return <DeviceContext.Provider value={device}>{props.children ?? ''}</DeviceContext.Provider>;
 };

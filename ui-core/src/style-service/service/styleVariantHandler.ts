@@ -17,6 +17,6 @@ export const getStyleVariantRules = (variant: ButtonStyleVariant) => {
             };
 
         default:
-            break;
+            return {};
     }
 };

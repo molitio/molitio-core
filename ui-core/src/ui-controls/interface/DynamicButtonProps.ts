@@ -1,6 +1,6 @@
 import { ButtonStyleVariant } from 'ui-core-models';
 
-export interface ButtonProps {
+export interface DynamicButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     styleVariant: ButtonStyleVariant;
     label?: string;
     padding?: string;
