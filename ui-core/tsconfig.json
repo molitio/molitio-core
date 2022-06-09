@@ -1,6 +1,6 @@
 {
-    "include": ["src/**/*",  "__tests__/**/*"],
-    "exclude": ["node_modules", "build", "dist", "example", "*.config.js"],
+    "include": ["src/**/*", "__tests__/**/*"],
+    "exclude": ["node_modules", "build", "dist", ".artifact", "*.config.js"],
     "compilerOptions": {
         "target": "es5",
         "module": "es2020",
