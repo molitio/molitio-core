@@ -78,7 +78,9 @@
         "clean": "rm -rf dist && rm -rf .artifact",
         "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
         "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
-        "test:generate-output": "jest --json --outputFile=.jest-test-results.json"
+        "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
+        "jsdoc": "./node_modules/.bin/jsdoc",
+        "gendoc": "npm run jsdoc dist/index.js"
     },
     "peerDependencies": {
         "react": "^18.1.0",
@@ -140,6 +142,7 @@
         "jest": "^28.1.0",
         "jest-config": "^28.1.0",
         "jest-environment-jsdom": "^28.1.0",
+        "jsdoc": "~3.6.10",
         "node-sass": "^7.0.1",
         "npm": "^8.7.0",
         "postcss": "^8.4.14",
