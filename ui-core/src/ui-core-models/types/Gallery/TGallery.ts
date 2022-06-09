@@ -2,5 +2,5 @@ import { TCategory } from './TCategory';
 
 export type TGallery = {
     name: string;
-    categories: Map<string, TCategory>;
+    categories?: Map<string, TCategory>;
 };
