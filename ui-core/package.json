@@ -114,6 +114,7 @@
         "@storybook/preset-scss": "^1.0.3",
         "@storybook/preset-typescript": "^3.0.0",
         "@storybook/react": "^6.5.4",
+        "@storybook/react-docgen-typescript-plugin": "^1.0.2-canary.6.9d540b91e815f8fc2f8829189deb00553559ff63.0",
         "@storybook/testing-library": "^0.0.11",
         "@storybook/theming": "^6.5.4",
         "@testing-library/jest-dom": "^5.16.4",

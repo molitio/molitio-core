@@ -15,6 +15,7 @@ const packageJson = require('./package.json');
 const isProd = process.env.NODE_ENV === 'production';
 
 const extensions = ['.ts', '.tsx', '.md', '.mdx', '.svg'];
+const exclusions = ['node_modules/**', '**/*.stories.tsx', '**/*.test.*'];
 
 const globals = {
     react: 'React',
@@ -34,7 +35,7 @@ export default [
                 declarationDir: './dist',
                 declarationMap: true,
                 outputToFilesystem: true,
-                exclude: ['node_modules/**', '**/*.stories.tsx'],
+                exclude: [...exclusions],
             }),
             json(),
             commonjs(),
@@ -42,7 +43,7 @@ export default [
                 extensions: [...extensions],
                 babelHelpers: 'bundled',
                 include: ['src/**/*'],
-                exclude: ['node_modules/**', '**/*.stories.tsx'],
+                exclude: [...exclusions],
             }),
             nodeResolve(),
             postcss({
@@ -82,7 +83,7 @@ export default [
                 declarationDir: '.',
                 declarationMap: true,
                 outputToFilesystem: true,
-                exclude: ['node_modules/**', '**/*.stories.tsx'],
+                exclude: [...exclusions],
             }),
             json(),
             commonjs(),
@@ -90,7 +91,7 @@ export default [
                 extensions: [...extensions],
                 babelHelpers: 'bundled',
                 include: ['src'],
-                exclude: ['node_modules/**', '**/*.stories.tsx'],
+                exclude: [...exclusions],
             }),
             nodeResolve(),
             postcss({
