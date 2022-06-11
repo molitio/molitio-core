@@ -30,3 +30,10 @@ style
 */
 
 export type { ButtonStyleVariant } from './types/StyleService/ButtonStyleVariant';
+
+/* 
+resource gallery 
+*/
+
+export type { TCategory } from './types/Gallery/TCategory';
+export type { TGallery } from './types/Gallery/TGallery';

@@ -51,9 +51,9 @@ export default [
                 modules: true,
                 use: ['sass'],
             }),
-            image(),
             buble({ transforms: { forOf: false } }),
             size(),
+            image(),
             replace({
                 'process.env.NODE_ENV': JSON.stringify('production'),
                 __buildDate__: () => JSON.stringify(new Date()),

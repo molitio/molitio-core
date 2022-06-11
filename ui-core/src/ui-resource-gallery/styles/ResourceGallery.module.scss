@@ -1,8 +1,29 @@
-.imagePosition {
-    width: 30em;
-    height: auto;
+.resourceGallerySection {
+    color: #fff;
+    border: 3px solid orange;
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
 }
 
-.resourceContainer {
+.resourceGalleryContainer {
+    flex: 1;
+    border: 3px solid purple;
     display: flex;
+    flex-direction: row;
 }
+
+.categoryBrowser {
+    border: 3px solid yellow;
+    width: 10em;
+}
+
+.resourcePreview {
+    flex: 1;
+}
+
+.title {
+    text-align: center;
+}
+
+

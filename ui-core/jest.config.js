@@ -6,7 +6,7 @@ module.exports = {
     //preset: 'babel-jest',
     testEnvironment: 'jsdom',
     //roots: ['./src'],
-    rootDir: './__tests__',
+    rootDir: './.artifact/__tests__',
     verbose: true,
     transform: {
         '^.+\\.[jt]sx?$': 'babel-jest',
