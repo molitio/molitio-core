@@ -36,12 +36,11 @@ const storyArgs: ResourceGalleryProps = {
     gallery: { name: 'Galéria', categories: fillCategories() },
 };
 
-
 const meta: Meta = {
     title: 'molitio-core/Pages/Resource Gallery',
     component: ResourceGalleryPage,
     args: {
-       ...storyArgs
+        ...storyArgs,
     },
 };
 
