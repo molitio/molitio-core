@@ -22,7 +22,7 @@ module.exports = (api) => {
                     },
                 },
             ],
-            ['@babel/preset-react', { runtime: 'automatic' }],
+            '@babel/preset-react',
             '@babel/preset-typescript',
         ],
         plugins: ['@babel/proposal-class-properties', '@babel/proposal-object-rest-spread'],

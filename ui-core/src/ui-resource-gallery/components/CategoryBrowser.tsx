@@ -4,7 +4,7 @@ import { CategoryBrowserProps } from '../interfaces/CategoryBrowserProps';
 import styles from '../styles/CategoryBrowser.module.scss';
 
 export const CategoryBrowser: React.FC<CategoryBrowserProps> = ({ ...props }) => (
-    <>
+    <section>
         {Array.from([...(props.categories ?? new Map<string, TCategory>())]).map((category) => (
             <div key={category[0]}>
                 <h2>{category[1].categoryName}</h2>
@@ -13,8 +13,9 @@ export const CategoryBrowser: React.FC<CategoryBrowserProps> = ({ ...props }) =>
                     <div className={styles.resourceContainer} key={resource[0]}>
                         <h2>{resource[1].imageTag}</h2>
                         <br />
-
-                        <img className={styles.imagePosition} src={resource[1].imageUrl} alt={resource[0]} />
+                        <a href={resource[1].resourceId}>
+                            <img className={styles.imagePosition} src={resource[1].imageUrl} alt={resource[0]} />
+                        </a>
                         <br />
                     </div>
                 ))}
@@ -22,5 +23,5 @@ export const CategoryBrowser: React.FC<CategoryBrowserProps> = ({ ...props }) =>
                 <br />
             </div>
         ))}
-    </>
+    </section>
 );
