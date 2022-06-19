@@ -15,8 +15,8 @@ const globalStyles = {
         html: {
             fontSize: '20px',
             fontFamily: 'Open Sans',
-         /*    overflowY: 'hidden',
-            overflowX: 'hidden', */
+            overflowY: 'hidden',
+            overflowX: 'hidden',
             pointerEvents: 'none',
             paddingTop: 'env(safe-area-inset-top, 0px)',
             paddingLeft: 'env(safe-area-inset-left, 0px)',
@@ -62,6 +62,12 @@ const shellMain = {
         border: '0px dashed purple',
     },
 };
+
+/***
+ * AppShell provides a wrapper around componets and pages to provide theme context and global style rules
+ *
+ * @params AppShellProps
+ */
 
 export const AppShell: React.FC<AppShellProps & WithChildren> = ({ ...props }) => {
     const [selectedTheme, setSelectedTheme] = React.useState<ThemeNameTags>();

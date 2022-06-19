@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { createUseStyles } from 'react-jss';
-import { WithChildren } from 'ui-core-models';
 
-export const CenterDisplay: React.FC<WithChildren> = ({ ...props }) => {
+export const CenterDisplay: React.FC<PropsWithChildren> = ({ ...props }) => {
     const style = createUseStyles({
         center: {
             display: 'flex',

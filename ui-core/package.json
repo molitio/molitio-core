@@ -80,9 +80,8 @@
         "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
         "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
         "docgen": "mkdir -p .artifact/jsdoc && ./node_modules/.bin/jsdoc src/index.ts -d .artifact/jsdoc",
-        "tsgen": "npm run tsc src/index.ts --project tsconfig.json",
-        "testgen": "npm run tsc __tests__ -d .artifact/__tests__ --project tsconfig.json",
-        "tsc": "tsc"
+        "tsgen": "tsc --project tsconfig.json",
+        "testgen": "npm run tsc __tests__ -d .artifact/__tests__ --project tsconfig.json"
     },
     "peerDependencies": {
         "react": "^18.1.0",
