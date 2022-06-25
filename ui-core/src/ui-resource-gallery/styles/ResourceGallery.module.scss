@@ -1,9 +1,16 @@
 .resourceGallerySection {
+    /* szín */
     color: #fff;
+
+    /* szegély */
     border: 3px solid orange;
-    display: flex;
+
+    /* full screen */
     min-width: 100vw;
     min-height: 100vh;
+
+    /* egyedi a komponensre */
+    display: flex;
     overflow: auto;
     pointer-events: auto;
 }
