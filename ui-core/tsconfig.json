@@ -1,5 +1,5 @@
 {
-    "include": ["src/**/*", "src/DynamicButton.test.tsx", "__tests__"],
+    "include": ["src/**/*", "__tests__"],
     "exclude": ["node_modules", ".artifact", ".vscode", "assets", "design", "dist", "example", "page-layout-example"],
     "compilerOptions": {
         "target": "es5",
