@@ -1,6 +1,6 @@
 {
     "include": ["src/**/*", "src/DynamicButton.test.tsx", "__tests__"],
-    "exclude": ["node_modules", "build", "dist", "example", "rollup.config.js", "**/*.spec.tsx"],
+    "exclude": ["node_modules", ".artifact", ".vscode", "assets", "design", "dist", "example", "page-layout-example"],
     "compilerOptions": {
         "target": "es5",
         "module": "es2020",
@@ -14,7 +14,7 @@
         "declaration": true,
         "baseUrl": "src",
         "outDir": "dist",
-        "rootDir": "src",
+        "rootDirs": ["src", "__tests__"],
         "declarationDir": "dist",
         "declarationMap": true,
         "composite": true,
