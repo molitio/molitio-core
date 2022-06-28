@@ -1,5 +1,5 @@
 import React from 'react';
-import { TCategory, TImageResource } from 'ui-core-models';
+import { TCategory, TImageResource } from 'ui-core-schema';
 import { CategoryBrowserProps } from '../interfaces/CategoryBrowserProps';
 import styles from '../styles/CategoryBrowser.module.scss';
 import { ResourceGalleryActionType, ResourceGalleryReducer } from './ResourceGalleryReducer';

@@ -8,7 +8,7 @@ export * from './ui-nav-menu';
 ui-core-models
 */
 
-export * from './ui-core-models';
+export * from './ui-core-schema';
 
 /* 
 ui-common

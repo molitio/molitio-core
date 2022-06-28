@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta, ComponentStory } from '@storybook/react';
 import { RadioPage } from 'ui-page';
-import { ThemeNameTags } from 'ui-core-models';
 import {
     LogoAppStoreSvg,
     LogoFreshPrintSvg,
@@ -14,6 +13,7 @@ import {
 } from 'ui-svg';
 import { AppShell, SpanBlock, DefaultFooter } from 'ui-common';
 import { StripedBackground } from 'ui-background';
+import { ThemeNameTags } from 'ui-core-schema/tags/ui-style-service/theme/ThemeNameTags';
 
 const embededImageSource =
     'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_effect.png';
@@ -68,14 +68,29 @@ const Template: ComponentStory<typeof AppShell> = (args) => (
                         <LogoNestMediaSvg dimensions={{ height: '2.5em' }} />,
                     ]}
                     centerColumnElements={[
-                        <SpanBlock rem={0.7} color={'secondary'} marginTop={'0.2rem'} center>
-                            Email: hello@radiosense.hu
-                        </SpanBlock>,
-                        <SpanBlock rem={0.5} color={'secondary'} marginTop={'0.1rem'} center>
-                            © 2022 Radio Sense Hungary. All rights reserved.
-                            <br />
-                            created by nestmedia
-                        </SpanBlock>,
+                        <SpanBlock
+                            rem={0.7}
+                            color={'secondary'}
+                            textContent={'Email: hello@radiosense.hu'}
+                            marginTop={'0.2rem'}
+                            center
+                        />,
+                        <br />,
+
+                        <SpanBlock
+                            rem={0.5}
+                            color={'secondary'}
+                            textContent={' © 2022 Radio Sense Hungary. All rights reserved.'}
+                            marginTop={'0.1rem'}
+                            center
+                        />,
+                        <SpanBlock
+                            rem={0.3}
+                            color={'secondary'}
+                            textContent={'created by nestmedia'}
+                            marginTop={'0.1rem'}
+                            center
+                        />,
                     ]}
                     rightColumnElements={[
                         <LogoGooglePlaySvg

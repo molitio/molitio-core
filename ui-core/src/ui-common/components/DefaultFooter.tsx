@@ -4,12 +4,12 @@ import { StyledThemeContext } from 'ui-context';
 import { DefaultFooterProps } from '../interfaces/DefaultFooterProps';
 
 export const DefaultFooter: React.FC<DefaultFooterProps> = ({ ...props }) => {
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         content: {
             display: 'flex',
             justifyContent: 'center',
             marginTop: '0.5em',
-            backgroundColor: theme.backgroundColor,
+            backgroundColor: themeContext.theme?.backgroundColor,
         },
         leftColumnElements: {
             display: 'flex',

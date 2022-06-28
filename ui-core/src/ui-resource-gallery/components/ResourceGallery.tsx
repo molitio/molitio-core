@@ -1,21 +1,21 @@
 import React from 'react';
 import { CategoryBrowser, ResourceGalleryProps } from 'ui-resource-gallery';
 import styles from '../styles/ResourceGallery.module.scss';
-import systemStyles from '../styles/SystemStyle';
+import { SystemStyles } from 'ui-style-service';
 import { ResourceGalleryReducer } from './ResourceGalleryReducer';
 
 export const ResourceGallery: React.FC<ResourceGalleryProps> = ({ ...props }) => {
     const [resourceGalleryState, dispatch] = React.useReducer(ResourceGalleryReducer, {});
 
     return (
-        <section className={`${systemStyles['section-rounded'].style} ${systemStyles['section-text-bold'].style}`}>
+        <section className={`${SystemStyles['section-rounded'].style} ${SystemStyles['section-text-bold'].style}`}>
             {props.gallery && (
                 <div className={styles.resourceGalleryContainer}>
                     selected category: {resourceGalleryState.selectedCategoryTag}
                     <div
                         id="id-resource-gallery"
                         className={`${styles.categoryBrowser} ${{
-                            ...systemStyles['section-box-shadow'].style,
+                            ...SystemStyles['section-box-shadow'].style,
                         }}`}
                     >
                         <CategoryBrowser categories={props.gallery.categories} />

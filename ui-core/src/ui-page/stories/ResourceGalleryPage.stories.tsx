@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/react';
-import { ResourceGalleryPage } from '../resource-gallery/components/ResourceGalleryPage';
-import { TCategory } from 'ui-core-models/types/Gallery/TCategory';
-import { TResource } from 'ui-core-models/types/Resources/TResource';
+import { ResourceGalleryPage } from '../resource-gallery-page/components/ResourceGalleryPage';
+import { TCategory } from 'ui-core-schema/types/generics/TCategory';
+import { TResource } from 'ui-core-schema/types/Resources/TResource';
 import { AppShell } from 'ui-common';
 import { ResourceGalleryProps } from 'ui-resource-gallery';
 

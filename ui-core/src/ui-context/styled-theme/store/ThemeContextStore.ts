@@ -1,4 +1,4 @@
-import { ThemeNameTags } from 'ui-core-models';
+import { ThemeNameTags } from 'ui-core-schema';
 import { OrangeHighlight, YellowHighlight } from '../styles/SvgBorderHighLights';
 import { StyledThemeContext } from '../interface/StyledThemeContext';
 

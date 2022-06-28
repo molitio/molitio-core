@@ -1,4 +1,4 @@
-import { TNavPage } from 'ui-core-models';
+import { TNavPage } from 'ui-core-schema';
 
 export type TNavPageCollection = {
     tag: string;

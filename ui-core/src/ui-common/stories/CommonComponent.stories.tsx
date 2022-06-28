@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react';
 import { CenterDisplay, ComponentGroup, ComponentGroupProps } from 'ui-common';
-import { ComponentGroupTags, ThemeNameTags } from 'ui-core-models';
+import { ComponentGroupTags, ThemeNameTags } from 'ui-core-schema';
 import { LogoFreshPrintSvg } from 'ui-svg';
 import { StyledThemeContextProvider, StyledThemeProps } from 'ui-context';
 

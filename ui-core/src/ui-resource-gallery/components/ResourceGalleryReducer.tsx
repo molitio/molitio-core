@@ -1,4 +1,4 @@
-import { TGallery } from 'ui-core-models';
+import { TGallery } from 'ui-core-schema';
 
 export enum ResourceGalleryActionType {
     SELECT_CATEGORY,

@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
-import { TNavPage } from 'ui-core-models';
+import { TNavPage } from 'ui-core-schema';
 import { StyledThemeContext } from 'ui-context';
 import styles from '../styles/NavMenuComponent.module.scss';
 
@@ -13,7 +13,7 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
         setMenuPages(new Map([...(props.pageCollection.pageCollection ?? new Map<string, TNavPage>())]));
     }, []);
 
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         nav: {
             /*  backgroundColor: theme.backgroundColor, */
             backgroundColor: 'DodgerBlue',
@@ -46,10 +46,10 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
             },
         },
         pageTitle: {
-            color: theme.primary,
+            color: themeContext.theme?.primary,
         },
         pageBackground: {
-            backgroundColor: theme.backgroundColor,
+            backgroundColor: themeContext.theme?.backgroundColor,
         },
         brandSection: {
             flexGrow: 1,

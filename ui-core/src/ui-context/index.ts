@@ -4,12 +4,12 @@ audio-player
 
 export { AudioPlayerContext } from './audio-player/components/AudioPlayerContext';
 export { AudioPlayerContextProvider } from './audio-player/components/AudioPlayerContextProvider';
-export type { AudioPlayerState } from './audio-player/interfaces/AudioPlayerState';
+export type { TAudioPlayerState as AudioPlayerState } from '../ui-core-schema/types/ui-context/TAudioPlayerState';
 /*
 theming
 */
 
-export { StyledThemeContextProvider } from './styled-theme/components/StyledThemeContextProvider';
+export { StyledThemeContextProvider } from '../ui-style-service/components/StyledThemeContextProvider';
 export type { StyledThemeContextProviderProps } from './styled-theme/interface/StyledThemeContextProviderProps';
 export type { StyledThemeContext } from './styled-theme/interface/StyledThemeContext';
 export type { StyledThemeProps } from './styled-theme/interface/ThemeProps';

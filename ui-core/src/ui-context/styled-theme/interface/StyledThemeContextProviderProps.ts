@@ -1,4 +1,4 @@
-import { TDeviceTypes } from 'ui-core-models';
+import { TDeviceTypes } from 'ui-core-schema';
 
 export interface StyledThemeContextProviderProps {
     themeName?: string;

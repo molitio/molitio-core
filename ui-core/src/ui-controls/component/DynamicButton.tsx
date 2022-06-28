@@ -1,17 +1,17 @@
 import React from 'react';
 import { createUseStyles, useTheme } from 'react-jss';
-import { ButtonStyleVariant } from 'ui-core-models';
+import { ButtonStyleVariant } from 'ui-core-schema';
 import { DynamicButtonProps } from '../interface/DynamicButtonProps';
-import { getStyleVariantRules } from 'style-service';
+import { getStyleVariantRules } from 'ui-style-service';
 import styles from '../styles/DynamicButton.module.scss';
 import { StyledThemeContext } from 'ui-context';
 
 export const DynamicButton: React.FC<DynamicButtonProps> = ({ ...props }) => {
-    const theme = useTheme<StyledThemeContext>();
+    const themeContext = useTheme<StyledThemeContext>();
     const createStyleVariantRules = (variant: ButtonStyleVariant) => {
         return createUseStyles(() => ({
             buttonStyle: {
-                backgroundColor: theme?.backgroundColor,
+                backgroundColor: themeContext.theme?.backgroundColor,
                 ...getStyleVariantRules(variant),
             },
         })).apply({});

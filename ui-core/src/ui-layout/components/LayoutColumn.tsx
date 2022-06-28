@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { DevHighlight } from 'ui-context';
-import { WithChildren } from 'ui-core-models';
+import { WithChildren } from 'ui-core-schema';
 
 export const LayoutColumn: React.FC<WithChildren> = ({ ...props }) => {
     const style = createUseStyles({

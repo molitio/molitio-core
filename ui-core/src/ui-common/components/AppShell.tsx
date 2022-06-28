@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { AppShellProps } from '../interfaces/AppShellProps';
 import { isClient } from '../services/Platform';
 import { StyledThemeContextProvider, DeviceContextProvider } from 'ui-context';
-import { ThemeNameTags, WithChildren } from 'ui-core-models';
+import { ThemeNameTags } from 'ui-core-schema';
 
 const globalStyles = {
     '@global': {
@@ -69,9 +69,10 @@ const shellMain = {
  * @params AppShellProps
  */
 
-export const AppShell: React.FC<AppShellProps & WithChildren> = ({ ...props }) => {
+export const AppShell: React.FC<AppShellProps & React.PropsWithChildren> = (props) => {
+    const { children } = props;
+
     const [selectedTheme, setSelectedTheme] = React.useState<ThemeNameTags>();
-    const [children, setChildren] = React.useState<React.ReactElement<any, any>>();
 
     React.useEffect(() => {
         const effect = async () => {
@@ -79,13 +80,6 @@ export const AppShell: React.FC<AppShellProps & WithChildren> = ({ ...props }) =
         };
         effect();
     }, [props.themeName]);
-
-    React.useEffect(() => {
-        const effect = async () => {
-            setChildren(props.children);
-        };
-        effect();
-    }, [props.children]);
 
     const styleOverrides = props.applyGlobalStyleRules ? globalStyles : {};
     const classes = createUseStyles({

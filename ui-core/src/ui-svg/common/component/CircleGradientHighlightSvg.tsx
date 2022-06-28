@@ -3,10 +3,10 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { StyledThemeContext } from 'ui-context';
 import { EmbededHtml } from './EmbededHtml';
-import { WithChildren } from 'ui-core-models';
+import { WithChildren } from 'ui-core-schema';
 
 export const CircleGradientHighlightSvg: React.FC<SvgComponentProps & WithChildren> = ({ ...props }) => {
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         svg: {
             position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
             height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height,
@@ -18,10 +18,10 @@ export const CircleGradientHighlightSvg: React.FC<SvgComponentProps & WithChildr
         },
         content: {},
         gradientColors: {
-            fill: theme.backgroundColor,
+            fill: themeContext.theme?.backgroundColor,
         },
         secondaryGradientColors: {
-            fill: theme.secondaryBackgroundColor,
+            fill: themeContext.theme?.secondaryBackgroundColor,
         },
     })).apply({});
 

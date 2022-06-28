@@ -1,5 +1,5 @@
 import React from 'react';
-import { TDeviceTypes, WithChildren } from 'ui-core-models';
+import { TDeviceTypes, WithChildren } from 'ui-core-schema';
 import DeviceDetector from 'device-detector-js';
 import { DeviceContext } from './DeviceContext';
 

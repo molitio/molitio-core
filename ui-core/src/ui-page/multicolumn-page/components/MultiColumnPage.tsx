@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { WithChildren } from 'ui-core-models';
+import { WithChildren } from 'ui-core-schema';
 import { MultiColumnPageProps } from '../interfaces/MultiColumnPageProps';
 
 export const MultiColumnPage: React.FC<MultiColumnPageProps & WithChildren> = ({ ...props }) => {

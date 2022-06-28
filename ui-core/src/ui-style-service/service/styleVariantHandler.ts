@@ -1,4 +1,4 @@
-import { ButtonStyleVariant } from 'ui-core-models';
+import { ButtonStyleVariant } from 'ui-core-schema';
 
 export const getStyleVariantRules = (variant: ButtonStyleVariant) => {
     switch (variant) {

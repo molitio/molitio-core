@@ -1,15 +1,17 @@
-import { TDeviceTypes } from 'ui-core-models';
+import { TDeviceTypes } from 'ui-core-schema';
 
-export interface StyledThemeContext {
+export type StyledThemeContext = {
     themeName?: string;
     deviceType?: TDeviceTypes;
-    primary?: string;
-    secondary?: string;
-    primaryFontColor?: string;
-    secondaryFontColor?: string;
-    backgroundColor?: string;
-    secondaryBackgroundColor?: string;
-    interactiveHighlight?: { fill: string; strokeWidth: number; stroke: string };
+    theme?: {
+        primary?: string;
+        secondary?: string;
+        primaryFontColor?: string;
+        secondaryFontColor?: string;
+        backgroundColor?: string;
+        secondaryBackgroundColor?: string;
+        interactiveHighlight?: { fill: string; strokeWidth: number; stroke: string };
+    };
     gridGroup?: {
         display: string;
         gridTemplateColumns: string;
@@ -18,8 +20,10 @@ export interface StyledThemeContext {
         display: string;
         flexDirection: string;
     };
-    horizontalGroup?: {
-        display: string;
-        flexDirection: string;
-    };
-}
+    horizontalGroup?:
+        | {
+              display: string;
+              flexDirection: string;
+          }
+        | undefined;
+};

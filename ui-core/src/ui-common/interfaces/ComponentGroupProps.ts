@@ -1,4 +1,4 @@
-import { ComponentGroupTags } from 'ui-core-models';
+import { ComponentGroupTags } from 'ui-core-schema';
 import { ShapeDimensions } from 'ui-svg';
 
 export type breakpoints = 'xs' | 'sm' | 'lg' | 'wide';

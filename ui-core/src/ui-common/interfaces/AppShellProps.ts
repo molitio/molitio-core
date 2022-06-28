@@ -1,4 +1,4 @@
-import { ThemeNameTags } from 'ui-core-models';
+import { ThemeNameTags } from 'ui-core-schema';
 
 export interface AppShellProps {
     themeName?: ThemeNameTags;
