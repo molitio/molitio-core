@@ -1,9 +1,8 @@
 import { Story, Meta } from '@storybook/react';
-import { ResourceGalleryPage } from '../resource-gallery-page/components/ResourceGalleryPage';
-
 import { AppShell } from 'ui-common';
 import { ResourceGalleryProps } from 'ui-resource-gallery';
-import { TCategory, TResource } from 'ui-core-schema';
+import { ResourceGalleryPage } from 'ui-page';
+import { TResource, TCategory } from 'ui-core-schema';
 
 const fillResources = () => {
     const tajkepGyujtemeny = new Map<string, TResource>();
@@ -69,7 +68,7 @@ const storyArgs: ResourceGalleryProps = {
 };
 
 const meta: Meta = {
-    title: 'molitio-core/Pages/Resource Gallery Page',
+    title: 'molitio-core/Components/Resource Gallery',
     component: ResourceGalleryPage,
     args: {
         ...storyArgs,

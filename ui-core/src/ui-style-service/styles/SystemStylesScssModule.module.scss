@@ -1,5 +1,6 @@
 $nature-theme-color-primary: green;
+$basic_border: 2px solid red;
 
-.natureThemeColor {
-    color: $nature-theme-color-primary;
+.sysStyleBasicBorder {
+    border: $basic_border;
 }

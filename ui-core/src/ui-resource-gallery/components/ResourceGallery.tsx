@@ -1,23 +1,25 @@
 import React from 'react';
+import { ComponentTag, SystemStyleTag, ThemeNameTags } from 'ui-core-schema';
 import { CategoryBrowser, ResourceGalleryProps } from 'ui-resource-gallery';
+import { resolveSystemStyle, useSystemStyles } from 'ui-style-service';
 import styles from '../styles/ResourceGallery.module.scss';
-import { SystemStyles } from 'ui-style-service';
 import { ResourceGalleryReducer } from './ResourceGalleryReducer';
+
+const COMPONENT_TAG = ComponentTag.RESOURCE_GALLERY;
 
 export const ResourceGallery: React.FC<ResourceGalleryProps> = ({ ...props }) => {
     const [resourceGalleryState, dispatch] = React.useReducer(ResourceGalleryReducer, {});
 
+    const { resolvedStyle, resolvedThemeContext } = useSystemStyles(ComponentTag.RESOURCE_GALLERY, {
+        themeNameTag: ThemeNameTags.BLACK_YELLOW,
+    });
+
     return (
-        <section className={`${SystemStyles['section-rounded'].style} ${SystemStyles['section-text-bold'].style}`}>
+        <section className={`${{ ...resolvedStyle }}`}>
             {props.gallery && (
                 <div className={styles.resourceGalleryContainer}>
-                    selected category: {resourceGalleryState.selectedCategoryTag}
-                    <div
-                        id="id-resource-gallery"
-                        className={`${styles.categoryBrowser} ${{
-                            ...SystemStyles['section-box-shadow'].style,
-                        }}`}
-                    >
+                    <div className={`${resolveSystemStyle(SystemStyleTag.BASIC_BORDER)}`}>
+                        selected category: {resourceGalleryState.selectedCategoryTag}
                         <CategoryBrowser categories={props.gallery.categories} />
                     </div>
                     <div className={styles.resourcePreview}>

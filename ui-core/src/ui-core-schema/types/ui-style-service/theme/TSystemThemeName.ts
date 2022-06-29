@@ -1,4 +1,6 @@
+import { ThemeNameTags } from '../../../tags/ui-style-service/theme/ThemeNameTags';
+
 export type TSystemThemeName = {
-    themeId: string;
-    themeName: string;
+    themeId?: string;
+    themeNameTag: ThemeNameTags;
 };

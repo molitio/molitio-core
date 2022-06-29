@@ -3,7 +3,6 @@
     color: #fff;
 
     /* szegély */
-    border: 3px solid orange;
 
     /* full screen */
     min-width: 100vw;
@@ -17,17 +16,14 @@
 
 .resourceGalleryContainer {
     flex: 1;
-    border: 3px solid purple;
     display: flex;
     flex-direction: row;
 }
 
 .categoryBrowser {
-    border: 3px solid yellow;
     width: 10em;
     top: 25%;
     position: fixed;
-    border: 3px solid yellow;
     width: 12em;
     height: 50vh;
     overflow-x: scroll;

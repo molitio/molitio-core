@@ -1,2 +1,2 @@
 export { getStyleVariantRules } from './service/styleVariantHandler';
-export { useSystemStyles } from './components/SystemStyles';
+export { useSystemStyles, resolveSystemStyle } from './service/SystemStyles';
