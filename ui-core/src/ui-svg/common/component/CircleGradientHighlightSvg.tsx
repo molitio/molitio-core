@@ -3,9 +3,8 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { StyledThemeContext } from 'ui-context';
 import { EmbededHtml } from './EmbededHtml';
-import { WithChildren } from 'ui-core-schema';
 
-export const CircleGradientHighlightSvg: React.FC<SvgComponentProps & WithChildren> = ( props ) => {
+export const CircleGradientHighlightSvg: React.FC<SvgComponentProps & React.PropsWithChildren> = ( props ) => {
 
     const {dimensions, children} = props;
 
