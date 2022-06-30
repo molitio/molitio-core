@@ -70,13 +70,13 @@ const shellMain = {
  */
 
 export const AppShell: React.FC<AppShellProps & React.PropsWithChildren> = (props) => {
-    const { children } = props;
+    const { children, themeName } = props;
 
     const [selectedTheme, setSelectedTheme] = React.useState<ThemeNameTags>();
 
     React.useEffect(() => {
         const effect = async () => {
-            setSelectedTheme(props.themeName);
+            setSelectedTheme(themeName);
         };
         effect();
     }, [props.themeName]);
