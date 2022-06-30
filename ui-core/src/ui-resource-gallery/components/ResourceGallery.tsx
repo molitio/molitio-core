@@ -15,7 +15,7 @@ export const ResourceGallery: React.FC<ResourceGalleryProps> = ({ ...props }) =>
     });
 
     return (
-        <section className={`${{ ...resolvedStyle }}`}>
+        <section className={`${resolveSystemStyle(SystemStyleTag.BASIC_BORDER)} ${`mock`}`}>
             {props.gallery && (
                 <div className={styles.resourceGalleryContainer}>
                     <div className={`${resolveSystemStyle(SystemStyleTag.BASIC_BORDER)}`}>

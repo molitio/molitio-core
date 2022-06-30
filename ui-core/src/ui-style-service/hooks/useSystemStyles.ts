@@ -39,13 +39,14 @@ type StyleFragment = {
  *
  * @return {Partial<Record<string, string>>} - Style rule collection matching the provided SystemStyleTag
  */
-export const resolveSystemStyle = (styleFragmentTag: SystemStyleTag): Partial<Record<string, string>> => {
+export const resolveSystemStyle = (styleFragmentTag: SystemStyleTag): string => {
     console.log(`styleFragmentTag: ${styleFragmentTag}`);
     console.log(`scss: ${JSON.stringify(SystemStylesScssModule)}`);
+
     const styleEntries: StyleFragment = Object.assign(SystemStylesScssModule);
     console.log(`style entries: ${JSON.stringify(styleEntries)}`);
 
-    return styleEntries;
+    return styleEntries[styleFragmentTag];
 };
 
 type SystemStylesResponse = {
