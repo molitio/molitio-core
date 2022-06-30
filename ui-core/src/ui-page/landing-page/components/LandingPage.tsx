@@ -1,10 +1,9 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { StyledThemeContext } from 'ui-context';
-import { WithChildren } from 'ui-core-schema';
 import { LandingPageProps } from '../interfaces/LandingPageProps';
 
-export const LandingPage: React.FC<LandingPageProps & WithChildren> = (props) => {
+export const LandingPage: React.FC<LandingPageProps & React.PropsWithChildren> = (props) => {
 
 const {children, pageTitle} = props;
 
