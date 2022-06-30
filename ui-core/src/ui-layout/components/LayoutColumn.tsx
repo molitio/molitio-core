@@ -3,7 +3,10 @@ import { createUseStyles } from 'react-jss';
 import { DevHighlight } from 'ui-context';
 import { WithChildren } from 'ui-core-schema';
 
-export const LayoutColumn: React.FC<WithChildren> = ({ ...props }) => {
+export const LayoutColumn: React.FC<WithChildren> = (props) => {
+
+const {children} = props;
+
     const style = createUseStyles({
         pageColumn: {
             height: '100%',
@@ -14,5 +17,5 @@ export const LayoutColumn: React.FC<WithChildren> = ({ ...props }) => {
         },
     }).apply({});
 
-    return <div className={`${style.pageColumn} ${style.devHighlight}`}>{props.children}</div>;
+    return <div className={`${style.pageColumn} ${style.devHighlight}`}>{children}</div>;
 };

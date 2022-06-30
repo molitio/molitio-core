@@ -16,9 +16,11 @@ interface AudioPlayerStateAction {
     payload: TAudioPlayerState;
 }
 
-export const AudioPlayerContextProvider: React.FC<WithChildren> = ({ ...props }) => {
+export const AudioPlayerContextProvider: React.FC<WithChildren> = ({...props}) => {
+
     const deviceContext = React.useContext(DeviceContext);
 
+    // children is defined !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
     const [children, setChildren] = React.useState<React.ReactElement<any, any>>();
     React.useEffect(() => {
         const effect = async () => {

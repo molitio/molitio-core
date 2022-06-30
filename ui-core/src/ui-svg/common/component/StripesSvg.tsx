@@ -5,7 +5,7 @@ import { StripesSvgProps } from '../interface/StripesSvgProps';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { EmbededImage } from './EmbededImage';
 
-export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...props }) => {
+export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = () => {
     const rotationAngle = props.rotationAngle ?? 45;
     const fillOpacity = props.fillOpacity ?? 0.87059;
     const stripeLength = props.stripeLength ?? 1578.7;

@@ -1,7 +1,8 @@
 import React, { PropsWithChildren } from 'react';
 import { createUseStyles } from 'react-jss';
 
-export const CenterDisplay: React.FC<PropsWithChildren> = ({ ...props }) => {
+export const CenterDisplay: React.FC<PropsWithChildren> = (props) => {
+    const { children } = props;
     const style = createUseStyles({
         center: {
             display: 'flex',
@@ -12,5 +13,5 @@ export const CenterDisplay: React.FC<PropsWithChildren> = ({ ...props }) => {
         },
     }).apply({});
 
-    return <div className={style.center}>{props.children}</div>;
+    return <div className={style.center}>{children}</div>;
 };

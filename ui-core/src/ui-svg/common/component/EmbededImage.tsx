@@ -2,13 +2,16 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 
-export const EmbededImage: React.FC<SvgComponentProps> = ({ ...props }: SvgComponentProps) => {
-    const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto';
-    const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto';
+export const EmbededImage: React.FC<SvgComponentProps> = ( props: SvgComponentProps) => {
+
+const {dimensions, opacity, embededImageSrc} = props;
+
+    const componentHeight = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height ?? 'auto';
+    const componentWidth = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width ?? 'auto';
 
     const style = createUseStyles({
         dimensions: {
-            opacity: props.opacity,
+            opacity: opacity,
             pointerEvents: 'none',
         },
     }).apply({});
@@ -19,7 +22,7 @@ export const EmbededImage: React.FC<SvgComponentProps> = ({ ...props }: SvgCompo
             width={componentWidth}
             height={componentHeight}
             preserveAspectRatio="xMaxYMax slice"
-            xlinkHref={props.embededImageSrc}
+            xlinkHref={embededImageSrc}
         />
     );
 };

@@ -4,7 +4,10 @@ import { StyledThemeContext } from 'ui-context';
 import { WithChildren } from 'ui-core-schema';
 import { LandingPageProps } from '../interfaces/LandingPageProps';
 
-export const LandingPage: React.FC<LandingPageProps & WithChildren> = ({ ...props }) => {
+export const LandingPage: React.FC<LandingPageProps & WithChildren> = (props) => {
+
+const {children, pageTitle} = props;
+
     const useStyles = createUseStyles((themeContext: StyledThemeContext) => ({
         landing: {
             display: 'flex',
@@ -42,8 +45,8 @@ export const LandingPage: React.FC<LandingPageProps & WithChildren> = ({ ...prop
     const style = useStyles();
     return (
         <div className={style.landing}>
-            <h1>{props.pageTitle}</h1>
-            <div className={style.pageContent}>{props.children}</div>
+            <h1>{pageTitle}</h1>
+            <div className={style.pageContent}>{children}</div>
         </div>
     );
 };

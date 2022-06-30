@@ -4,9 +4,12 @@ import { AudioPlayerContext, StyledThemeContext } from 'ui-context';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { EmbededImage } from './EmbededImage';
 
-export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
-    const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto';
-    const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto';
+export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = (props) => {
+
+const {dimensions, embededImageSrc} = props;
+
+    const componentHeight = dimensions === 'FULLSCREEN' ? '100%' :dimensions?.height ?? 'auto';
+    const componentWidth = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width ?? 'auto';
 
     const playerContext = React.useContext(AudioPlayerContext);
     const playButtonRef = React.useRef<SVGGElement>(null);
@@ -334,9 +337,9 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
                     </g>
                 </g>
                 <g width="100" height="100">
-                    {props.embededImageSrc ? (
+                    {embededImageSrc ? (
                         <EmbededImage
-                            embededImageSrc={props.embededImageSrc}
+                            embededImageSrc={embededImageSrc}
                             dimensions={{ width: '100', height: '100' }}
                         />
                     ) : (

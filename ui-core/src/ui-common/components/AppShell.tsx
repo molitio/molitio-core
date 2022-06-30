@@ -70,18 +70,19 @@ const shellMain = {
  */
 
 export const AppShell: React.FC<AppShellProps & React.PropsWithChildren> = (props) => {
-    const { children } = props;
+    
+    const { children, themeName, applyGlobalStyleRules } = props;
 
     const [selectedTheme, setSelectedTheme] = React.useState<ThemeNameTags>();
 
     React.useEffect(() => {
         const effect = async () => {
-            setSelectedTheme(props.themeName);
+            setSelectedTheme(themeName);
         };
         effect();
-    }, [props.themeName]);
+    }, [themeName]);
 
-    const styleOverrides = props.applyGlobalStyleRules ? globalStyles : {};
+    const styleOverrides = applyGlobalStyleRules ? globalStyles : {};
     const classes = createUseStyles({
         ...shellMain,
         ...styleOverrides,

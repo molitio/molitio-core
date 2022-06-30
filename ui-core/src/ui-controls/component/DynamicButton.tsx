@@ -6,7 +6,10 @@ import { getStyleVariantRules } from 'ui-style-service';
 import styles from '../styles/DynamicButton.module.scss';
 import { StyledThemeContext } from 'ui-context';
 
-export const DynamicButton: React.FC<DynamicButtonProps> = ({ ...props }) => {
+export const DynamicButton: React.FC<DynamicButtonProps> = (props) => {
+
+const {styleVariant, label, children} = props;
+
     const themeContext = useTheme<StyledThemeContext>();
     const createStyleVariantRules = (variant: ButtonStyleVariant) => {
         return createUseStyles(() => ({
@@ -16,11 +19,11 @@ export const DynamicButton: React.FC<DynamicButtonProps> = ({ ...props }) => {
             },
         })).apply({});
     };
-    const themeStyle = createStyleVariantRules(props.styleVariant);
+    const themeStyle = createStyleVariantRules(styleVariant);
 
     return (
         <button data-testid="dynamic-button" className={`${themeStyle.buttonStyle} ${styles.btnBasic}`}>
-            {props.label ?? props.children}
+            {label ?? children}
         </button>
     );
 };

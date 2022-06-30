@@ -4,7 +4,12 @@ import { AudioPlayer } from 'ui-common';
 import { AudioPlayerContextProvider, StyledThemeContext } from 'ui-context';
 import { RadioPageProps } from '../interfaces/RadioPageProps';
 
-export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
+export const RadioPage: React.FC<RadioPageProps> = (props) => {
+
+    const {background, logo, socialButtons, playerElement, radio, pageFooter} = props;
+
+    const {externalBackgroundEffect} = props;
+
     const headerItemSpacingTop = '2em';
     const headerItemSpacingSide = '12em';
     //const playerWidthAndHeightMicro = '8em';
@@ -60,8 +65,8 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
         externalBackgroundEffect: {
             position: 'fixed',
             zIndex: 80,
-            visibility: props.externalBackgroundEffect ? 'visible' : 'hidden',
-            backgroundImage: `url(${props.externalBackgroundEffect})`,
+            visibility: externalBackgroundEffect ? 'visible' : 'hidden',
+            backgroundImage: `url(${externalBackgroundEffect})`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
@@ -212,37 +217,37 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
 
     return (
         <>
-            {props.background}
+            {background}
             <div className={style.pageContainer}>
-                <div className={style.logo}>{props.logo}</div>
-                <div className={style.socialButtons}>{props.socialButtons}</div>
+                <div className={logo}>{logo}</div>
+                <div className={style.socialButtons}>{socialButtons}</div>
                 <div>
                     <div className={style.content}>
                         <div className={style.player}>
                             <AudioPlayerContextProvider>
                                 <>
-                                    {props.playerElement}
+                                    {playerElement}
                                     <AudioPlayer
                                         mediaSource={{
-                                            sourceUrl: props.radio.mediaSource.sourceUrl,
-                                            mediaType: props.radio.mediaSource.mediaType,
+                                            sourceUrl: radio.mediaSource.sourceUrl,
+                                            mediaType: radio.mediaSource.mediaType,
                                         }}
                                         alternativeMediaSource={{
-                                            sourceUrl: props.radio.alternativeMediaSource?.sourceUrl
-                                                ? props.radio.alternativeMediaSource.sourceUrl
+                                            sourceUrl: radio.alternativeMediaSource?.sourceUrl
+                                                ? radio.alternativeMediaSource.sourceUrl
                                                 : '',
-                                            mediaType: props.radio.alternativeMediaSource?.mediaType
-                                                ? props.radio.alternativeMediaSource.mediaType
+                                            mediaType: radio.alternativeMediaSource?.mediaType
+                                                ? radio.alternativeMediaSource.mediaType
                                                 : 'audio/mpeg',
                                         }}
-                                        preload={props.radio.preload}
+                                        preload={radio.preload}
                                     />
                                 </>
                             </AudioPlayerContextProvider>
                         </div>
                     </div>
                 </div>
-                <div className={style.pageFooter}>{props.pageFooter}</div>
+                <div className={style.pageFooter}>{pageFooter}</div>
             </div>
         </>
     );

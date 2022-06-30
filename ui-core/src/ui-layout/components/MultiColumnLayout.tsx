@@ -3,7 +3,10 @@ import { createUseStyles } from 'react-jss';
 import { MultiColumnLayoutProps } from 'ui-layout';
 import { DevHighlight } from 'ui-context';
 
-export const MultiColumnLayout: React.FC<MultiColumnLayoutProps> = ({ ...props }) => {
+export const MultiColumnLayout: React.FC<MultiColumnLayoutProps> = (props) => {
+
+const {layoutColumns} = props;
+
     const style = createUseStyles({
         landing: {
             minHeight: 'calc(100vh - 10px)',
@@ -21,7 +24,7 @@ export const MultiColumnLayout: React.FC<MultiColumnLayoutProps> = ({ ...props }
 
     return (
         <div className={`${style.landing}`}>
-            {props.layoutColumns.map((layoutColumn) => (
+            {layoutColumns.map((layoutColumn) => (
                 <div className={`${style.pageColumn} ${style.devHighlight}`}>{layoutColumn}</div>
             ))}
         </div>

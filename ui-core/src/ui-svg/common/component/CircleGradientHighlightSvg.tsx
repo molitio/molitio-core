@@ -5,12 +5,15 @@ import { StyledThemeContext } from 'ui-context';
 import { EmbededHtml } from './EmbededHtml';
 import { WithChildren } from 'ui-core-schema';
 
-export const CircleGradientHighlightSvg: React.FC<SvgComponentProps & WithChildren> = ({ ...props }) => {
+export const CircleGradientHighlightSvg: React.FC<SvgComponentProps & WithChildren> = ( props ) => {
+
+    const {dimensions, children} = props;
+
     const style = createUseStyles((themeContext: StyledThemeContext) => ({
         svg: {
-            position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
-            height: props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width,
+            position: dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
+            height: dimensions === 'FULLSCREEN' ? '100vh' : dimensions?.height,
+            width: dimensions === 'FULLSCREEN' ? '100vw' : dimensions?.width,
             pointerEvents: 'none',
         },
         gradientRect: {
@@ -59,7 +62,7 @@ export const CircleGradientHighlightSvg: React.FC<SvgComponentProps & WithChildr
             </g>
             <g>
                 <EmbededHtml x="200" y="200" width="400" height="400">
-                    {props.children}
+                    {children}
                 </EmbededHtml>
             </g>
         </svg>

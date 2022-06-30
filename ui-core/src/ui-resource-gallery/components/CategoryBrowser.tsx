@@ -4,11 +4,15 @@ import { CategoryBrowserProps } from '../interfaces/CategoryBrowserProps';
 import styles from '../styles/CategoryBrowser.module.scss';
 import { ResourceGalleryActionType, ResourceGalleryReducer } from './ResourceGalleryReducer';
 
-export const CategoryBrowser: React.FC<CategoryBrowserProps> = ({ ...props }) => {
+export const CategoryBrowser: React.FC<CategoryBrowserProps> = (props) => {
+
+
+const {categories} = props;
+
     const [resourceGalleryState, dispatch] = React.useReducer(ResourceGalleryReducer, {});
     return (
         <section>
-            {Array.from([...(props.categories ?? new Map<string, TCategory>())]).map((category) => (
+            {Array.from([...(categories ?? new Map<string, TCategory>())]).map((category) => (
                 <div
                     key={category[0]}
                     onClick={() =>

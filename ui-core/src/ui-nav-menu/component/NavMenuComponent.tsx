@@ -6,11 +6,13 @@ import { TNavPage } from 'ui-core-schema';
 import { StyledThemeContext } from 'ui-context';
 import styles from '../styles/NavMenuComponent.module.scss';
 
-export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: NavMenuComponentProps) => {
+export const NavMenuComponent: React.FC<NavMenuComponentProps> = (props: NavMenuComponentProps) => {
+    const {pageCollection} = props;
+
     const [menuPages, setMenuPages] = React.useState<Map<string, TNavPage>>(new Map<string, TNavPage>());
 
     React.useEffect(() => {
-        setMenuPages(new Map([...(props.pageCollection.pageCollection ?? new Map<string, TNavPage>())]));
+        setMenuPages(new Map([...(pageCollection.pageCollection ?? new Map<string, TNavPage>())]));
     }, []);
 
     const style = createUseStyles((themeContext: StyledThemeContext) => ({

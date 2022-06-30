@@ -2,12 +2,15 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 
-export const LogoLedArtSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
+export const LogoLedArtSvg: React.FC<SvgComponentProps> = (props) => {
+
+    const {dimensions,linkUrl} = props;
+
     const style = createUseStyles({
         svg: {
             /* position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'absolute', */
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
+            height: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height,
+            width: dimensions === 'FULLSCREEN' ? '100%' :dimensions?.width,
             pointerEvents: 'none',
         },
         fil0: { fill: '#6D6E72' },
@@ -27,7 +30,7 @@ export const LogoLedArtSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             xmlns="http://www.w3.org/2000/svg"
         >
             <defs id="playb"></defs>
-            <a href={props.linkUrl} target="_blank">
+            <a href={linkUrl} target="_blank">
                 <g id="playd">
                     <path
                         id="playe"

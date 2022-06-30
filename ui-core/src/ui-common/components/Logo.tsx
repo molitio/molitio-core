@@ -7,7 +7,10 @@ export const LargeLogoDimensions = {
     height: '300px',
 };
 
-export const Logo: React.FC<LogoProps> = ({ ...props }: LogoProps) => {
+export const Logo: React.FC<LogoProps> = ( props: LogoProps) => {
+
+  const {opacity, url} = props;
+
     const style = createUseStyles({
         center: {
             justifyContent: 'center',
@@ -16,9 +19,9 @@ export const Logo: React.FC<LogoProps> = ({ ...props }: LogoProps) => {
             zIndex: '90',
         },
         dimensions: {
-            opacity: props.opacity,
+            opacity: opacity,
         },
     }).apply({});
 
-    return <img className={`${style.center} ${style.dimensions}`} src={props.url} />;
+    return <img className={`${style.center} ${style.dimensions}`} src={url} />;
 };

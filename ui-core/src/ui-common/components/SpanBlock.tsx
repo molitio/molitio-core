@@ -4,9 +4,9 @@ import { TypographyProps } from '../interfaces/TypographyProps';
 import { StyledThemeContext } from 'ui-context';
 
 export const SpanBlock: React.FC<TypographyProps> = (props) => {
-    const { textContent, color, rem, marginTop } = props;
+    const {maxContent, textContent, color, rem, marginTop } = props;
 
-    const maxContentSpacing = props.maxContent ? { width: 'max-content', height: 'max-content' } : {};
+    const maxContentSpacing = maxContent ? { width: 'max-content', height: 'max-content' } : {};
 
     const style = createUseStyles((themeContext: StyledThemeContext) => ({
         spanBlock: {
