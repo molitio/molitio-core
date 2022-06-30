@@ -24,7 +24,7 @@ export const StyledThemeContextProvider: React.FC<StyledThemeContextProviderProp
     }, []);
 
     React.useEffect(() => {
-        const effect = async () => {
+        /*      const effect = async () => {
             const theme = themeMap.get(props.themeName ?? 'default') ?? {};
             theme.deviceType = props.deviceType;
             if (theme) {
@@ -32,7 +32,7 @@ export const StyledThemeContextProvider: React.FC<StyledThemeContextProviderProp
             }
         };
 
-        effect();
+        effect(); */
     }, [themeMap, props.themeName]);
 
     return <ThemeProvider theme={selectedTheme}>{children}</ThemeProvider>;

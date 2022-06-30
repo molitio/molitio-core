@@ -30,17 +30,28 @@ const resolveThemeContext = (themeNameTag: TSystemThemeName): Record<string, str
     return themeContext;
 };
 
+type StyleFragment = {
+    [className: string]: string;
+};
 /***
  * Resolves a set of css rules that compose a predifined set of style rules based on the provided SystemStyleTag
  * @param styleFragmentTag {SystemStyleTag} - Tag for predifened stylesheets
  *
  * @return {Partial<Record<string, string>>} - Style rule collection matching the provided SystemStyleTag
  */
-export const resolveSystemStyle = (styleFragmentTag: SystemStyleTag): Partial<Record<string, string>> => {
-    const styleRules: Partial<Record<string, string>> = Object.create({
-        styleRules: SystemStylesScssModule[styleFragmentTag],
-    });
-    return styleRules;
+export const resolveSystemStyle = (styleFragmentTag: SystemStyleTag): string => {
+    console.log(`styleFragmentTag: ${styleFragmentTag}`);
+    console.log(`scss: ${JSON.stringify(SystemStylesScssModule)}`);
+
+    const styleEntries: StyleFragment = Object.assign(SystemStylesScssModule);
+    console.log(`style entries: ${JSON.stringify(styleEntries)}`);
+
+    return styleEntries[styleFragmentTag];
+};
+
+type SystemStylesResponse = {
+    resolvedStyle: Record<string, string>;
+    resolvedThemeContext: StyledThemeContext;
 };
 
 /***
@@ -48,13 +59,14 @@ export const resolveSystemStyle = (styleFragmentTag: SystemStyleTag): Partial<Re
  * @param styleFragmentTag {ComponentTag} - Tag for predifened stylesheets
  * @param themeNameTag {TSystemThemeName} -  for predifened stylesheets
  *
- * @returns {{resolvedStyle: Record<string, string>; resolvedThemeContext: StyledThemeContext}}  - Style rule collection matching the provided {SystemStyleTag}
+ * @returns {SystemStylesResponse}  - Style rule collection matching the provided SystemStyleTag
  */
 export const useSystemStyles = (
     styleFragmentTag: ComponentTag,
     themeNameTag: TSystemThemeName,
 ): { resolvedStyle: Record<string, string>; resolvedThemeContext: StyledThemeContext } => {
-    const resolvedStyle = Object.create(resolveComponentStyle(styleFragmentTag));
+    const resolvedStyle: Record<string, string> = Object.create(resolveComponentStyle(styleFragmentTag));
     const resolvedThemeContext = resolveThemeContext(themeNameTag);
-    return { resolvedStyle, resolvedThemeContext };
+    const SystemStylesResponse: SystemStylesResponse = { resolvedStyle, resolvedThemeContext };
+    return SystemStylesResponse;
 };

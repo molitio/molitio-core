@@ -19,8 +19,8 @@ const {gallery} = props;
     });
 
     return (
-        <section className={`${{ ...resolvedStyle }}`}>
-            {gallery && (
+        <section className={`${resolveSystemStyle(SystemStyleTag.BASIC_BORDER)} ${`mock`}`}>
+            {props.gallery && (
                 <div className={styles.resourceGalleryContainer}>
                     <div className={`${resolveSystemStyle(SystemStyleTag.BASIC_BORDER)}`}>
                         selected category: {resourceGalleryState.selectedCategoryTag}
