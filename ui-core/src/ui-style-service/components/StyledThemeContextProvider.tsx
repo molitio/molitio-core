@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyledThemeContextProviderProps } from '../../ui-context/styled-theme/interface/StyledThemeContextProviderProps';
-import { getThemes } from '../../ui-context/styled-theme/store/ThemeContextStore';
-import { StyledThemeContext } from '../../ui-context/styled-theme/interface/StyledThemeContext';
+import { StyledThemeContextProviderProps } from '../interfaces/StyledThemeContextProviderProps';
+import { getThemes } from '../hooks/ThemeContextStore';
+import { StyledThemeContext } from '../../ui-core-schema/types/ui-style-service/theme/StyledThemeContext';
 import { ThemeProvider } from 'react-jss';
 
 export const StyledThemeContextProvider: React.FC<StyledThemeContextProviderProps & React.PropsWithChildren> = (

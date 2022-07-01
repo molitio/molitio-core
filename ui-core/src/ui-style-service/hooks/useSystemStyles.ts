@@ -1,7 +1,6 @@
-import { StyledThemeContext } from 'ui-context';
 import { SystemStyleTag } from 'ui-core-schema/tags/ui-style-service/SystemStyleTag';
-import { ComponentTag } from 'ui-core-schema';
-import { TSystemThemeName } from 'ui-core-schema/types/ui-style-service/theme/TSystemThemeName';
+import { ComponentTag, StyledThemeContext } from 'ui-core-schema';
+import { SystemThemeName } from 'ui-core-schema/types/ui-style-service/theme/SystemThemeName';
 import SystemStylesScssModule from '../styles/SystemStylesScssModule.module.scss';
 import ComponentStylesScssModule from '../styles/ComponentStylesScssModule.module.scss';
 
@@ -24,7 +23,7 @@ const resolveComponentStyle = (componentTag: ComponentTag): Partial<Record<strin
  *
  * @return {Partial<Record<string, string>>} - Style rule collection matching the provided SystemStyleTag
  */
-const resolveThemeContext = (themeNameTag: TSystemThemeName): Record<string, string> => {
+const resolveThemeContext = (themeNameTag: SystemThemeName): Record<string, string> => {
     //TODO: create a managed theme context that can be resolved here
     const themeContext = {};
     return themeContext;
@@ -57,13 +56,13 @@ type SystemStylesResponse = {
 /***
  * Resolves a set of css rules that compose a predifined set of style rules based on the provided SystemStyleTag
  * @param styleFragmentTag {ComponentTag} - Tag for predifened stylesheets
- * @param themeNameTag {TSystemThemeName} -  for predifened stylesheets
+ * @param themeNameTag {SystemThemeName} -  for predifened stylesheets
  *
  * @returns {SystemStylesResponse}  - Style rule collection matching the provided SystemStyleTag
  */
 export const useSystemStyles = (
     styleFragmentTag: ComponentTag,
-    themeNameTag: TSystemThemeName,
+    themeNameTag: SystemThemeName,
 ): { resolvedStyle: Record<string, string>; resolvedThemeContext: StyledThemeContext } => {
     const resolvedStyle: Record<string, string> = Object.create(resolveComponentStyle(styleFragmentTag));
     const resolvedThemeContext = resolveThemeContext(themeNameTag);

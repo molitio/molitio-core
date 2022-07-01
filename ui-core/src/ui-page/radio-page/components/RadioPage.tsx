@@ -1,7 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AudioPlayer } from 'ui-common';
-import { AudioPlayerContextProvider, StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
+import { AudioPlayerContextProvider } from 'ui-media';
 import { RadioPageProps } from '../interfaces/RadioPageProps';
 
 export const RadioPage: React.FC<RadioPageProps> = (props) => {

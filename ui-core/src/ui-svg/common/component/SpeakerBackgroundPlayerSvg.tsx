@@ -1,6 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { AudioPlayerContext, StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
+import { AudioPlayerContext } from 'ui-media';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { EmbededImage } from './EmbededImage';
 

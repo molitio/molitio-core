@@ -17,6 +17,11 @@ export type { TDeviceTypes } from './types/ui-device-context/TDeviceTypes';
 
 export type { TImageResource } from './types/generics/TImageResource';
 
+export type { StyledThemeContext } from './types/ui-style-service/theme/StyledThemeContext';
+export type { SystemThemeName } from './types/ui-style-service/theme/SystemThemeName';
+export type { SystemThemeStyles } from './types/ui-style-service/theme/SystemThemeStyles';
+export type { ThemeColor } from './types/ui-style-service/theme/ThemeColor';
+
 /* 
    tags
 */

@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentTag, SystemStyleTag, ThemeNameTags } from 'ui-core-schema';
+import { createUseStyles } from 'react-jss';
 import { CategoryBrowser, ResourceGalleryProps } from 'ui-resource-gallery';
 import { resolveSystemStyle, useSystemStyles } from 'ui-style-service';
-import styles from '../styles/ResourceGallery.module.scss';
 import { ResourceGalleryReducer } from './ResourceGalleryReducer';
 
 const COMPONENT_TAG = ComponentTag.RESOURCE_GALLERY;
@@ -10,14 +10,47 @@ const COMPONENT_TAG = ComponentTag.RESOURCE_GALLERY;
 export const ResourceGallery: React.FC<ResourceGalleryProps> = (props) => {
     const { gallery } = props;
 
+    const styles = createUseStyles({
+        resourceGallerySection: {
+            color: '#fff',
+            minWidth: '100vw',
+            minHeight: '100vh',
+            display: 'flex',
+            overflow: 'auto',
+            pointerEvents: 'auto',
+        },
+        resourceGalleryContainer: {
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'row',
+        },
+        categoryBrowser: {
+            top: '25%',
+            position: 'fixed',
+            width: '12em',
+            height: '50vh',
+            overflowX: 'scroll',
+        },
+        resourcePreview: {
+            flex: 1,
+        },
+        title: {
+            textAlign: 'center',
+        },
+    }).apply({});
+
     const [resourceGalleryState, dispatch] = React.useReducer(ResourceGalleryReducer, {});
 
-    /*     const { resolvedStyle, resolvedThemeContext } = useSystemStyles(ComponentTag.RESOURCE_GALLERY, {
+    const { resolvedStyle, resolvedThemeContext } = useSystemStyles(ComponentTag.RESOURCE_GALLERY, {
         themeNameTag: ThemeNameTags.BLACK_YELLOW,
-    }); */
+    });
 
     return (
-        <section className={`${resolveSystemStyle(SystemStyleTag.BASIC_BORDER)} ${`mock`}`}>
+        <section
+            className={`${resolvedStyle[SystemStyleTag.MEMPHIS]} ${
+                resolvedStyle[SystemStyleTag.BASIC_BORDER]
+            } ${`mock`}`}
+        >
             {props.gallery && (
                 <div className={styles.resourceGalleryContainer}>
                     <div className={`${resolveSystemStyle(SystemStyleTag.BASIC_BORDER)}`}>

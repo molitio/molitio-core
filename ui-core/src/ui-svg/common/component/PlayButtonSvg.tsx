@@ -1,8 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { StyledThemeContext } from 'ui-core-schema';
+import { AudioPlayerContext } from 'ui-media';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
-import { AudioPlayerContext } from 'ui-context';
-import { StyledThemeContext } from 'ui-context';
 
 export const PlayButtonSvg: React.FC<SvgComponentProps> = (props) => {
     const { dimensions } = props;

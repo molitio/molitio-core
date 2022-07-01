@@ -1,10 +1,9 @@
 import React from 'react';
-import { TDeviceTypes} from 'ui-core-schema';
+import { TDeviceTypes } from 'ui-core-schema';
 import DeviceDetector from 'device-detector-js';
-import { DeviceContext } from './DeviceContext';
+import { DeviceContext } from '../context/DeviceContext';
 
 export const DeviceContextProvider: React.FC<React.PropsWithChildren> = (props) => {
-
     const { children } = props;
 
     const [device, setDevice] = React.useState<TDeviceTypes>({

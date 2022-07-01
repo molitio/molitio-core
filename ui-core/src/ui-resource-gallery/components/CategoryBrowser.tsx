@@ -1,13 +1,21 @@
 import React from 'react';
 import { TCategory, TImageResource } from 'ui-core-schema';
 import { CategoryBrowserProps } from '../interfaces/CategoryBrowserProps';
-import styles from '../styles/CategoryBrowser.module.scss';
+import { createUseStyles } from 'react-jss';
 import { ResourceGalleryActionType, ResourceGalleryReducer } from './ResourceGalleryReducer';
 
 export const CategoryBrowser: React.FC<CategoryBrowserProps> = (props) => {
+    const { categories } = props;
 
-
-const {categories} = props;
+    const styles = createUseStyles({
+        imagePosition: {
+            width: '5em',
+            height: 'auto',
+        },
+        resourceContainer: {
+            display: 'flex',
+        },
+    }).apply({});
 
     const [resourceGalleryState, dispatch] = React.useReducer(ResourceGalleryReducer, {});
     return (

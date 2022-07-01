@@ -1,6 +1,6 @@
 import { ThemeNameTags } from 'ui-core-schema';
 import { OrangeHighlight, YellowHighlight } from '../styles/SvgBorderHighLights';
-import { StyledThemeContext } from '../interface/StyledThemeContext';
+import { StyledThemeContext } from '../../ui-core-schema/types/ui-style-service/theme/StyledThemeContext';
 
 export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
     //TODO: connect to backend

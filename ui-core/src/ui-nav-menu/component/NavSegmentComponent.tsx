@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
 import { NavSegmentProps } from '../interface/NavSegmentProps';
 //import './style.css';
 

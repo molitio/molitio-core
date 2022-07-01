@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
 import { StripesSvgProps } from '../interface/StripesSvgProps';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { EmbededImage } from './EmbededImage';

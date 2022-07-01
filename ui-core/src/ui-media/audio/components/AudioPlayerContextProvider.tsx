@@ -1,6 +1,6 @@
 import React from 'react';
-import { AudioPlayerContext } from '../components/AudioPlayerContext';
-import { DeviceContext } from '../../device/components/DeviceContext';
+import { AudioPlayerContext } from '../context/AudioPlayerContext';
+import { DeviceContext } from '../../../ui-platform/context/DeviceContext';
 import { TAudioPlayerState } from '../../../ui-core-schema/types/ui-context/TAudioPlayerState';
 
 export enum AudioPlayerStateActionType {

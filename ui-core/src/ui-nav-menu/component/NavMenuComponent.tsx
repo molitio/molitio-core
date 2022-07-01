@@ -2,12 +2,11 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
-import { TNavPage } from 'ui-core-schema';
-import { StyledThemeContext } from 'ui-context';
+import { StyledThemeContext, TNavPage } from 'ui-core-schema';
 import styles from '../styles/NavMenuComponent.module.scss';
 
 export const NavMenuComponent: React.FC<NavMenuComponentProps> = (props: NavMenuComponentProps) => {
-    const {pageCollection} = props;
+    const { pageCollection } = props;
 
     const [menuPages, setMenuPages] = React.useState<Map<string, TNavPage>>(new Map<string, TNavPage>());
 
