@@ -5,16 +5,15 @@ import { AudioPlayerContext } from 'ui-context';
 import { StyledThemeContext } from 'ui-context';
 
 export const PlayButtonSvg: React.FC<SvgComponentProps> = (props) => {
-
-const {dimensions} = props;
+    const { dimensions } = props;
 
     const playerContext = React.useContext(AudioPlayerContext);
 
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         svg: {
             //position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
             height: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height ?? '100%',
-            width:  dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width ?? '100%',
+            width: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width ?? '100%',
             pointerEvents: 'none',
             preserveAspectRatio: 'xMidYMid meet',
             //border: '3px dashed green',
@@ -30,8 +29,8 @@ const {dimensions} = props;
             fill: '#f6c339',
         },
         controlColoring: {
-            fill: theme.secondary,
-            stroke: theme.secondary,
+            fill: themeContext.theme?.secondary,
+            stroke: themeContext.theme?.secondary,
         },
         visible: {
             visibility: 'visible',

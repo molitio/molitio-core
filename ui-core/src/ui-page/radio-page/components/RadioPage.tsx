@@ -5,10 +5,9 @@ import { AudioPlayerContextProvider, StyledThemeContext } from 'ui-context';
 import { RadioPageProps } from '../interfaces/RadioPageProps';
 
 export const RadioPage: React.FC<RadioPageProps> = (props) => {
+    const { background, logo, socialButtons, playerElement, radio, pageFooter } = props;
 
-    const {background, logo, socialButtons, playerElement, radio, pageFooter} = props;
-
-    const {externalBackgroundEffect} = props;
+    const { externalBackgroundEffect } = props;
 
     const headerItemSpacingTop = '2em';
     const headerItemSpacingSide = '12em';
@@ -17,7 +16,7 @@ export const RadioPage: React.FC<RadioPageProps> = (props) => {
     const playerWidthAndHeightLG = '80vw';
     const playerWidthAndHeightWIDE = '60vh';
 
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         pageContainer: {
             top: 'env(safe-area-inset-top, 0px)',
             left: 'env(safe-area-inset-left, 0px)',
@@ -81,7 +80,7 @@ export const RadioPage: React.FC<RadioPageProps> = (props) => {
             bottom: 0,
             width: 'calc(env(safe-area-inset-left, 0px) + 100% + env(safe-area-inset-right, 0px))',
             height: '5em',
-            backgroundColor: theme.backgroundColor,
+            backgroundColor: themeContext.theme?.backgroundColor,
         },
 
         '@media (orientation: landscape) and (max-width: 1400px)': {
@@ -219,7 +218,7 @@ export const RadioPage: React.FC<RadioPageProps> = (props) => {
         <>
             {background}
             <div className={style.pageContainer}>
-                <div className={logo}>{logo}</div>
+                <div className={style.logo}>{logo}</div>
                 <div className={style.socialButtons}>{socialButtons}</div>
                 <div>
                     <div className={style.content}>

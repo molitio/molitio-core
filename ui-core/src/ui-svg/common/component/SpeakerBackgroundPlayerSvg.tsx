@@ -5,10 +5,9 @@ import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { EmbededImage } from './EmbededImage';
 
 export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = (props) => {
+    const { dimensions, embededImageSrc } = props;
 
-const {dimensions, embededImageSrc} = props;
-
-    const componentHeight = dimensions === 'FULLSCREEN' ? '100%' :dimensions?.height ?? 'auto';
+    const componentHeight = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height ?? 'auto';
     const componentWidth = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width ?? 'auto';
 
     const playerContext = React.useContext(AudioPlayerContext);
@@ -23,7 +22,7 @@ const {dimensions, embededImageSrc} = props;
         effect();
     }, []);
 
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         svg: {
             height: componentHeight,
             width: componentWidth,
@@ -123,8 +122,8 @@ const {dimensions, embededImageSrc} = props;
             fill: '#f6c339',
         },
         controlColoring: {
-            fill: theme.secondary,
-            stroke: theme.secondary,
+            fill: themeContext.theme?.secondary,
+            stroke: themeContext.theme?.secondary,
         },
         visible: {
             visibility: 'visible',
@@ -338,10 +337,7 @@ const {dimensions, embededImageSrc} = props;
                 </g>
                 <g width="100" height="100">
                     {embededImageSrc ? (
-                        <EmbededImage
-                            embededImageSrc={embededImageSrc}
-                            dimensions={{ width: '100', height: '100' }}
-                        />
+                        <EmbededImage embededImageSrc={embededImageSrc} dimensions={{ width: '100', height: '100' }} />
                     ) : (
                         ''
                     )}

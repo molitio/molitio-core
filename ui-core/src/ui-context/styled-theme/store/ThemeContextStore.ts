@@ -25,15 +25,17 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
             {
                 ...commonStyles,
                 themeName: 'testTheme01',
-                primary: '#f6c339',
-                secondary: '#2a2a2a',
-                primaryFontColor: 'white',
-                secondaryFontColor: '#6d6e72',
-                backgroundColor: '#2b2b2b',
-                secondaryBackgroundColor: '#363636',
+                theme: {
+                    primary: '#f6c339',
+                    secondary: '#2a2a2a',
+                    primaryFontColor: 'white',
+                    secondaryFontColor: '#6d6e72',
+                    backgroundColor: '#2b2b2b',
+                    secondaryBackgroundColor: '#363636',
 
-                interactiveHighlight: {
-                    ...YellowHighlight,
+                    interactiveHighlight: {
+                        ...YellowHighlight,
+                    },
                 },
             },
         ],
@@ -42,14 +44,16 @@ export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {
             {
                 ...commonStyles,
                 themeName: 'testTheme02',
-                primary: 'orange',
-                secondary: 'lightyellow',
-                primaryFontColor: 'white',
-                secondaryFontColor: 'yellow',
-                backgroundColor: 'yellow',
-                secondaryBackgroundColor: 'green',
-                interactiveHighlight: {
-                    ...OrangeHighlight,
+                theme: {
+                    primary: 'orange',
+                    secondary: 'lightyellow',
+                    primaryFontColor: 'white',
+                    secondaryFontColor: 'yellow',
+                    backgroundColor: 'yellow',
+                    secondaryBackgroundColor: 'green',
+                    interactiveHighlight: {
+                        ...OrangeHighlight,
+                    },
                 },
             },
         ],

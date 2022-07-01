@@ -8,15 +8,13 @@ import { ResourceGalleryReducer } from './ResourceGalleryReducer';
 const COMPONENT_TAG = ComponentTag.RESOURCE_GALLERY;
 
 export const ResourceGallery: React.FC<ResourceGalleryProps> = (props) => {
-
-
-const {gallery} = props;
+    const { gallery } = props;
 
     const [resourceGalleryState, dispatch] = React.useReducer(ResourceGalleryReducer, {});
 
-    const { resolvedStyle, resolvedThemeContext } = useSystemStyles(ComponentTag.RESOURCE_GALLERY, {
+    /*     const { resolvedStyle, resolvedThemeContext } = useSystemStyles(ComponentTag.RESOURCE_GALLERY, {
         themeNameTag: ThemeNameTags.BLACK_YELLOW,
-    });
+    }); */
 
     return (
         <section className={`${resolveSystemStyle(SystemStyleTag.BASIC_BORDER)} ${`mock`}`}>
@@ -24,10 +22,10 @@ const {gallery} = props;
                 <div className={styles.resourceGalleryContainer}>
                     <div className={`${resolveSystemStyle(SystemStyleTag.BASIC_BORDER)}`}>
                         selected category: {resourceGalleryState.selectedCategoryTag}
-                        <CategoryBrowser categories={gallery.categories} />
+                        <CategoryBrowser categories={gallery?.categories} />
                     </div>
                     <div className={styles.resourcePreview}>
-                        <h2 className={styles.title}>{gallery.name}</h2>
+                        <h2 className={styles.title}>{gallery?.name}</h2>
                         <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature1.jpg" />
                         <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature2.jpg" />
                         <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature3.jpg" />

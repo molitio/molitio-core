@@ -1,4 +1,4 @@
-import { TGallery } from 'ui-core-schema/types/Gallery/TGallery';
+import { TGallery } from 'ui-core-schema';
 
 export interface ResourceGalleryProps {
     gallery?: TGallery;

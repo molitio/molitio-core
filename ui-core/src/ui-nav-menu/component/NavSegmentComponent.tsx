@@ -5,18 +5,17 @@ import { NavSegmentProps } from '../interface/NavSegmentProps';
 //import './style.css';
 
 export const NavSegmentComponent: React.FC<NavSegmentProps> = (props: NavSegmentProps) => {
+    const { navSegment } = props;
 
-  const {navSegment} = props;
-
-    const useStyles = createUseStyles((theme: StyledThemeContext) => ({
+    const useStyles = createUseStyles((themeContext: StyledThemeContext) => ({
         itemText: {
-            color: theme.primary,
+            color: themeContext.theme?.primary,
         },
         navUl: {
             listStyleType: 'none',
         },
         itemBackground: {
-            backgroundColor: theme.backgroundColor,
+            backgroundColor: themeContext.theme?.backgroundColor,
         },
         listItem: {
             '& a': {

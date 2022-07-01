@@ -4,8 +4,7 @@ import { StripedBackgroundProps } from '../interfaces/StripedBackgroundProps';
 import { StripesSvg } from 'ui-svg';
 
 export const StripedBackground: React.FC<StripedBackgroundProps> = (props) => {
-
-const{backgroundEffectSrc, highlightStripes} = props;
+    const { backgroundEffectSrc, highlightStripes } = props;
 
     const style = createUseStyles({
         backgroundContainer: {
