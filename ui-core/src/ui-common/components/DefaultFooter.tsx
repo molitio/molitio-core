@@ -1,11 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
 import { DefaultFooterProps } from '../interfaces/DefaultFooterProps';
 
 export const DefaultFooter: React.FC<DefaultFooterProps> = (props) => {
-
-const {leftColumnElements, centerColumnElements,rightColumnElements } = props;
+    const { leftColumnElements, centerColumnElements, rightColumnElements } = props;
 
     const style = createUseStyles((themeContext: StyledThemeContext) => ({
         content: {

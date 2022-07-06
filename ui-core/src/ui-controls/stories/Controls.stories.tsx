@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import { CenterDisplay } from 'ui-common';
 import { DynamicButton } from 'ui-controls';
 import { ThemeNameTags } from 'ui-core-schema';
-import { StyledThemeContextProvider } from 'ui-context';
+import { StyledThemeContextProvider } from 'ui-style-service';
 
 const buttonArgs = {
     themeName: ThemeNameTags.BLACK_YELLOW,

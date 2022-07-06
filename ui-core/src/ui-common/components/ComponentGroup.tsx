@@ -1,8 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { createUseStyles } from 'react-jss';
 import { ComponentGroupProps } from '../interfaces/ComponentGroupProps';
-import { ComponentGroupTags } from 'ui-core-schema';
-import { StyledThemeContext } from 'ui-context';
+import { ComponentGroupTags, StyledThemeContext } from 'ui-core-schema';
 
 /* type Props = {
     className?: string;

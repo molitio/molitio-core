@@ -1,3 +1,3 @@
 export enum ComponentTag {
-    RESOURCE_GALLERY = '.ui-resource-gallery',
+    RESOURCE_GALLERY = 'ui-resource-gallery',
 }

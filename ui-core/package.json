@@ -161,6 +161,7 @@
         "sass-loader": "^12.6.0",
         "size-limit": "^7.0.3",
         "style-loader": "^3.3.1",
+        "styled-components": "^5.3.5",
         "ts-jest": "^28.0.4",
         "ts-loader": "^9.2.6",
         "ts-node": "^10.8.0",

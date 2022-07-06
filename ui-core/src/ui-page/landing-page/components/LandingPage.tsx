@@ -1,11 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
 import { LandingPageProps } from '../interfaces/LandingPageProps';
 
 export const LandingPage: React.FC<LandingPageProps & React.PropsWithChildren> = (props) => {
-
-const {children, pageTitle} = props;
+    const { children, pageTitle } = props;
 
     const useStyles = createUseStyles((themeContext: StyledThemeContext) => ({
         landing: {

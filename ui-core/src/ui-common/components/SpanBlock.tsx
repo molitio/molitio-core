@@ -1,10 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { StyledThemeContext } from 'ui-core-schema';
 import { TypographyProps } from '../interfaces/TypographyProps';
-import { StyledThemeContext } from 'ui-context';
 
 export const SpanBlock: React.FC<TypographyProps> = (props) => {
-    const {maxContent, textContent, color, rem, marginTop } = props;
+    const { maxContent, textContent, color, rem, marginTop } = props;
 
     const maxContentSpacing = maxContent ? { width: 'max-content', height: 'max-content' } : {};
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { AudioPlayerContext } from '../context/AudioPlayerContext';
 import { DeviceContext } from '../../../ui-platform/context/DeviceContext';
-import { TAudioPlayerState } from '../../../ui-core-schema/types/ui-context/TAudioPlayerState';
+import { TAudioPlayerState } from 'ui-core-schema';
 
 export enum AudioPlayerStateActionType {
     TOGGLE_PLAYING = 'togglePlaying',

@@ -1,10 +1,9 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { DevHighlight } from 'ui-context';
+import { DevHighlight } from 'ui-style-service';
 
-export const LayoutColumn: React.FC< React.PropsWithChildren > = (props) => {
-
-const {children} = props;
+export const LayoutColumn: React.FC<React.PropsWithChildren> = (props) => {
+    const { children } = props;
 
     const style = createUseStyles({
         pageColumn: {

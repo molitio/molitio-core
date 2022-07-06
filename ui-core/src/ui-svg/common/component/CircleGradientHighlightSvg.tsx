@@ -1,12 +1,11 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { StyledThemeContext } from 'ui-core-schema';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
-import { StyledThemeContext } from 'ui-context';
 import { EmbededHtml } from './EmbededHtml';
 
-export const CircleGradientHighlightSvg: React.FC<SvgComponentProps & React.PropsWithChildren> = ( props ) => {
-
-    const {dimensions, children} = props;
+export const CircleGradientHighlightSvg: React.FC<SvgComponentProps & React.PropsWithChildren> = (props) => {
+    const { dimensions, children } = props;
 
     const style = createUseStyles((themeContext: StyledThemeContext) => ({
         svg: {

@@ -33,11 +33,6 @@ ui-background
 export * from './ui-background';
 
 /*
-theme-context
-*/
-export * from './ui-context';
-
-/*
 ui-svg
 */
 export * from './ui-svg';

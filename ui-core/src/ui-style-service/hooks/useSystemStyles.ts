@@ -1,8 +1,8 @@
 import { SystemStyleTag } from 'ui-core-schema/tags/ui-style-service/SystemStyleTag';
 import { ComponentTag, StyledThemeContext } from 'ui-core-schema';
 import { SystemThemeName } from 'ui-core-schema/types/ui-style-service/theme/SystemThemeName';
-import SystemStylesScssModule from '../styles/SystemStylesScssModule.module.scss';
-import ComponentStylesScssModule from '../styles/ComponentStylesScssModule.module.scss';
+//import SystemStylesScssModule from '../styles/SystemStylesScssModule.module.scss';
+//import ComponentStylesScssModule from '../styles/ComponentStylesScssModule.module.scss';
 
 /***
  * Resolves a set of css rules that compose a predifined set of style rules based on the provided ComponentTag
@@ -12,7 +12,7 @@ import ComponentStylesScssModule from '../styles/ComponentStylesScssModule.modul
  */
 const resolveComponentStyle = (componentTag: ComponentTag): Partial<Record<string, string>> => {
     const styleRules: Partial<Record<string, string>> = Object.create({
-        styleRules: ComponentStylesScssModule[componentTag],
+        //  styleRules: ComponentStylesScssModule[componentTag],
     });
     return styleRules;
 };
@@ -39,13 +39,14 @@ type StyleFragment = {
  * @return {Partial<Record<string, string>>} - Style rule collection matching the provided SystemStyleTag
  */
 export const resolveSystemStyle = (styleFragmentTag: SystemStyleTag): string => {
-    console.log(`styleFragmentTag: ${styleFragmentTag}`);
-    console.log(`scss: ${JSON.stringify(SystemStylesScssModule)}`);
+    /*     console.log(`styleFragmentTag: ${styleFragmentTag}`);
+   console.log(`scss: ${JSON.stringify(SystemStylesScssModule)}`);
 
     const styleEntries: StyleFragment = Object.assign(SystemStylesScssModule);
     console.log(`style entries: ${JSON.stringify(styleEntries)}`);
 
-    return styleEntries[styleFragmentTag];
+    return styleEntries[styleFragmentTag]; */
+    return 'mock';
 };
 
 type SystemStylesResponse = {

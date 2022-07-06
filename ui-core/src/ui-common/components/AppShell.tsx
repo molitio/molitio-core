@@ -2,8 +2,9 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AppShellProps } from '../interfaces/AppShellProps';
 import { isClient } from '../services/Platform';
-import { StyledThemeContextProvider, DeviceContextProvider } from 'ui-context';
+import { DeviceContextProvider } from 'ui-platform';
 import { ThemeNameTags } from 'ui-core-schema';
+import { StyledThemeContextProvider } from 'ui-style-service/components/StyledThemeContextProvider';
 
 const globalStyles = {
     '@global': {
@@ -70,7 +71,6 @@ const shellMain = {
  */
 
 export const AppShell: React.FC<AppShellProps & React.PropsWithChildren> = (props) => {
-    
     const { children, themeName, applyGlobalStyleRules } = props;
 
     const [selectedTheme, setSelectedTheme] = React.useState<ThemeNameTags>();

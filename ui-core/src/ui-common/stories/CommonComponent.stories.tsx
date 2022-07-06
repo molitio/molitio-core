@@ -1,8 +1,8 @@
 import { Story, Meta } from '@storybook/react';
 import { CenterDisplay, ComponentGroup, ComponentGroupProps } from 'ui-common';
 import { ComponentGroupTags, ThemeNameTags } from 'ui-core-schema';
+import { StyledThemeContextProvider, StyledThemeProps } from 'ui-style-service';
 import { LogoFreshPrintSvg } from 'ui-svg';
-import { StyledThemeContextProvider, StyledThemeProps } from 'ui-context';
 
 const navMenuArgs: ComponentGroupProps & StyledThemeProps = {
     groupingType: ComponentGroupTags.HORIZONTAL_FLEX,

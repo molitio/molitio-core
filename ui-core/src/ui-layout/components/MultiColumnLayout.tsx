@@ -1,11 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { MultiColumnLayoutProps } from 'ui-layout';
-import { DevHighlight } from 'ui-context';
+import { DevHighlight } from 'ui-style-service';
 
 export const MultiColumnLayout: React.FC<MultiColumnLayoutProps> = (props) => {
-
-const {layoutColumns} = props;
+    const { layoutColumns } = props;
 
     const style = createUseStyles({
         landing: {

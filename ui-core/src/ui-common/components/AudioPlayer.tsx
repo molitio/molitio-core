@@ -1,11 +1,10 @@
 import React from 'react';
-import { AudioPlayerContext } from 'ui-context';
 import { AudioPlayerProps } from '../interfaces/AudioPlayerProps';
 import { createUseStyles } from 'react-jss';
+import { AudioPlayerContext } from 'ui-media';
 
 export const AudioPlayer: React.FC<AudioPlayerProps> = (props) => {
-
-    const {preload, mediaSource, alternativeMediaSource } = props;
+    const { preload, mediaSource, alternativeMediaSource } = props;
 
     const playerContext = React.useContext(AudioPlayerContext);
     const playerRef = React.useRef<HTMLAudioElement>(null);

@@ -1,10 +1,10 @@
 import { Story, Meta } from '@storybook/react';
 import { ThemeNameTags } from 'ui-core-schema';
-import { StyledThemeContextProvider, StyledThemeProps } from 'ui-context';
 
 import { TNavSegment } from 'ui-core-schema';
 
 import { NavSegmentComponent, NavMenuComponentProps, NavMenuComponent, NavSegmentProps } from 'ui-nav-menu';
+import { StyledThemeContextProvider, StyledThemeProps } from 'ui-style-service';
 
 const servicesPageArgs: TNavSegment[] = [
     {

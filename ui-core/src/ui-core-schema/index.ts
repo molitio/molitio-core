@@ -12,8 +12,9 @@ export type { TNavPageCollection } from './types/ui-nav-menu/TNavPageCollection'
 
 export type { TPage } from './types/generics/TPage';
 export type { TUniversalRadio } from './types/generics/TUniversalRadio';
+export type { TAudioPlayerState } from './types/ui-media/TAudioPlayerState';
 export type { TResource } from './types/generics/TResource';
-export type { TDeviceTypes } from './types/ui-device-context/TDeviceTypes';
+export type { TDeviceTypes } from './types/ui-platform/TDeviceTypes';
 
 export type { TImageResource } from './types/generics/TImageResource';
 
