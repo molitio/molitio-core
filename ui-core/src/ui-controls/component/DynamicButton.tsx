@@ -3,10 +3,39 @@ import { createUseStyles, useTheme } from 'react-jss';
 import { ButtonStyleVariant, StyledThemeContext } from 'ui-core-schema';
 import { DynamicButtonProps } from '../interface/DynamicButtonProps';
 import { getStyleVariantRules } from 'ui-style-service';
+import styled from 'styled-components';
 
-export const DynamicButton: React.FC<DynamicButtonProps> = (props) => {
+// Define what props.theme will look like
+const theme = {
+    main: 'mediumseagreen',
+    buttonStyleVariants: {
+        'btn-rounded': { color: 'black' },
+        'btn-rectangle': { color: 'blue' },
+    },
+};
+
+const Button = styled.button<DynamicButtonProps>`
+    height: 3em;
+    width: auto;
+    padding: 1em;
+    color: ${(props) => props.theme.buttonStyleVariants[props.styleVariant].color};
+`;
+
+// color: ${theme.buttonStyleVariants['btn-rectangle'].color};
+// We are passing a default theme for Buttons that arent wrapped in the ThemeProvider
+Button.defaultProps = {
+    theme: {
+        main: 'green',
+        buttonStyleVariants: {
+            'btn-rounded': { color: 'purple' },
+            'btn-rectangle': { color: 'orange' },
+        },
+    },
+};
+
+export const DynamicButton: React.FC<DynamicButtonProps & React.PropsWithChildren> = (props) => {
     const { styleVariant, label, children } = props;
-
+    /* 
     const styles = createUseStyles({
         testBackground: {
             backgroundColor: '#e5db7f',
@@ -54,11 +83,11 @@ export const DynamicButton: React.FC<DynamicButtonProps> = (props) => {
             },
         })).apply({});
     };
-    const themeStyle = createStyleVariantRules(styleVariant);
+    const themeStyle = createStyleVariantRules(styleVariant); */
 
     return (
-        <button data-testid="dynamic-button" className={`${themeStyle.buttonStyle} ${styles.btnBasic}`}>
+        <Button styleVariant={styleVariant} data-testid="dynamic-button">
             {label ?? children}
-        </button>
+        </Button>
     );
 };

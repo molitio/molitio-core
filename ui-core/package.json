@@ -60,6 +60,9 @@
             "limit": "10 KB"
         }
     ],
+    "resolutions": {
+        "styled-components": "^5"
+    },
     "scripts": {
         "prebuild": "npm run clean && prettier --write src/",
         "build": "rollup --config",
@@ -127,6 +130,7 @@
         "@types/react": "^18.0.9",
         "@types/react-dom": "^18.0.5",
         "@types/rollup-plugin-peer-deps-external": "^2.2.1",
+        "@types/styled-components": "^5.1.25",
         "@typescript-eslint/eslint-plugin": "^5.4.0",
         "@typescript-eslint/parser": "^5.4.0",
         "babel-cli": "^6.26.0",
