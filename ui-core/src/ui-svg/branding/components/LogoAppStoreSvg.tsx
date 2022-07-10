@@ -3,13 +3,12 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 
 export const LogoAppStoreSvg: React.FC<SvgComponentProps> = (props) => {
-
-    const {dimensions, linkUrl, opacity} = props;
+    const { dimensions, linkUrl, opacity } = props;
     const style = createUseStyles({
         svg: {
             height: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height,
-            width: dimensions === 'FULLSCREEN' ? '100%' :dimensions?.width,
-            pointerEvents:linkUrl ? 'auto' : 'none',
+            width: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width,
+            pointerEvents: linkUrl ? 'auto' : 'none',
             cursor: linkUrl ? 'pointer' : 'none',
             opacity: opacity,
         },

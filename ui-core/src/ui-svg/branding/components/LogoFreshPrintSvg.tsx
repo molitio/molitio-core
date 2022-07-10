@@ -3,14 +3,13 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 
 export const LogoFreshPrintSvg: React.FC<SvgComponentProps> = (props) => {
-
-const {dimensions,linkUrl} = props;
+    const { dimensions, linkUrl } = props;
 
     const style = createUseStyles({
         svg: {
             position: dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
-            height:dimensions === 'FULLSCREEN' ? '100%' :dimensions?.height,
-            width: dimensions === 'FULLSCREEN' ? '100%' :dimensions?.width,
+            height: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height,
+            width: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width,
             pointerEvents: 'none',
             // border: '1px solid yellow',
         },

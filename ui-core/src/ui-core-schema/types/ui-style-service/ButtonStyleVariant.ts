@@ -1,4 +1,4 @@
-/***
+/**
  * @exports ButtonStyleVariant
  *
  *  | 'btn-rectangle'

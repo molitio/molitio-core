@@ -1,4 +1,4 @@
-/***
+/**
  * ui-platform
  *
  * Provide platfrom specific information

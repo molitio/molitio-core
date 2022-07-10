@@ -1,8 +1,8 @@
-import { TDeviceTypes } from 'ui-core-schema';
+import { DeviceTypes } from 'ui-core-schema';
 
 export type StyledThemeContext = {
     themeName?: string;
-    deviceType?: TDeviceTypes;
+    deviceType?: DeviceTypes;
     theme?: {
         primary?: string;
         secondary?: string;

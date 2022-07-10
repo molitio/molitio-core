@@ -3,8 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 
 export const LogoListenNowSvg: React.FC<SvgComponentProps> = (props) => {
-
-    const {dimensions} = props;
+    const { dimensions } = props;
 
     const style = createUseStyles({
         svg: {

@@ -1,5 +1,5 @@
-import { TNavSegment } from 'ui-core-schema';
+import { NavSegment } from 'ui-core-schema';
 
 export interface NavSegmentProps {
-    navSegment: TNavSegment;
+    navSegment: NavSegment;
 }

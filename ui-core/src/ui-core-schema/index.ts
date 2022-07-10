@@ -1,6 +1,4 @@
-import React from 'react';
-
-/***
+/**
  * ui-core-schema
  *  tags:
  *      ui-common:

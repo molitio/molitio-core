@@ -3,13 +3,12 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 
 export const LogoNestMediaSvg: React.FC<SvgComponentProps> = (props) => {
-
-    const {dimensions,linkUrl} = props;
+    const { dimensions, linkUrl } = props;
 
     const style = createUseStyles({
         svg: {
             /* position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'absolute', */
-            height:dimensions === 'FULLSCREEN' ? '100vh' : dimensions?.height,
+            height: dimensions === 'FULLSCREEN' ? '100vh' : dimensions?.height,
             width: dimensions === 'FULLSCREEN' ? '100vw' : dimensions?.width,
             pointerEvents: 'none',
         },

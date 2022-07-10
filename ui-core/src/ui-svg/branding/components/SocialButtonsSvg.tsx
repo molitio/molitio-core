@@ -4,12 +4,11 @@ import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 import { SocialButtonsSvgProps } from '../interfaces/SocialButtonsSvgProps';
 
 export const SocialButtonsSvg: React.FC<SvgComponentProps & SocialButtonsSvgProps> = (props) => {
-
-    const {dimensions, facebookUrl, instagramUrl, youtubeUrl, externalUrl} = props;
+    const { dimensions, facebookUrl, instagramUrl, youtubeUrl, externalUrl } = props;
 
     const style = createUseStyles({
         svg: {
-            height: dimensions === 'FULLSCREEN' ? '100%' :dimensions?.height,
+            height: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height,
             width: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width,
             pointerEvents: 'none',
         },

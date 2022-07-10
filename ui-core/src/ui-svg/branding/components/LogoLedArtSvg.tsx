@@ -3,14 +3,13 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 
 export const LogoLedArtSvg: React.FC<SvgComponentProps> = (props) => {
-
-    const {dimensions,linkUrl} = props;
+    const { dimensions, linkUrl } = props;
 
     const style = createUseStyles({
         svg: {
             /* position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'absolute', */
             height: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height,
-            width: dimensions === 'FULLSCREEN' ? '100%' :dimensions?.width,
+            width: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width,
             pointerEvents: 'none',
         },
         fil0: { fill: '#6D6E72' },

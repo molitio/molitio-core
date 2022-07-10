@@ -64,7 +64,7 @@ const shellMain = {
     },
 };
 
-/***
+/**
  * AppShell provides a wrapper around componets and pages to provide theme context and global style rules
  *
  * @params AppShellProps

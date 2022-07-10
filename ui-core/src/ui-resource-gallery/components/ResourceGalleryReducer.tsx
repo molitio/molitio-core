@@ -13,7 +13,7 @@ export type TResourceGalleryState = {
 
 export type TResourceGalleryAction = {
     type: ResourceGalleryActionType;
-    payload: TResourceGalleryState;
+    payload?: TResourceGalleryState;
 };
 
 export const ResourceGalleryReducer = (state: TResourceGalleryState, action: TResourceGalleryAction) => {
@@ -24,7 +24,7 @@ export const ResourceGalleryReducer = (state: TResourceGalleryState, action: TRe
 
             return {
                 ...state,
-                selectedCategoryTag: payload.selectedCategoryTag,
+                selectedCategoryTag: payload?.selectedCategoryTag,
             };
         default:
             return {

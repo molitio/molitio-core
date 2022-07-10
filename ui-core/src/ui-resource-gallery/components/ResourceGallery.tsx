@@ -1,11 +1,13 @@
 import React from 'react';
 import { ComponentTag, SystemStyleTag, ThemeNameTags } from 'ui-core-schema';
 import { createUseStyles } from 'react-jss';
-import { CategoryBrowser, ResourceGalleryProps } from 'ui-resource-gallery';
+import { CategoryBrowser } from './CategoryBrowser';
+import { ResourceGalleryProps } from '../interfaces/ResourceGalleryProps';
 import { resolveSystemStyle, useSystemStyles } from 'ui-style-service';
-import { ResourceGalleryReducer } from './ResourceGalleryReducer';
+import { ResourceGalleryActionType, ResourceGalleryReducer } from './ResourceGalleryReducer';
+import { MolitioComponent } from 'ui-core-schema/types/generics/MolitioComponent';
 
-export const ResourceGallery: React.FC<ResourceGalleryProps> = (props) => {
+export const ResourceGallery: MolitioComponent<ResourceGalleryProps> = (props) => {
     const { gallery } = props;
 
     const styles = createUseStyles({
@@ -39,9 +41,13 @@ export const ResourceGallery: React.FC<ResourceGalleryProps> = (props) => {
 
     const [resourceGalleryState, dispatch] = React.useReducer(ResourceGalleryReducer, {});
 
-    const { resolvedStyle, resolvedThemeContext } = useSystemStyles(ComponentTag.RESOURCE_GALLERY, {
+    const { resolvedStyle } = useSystemStyles(ComponentTag.RESOURCE_GALLERY, {
         themeNameTag: ThemeNameTags.BLACK_YELLOW,
     });
+
+    const handleClick = () => {
+        dispatch({ type: ResourceGalleryActionType.FOCUS_IMAGE });
+    };
 
     return (
         <section
@@ -57,7 +63,10 @@ export const ResourceGallery: React.FC<ResourceGalleryProps> = (props) => {
                     </div>
                     <div className={styles.resourcePreview}>
                         <h2 className={styles.title}>{gallery?.name}</h2>
-                        <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature1.jpg" />
+                        <img
+                            onClick={handleClick}
+                            src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature1.jpg"
+                        />
                         <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature2.jpg" />
                         <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature3.jpg" />
                         <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/natura4.jpg" />

@@ -1,4 +1,4 @@
-/***
+/**
  * ui-media
  *
  * Provides tools for media presentation for UI components.

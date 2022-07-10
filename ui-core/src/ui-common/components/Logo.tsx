@@ -7,9 +7,8 @@ export const LargeLogoDimensions = {
     height: '300px',
 };
 
-export const Logo: React.FC<LogoProps> = ( props: LogoProps) => {
-
-  const {opacity, url} = props;
+export const Logo: React.FC<LogoProps> = (props: LogoProps) => {
+    const { opacity, url } = props;
 
     const style = createUseStyles({
         center: {

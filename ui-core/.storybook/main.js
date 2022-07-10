@@ -9,8 +9,9 @@ module.exports = {
         '@storybook/addon-interactions',
         '@storybook/preset-scss',
         '@storybook/addon-outline',
+        '@storybook/addon-docs',
         'storybook-addon-designs',
-     //   '@storybook/addon-jest',
+        //   '@storybook/addon-jest',
         // module
         /*         {
             name: `@storybook/preset-scss`,

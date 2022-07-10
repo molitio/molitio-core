@@ -2,16 +2,16 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
-import { StyledThemeContext, TNavPage } from 'ui-core-schema';
+import { StyledThemeContext, NavPage } from 'ui-core-schema';
 import styles from '../styles/NavMenuComponent.module.scss';
 
 export const NavMenuComponent: React.FC<NavMenuComponentProps> = (props: NavMenuComponentProps) => {
     const { pageCollection } = props;
 
-    const [menuPages, setMenuPages] = React.useState<Map<string, TNavPage>>(new Map<string, TNavPage>());
+    const [menuPages, setMenuPages] = React.useState<Map<string, NavPage>>(new Map<string, NavPage>());
 
     React.useEffect(() => {
-        setMenuPages(new Map([...(pageCollection.pageCollection ?? new Map<string, TNavPage>())]));
+        setMenuPages(new Map([...(pageCollection.pageCollection ?? new Map<string, NavPage>())]));
     }, []);
 
     const style = createUseStyles((themeContext: StyledThemeContext) => ({

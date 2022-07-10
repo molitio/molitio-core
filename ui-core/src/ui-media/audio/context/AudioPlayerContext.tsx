@@ -1,7 +1,7 @@
 import React from 'react';
-import { TAudioPlayerState } from 'ui-core-schema';
+import { AudioPlayerState } from 'ui-core-schema';
 
-export const AudioPlayerContext = React.createContext<TAudioPlayerState>({
+export const AudioPlayerContext = React.createContext<AudioPlayerState>({
     isPlaying: false,
     isLoading: false,
     isMuted: false,

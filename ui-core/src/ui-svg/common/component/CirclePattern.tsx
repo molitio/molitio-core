@@ -21,8 +21,7 @@ const findPoint = (cx: number, cy: number, rad: number, cornerGrad: number) => {
 };
 
 export const CirclePattern: React.FC<CirclePatternProps> = (props) => {
-
-    const {r, strokeWidth, outerRimCount} = props;
+    const { r, strokeWidth, outerRimCount } = props;
 
     const [circles, setCircles] = useState<Circle[]>([]);
 

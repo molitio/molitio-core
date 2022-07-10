@@ -3,8 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 
 export const SpeakerBackgroundSvg: React.FC<SvgComponentProps> = (props) => {
-
-    const {dimensions } = props;
+    const { dimensions } = props;
 
     const componentHeight = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height ?? 'auto';
     const componentWidth = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width ?? 'auto';

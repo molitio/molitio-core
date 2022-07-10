@@ -1,7 +1,7 @@
 import React from 'react';
 import { AudioPlayerContext } from '../context/AudioPlayerContext';
-import { DeviceContext } from '../../../ui-platform/context/DeviceContext';
-import { TAudioPlayerState } from 'ui-core-schema';
+import { AudioPlayerState } from 'ui-core-schema';
+import { DeviceContext } from 'ui-platform';
 
 export enum AudioPlayerStateActionType {
     TOGGLE_PLAYING = 'togglePlaying',
@@ -12,7 +12,7 @@ export enum AudioPlayerStateActionType {
 }
 interface AudioPlayerStateAction {
     type: AudioPlayerStateActionType;
-    payload: TAudioPlayerState;
+    payload: AudioPlayerState;
 }
 
 export const AudioPlayerContextProvider: React.FC<React.PropsWithChildren> = (props) => {
@@ -20,7 +20,7 @@ export const AudioPlayerContextProvider: React.FC<React.PropsWithChildren> = (pr
 
     const deviceContext = React.useContext(DeviceContext);
 
-    const playerStateReducer = (state: TAudioPlayerState, action: AudioPlayerStateAction): TAudioPlayerState => {
+    const playerStateReducer = (state: AudioPlayerState, action: AudioPlayerStateAction): AudioPlayerState => {
         const { type: actionType, payload } = action;
         switch (actionType) {
             case AudioPlayerStateActionType.TOGGLE_LOADING:
@@ -45,7 +45,6 @@ export const AudioPlayerContextProvider: React.FC<React.PropsWithChildren> = (pr
                         updatedState.playerRef.play();
                     } else {
                         updatedState.playerRef.pause();
-                        //updatedState.playerRef.load();
                     }
                 }
                 return updatedState;
