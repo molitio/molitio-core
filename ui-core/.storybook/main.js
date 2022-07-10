@@ -8,6 +8,8 @@ module.exports = {
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
         '@storybook/preset-scss',
+        '@storybook/addon-outline',
+        'storybook-addon-designs',
      //   '@storybook/addon-jest',
         // module
         /*         {
