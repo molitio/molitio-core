@@ -1,3 +1,3 @@
-export type TCollection = {
+export type Collection = {
     dataSource: string; // kepGalery
 };

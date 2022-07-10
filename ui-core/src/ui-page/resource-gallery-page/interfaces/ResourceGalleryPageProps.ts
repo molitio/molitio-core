@@ -1,5 +1,5 @@
-import { TGallery } from 'ui-core-schema';
+import { Gallery } from 'ui-core-schema';
 
 export interface ResourceGalleryPageProps {
-    gallery?: TGallery;
+    gallery?: Gallery;
 }

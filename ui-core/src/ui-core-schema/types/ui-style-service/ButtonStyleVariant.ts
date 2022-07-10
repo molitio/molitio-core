@@ -1,5 +1,5 @@
 /***
- * ButtonStyleVariant
+ * @exports ButtonStyleVariant
  *
  *  | 'btn-rectangle'
  *  | 'btn-rounded'

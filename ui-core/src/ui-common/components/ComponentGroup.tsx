@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { createUseStyles } from 'react-jss';
 import { ComponentGroupProps } from '../interfaces/ComponentGroupProps';
-import { ComponentGroupTags, StyledThemeContext } from 'ui-core-schema';
+import { ComponentCollectionTags, StyledThemeContext } from 'ui-core-schema';
 
 /* type Props = {
     className?: string;
@@ -31,7 +31,7 @@ export const ComponentGroup: React.FC<ComponentGroupProps & mediaLg & HTMLAttrib
         },
         position: () => {
             switch (props.groupingType) {
-                case ComponentGroupTags.GRID:
+                case ComponentCollectionTags.GRID:
                     return {
                         ...theme.gridGroup,
                         gap: props.itemGap,
@@ -39,7 +39,7 @@ export const ComponentGroup: React.FC<ComponentGroupProps & mediaLg & HTMLAttrib
                         fontSize: props.fontSize,
                         padding: props.itemPadding,
                     };
-                case ComponentGroupTags.VERTICAL_FLEX:
+                case ComponentCollectionTags.VERTICAL_FLEX:
                     return {
                         ...theme.verticalGroup,
                         height: '100%',
@@ -67,7 +67,7 @@ export const ComponentGroup: React.FC<ComponentGroupProps & mediaLg & HTMLAttrib
                             padding: props.itemPadding,
                         },
                     };
-                case ComponentGroupTags.HORIZONTAL_FLEX:
+                case ComponentCollectionTags.HORIZONTAL_FLEX:
                     return {
                         ...theme.horizontalGroup,
                         width: '100%',

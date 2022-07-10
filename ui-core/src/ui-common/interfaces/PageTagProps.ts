@@ -1,5 +1,5 @@
-import { TPage } from 'ui-core-schema';
+import { Page } from 'ui-core-schema';
 
 export interface PageTagProps {
-    tag: TPage;
+    tag: Page;
 }

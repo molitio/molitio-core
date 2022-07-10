@@ -1,4 +1,5 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 import { createUseStyles } from 'react-jss';
 import { DevHighlight } from 'ui-style-service';
 
@@ -15,5 +16,9 @@ export const LayoutColumn: React.FC<React.PropsWithChildren> = (props) => {
         },
     }).apply({});
 
-    return <div className={`${style.pageColumn} ${style.devHighlight}`}>{children}</div>;
+    return (
+        <div key={nanoid()} className={`${style.pageColumn} ${style.devHighlight}`}>
+            {children}
+        </div>
+    );
 };

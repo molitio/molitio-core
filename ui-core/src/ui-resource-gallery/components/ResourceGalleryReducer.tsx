@@ -1,4 +1,4 @@
-import { TGallery } from 'ui-core-schema';
+import { Gallery } from 'ui-core-schema';
 
 export enum ResourceGalleryActionType {
     SELECT_CATEGORY,
@@ -8,7 +8,7 @@ export enum ResourceGalleryActionType {
 export type TResourceGalleryState = {
     focusedImageTag?: string;
     selectedCategoryTag?: string;
-    gallery?: TGallery;
+    gallery?: Gallery;
 };
 
 export type TResourceGalleryAction = {

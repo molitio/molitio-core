@@ -3,10 +3,10 @@ import { ResourceGalleryPage } from '../resource-gallery-page/components/Resourc
 
 import { AppShell } from 'ui-common';
 import { ResourceGalleryProps } from 'ui-resource-gallery';
-import { TCategory, TResource } from 'ui-core-schema';
+import { Category, Resource } from 'ui-core-schema';
 
 const fillResources = () => {
-    const tajkepGyujtemeny = new Map<string, TResource>();
+    const tajkepGyujtemeny = new Map<string, Resource>();
     tajkepGyujtemeny.set('kepegy', {
         resourceId: 'mockId01',
         imageTag: '01',
@@ -42,7 +42,7 @@ const fillResources = () => {
 };
 
 const fillCategories = () => {
-    const paintingGallery = new Map<string, TCategory>();
+    const paintingGallery = new Map<string, Category>();
 
     paintingGallery.set('tajkep', {
         categoryName: 'Tájkép',

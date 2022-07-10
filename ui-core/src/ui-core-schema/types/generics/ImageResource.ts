@@ -1,4 +1,4 @@
-export type TImageResource = {
+export type ImageResource = {
     imageTag?: string;
     imageUrl: string;
 };

@@ -1,4 +1,4 @@
-export type TAudioPlayerState = {
+export type AudioPlayerState = {
     playerRef?: HTMLAudioElement | null;
     playButtonRef?: HTMLElement | SVGGElement | SVGElement | null;
     isPlaying: boolean;

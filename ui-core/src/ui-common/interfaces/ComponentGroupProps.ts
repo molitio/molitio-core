@@ -1,16 +1,16 @@
-import { ComponentGroupTags } from 'ui-core-schema';
+import { ComponentCollectionTags } from 'ui-core-schema';
 import { ShapeDimensions } from 'ui-svg';
 
-export type breakpoints = 'xs' | 'sm' | 'lg' | 'wide';
+export type Breakpoints = 'xs' | 'sm' | 'lg' | 'wide';
 
 export interface ComponentGroupProps {
-    groupingType: ComponentGroupTags;
+    groupingType: ComponentCollectionTags;
     dimensions?: ShapeDimensions;
     itemGap?: string;
     itemPadding?: string;
     fontColor?: string;
     fontSize?: string;
-    switchDirectionOn?: [breakpoints];
+    switchDirectionOn?: [Breakpoints];
     margin?: string;
     marginTop?: string;
     marginRight?: string;

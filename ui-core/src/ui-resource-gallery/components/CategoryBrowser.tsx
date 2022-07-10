@@ -1,5 +1,5 @@
 import React from 'react';
-import { TCategory, TImageResource } from 'ui-core-schema';
+import { Category, ImageResource } from 'ui-core-schema';
 import { CategoryBrowserProps } from '../interfaces/CategoryBrowserProps';
 import { createUseStyles } from 'react-jss';
 import { ResourceGalleryActionType, ResourceGalleryReducer } from './ResourceGalleryReducer';
@@ -20,7 +20,7 @@ export const CategoryBrowser: React.FC<CategoryBrowserProps> = (props) => {
     const [resourceGalleryState, dispatch] = React.useReducer(ResourceGalleryReducer, {});
     return (
         <section>
-            {Array.from([...(categories ?? new Map<string, TCategory>())]).map((category) => (
+            {Array.from([...(categories ?? new Map<string, Category>())]).map((category) => (
                 <div
                     key={category[0]}
                     onClick={() =>
@@ -32,7 +32,7 @@ export const CategoryBrowser: React.FC<CategoryBrowserProps> = (props) => {
                 >
                     <h2>{category[1].categoryName}</h2>
 
-                    {Array.from([...(category[1].resources ?? new Map<string, TImageResource>())]).map((resource) => (
+                    {Array.from([...(category[1].resources ?? new Map<string, ImageResource>())]).map((resource) => (
                         <div className={styles.resourceContainer} key={resource[0]}>
                             <h2>{resource[1].imageTag}</h2>
                             <br />

@@ -3,8 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { MultiColumnPageProps } from '../interfaces/MultiColumnPageProps';
 
 export const MultiColumnPage: React.FC<MultiColumnPageProps & React.PropsWithChildren> = (props) => {
-    
-  const {pageSections} = props;
+    const { pageSections } = props;
 
     const style = createUseStyles({
         pageBackground: {
@@ -12,5 +11,11 @@ export const MultiColumnPage: React.FC<MultiColumnPageProps & React.PropsWithChi
         },
     }).apply({});
 
-    return <div className={style.pageBackground}>{pageSections.map((section) => section.element)}</div>;
+    return (
+        <div className={style.pageBackground}>
+            {pageSections.map((section, index) => (
+                <div key={index}>{section.element}</div>
+            ))}
+        </div>
+    );
 };

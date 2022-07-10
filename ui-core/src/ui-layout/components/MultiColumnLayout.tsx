@@ -1,4 +1,5 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 import { createUseStyles } from 'react-jss';
 import { MultiColumnLayoutProps } from 'ui-layout';
 import { DevHighlight } from 'ui-style-service';
@@ -21,10 +22,16 @@ export const MultiColumnLayout: React.FC<MultiColumnLayoutProps> = (props) => {
         },
     }).apply({});
 
+    const columnCollectionKey = nanoid();
+
+    console.log(`columnCollectionKey: ${columnCollectionKey}`);
+
     return (
-        <div className={`${style.landing}`}>
-            {layoutColumns.map((layoutColumn) => (
-                <div className={`${style.pageColumn} ${style.devHighlight}`}>{layoutColumn}</div>
+        <div key={columnCollectionKey} className={`${style.landing}`}>
+            {layoutColumns.map((layoutColumn, index) => (
+                <div key={index} className={`${style.pageColumn} ${style.devHighlight}`}>
+                    {layoutColumn}
+                </div>
             ))}
         </div>
     );

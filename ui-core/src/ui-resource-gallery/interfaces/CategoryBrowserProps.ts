@@ -1,5 +1,5 @@
-import { TCategory } from 'ui-core-schema';
+import { Category } from 'ui-core-schema';
 
 export interface CategoryBrowserProps {
-    categories?: Map<string, TCategory>;
+    categories?: Map<string, Category>;
 }

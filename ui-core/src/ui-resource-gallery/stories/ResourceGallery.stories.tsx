@@ -2,10 +2,10 @@ import { Story, Meta } from '@storybook/react';
 import { AppShell } from 'ui-common';
 import { ResourceGalleryProps } from 'ui-resource-gallery';
 import { ResourceGalleryPage } from 'ui-page';
-import { TResource, TCategory } from 'ui-core-schema';
+import { Resource, Category } from 'ui-core-schema';
 
 const fillResources = () => {
-    const tajkepGyujtemeny = new Map<string, TResource>();
+    const tajkepGyujtemeny = new Map<string, Resource>();
     tajkepGyujtemeny.set('kepegy', {
         resourceId: 'mockId01',
         imageTag: '01',
@@ -41,7 +41,7 @@ const fillResources = () => {
 };
 
 const fillCategories = () => {
-    const paintingGallery = new Map<string, TCategory>();
+    const paintingGallery = new Map<string, Category>();
 
     paintingGallery.set('tajkep', {
         categoryName: 'Tájkép',

@@ -41,9 +41,9 @@ export const CircleGradientHighlightSvg: React.FC<SvgComponentProps & React.Prop
         >
             <defs id="gradient-defs">
                 <radialGradient id="gradient-fill" cx="400" cy="400" r="420" gradientUnits="userSpaceOnUse">
-                    <stop id="gradient-stop-0" stopColor="black" stop-opacity=".0" offset="0" />
+                    <stop id="gradient-stop-0" stopColor="black" stopOpacity=".0" offset="0" />
                     {/*  <stop id="gradient-stop-1" stopColor="cyan" stop-opacity=".9" offset="42%" /> */}
-                    <stop id="gradient-stop-2" stopColor="black" stop-opacity=".9" offset="100%" />
+                    <stop id="gradient-stop-2" stopColor="black" stopOpacity=".9" offset="100%" />
                 </radialGradient>
             </defs>
             <g id="rect-0">
