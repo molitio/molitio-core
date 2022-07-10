@@ -1,11 +1,12 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from 'ui-context';
-import { WithChildren } from 'ui-core-models';
+import { StyledThemeContext } from 'ui-core-schema';
 import { LandingPageProps } from '../interfaces/LandingPageProps';
 
-export const LandingPage: React.FC<LandingPageProps & WithChildren> = ({ ...props }) => {
-    const useStyles = createUseStyles((theme: StyledThemeContext) => ({
+export const LandingPage: React.FC<LandingPageProps & React.PropsWithChildren> = (props) => {
+    const { children, pageTitle } = props;
+
+    const useStyles = createUseStyles((themeContext: StyledThemeContext) => ({
         landing: {
             display: 'flex',
             flexDirection: 'column',
@@ -35,15 +36,15 @@ export const LandingPage: React.FC<LandingPageProps & WithChildren> = ({ ...prop
                     boxShadow: theme.shadows[5], */
         },
         pageTitle: {
-            color: theme.primary,
+            color: themeContext.theme?.primary,
         },
     }));
 
     const style = useStyles();
     return (
         <div className={style.landing}>
-            <h1>{props.pageTitle}</h1>
-            <div className={style.pageContent}>{props.children}</div>
+            <h1>{pageTitle}</h1>
+            <div className={style.pageContent}>{children}</div>
         </div>
     );
 };

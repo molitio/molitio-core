@@ -3,11 +3,14 @@ import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 import { SocialButtonsSvgProps } from '../interfaces/SocialButtonsSvgProps';
 
-export const SocialButtonsSvg: React.FC<SvgComponentProps & SocialButtonsSvgProps> = ({ ...props }) => {
+export const SocialButtonsSvg: React.FC<SvgComponentProps & SocialButtonsSvgProps> = (props) => {
+
+    const {dimensions, facebookUrl, instagramUrl, youtubeUrl, externalUrl} = props;
+
     const style = createUseStyles({
         svg: {
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
+            height: dimensions === 'FULLSCREEN' ? '100%' :dimensions?.height,
+            width: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width,
             pointerEvents: 'none',
         },
         externalSite: {
@@ -38,9 +41,9 @@ export const SocialButtonsSvg: React.FC<SvgComponentProps & SocialButtonsSvgProp
             xmlns="http://www.w3.org/2000/svg"
         >
             <g id="logo-socialbuttons" strokeWidth="2.8779">
-                {props.facebookUrl ? (
+                {facebookUrl ? (
                     <g id="logo-socialbuttons-facebook" className={style.externalSite}>
-                        <a href={props.facebookUrl} target="_blank">
+                        <a href={facebookUrl} target="_blank">
                             <path
                                 className={style.fil0}
                                 d="m91.298 48.479c0 23.841-19.327 43.168-43.168 43.168-23.84 0-43.167-19.326-43.167-43.167v-0.0011c0-23.841 19.327-43.168 43.168-43.168 23.84 0 43.167 19.327 43.167 43.167z"
@@ -54,9 +57,9 @@ export const SocialButtonsSvg: React.FC<SvgComponentProps & SocialButtonsSvgProp
                 ) : (
                     ''
                 )}
-                {props.instagramUrl ? (
+                {instagramUrl ? (
                     <g id="logo-socialbuttons-instagram" className={style.externalSite}>
-                        <a href={props.instagramUrl} target="_blank">
+                        <a href={instagramUrl} target="_blank">
                             <path
                                 className={style.fil0}
                                 d="m192.03 48.479c0 23.842-19.327 43.169-43.169 43.169-23.84 0-43.167-19.326-43.167-43.167v-0.0011c0-23.841 19.327-43.168 43.167-43.168h1e-3c23.84 0 43.167 19.327 43.167 43.167z"
@@ -70,9 +73,9 @@ export const SocialButtonsSvg: React.FC<SvgComponentProps & SocialButtonsSvgProp
                 ) : (
                     ''
                 )}
-                {props.youtubeUrl ? (
+                {youtubeUrl ? (
                     <g id="logo-socialbuttons-youtube" className={style.externalSite}>
-                        <a href={props.youtubeUrl} target="_blank">
+                        <a href={youtubeUrl} target="_blank">
                             <path
                                 className={style.fil0}
                                 d="m292.75 48.479c0 23.841-19.327 43.168-43.168 43.168h-8.6e-4c-23.84 0-43.166-19.326-43.166-43.167v-0.0011c0-23.841 19.326-43.168 43.168-43.168h5.8e-4c23.84 0 43.167 19.327 43.167 43.167z"
@@ -86,9 +89,9 @@ export const SocialButtonsSvg: React.FC<SvgComponentProps & SocialButtonsSvgProp
                 ) : (
                     ''
                 )}
-                {props.externalUrl ? (
+                {externalUrl ? (
                     <g id="logo-socialbuttons-external" className={style.externalSite}>
-                        <a href={props.externalUrl} target="_blank">
+                        <a href={externalUrl} target="_blank">
                             <path
                                 className={style.fil0}
                                 d="m393.48 48.479c0 23.841-19.327 43.168-43.168 43.168h-8.7e-4c-23.84 0-43.166-19.326-43.166-43.167v-0.0011c0-23.841 19.326-43.168 43.168-43.168h5.8e-4c23.84 0 43.167 19.327 43.167 43.167z"

@@ -1,17 +1,19 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
+import { StyledThemeContext } from 'ui-core-schema';
+import { AudioPlayerContext } from 'ui-media';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
-import { AudioPlayerContext } from 'ui-context';
-import { StyledThemeContext } from 'ui-context';
 
-export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
+export const PlayButtonSvg: React.FC<SvgComponentProps> = (props) => {
+    const { dimensions } = props;
+
     const playerContext = React.useContext(AudioPlayerContext);
 
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         svg: {
             //position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? '100%',
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? '100%',
+            height: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height ?? '100%',
+            width: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width ?? '100%',
             pointerEvents: 'none',
             preserveAspectRatio: 'xMidYMid meet',
             //border: '3px dashed green',
@@ -27,8 +29,8 @@ export const PlayButtonSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
             fill: '#f6c339',
         },
         controlColoring: {
-            fill: theme.secondary,
-            stroke: theme.secondary,
+            fill: themeContext.theme?.secondary,
+            stroke: themeContext.theme?.secondary,
         },
         visible: {
             visibility: 'visible',

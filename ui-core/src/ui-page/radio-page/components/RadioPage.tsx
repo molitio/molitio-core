@@ -1,10 +1,15 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AudioPlayer } from 'ui-common';
-import { AudioPlayerContextProvider, StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
+import { AudioPlayerContextProvider } from 'ui-media';
 import { RadioPageProps } from '../interfaces/RadioPageProps';
 
-export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
+export const RadioPage: React.FC<RadioPageProps> = (props) => {
+    const { background, logo, socialButtons, playerElement, radio, pageFooter } = props;
+
+    const { externalBackgroundEffect } = props;
+
     const headerItemSpacingTop = '2em';
     const headerItemSpacingSide = '12em';
     //const playerWidthAndHeightMicro = '8em';
@@ -12,7 +17,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
     const playerWidthAndHeightLG = '80vw';
     const playerWidthAndHeightWIDE = '60vh';
 
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         pageContainer: {
             top: 'env(safe-area-inset-top, 0px)',
             left: 'env(safe-area-inset-left, 0px)',
@@ -60,8 +65,8 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
         externalBackgroundEffect: {
             position: 'fixed',
             zIndex: 80,
-            visibility: props.externalBackgroundEffect ? 'visible' : 'hidden',
-            backgroundImage: `url(${props.externalBackgroundEffect})`,
+            visibility: externalBackgroundEffect ? 'visible' : 'hidden',
+            backgroundImage: `url(${externalBackgroundEffect})`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
@@ -76,7 +81,7 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
             bottom: 0,
             width: 'calc(env(safe-area-inset-left, 0px) + 100% + env(safe-area-inset-right, 0px))',
             height: '5em',
-            backgroundColor: theme.backgroundColor,
+            backgroundColor: themeContext.theme?.backgroundColor,
         },
 
         '@media (orientation: landscape) and (max-width: 1400px)': {
@@ -212,37 +217,37 @@ export const RadioPage: React.FC<RadioPageProps> = ({ ...props }) => {
 
     return (
         <>
-            {props.background}
+            {background}
             <div className={style.pageContainer}>
-                <div className={style.logo}>{props.logo}</div>
-                <div className={style.socialButtons}>{props.socialButtons}</div>
+                <div className={style.logo}>{logo}</div>
+                <div className={style.socialButtons}>{socialButtons}</div>
                 <div>
                     <div className={style.content}>
                         <div className={style.player}>
                             <AudioPlayerContextProvider>
                                 <>
-                                    {props.playerElement}
+                                    {playerElement}
                                     <AudioPlayer
                                         mediaSource={{
-                                            sourceUrl: props.radio.mediaSource.sourceUrl,
-                                            mediaType: props.radio.mediaSource.mediaType,
+                                            sourceUrl: radio.mediaSource.sourceUrl,
+                                            mediaType: radio.mediaSource.mediaType,
                                         }}
                                         alternativeMediaSource={{
-                                            sourceUrl: props.radio.alternativeMediaSource?.sourceUrl
-                                                ? props.radio.alternativeMediaSource.sourceUrl
+                                            sourceUrl: radio.alternativeMediaSource?.sourceUrl
+                                                ? radio.alternativeMediaSource.sourceUrl
                                                 : '',
-                                            mediaType: props.radio.alternativeMediaSource?.mediaType
-                                                ? props.radio.alternativeMediaSource.mediaType
+                                            mediaType: radio.alternativeMediaSource?.mediaType
+                                                ? radio.alternativeMediaSource.mediaType
                                                 : 'audio/mpeg',
                                         }}
-                                        preload={props.radio.preload}
+                                        preload={radio.preload}
                                     />
                                 </>
                             </AudioPlayerContextProvider>
                         </div>
                     </div>
                 </div>
-                <div className={style.pageFooter}>{props.pageFooter}</div>
+                <div className={style.pageFooter}>{pageFooter}</div>
             </div>
         </>
     );

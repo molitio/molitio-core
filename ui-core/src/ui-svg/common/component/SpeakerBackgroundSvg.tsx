@@ -2,9 +2,12 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 
-export const SpeakerBackgroundSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
-    const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto';
-    const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto';
+export const SpeakerBackgroundSvg: React.FC<SvgComponentProps> = (props) => {
+
+    const {dimensions } = props;
+
+    const componentHeight = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height ?? 'auto';
+    const componentWidth = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width ?? 'auto';
 
     const style = createUseStyles({
         svg: {

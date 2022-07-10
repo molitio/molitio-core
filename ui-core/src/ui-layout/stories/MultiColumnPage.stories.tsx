@@ -24,7 +24,7 @@ const Template: Story = () => (
                             <LayoutColumn>
                                 <CircleGradientHighlightSvg dimensions={{ width: '100%', height: '100%' }}>
                                     <Logo
-                                        url="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/nest-media-ui/nestmedia_logo_final_one_900.png"
+                                        url={`https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/ui-molitio-com/pexels-kalai-selvam-800752.jpg`}
                                         opacity={0.8}
                                     />
                                 </CircleGradientHighlightSvg>

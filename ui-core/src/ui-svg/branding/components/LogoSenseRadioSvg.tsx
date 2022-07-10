@@ -2,11 +2,14 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 
-export const LogoSenseRadioSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
+export const LogoSenseRadioSvg: React.FC<SvgComponentProps> = (props) => {
+
+    const {dimensions} = props;
+
     const style = createUseStyles({
         svg: {
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto',
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto',
+            height: dimensions === 'FULLSCREEN' ? '100%' :dimensions?.height ?? 'auto',
+            width: dimensions === 'FULLSCREEN' ? '100%' :dimensions?.width ?? 'auto',
             pointerEvents: 'none',
         },
         st0: {

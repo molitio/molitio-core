@@ -3,6 +3,8 @@
     export default styles;
 } */
 
+type NodeJSGlobal = typeof global;
+
 declare module '*.scss' {
     const styles: {
         [className: string]: string;

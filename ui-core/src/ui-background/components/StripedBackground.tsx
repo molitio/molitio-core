@@ -3,7 +3,9 @@ import { createUseStyles } from 'react-jss';
 import { StripedBackgroundProps } from '../interfaces/StripedBackgroundProps';
 import { StripesSvg } from 'ui-svg';
 
-export const StripedBackground: React.FC<StripedBackgroundProps> = ({ ...props }) => {
+export const StripedBackground: React.FC<StripedBackgroundProps> = (props) => {
+    const { backgroundEffectSrc, highlightStripes } = props;
+
     const style = createUseStyles({
         backgroundContainer: {
             top: 'env(safe-area-inset-top, 0px)',
@@ -21,8 +23,8 @@ export const StripedBackground: React.FC<StripedBackgroundProps> = ({ ...props }
         <div className={style.backgroundContainer}>
             <StripesSvg
                 dimensions={'FULLSCREEN'}
-                embededImageSrc={props.backgroundEffectSrc}
-                highlightStripes={props.highlightStripes}
+                embededImageSrc={backgroundEffectSrc}
+                highlightStripes={highlightStripes}
             />
         </div>
     );

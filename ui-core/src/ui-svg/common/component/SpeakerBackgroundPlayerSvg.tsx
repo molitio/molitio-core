@@ -1,12 +1,15 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { AudioPlayerContext, StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
+import { AudioPlayerContext } from 'ui-media';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { EmbededImage } from './EmbededImage';
 
-export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
-    const componentHeight = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height ?? 'auto';
-    const componentWidth = props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width ?? 'auto';
+export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = (props) => {
+    const { dimensions, embededImageSrc } = props;
+
+    const componentHeight = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height ?? 'auto';
+    const componentWidth = dimensions === 'FULLSCREEN' ? '100%' : dimensions?.width ?? 'auto';
 
     const playerContext = React.useContext(AudioPlayerContext);
     const playButtonRef = React.useRef<SVGGElement>(null);
@@ -20,7 +23,7 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
         effect();
     }, []);
 
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         svg: {
             height: componentHeight,
             width: componentWidth,
@@ -120,8 +123,8 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
             fill: '#f6c339',
         },
         controlColoring: {
-            fill: theme.secondary,
-            stroke: theme.secondary,
+            fill: themeContext.theme?.secondary,
+            stroke: themeContext.theme?.secondary,
         },
         visible: {
             visibility: 'visible',
@@ -334,11 +337,8 @@ export const SpeakerBackgroundPlayerSvg: React.FC<SvgComponentProps> = ({ ...pro
                     </g>
                 </g>
                 <g width="100" height="100">
-                    {props.embededImageSrc ? (
-                        <EmbededImage
-                            embededImageSrc={props.embededImageSrc}
-                            dimensions={{ width: '100', height: '100' }}
-                        />
+                    {embededImageSrc ? (
+                        <EmbededImage embededImageSrc={embededImageSrc} dimensions={{ width: '100', height: '100' }} />
                     ) : (
                         ''
                     )}

@@ -1,5 +1,5 @@
-import { TGallery } from 'ui-core-models/types/Gallery/TGallery';
+import { Gallery } from 'ui-core-schema';
 
-export interface ResourceGalleryProps {
-    gallery?: TGallery;
-}
+export type ResourceGalleryProps = {
+    gallery?: Gallery;
+};

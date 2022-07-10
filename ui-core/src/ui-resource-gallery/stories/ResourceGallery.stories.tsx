@@ -1,28 +1,60 @@
 import { Story, Meta } from '@storybook/react';
-import { TCategory } from 'ui-core-models/types/Gallery/TCategory';
-import { TResource } from 'ui-core-models/types/Resources/TResource';
-import { ResourceGallery } from 'ui-resource-gallery';
-import { ResourceGalleryProps } from 'ui-resource-gallery/interfaces/ResourceGalleryProps';
+import { AppShell } from 'ui-common';
+import { ResourceGalleryProps } from 'ui-resource-gallery';
+import { ResourceGalleryPage } from 'ui-page';
+import { Resource, Category } from 'ui-core-schema';
 
 const fillResources = () => {
-    const tajkepGyujtemeny = new Map<string, TResource>();
-    tajkepGyujtemeny.set('windózháttér', {
+    const tajkepGyujtemeny = new Map<string, Resource>();
+    tajkepGyujtemeny.set('kepegy', {
         resourceId: 'mockId01',
-        imageUrl: 'https://www.notebook.hu/blog/wp-content/uploads/2019/07/windows_xp_bliss-wide-1024x640.jpg',
+        imageTag: '01',
+        imageUrl: 'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature1.jpg',
     });
-    tajkepGyujtemeny.set('szipferrari', {
+    tajkepGyujtemeny.set('kepketto', {
         resourceId: 'mockId02',
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Orange_Enzo_Ferrari_%287191948164%29.jpg',
+        imageTag: '02',
+        imageUrl: 'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature2.jpg',
+    });
+    tajkepGyujtemeny.set('kepharom', {
+        resourceId: 'mockId03',
+        imageTag: '03',
+        imageUrl: 'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature3.jpg',
+    });
+    tajkepGyujtemeny.set('kepnegy', {
+        resourceId: 'mockId04',
+        imageTag: '04',
+        imageUrl: 'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/natura4.jpg',
+    });
+    tajkepGyujtemeny.set('kepot', {
+        resourceId: 'mockId05',
+        imageTag: '05',
+        imageUrl: 'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/still_life1.jpg',
+    });
+    tajkepGyujtemeny.set('kephat', {
+        resourceId: 'mockId06',
+        imageTag: '06',
+        imageUrl: 'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/still_life2.jpg',
     });
 
     return tajkepGyujtemeny;
 };
 
 const fillCategories = () => {
-    const paintingGallery = new Map<string, TCategory>();
+    const paintingGallery = new Map<string, Category>();
 
     paintingGallery.set('tajkep', {
-        categoryName: 'tajkep',
+        categoryName: 'Tájkép',
+        dataSource: 'mock',
+        resources: fillResources(),
+    });
+    paintingGallery.set('eletkep', {
+        categoryName: 'Életkép',
+        dataSource: 'mock',
+        resources: fillResources(),
+    });
+    paintingGallery.set('portrait', {
+        categoryName: 'Portré',
         dataSource: 'mock',
         resources: fillResources(),
     });
@@ -32,19 +64,26 @@ const fillCategories = () => {
 };
 
 const storyArgs: ResourceGalleryProps = {
-    gallery: { name: 'kép galéria', categories: fillCategories() },
+    gallery: { name: 'Galéria', categories: fillCategories() },
 };
 
 const meta: Meta = {
-    title: 'molitio-core/Gallery/Resource Gallery',
-    component: ResourceGallery,
-    args: { ...storyArgs },
+    title: 'molitio-core/Components/Resource Gallery',
+    component: ResourceGalleryPage,
+    args: {
+        ...storyArgs,
+    },
 };
+
 export default meta;
 
-const Template: Story<ResourceGalleryProps> = (args) => <ResourceGallery {...args} />;
+const Template: Story = (args) => (
+    <AppShell applyGlobalStyleRules>
+        <ResourceGalleryPage gallery={args.gallery}></ResourceGalleryPage>
+    </AppShell>
+);
 
-export const ResourceGalleryStory = Template.bind({});
-ResourceGalleryStory.args = {
-    ...storyArgs,
+export const PaintingGalleryPage = Template.bind({});
+PaintingGalleryPage.parameters = {
+    controls: { hideNoControlsWarning: true },
 };

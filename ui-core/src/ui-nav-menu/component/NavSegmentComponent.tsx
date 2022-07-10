@@ -1,19 +1,21 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
 import { NavSegmentProps } from '../interface/NavSegmentProps';
 //import './style.css';
 
-export const NavSegmentComponent: React.FC<NavSegmentProps> = ({ ...props }: NavSegmentProps) => {
-    const useStyles = createUseStyles((theme: StyledThemeContext) => ({
+export const NavSegmentComponent: React.FC<NavSegmentProps> = (props: NavSegmentProps) => {
+    const { navSegment } = props;
+
+    const useStyles = createUseStyles((themeContext: StyledThemeContext) => ({
         itemText: {
-            color: theme.primary,
+            color: themeContext.theme?.primary,
         },
         navUl: {
             listStyleType: 'none',
         },
         itemBackground: {
-            backgroundColor: theme.backgroundColor,
+            backgroundColor: themeContext.theme?.backgroundColor,
         },
         listItem: {
             '& a': {
@@ -32,13 +34,13 @@ export const NavSegmentComponent: React.FC<NavSegmentProps> = ({ ...props }: Nav
     const style = useStyles();
 
     return (
-        <li className={style.listItem} key={props.navSegment.itemName}>
-            <a target="_blank" className={style.itemText} href={props.navSegment.pathSegment}>
-                {props.navSegment.itemName}
+        <li className={style.listItem} key={navSegment.itemName}>
+            <a target="_blank" className={style.itemText} href={navSegment.pathSegment}>
+                {navSegment.itemName}
             </a>
-            {props.navSegment.navSegments ? (
+            {navSegment.navSegments ? (
                 <ul className={style.navUl}>
-                    {Array.from(props.navSegment.navSegments).map((item) => (
+                    {Array.from(navSegment.navSegments).map((item) => (
                         <NavSegmentComponent key={item.itemName} navSegment={item} />
                     ))}
                 </ul>

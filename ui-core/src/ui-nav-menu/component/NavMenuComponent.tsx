@@ -2,18 +2,19 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
-import { TNavPage } from 'ui-core-models';
-import { StyledThemeContext } from 'ui-context';
+import { StyledThemeContext, TNavPage } from 'ui-core-schema';
 import styles from '../styles/NavMenuComponent.module.scss';
 
-export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: NavMenuComponentProps) => {
+export const NavMenuComponent: React.FC<NavMenuComponentProps> = (props: NavMenuComponentProps) => {
+    const { pageCollection } = props;
+
     const [menuPages, setMenuPages] = React.useState<Map<string, TNavPage>>(new Map<string, TNavPage>());
 
     React.useEffect(() => {
-        setMenuPages(new Map([...(props.pageCollection.pageCollection ?? new Map<string, TNavPage>())]));
+        setMenuPages(new Map([...(pageCollection.pageCollection ?? new Map<string, TNavPage>())]));
     }, []);
 
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         nav: {
             /*  backgroundColor: theme.backgroundColor, */
             backgroundColor: 'DodgerBlue',
@@ -46,10 +47,10 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = ({ ...props }: 
             },
         },
         pageTitle: {
-            color: theme.primary,
+            color: themeContext.theme?.primary,
         },
         pageBackground: {
-            backgroundColor: theme.backgroundColor,
+            backgroundColor: themeContext.theme?.backgroundColor,
         },
         brandSection: {
             flexGrow: 1,

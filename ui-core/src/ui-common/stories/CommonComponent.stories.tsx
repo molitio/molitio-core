@@ -1,11 +1,11 @@
 import { Story, Meta } from '@storybook/react';
 import { CenterDisplay, ComponentGroup, ComponentGroupProps } from 'ui-common';
-import { ComponentGroupTags, ThemeNameTags } from 'ui-core-models';
+import { ComponentCollectionTags, ThemeNameTags } from 'ui-core-schema';
+import { StyledThemeContextProvider, StyledThemeProps } from 'ui-style-service';
 import { LogoFreshPrintSvg } from 'ui-svg';
-import { StyledThemeContextProvider, StyledThemeProps } from 'ui-context';
 
 const navMenuArgs: ComponentGroupProps & StyledThemeProps = {
-    groupingType: ComponentGroupTags.HORIZONTAL_FLEX,
+    groupingType: ComponentCollectionTags.HORIZONTAL_FLEX,
     themeName: ThemeNameTags.BLACK_YELLOW,
 };
 
@@ -17,9 +17,9 @@ const meta: Meta = {
             control: {
                 type: 'select',
                 options: [
-                    ComponentGroupTags.GRID,
-                    ComponentGroupTags.VERTICAL_FLEX,
-                    ComponentGroupTags.HORIZONTAL_FLEX,
+                    ComponentCollectionTags.GRID,
+                    ComponentCollectionTags.VERTICAL_FLEX,
+                    ComponentCollectionTags.HORIZONTAL_FLEX,
                 ],
             },
         },

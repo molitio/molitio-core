@@ -1,4 +1,4 @@
-import { TNavPageCollection } from 'ui-core-models';
+import { TNavPageCollection } from 'ui-core-schema';
 
 export interface NavMenuComponentProps {
     pageCollection: TNavPageCollection;

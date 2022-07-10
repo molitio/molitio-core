@@ -1,21 +1,25 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
 import { StripesSvgProps } from '../interface/StripesSvgProps';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { EmbededImage } from './EmbededImage';
 
-export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...props }) => {
-    const rotationAngle = props.rotationAngle ?? 45;
-    const fillOpacity = props.fillOpacity ?? 0.87059;
-    const stripeLength = props.stripeLength ?? 1578.7;
-    const stripeHeight = props.stripeHeight ?? 74.453;
-    const componentWidth = props.dimensions === 'FULLSCREEN' ? '100vw' : props.dimensions?.width;
-    const componentHeight = props.dimensions === 'FULLSCREEN' ? '100vh' : props.dimensions?.height;
+export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = (props) => {
+    const {
+        rotationAngle = 45,
+        fillOpacity = 0.87059,
+        stripeLength = 1578.7,
+        stripeHeight = 74.453,
+        dimensions = { width: '100vw', height: '100vh' },
+    } = props;
 
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+    const componentWidth = dimensions === 'FULLSCREEN' ? '100vw' : dimensions?.width;
+    const componentHeight = dimensions === 'FULLSCREEN' ? '100vh' : dimensions?.height;
+
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         svg: {
-            position: props.dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
+            position: dimensions === 'FULLSCREEN' ? 'fixed' : 'relative',
             top: 0,
             left: 0,
             height: componentHeight,
@@ -24,17 +28,17 @@ export const StripesSvg: React.FC<SvgComponentProps & StripesSvgProps> = ({ ...p
         },
         stripes: {
             '& rect': {
-                fill: theme.secondaryBackgroundColor,
+                fill: themeContext.theme?.secondaryBackgroundColor,
             },
             '& rect:hover': props.highlightStripes
                 ? {
-                      ...theme.interactiveHighlight,
+                      ...themeContext.theme?.interactiveHighlight,
                   }
                 : '',
         },
         stripesBackground: {
             '& rect': {
-                fill: theme.backgroundColor,
+                fill: themeContext.theme?.backgroundColor,
             },
         },
     })).apply({});

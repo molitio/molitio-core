@@ -1,15 +1,17 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from 'ui-context';
+import { StyledThemeContext } from 'ui-core-schema';
 import { DefaultFooterProps } from '../interfaces/DefaultFooterProps';
 
-export const DefaultFooter: React.FC<DefaultFooterProps> = ({ ...props }) => {
-    const style = createUseStyles((theme: StyledThemeContext) => ({
+export const DefaultFooter: React.FC<DefaultFooterProps> = (props) => {
+    const { leftColumnElements, centerColumnElements, rightColumnElements } = props;
+
+    const style = createUseStyles((themeContext: StyledThemeContext) => ({
         content: {
             display: 'flex',
             justifyContent: 'center',
             marginTop: '0.5em',
-            backgroundColor: theme.backgroundColor,
+            backgroundColor: themeContext.theme?.backgroundColor,
         },
         leftColumnElements: {
             display: 'flex',
@@ -46,19 +48,19 @@ export const DefaultFooter: React.FC<DefaultFooterProps> = ({ ...props }) => {
         <footer>
             <div className={style.content}>
                 <div className={style.leftColumnElements}>
-                    {props.leftColumnElements.map((element, i) => (
+                    {leftColumnElements.map((element, i) => (
                         <div key={i}>{element}</div>
                     ))}
                 </div>
 
                 <div className={style.centerColumnElements}>
-                    {props.centerColumnElements.map((element, i) => (
+                    {centerColumnElements.map((element, i) => (
                         <div key={i}>{element}</div>
                     ))}
                 </div>
 
                 <div className={style.rightColumnElements}>
-                    {props.rightColumnElements.map((element, i) => (
+                    {rightColumnElements.map((element, i) => (
                         <div key={i}>{element}</div>
                     ))}
                 </div>

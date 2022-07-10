@@ -6,7 +6,7 @@ module.exports = {
     //preset: 'babel-jest',
     testEnvironment: 'jsdom',
     //roots: ['./src'],
-    rootDir: './__tests__',
+    rootDir: './.artifact/__tests__',
     verbose: true,
     transform: {
         '^.+\\.[jt]sx?$': 'babel-jest',
@@ -19,7 +19,8 @@ module.exports = {
     extensionsToTreatAsEsm: ['.ts, .tsx'],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
    // testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
-    testPathIgnorePatterns: ['globals.d.ts', `\\.cache`],
+    testPathIgnorePatterns: [`\\.cache`],
+    /* testPathIgnorePatterns: ['globals.d.ts', `\\.cache`], */
     testEnvironmentOptions: { url: `http://localhost:3999` },
     /*    globals: {
         'ts-jest': {

@@ -1,41 +1,70 @@
-import { TCategory } from 'ui-core-models/types/Gallery/TCategory';
-import { TImageResource } from 'ui-core-models';
-import { ResourceGalleryProps } from 'ui-resource-gallery';
-import styles from '../styles/ResourceGallery.module.scss';
+import React from 'react';
+import { ComponentTag, SystemStyleTag, ThemeNameTags } from 'ui-core-schema';
+import { createUseStyles } from 'react-jss';
+import { CategoryBrowser, ResourceGalleryProps } from 'ui-resource-gallery';
+import { resolveSystemStyle, useSystemStyles } from 'ui-style-service';
+import { ResourceGalleryReducer } from './ResourceGalleryReducer';
 
-export const ResourceGallery: React.FC<ResourceGalleryProps> = ({ ...props }) => {
+export const ResourceGallery: React.FC<ResourceGalleryProps> = (props) => {
+    const { gallery } = props;
+
+    const styles = createUseStyles({
+        resourceGallerySection: {
+            color: '#fff',
+            minWidth: '100vw',
+            minHeight: '100vh',
+            display: 'flex',
+            overflow: 'auto',
+            pointerEvents: 'auto',
+        },
+        resourceGalleryContainer: {
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'row',
+        },
+        categoryBrowser: {
+            top: '25%',
+            position: 'fixed',
+            width: '12em',
+            height: '50vh',
+            overflowX: 'scroll',
+        },
+        resourcePreview: {
+            flex: 1,
+        },
+        title: {
+            textAlign: 'center',
+        },
+    }).apply({});
+
+    const [resourceGalleryState, dispatch] = React.useReducer(ResourceGalleryReducer, {});
+
+    const { resolvedStyle, resolvedThemeContext } = useSystemStyles(ComponentTag.RESOURCE_GALLERY, {
+        themeNameTag: ThemeNameTags.BLACK_YELLOW,
+    });
+
     return (
-        <section>
-            {props.gallery ? (
-                <div>
-                    <h2>{props.gallery.name}</h2>
-
-                    {Array.from([...(props.gallery.categories ?? new Map<string, TCategory>())]).map((category) => (
-                        <div key={category[0]}>
-                            <h2>{category[1].categoryName}</h2>
-
-                            {Array.from([...(category[1].resources ?? new Map<string, TImageResource>())]).map(
-                                (resource) => (
-                                    <div className={styles.resourceContainer} key={resource[0]}>
-                                        <h2>{resource[1].resourceId}</h2>
-                                        <br />
-
-                                        <img
-                                            className={styles.imagePosition}
-                                            src={resource[1].imageUrl}
-                                            alt={resource[0]}
-                                        />
-                                        <br />
-                                    </div>
-                                ),
-                            )}
-
-                            <br />
-                        </div>
-                    ))}
+        <section
+            className={`${resolvedStyle[SystemStyleTag.MEMPHIS]} ${
+                resolvedStyle[SystemStyleTag.BASIC_BORDER]
+            } ${`mock`}`}
+        >
+            {props.gallery && (
+                <div className={styles.resourceGalleryContainer}>
+                    <div className={`${resolveSystemStyle(SystemStyleTag.BASIC_BORDER)}`}>
+                        selected category: {resourceGalleryState.selectedCategoryTag}
+                        <CategoryBrowser categories={gallery?.categories} />
+                    </div>
+                    <div className={styles.resourcePreview}>
+                        <h2 className={styles.title}>{gallery?.name}</h2>
+                        <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature1.jpg" />
+                        <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature2.jpg" />
+                        <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/nature3.jpg" />
+                        <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/natura4.jpg" />
+                        <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/still_life1.jpg" />
+                        <img src="https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/art-natalia/still_life2.jpg" />
+                    </div>
                 </div>
-            ) : (
-                ''
             )}
         </section>
     );

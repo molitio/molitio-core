@@ -1,3 +1,3 @@
-import { TUniversalRadio } from 'ui-core-models';
+import { UniversalRadio } from 'ui-core-schema';
 
-export interface AudioPlayerProps extends TUniversalRadio {}
+export interface AudioPlayerProps extends UniversalRadio {}

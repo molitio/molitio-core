@@ -2,8 +2,9 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AppShellProps } from '../interfaces/AppShellProps';
 import { isClient } from '../services/Platform';
-import { StyledThemeContextProvider, DeviceContextProvider } from 'ui-context';
-import { ThemeNameTags, WithChildren } from 'ui-core-models';
+import { DeviceContextProvider } from 'ui-platform';
+import { ThemeNameTags } from 'ui-core-schema';
+import { StyledThemeContextProvider } from 'ui-style-service/components/StyledThemeContextProvider';
 
 const globalStyles = {
     '@global': {
@@ -63,25 +64,25 @@ const shellMain = {
     },
 };
 
-export const AppShell: React.FC<AppShellProps & WithChildren> = ({ ...props }) => {
+/***
+ * AppShell provides a wrapper around componets and pages to provide theme context and global style rules
+ *
+ * @params AppShellProps
+ */
+
+export const AppShell: React.FC<AppShellProps & React.PropsWithChildren> = (props) => {
+    const { children, themeName, applyGlobalStyleRules } = props;
+
     const [selectedTheme, setSelectedTheme] = React.useState<ThemeNameTags>();
-    const [children, setChildren] = React.useState<React.ReactElement<any, any>>();
 
     React.useEffect(() => {
         const effect = async () => {
-            setSelectedTheme(props.themeName);
+            setSelectedTheme(themeName);
         };
         effect();
-    }, [props.themeName]);
+    }, [themeName]);
 
-    React.useEffect(() => {
-        const effect = async () => {
-            setChildren(props.children);
-        };
-        effect();
-    }, [props.children]);
-
-    const styleOverrides = props.applyGlobalStyleRules ? globalStyles : {};
+    const styleOverrides = applyGlobalStyleRules ? globalStyles : {};
     const classes = createUseStyles({
         ...shellMain,
         ...styleOverrides,

@@ -1,7 +1,10 @@
+import { ThemeColor } from 'ui-core-schema/types/ui-style-service/theme/ThemeColor';
+
 export interface TypographyProps {
     rem: number;
-    color?: 'primary' | 'secondary';
+    color?: ThemeColor;
     marginTop?: string;
     maxContent?: boolean;
     center?: boolean;
+    textContent?: string;
 }

@@ -2,14 +2,16 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { SvgComponentProps } from '../../common/interface/SvgComponentProps';
 
-export const LogoAppStoreSvg: React.FC<SvgComponentProps> = ({ ...props }) => {
+export const LogoAppStoreSvg: React.FC<SvgComponentProps> = (props) => {
+
+    const {dimensions, linkUrl, opacity} = props;
     const style = createUseStyles({
         svg: {
-            height: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.height,
-            width: props.dimensions === 'FULLSCREEN' ? '100%' : props.dimensions?.width,
-            pointerEvents: props.linkUrl ? 'auto' : 'none',
-            cursor: props.linkUrl ? 'pointer' : 'none',
-            opacity: props.opacity,
+            height: dimensions === 'FULLSCREEN' ? '100%' : dimensions?.height,
+            width: dimensions === 'FULLSCREEN' ? '100%' :dimensions?.width,
+            pointerEvents:linkUrl ? 'auto' : 'none',
+            cursor: linkUrl ? 'pointer' : 'none',
+            opacity: opacity,
         },
         st0: { fill: '#FFC82F' },
     }).apply({});

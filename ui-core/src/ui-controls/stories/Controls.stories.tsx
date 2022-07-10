@@ -1,8 +1,8 @@
 import { Story, Meta } from '@storybook/react';
 import { CenterDisplay } from 'ui-common';
 import { DynamicButton } from 'ui-controls';
-import { ThemeNameTags } from 'ui-core-models';
-import { StyledThemeContextProvider } from 'ui-context';
+import { ThemeNameTags } from 'ui-core-schema';
+import { StyledThemeContextProvider } from 'ui-style-service';
 
 const buttonArgs = {
     themeName: ThemeNameTags.BLACK_YELLOW,
@@ -23,7 +23,9 @@ export default meta;
 const TemplateRounded: Story = (args) => (
     <StyledThemeContextProvider themeName={args.themeName}>
         <CenterDisplay>
-            <DynamicButton styleVariant="btn-rounded" label={`variant: btn-rounded`}></DynamicButton>
+            <DynamicButton styleVariant="btn-rounded" label="DO CLICK ME">
+                Click Me!
+            </DynamicButton>
         </CenterDisplay>
     </StyledThemeContextProvider>
 );
@@ -34,9 +36,7 @@ RoundedButton.args = { ...buttonArgs };
 const TemplateRectangle: Story = (args) => (
     <StyledThemeContextProvider themeName={args.themeName}>
         <CenterDisplay>
-            <DynamicButton styleVariant="btn-rectangle" label={`variant: btn-rectangle`}>
-                test text
-            </DynamicButton>
+            <DynamicButton styleVariant="btn-rectangle">Click Me!</DynamicButton>
         </CenterDisplay>
     </StyledThemeContextProvider>
 );

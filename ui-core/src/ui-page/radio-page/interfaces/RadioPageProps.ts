@@ -1,4 +1,4 @@
-import { TUniversalRadio } from 'ui-core-models';
+import { UniversalRadio } from 'ui-core-schema';
 
 export interface RadioPageProps {
     playerElement?: JSX.Element;
@@ -9,6 +9,6 @@ export interface RadioPageProps {
     externalBackgroundEffect?: string;
     logo?: JSX.Element;
     socialButtons?: JSX.Element;
-    radio: TUniversalRadio;
+    radio: UniversalRadio;
     pageFooter?: JSX.Element;
 }

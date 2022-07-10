@@ -1,9 +1,11 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 import { createUseStyles } from 'react-jss';
-import { DevHighlight } from 'ui-context';
-import { WithChildren } from 'ui-core-models';
+import { DevHighlight } from 'ui-style-service';
 
-export const LayoutColumn: React.FC<WithChildren> = ({ ...props }) => {
+export const LayoutColumn: React.FC<React.PropsWithChildren> = (props) => {
+    const { children } = props;
+
     const style = createUseStyles({
         pageColumn: {
             height: '100%',
@@ -14,5 +16,9 @@ export const LayoutColumn: React.FC<WithChildren> = ({ ...props }) => {
         },
     }).apply({});
 
-    return <div className={`${style.pageColumn} ${style.devHighlight}`}>{props.children}</div>;
+    return (
+        <div key={nanoid()} className={`${style.pageColumn} ${style.devHighlight}`}>
+            {children}
+        </div>
+    );
 };
