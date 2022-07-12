@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { AudioPlayer } from 'ui-common';
-import { StyledThemeContext } from 'ui-core-schema';
+import { StyledThemeContext } from '@molitio/molitio-schema';
 import { AudioPlayerContextProvider } from 'ui-media';
 import { RadioPageProps } from '../interfaces/RadioPageProps';
 

@@ -14,7 +14,8 @@
         "ui-core"
     ],
     "bugs": {
-        "url": "https://github.com/molitio/molitio-core/issues"
+        "url": "https://github.com/molitio/molitio-core/issues",
+        "email": "peter.Koller@molitio.com"
     },
     "homepage": "https://github.com/molitio/molitio-core#readme",
     "main": "dist/index.js",

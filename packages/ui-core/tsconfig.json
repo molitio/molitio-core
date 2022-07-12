@@ -1,5 +1,5 @@
 {
-    "include": ["src/**/*"],
+    "include": ["src/**/*", "../molitio-schema/src/tags"],
     "exclude": ["node_modules", "build", "dist", ".artifact", "*.config.js"],
     "compilerOptions": {
         "target": "ES5",

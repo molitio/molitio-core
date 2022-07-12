@@ -2,7 +2,19 @@
   "name": "@molitio/molitio-schema",
   "packageManager": "yarn@3.2.1",
   "version": "0.0.0-development",
-  "description": "Universal resource distribution model library",
+  "description": "Universal reusable React UI Components",
+  "homepage": "http://molitio.org/about",
+  "author": "Peter Koller",
+  "bugs": {
+    "url": "https://github.com/molitio/molitio-core/issues",
+    "email": "peter.Koller@molitio.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/molitio/molitio-core.git",
+    "directory": "molitio-schema"
+  },
+  "license": "CC0-1.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "type": "module",
@@ -35,17 +47,5 @@
     "ts-node": "^9.0.0",
     "ts-node-dev": "1.0.0-pre.63",
     "typescript": "^4.1.5"
-  },
-  "homepage": "http://molitio.org/about",
-  "author": "Peter Koller - peterkollerlv@live.com",
-  "bugs": {
-    "url": "https://github.com/molitio/molitio-lib",
-    "email": "peterkollerlv@live.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/molitio/molitio-core.git",
-    "directory": "molitio-schema"
-  },
-  "license": "MIT"
+  }
 }
