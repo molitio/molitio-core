@@ -1,0 +1,13 @@
+{
+  "name": "molitio-core",
+  "packageManager": "yarn@3.2.1",
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
