@@ -40,6 +40,7 @@ By creating digital tools, that are accessible easily to anyone and can perform 
 ## Foundation Roles
 
 - ## #digital_samaritan
+
   A human being who provides aid to anyone with insufficient technical understanding to utilize digital tools, including how to use molitio.org. Besides aiding the usage of the tools also documents resource needs of others who are in need and unable to do it for themself.
 
 ## Contributors
