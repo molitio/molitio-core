@@ -1,13 +1,31 @@
 {
   "name": "molitio-core",
   "packageManager": "yarn@3.2.1",
-  "resolutions": {
-    "styled-components": "^5"
+  "version": "0.12.6",
+  "author": "Peter Koller",
+  "description": "Universal reusable React UI Components",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/molitio/molitio-core.git"
   },
-  "workspaces": [
-    "packages/*"
+  "keywords": [
+    "molitio",
+    "ui-core"
   ],
+  "bugs": {
+    "url": "https://github.com/molitio/molitio-core/issues",
+    "email": "peter.koller@molitio.com"
+  },
+  "homepage": "https://github.com/molitio/molitio-core#readme",
+  "workspaces": [
+    "packages/**/*"
+  ],
+  "scripts": {
+    "build": "yarn workspace @molitio/ui-core build"
+  },
   "devDependencies": {
-    "typescript": "^4.7.4"
+    "@yarnpkg/eslint-config": "^1.0.0-rc.11",
+    "@yarnpkg/sdks": "^3.0.0-rc.11"
   }
 }

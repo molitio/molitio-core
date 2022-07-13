@@ -1,48 +1,42 @@
 {
   "name": "@molitio/molitio-schema",
-  "packageManager": "yarn@3.2.1",
-  "version": "0.0.0-development",
+  "version": "0.12.6",
   "description": "Universal reusable React UI Components",
   "homepage": "http://molitio.org/about",
   "author": "Peter Koller",
   "bugs": {
     "url": "https://github.com/molitio/molitio-core/issues",
-    "email": "peter.Koller@molitio.com"
+    "email": "peter.koller@molitio.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/molitio/molitio-core.git",
-    "directory": "molitio-schema"
+    "url": "https://github.com/molitio/molitio-core.git"
   },
   "license": "CC0-1.0",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
-  "files": [
-    "lib/**/*"
-  ],
   "scripts": {
     "lint": "eslint src/** --ext .ts",
     "lint-fix": "eslint src/** --ext .ts --fix",
-    "build": "tsc",
-    "prestart": "npm run build",
-    "pretest": "npm run lint",
-    "test": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
-    "test-nolint": "ts-node node_modules/jasmine/bin/jasmine --config=jasmine.json",
-    "coverage": "nyc -r text -e .ts -x \"tests/*.test.ts\" npm run test",
-    "semantic-release": "semantic-release"
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "dependencies": {
     "moment": "^2.29.2"
   },
   "devDependencies": {
-    "@types/jasmine": "^3.6.3",
     "@types/node": "12.12.2",
     "@typescript-eslint/eslint-plugin": "^4.15.0",
     "@typescript-eslint/parser": "^4.15.0",
     "eslint": "^7.20.0",
     "eslint-config-google": "^0.14.0",
     "jasmine": "^3.6.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "semantic-release": "^19.0.2",
     "ts-node": "^9.0.0",
     "ts-node-dev": "1.0.0-pre.63",

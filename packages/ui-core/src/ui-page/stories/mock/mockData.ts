@@ -1,4 +1,4 @@
-import { Category, Resource } from 'ui-core-schema';
+import { Category, Resource } from '@molitio/molitio-schema';
 
 export const fillResources = () => {
     const tajkepGyujtemeny = new Map<string, Resource>();

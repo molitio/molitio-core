@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import { AppShell } from 'ui-common';
 import { ResourceGalleryProps } from 'ui-resource-gallery';
 import { ResourceGalleryPage } from 'ui-page';
-import { Resource, Category } from 'ui-core-schema';
+import { Resource, Category } from '@molitio/molitio-schema';
 
 const fillResources = () => {
     const tajkepGyujtemeny = new Map<string, Resource>();

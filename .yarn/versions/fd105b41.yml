@@ -1,0 +1,6 @@
+releases:
+  molitio-core: minor
+
+undecided:
+  - "@molitio/molitio-schema"
+  - "@molitio/ui-core"

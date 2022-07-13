@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { AppShellProps } from '../interfaces/AppShellProps';
 import { isClient } from '../services/Platform';
 import { DeviceContextProvider } from 'ui-platform';
-import { ThemeNameTags } from 'ui-core-schema';
+import { ThemeNameTags } from '@molitio/molitio-schema';
 import { StyledThemeContextProvider } from 'ui-style-service/components/StyledThemeContextProvider';
 
 const globalStyles = {

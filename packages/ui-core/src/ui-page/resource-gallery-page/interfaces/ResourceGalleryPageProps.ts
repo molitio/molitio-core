@@ -1,4 +1,4 @@
-import { Gallery } from 'ui-core-schema';
+import { Gallery } from '@molitio/molitio-schema';
 
 export interface ResourceGalleryPageProps {
     gallery?: Gallery;

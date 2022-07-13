@@ -1,6 +1,6 @@
 import { Story, Meta } from '@storybook/react';
 import { CenterDisplay, ComponentGroup, ComponentGroupProps } from 'ui-common';
-import { ComponentCollectionTags, ThemeNameTags } from 'ui-core-schema';
+import { ComponentCollectionTags, ThemeNameTags } from '@molitio/molitio-schema';
 import { StyledThemeContextProvider, StyledThemeProps } from 'ui-style-service';
 import { LogoFreshPrintSvg } from 'ui-svg';
 

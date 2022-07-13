@@ -1,4 +1,4 @@
-import { UniversalRadio } from 'ui-core-schema';
+import { UniversalRadio } from '@molitio/molitio-schema';
 
 export interface RadioPageProps {
     playerElement?: JSX.Element;

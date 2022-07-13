@@ -1,4 +1,4 @@
-import { NavSegment } from 'ui-core-schema';
+import { NavSegment } from '@molitio/molitio-schema';
 
 export interface NavSegmentProps {
     navSegment: NavSegment;

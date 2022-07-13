@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledThemeContextProviderProps } from '../interfaces/StyledThemeContextProviderProps';
 import { getThemes } from '../hooks/ThemeContextStore';
-import { StyledThemeContext } from '../../ui-core-schema/types/ui-style-service/theme/StyledThemeContext';
+import { StyledThemeContext } from '../../@molitio/molitio-schema/types/ui-style-service/theme/StyledThemeContext';
 import { ThemeProvider } from 'react-jss';
 
 export const StyledThemeContextProvider: React.FC<StyledThemeContextProviderProps & React.PropsWithChildren> = (

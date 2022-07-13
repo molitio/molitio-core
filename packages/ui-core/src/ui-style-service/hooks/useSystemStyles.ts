@@ -1,6 +1,6 @@
-import { SystemStyleTag } from 'ui-core-schema/tags/ui-style-service/SystemStyleTag';
-import { ComponentTag, StyledThemeContext } from 'ui-core-schema';
-import { SystemThemeName } from 'ui-core-schema/types/ui-style-service/theme/SystemThemeName';
+import { SystemStyleTag } from '@molitio/molitio-schema/tags/ui-style-service/SystemStyleTag';
+import { ComponentTag, StyledThemeContext } from '@molitio/molitio-schema';
+import { SystemThemeName } from '@molitio/molitio-schema/types/ui-style-service/theme/SystemThemeName';
 //import SystemStylesScssModule from '../styles/SystemStylesScssModule.module.scss';
 //import ComponentStylesScssModule from '../styles/ComponentStylesScssModule.module.scss';
 

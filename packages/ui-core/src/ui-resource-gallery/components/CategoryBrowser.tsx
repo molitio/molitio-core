@@ -1,5 +1,5 @@
 import React from 'react';
-import { Category, ImageResource } from 'ui-core-schema';
+import { Category, ImageResource } from '@molitio/molitio-schema';
 import { CategoryBrowserProps } from '../interfaces/CategoryBrowserProps';
 import { createUseStyles } from 'react-jss';
 import { ResourceGalleryActionType, ResourceGalleryReducer } from './ResourceGalleryReducer';

@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/react';
-import { ThemeNameTags } from 'ui-core-schema';
+import { ThemeNameTags } from '@molitio/molitio-schema';
 
-import { NavSegment } from 'ui-core-schema';
+import { NavSegment } from '@molitio/molitio-schema';
 
 import { NavSegmentComponent, NavMenuComponentProps, NavMenuComponent, NavSegmentProps } from 'ui-nav-menu';
 import { StyledThemeContextProvider, StyledThemeProps } from 'ui-style-service';

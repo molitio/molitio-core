@@ -1,4 +1,4 @@
-import { ComponentCollectionTags } from 'ui-core-schema';
+import { ComponentCollectionTags } from '@molitio/molitio-schema';
 import { ShapeDimensions } from 'ui-svg';
 
 export type Breakpoints = 'xs' | 'sm' | 'lg' | 'wide';

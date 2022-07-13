@@ -1,3 +1,3 @@
-import { UniversalRadio } from 'ui-core-schema';
+import { UniversalRadio } from '@molitio/molitio-schema';
 
 export interface AudioPlayerProps extends UniversalRadio {}

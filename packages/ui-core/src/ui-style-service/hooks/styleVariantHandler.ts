@@ -1,4 +1,4 @@
-import { ButtonStyleVariant } from 'ui-core-schema';
+import { ButtonStyleVariant } from '@molitio/molitio-schema';
 
 export const getStyleVariantRules = (variant: ButtonStyleVariant) => {
     switch (variant) {

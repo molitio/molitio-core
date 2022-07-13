@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import { createUseStyles } from 'react-jss';
 import { ComponentGroupProps } from '../interfaces/ComponentGroupProps';
-import { ComponentCollectionTags, StyledThemeContext } from 'ui-core-schema';
+import { ComponentCollectionTags, StyledThemeContext } from '@molitio/molitio-schema';
 
 /* type Props = {
     className?: string;
