@@ -77,9 +77,8 @@
         "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
         "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
         "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-        "docgen": "mkdir -p .artifact/jsdoc && ./node_modules/.bin/jsdoc dist/index.js -d .artifact/jsdoc",
-        "tsgen": "tsc --project tsconfig.json",
-        "testgen": "yarn tsc __tests__ -d .artifact/__tests__ --project tsconfig.json"
+        "predocgen":"mkdir -p .artifact/jsdoc",
+        "docgen": "yarn run typedoc --out .artifact/docs src/index.ts"
     },
     "dependencies": {
         "@molitio/molitio-schema": "workspace:*",

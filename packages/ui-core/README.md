@@ -81,3 +81,4 @@ By creating digital tools, that are accessible easily to anyone and can perform 
 
     Peter Koller
     Sandor Hepp
+    Erzsébet Antal-Somogyi
