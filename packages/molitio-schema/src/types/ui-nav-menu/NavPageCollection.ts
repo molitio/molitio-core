@@ -1,4 +1,4 @@
-import { NavPage } from "@molitio/molitio-schema";
+import { NavPage } from "./NavPage";
 
 export type NavPageCollection = {
   tag: string;

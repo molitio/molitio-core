@@ -1,7 +1,8 @@
+import React from 'react';
 import { Story, Meta } from '@storybook/react';
+import { ThemeNameTags } from '@molitio/molitio-schema';
 import { CenterDisplay } from 'ui-common';
 import { DynamicButton } from 'ui-controls';
-import { ThemeNameTags } from '@molitio/molitio-schema';
 import { StyledThemeContextProvider } from 'ui-style-service';
 
 const buttonArgs = {

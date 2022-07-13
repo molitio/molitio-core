@@ -1,4 +1,10 @@
 /**
+ * @exports MolitioComponent
+ *  Wraper to React.FC<T> extended with molitio properties
+ */
+export type { MolitioComponent } from './components/MolitioComponent';
+
+/**
  * @exports PageTag
  *  page tag to identify individual unique pages
  */
@@ -16,7 +22,7 @@ export type { AppShellProps } from './interfaces/AppShellProps';
  * @exports CenterDisplay
  *  content positioning to the center of the screen
  */
-export { CenterDisplay } from './components/CenterDisplay';
+export { CenterDisplay } from '../ui-resource-gallery/components/CenterDisplay';
 
 /**
  * @exports ComponentGroup

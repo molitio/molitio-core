@@ -1,11 +1,11 @@
 import React from 'react';
 import { ComponentTag, SystemStyleTag, ThemeNameTags } from '@molitio/molitio-schema';
 import { createUseStyles } from 'react-jss';
-import { CategoryBrowser } from './CategoryBrowser';
-import { ResourceGalleryProps } from '../interfaces/ResourceGalleryProps';
+import { MolitioComponent } from 'ui-common';
 import { resolveSystemStyle, useSystemStyles } from 'ui-style-service';
+import { ResourceGalleryProps } from '../interfaces/ResourceGalleryProps';
+import { CategoryBrowser } from './CategoryBrowser';
 import { ResourceGalleryActionType, ResourceGalleryReducer } from './ResourceGalleryReducer';
-import { MolitioComponent } from '@molitio/molitio-schema/types/generics/MolitioComponent';
 
 export const ResourceGallery: MolitioComponent<ResourceGalleryProps> = (props) => {
     const { gallery } = props;

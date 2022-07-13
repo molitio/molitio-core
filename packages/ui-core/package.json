@@ -20,7 +20,9 @@
     "main": "dist/index.js",
     "module": "dist/esm/index.js",
     "typings": "dist/index.d.ts",
-    "outputTestSample": "tests/index.js",
+    "files": [
+        "dist"
+    ],
     "bundle": {
         "esm": "dist/bundle/esm/index.js",
         "umd": "dist/bundle/umd/index.js"
@@ -28,11 +30,8 @@
     "iife": {
         "radioPage": "dist/iife/molitio-radio-page.js"
     },
-    "files": [
-        "dist"
-    ],
     "engines": {
-        "node": ">=12"
+        "node": ">=16"
     },
     "husky": {
         "hooks": {
@@ -129,8 +128,8 @@
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^13.3.0",
         "@types/jest": "^27.5.2",
-        "@types/node": "^16.11.10",
-        "@types/react": "^18.0.9",
+        "@types/node": "^18.0.3",
+        "@types/react": "^18.0.15",
         "@types/react-dom": "^18.0.5",
         "@types/rollup-plugin-peer-deps-external": "^2.2.1",
         "@types/styled-components": "^5.1.25",

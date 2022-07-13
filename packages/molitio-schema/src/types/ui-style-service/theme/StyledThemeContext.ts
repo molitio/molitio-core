@@ -1,4 +1,4 @@
-import { DeviceTypes } from "@molitio/molitio-schema";
+import { DeviceTypes } from "../../ui-platform/DeviceTypes";
 
 export type StyledThemeContext = {
   themeName?: string;

@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentTag } from "../../tags/ui-common/ComponentTag";
+import { ComponentTag } from "@molitio/molitio-schema";
 
 type MolitioComponentParams<T> = T & {
   tag?: ComponentTag;

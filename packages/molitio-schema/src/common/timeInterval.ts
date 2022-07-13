@@ -1,8 +1,8 @@
-import {Moment} from 'moment';
+import { Moment } from "moment";
 
-export interface TimeInterval {
+export type TimeInterval = {
   start: Moment;
   stop: Moment;
-  constructor(start: Date, stop: Date);
+  constructor(start: Date, stop: Date): TimeInterval;
   intervalLenghtMs(): number;
-}
+};

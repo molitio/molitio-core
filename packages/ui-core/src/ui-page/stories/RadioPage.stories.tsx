@@ -1,5 +1,6 @@
 import React from 'react';
 import { Meta, ComponentStory } from '@storybook/react';
+import { ThemeNameTags } from '@molitio/molitio-schema';
 import { RadioPage } from 'ui-page';
 import {
     LogoAppStoreSvg,
@@ -13,7 +14,6 @@ import {
 } from 'ui-svg';
 import { AppShell, SpanBlock, DefaultFooter } from 'ui-common';
 import { StripedBackground } from 'ui-background';
-import { ThemeNameTags } from '@molitio/molitio-schema/tags/ui-style-service/theme/ThemeNameTags';
 
 const embededImageSource =
     'https://s3.eu-west-1.amazonaws.com/filestore.molitio.org/nest-media/sense-radio/image-store/radio_sense_effect.png';

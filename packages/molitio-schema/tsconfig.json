@@ -5,8 +5,6 @@
     "target": "ES5",
     "module": "ES2020",
     "lib": ["dom", "dom.iterable", "es2020"],
-    "types": ["react"],
-    "typeRoots": ["src"],
     "resolveJsonModule": false,
     "isolatedModules": true,
     "importHelpers": true,
@@ -29,9 +27,6 @@
     "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
-    "sourceMap": false,
-    "paths": {
-      "@/*": ["src/*"]
-    }
+    "sourceMap": false
   }
 }
