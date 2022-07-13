@@ -69,7 +69,6 @@ const shellMain = {
  *
  * @params AppShellProps
  */
-
 export const AppShell: React.FC<AppShellProps & React.PropsWithChildren> = (props) => {
     const { children, themeName, applyGlobalStyleRules } = props;
 
