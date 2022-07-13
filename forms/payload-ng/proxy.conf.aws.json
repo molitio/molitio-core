@@ -1,8 +1,0 @@
-{
-  "/api": {
-    "target": "http://mo-forms-LB-1729038995.eu-west-1.elb.amazonaws.com",
-    "secure": false,
-    "changeOrigin": true,
-    "pathRewrite": { "^/api": "/api" }
-  }
-}
