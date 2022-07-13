@@ -44,9 +44,9 @@ generics
 export type { Category } from "./types/generics/Category";
 export type { Gallery } from "./types/generics/Gallery";
 
-export { Human } from "./human/human";
-export { TimeInterval } from "./common/timeInterval";
-export { Rating } from "./common/rating";
-export { PublicInfo } from "./human/publicInfo";
-export { MolitioResource } from "./resource/molitioResource";
-export { TransitionResource } from "./resource/transitionResource";
+export type { Human } from "./human/human";
+export type { TimeInterval } from "./common/timeInterval";
+export type { Rating } from "./common/rating";
+export type { PublicInfo } from "./human/publicInfo";
+export type { MolitioResource } from "./resource/molitioResource";
+export type { TransitionResource } from "./resource/transitionResource";

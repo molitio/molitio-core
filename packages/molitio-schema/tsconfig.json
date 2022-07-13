@@ -29,7 +29,7 @@
     "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "paths": {
       "@/*": ["src/*"]
     }
