@@ -77,7 +77,7 @@
         "test": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest",
         "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest --watch",
         "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-        "predocgen":"mkdir -p .artifact/jsdoc",
+        "predocgen": "mkdir -p .artifact/jsdoc",
         "docgen": "yarn run typedoc --out .artifact/docs src/index.ts"
     },
     "dependencies": {
