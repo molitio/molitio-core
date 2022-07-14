@@ -9,7 +9,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story = () => <LandingPage pageTitle="Landing Page"></LandingPage>;
+const Template: Story = () => <LandingPage pageTitle="Landing Page"><img width="1024" alt="Girasoli in Mugello" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Girasoli_in_Mugello.jpg/1024px-Girasoli_in_Mugello.jpg"/></LandingPage>;
 
 export const DefaultLandingPage = Template.bind({});
 DefaultLandingPage.parameters = {

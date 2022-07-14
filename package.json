@@ -22,7 +22,8 @@
     "packages/**/*"
   ],
   "scripts": {
-    "build": "yarn workspace @molitio/ui-core build"
+    "build": "yarn workspace @molitio/ui-core build",
+    "storybook": "yarn workspace @molitio/ui-core storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
