@@ -1,8 +1,10 @@
 import { ResourceValet } from "../resource/resourceValet";
+import { Rating } from "../common/rating";
 import { PublicInfo } from "./publicInfo";
 
 export interface Human {
   name: string;
-  public: PublicInfo;
+  publicRating: Rating;
+  pulicInfo: PublicInfo;
   resourceValet: ResourceValet;
 }
