@@ -81,7 +81,7 @@
         "docgen": "yarn run typedoc --out .artifact/docs src/index.ts"
     },
     "dependencies": {
-        "@molitio/molitio-schema": "workspace:*",
+        "@molitio/system-schema": "workspace:*",
         "nanoid": "^4.0.0"
     },
     "peerDependencies": {

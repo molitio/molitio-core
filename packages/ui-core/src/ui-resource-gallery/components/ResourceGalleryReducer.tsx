@@ -1,4 +1,4 @@
-import { Gallery } from '@molitio/molitio-schema';
+import { Gallery } from '@molitio/system-schema';
 
 export enum ResourceGalleryActionType {
     SELECT_CATEGORY,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AudioPlayerState } from '@molitio/molitio-schema';
+import { AudioPlayerState } from '@molitio/system-schema';
 
 export const AudioPlayerContext = React.createContext<AudioPlayerState>({
     isPlaying: false,

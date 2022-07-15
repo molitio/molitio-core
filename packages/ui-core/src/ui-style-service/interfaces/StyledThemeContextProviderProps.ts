@@ -1,4 +1,4 @@
-import { DeviceTypes } from '@molitio/molitio-schema';
+import { DeviceTypes } from '@molitio/system-schema';
 
 export interface StyledThemeContextProviderProps {
     themeName?: string;

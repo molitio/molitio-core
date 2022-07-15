@@ -1,4 +1,4 @@
-import { ThemeNameTags, StyledThemeContext } from '@molitio/molitio-schema';
+import { ThemeNameTags, StyledThemeContext } from '@molitio/system-schema';
 import { OrangeHighlight, YellowHighlight } from '../styles/SvgBorderHighLights';
 
 export const getThemes = async (): Promise<Map<string, StyledThemeContext>> => {

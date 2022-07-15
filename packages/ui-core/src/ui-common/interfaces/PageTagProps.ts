@@ -1,4 +1,4 @@
-import { Page } from '@molitio/molitio-schema';
+import { Page } from '@molitio/system-schema';
 
 export interface PageTagProps {
     tag: Page;

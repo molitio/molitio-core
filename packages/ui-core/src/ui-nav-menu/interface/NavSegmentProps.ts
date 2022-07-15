@@ -1,4 +1,4 @@
-import { NavSegment } from '@molitio/molitio-schema';
+import { NavSegment } from '@molitio/system-schema';
 
 export interface NavSegmentProps {
     navSegment: NavSegment;

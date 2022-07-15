@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentTag, SystemStyleTag, ThemeNameTags } from '@molitio/molitio-schema';
+import { ComponentTag, SystemStyleTag, ThemeNameTags } from '@molitio/system-schema';
 import { createUseStyles } from 'react-jss';
 import { MolitioComponent } from 'ui-common';
 import { resolveSystemStyle, useSystemStyles } from 'ui-style-service';

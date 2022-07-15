@@ -1,4 +1,4 @@
-import { Category, Resource } from '@molitio/molitio-schema';
+import { Category, Resource } from '@molitio/system-schema';
 
 export const fillResources = () => {
     const tajkepGyujtemeny = new Map<string, Resource>();

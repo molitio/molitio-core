@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from '@molitio/molitio-schema';
+import { StyledThemeContext } from '@molitio/system-schema';
 import { TypographyProps } from '../interfaces/TypographyProps';
 
 export const SpanBlock: React.FC<TypographyProps> = (props) => {

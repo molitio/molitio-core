@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { ThemeNameTags, NavSegment } from '@molitio/molitio-schema';
+import { ThemeNameTags, NavSegment } from '@molitio/system-schema';
 import { NavSegmentComponent, NavMenuComponentProps, NavMenuComponent, NavSegmentProps } from 'ui-nav-menu';
 import { StyledThemeContextProvider, StyledThemeProps } from 'ui-style-service';
 

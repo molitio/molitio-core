@@ -1,5 +1,5 @@
 /**
- * @molitio/molitio-schema
+ * @molitio/system-schema
  *  tags:
  *      ui-common:
  *          @exports {ComponentGroupTags}

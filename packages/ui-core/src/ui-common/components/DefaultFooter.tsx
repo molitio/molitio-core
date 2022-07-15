@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from '@molitio/molitio-schema';
+import { StyledThemeContext } from '@molitio/system-schema';
 import { DefaultFooterProps } from '../interfaces/DefaultFooterProps';
 
 export const DefaultFooter: React.FC<DefaultFooterProps> = (props) => {

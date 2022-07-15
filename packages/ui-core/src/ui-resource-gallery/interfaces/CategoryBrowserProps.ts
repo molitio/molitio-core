@@ -1,4 +1,4 @@
-import { Category } from '@molitio/molitio-schema';
+import { Category } from '@molitio/system-schema';
 
 export interface CategoryBrowserProps {
     categories?: Map<string, Category>;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AudioPlayerContext } from '../context/AudioPlayerContext';
-import { AudioPlayerState } from '@molitio/molitio-schema';
+import { AudioPlayerState } from '@molitio/system-schema';
 import { DeviceContext } from 'ui-platform';
 
 export enum AudioPlayerStateActionType {

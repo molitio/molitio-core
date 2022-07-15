@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { Resource, Category } from '@molitio/molitio-schema';
+import { Resource, Category } from '@molitio/system-schema';
 import { AppShell } from 'ui-common';
 import { ResourceGalleryProps } from 'ui-resource-gallery';
 import { ResourceGalleryPage } from 'ui-page';

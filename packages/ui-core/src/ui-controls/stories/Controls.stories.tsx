@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { ThemeNameTags } from '@molitio/molitio-schema';
+import { ThemeNameTags } from '@molitio/system-schema';
 import { CenterDisplay } from 'ui-common';
 import { DynamicButton } from 'ui-controls';
 import { StyledThemeContextProvider } from 'ui-style-service';

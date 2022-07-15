@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, ComponentStory } from '@storybook/react';
-import { ThemeNameTags } from '@molitio/molitio-schema';
+import { ThemeNameTags } from '@molitio/system-schema';
 import { RadioPage } from 'ui-page';
 import {
     LogoAppStoreSvg,

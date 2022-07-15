@@ -1,4 +1,4 @@
-import { ThemeNameTags } from '@molitio/molitio-schema';
+import { ThemeNameTags } from '@molitio/system-schema';
 
 export interface AppShellProps {
     themeName?: ThemeNameTags;

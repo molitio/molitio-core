@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentTag } from "@molitio/molitio-schema";
+import { ComponentTag } from "@molitio/system-schema";
 
 type MolitioComponentParams<T, D, S> = T &  {data?: Partial<Record<string, D>>} & {style?: Partial<Record<string, S>>} & {
   tag?: ComponentTag;

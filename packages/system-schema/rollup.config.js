@@ -53,27 +53,27 @@ export default [
     output: [
       //unbundled esm
       {
-        name: "@molitio/molitio-schema",
+        name: "@molitio/system-schema",
         file: packageJson.module,
         format: "esm",
         exports: "named",
       },
       //bundled esm
       {
-        name: "@molitio/molitio-schema",
+        name: "@molitio/system-schema",
         file: packageJson.bundle.esm,
         format: "esm",
         exports: "named",
       },
       //unbundled cjs
       {
-        name: "@molitio/molitio-schema",
+        name: "@molitio/system-schema",
         file: packageJson.main,
         format: "cjs",
       },
       //bundled umd
       {
-        name: "@molitio/molitio-schema",
+        name: "@molitio/system-schema",
         file: packageJson.bundle.umd,
         format: "umd",
       },

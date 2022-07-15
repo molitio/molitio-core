@@ -1,4 +1,4 @@
-import { ThemeColor } from "@molitio/molitio-schema";
+import { ThemeColor } from "@molitio/system-schema";
 
 export interface TypographyProps {
     rem: number;

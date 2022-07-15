@@ -1,5 +1,5 @@
 import React from 'react';
-import { DeviceTypes } from '@molitio/molitio-schema';
+import { DeviceTypes } from '@molitio/system-schema';
 import DeviceDetector from 'device-detector-js';
 import { DeviceContext } from '../context/DeviceContext';
 

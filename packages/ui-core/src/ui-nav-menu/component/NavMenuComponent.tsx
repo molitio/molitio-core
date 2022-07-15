@@ -2,7 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
-import { StyledThemeContext, NavPage } from '@molitio/molitio-schema';
+import { StyledThemeContext, NavPage } from '@molitio/system-schema';
 import styles from '../styles/NavMenuComponent.module.scss';
 
 export const NavMenuComponent: React.FC<NavMenuComponentProps> = (props: NavMenuComponentProps) => {

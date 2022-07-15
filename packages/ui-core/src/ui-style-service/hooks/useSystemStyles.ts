@@ -1,4 +1,4 @@
-import { ComponentTag, StyledThemeContext, SystemStyleTag, SystemThemeName } from '@molitio/molitio-schema';
+import { ComponentTag, StyledThemeContext, SystemStyleTag, SystemThemeName } from '@molitio/system-schema';
 //import SystemStylesScssModule from '../styles/SystemStylesScssModule.module.scss';
 //import ComponentStylesScssModule from '../styles/ComponentStylesScssModule.module.scss';
 

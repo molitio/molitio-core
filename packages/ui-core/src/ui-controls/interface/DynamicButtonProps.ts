@@ -1,4 +1,4 @@
-import { ButtonStyleVariant } from '@molitio/molitio-schema';
+import { ButtonStyleVariant } from '@molitio/system-schema';
 
 export interface DynamicButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
     styleVariant: ButtonStyleVariant;

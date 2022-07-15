@@ -1,6 +1,6 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
-import { StyledThemeContext } from '@molitio/molitio-schema';
+import { StyledThemeContext } from '@molitio/system-schema';
 import { SvgComponentProps } from '../interface/SvgComponentProps';
 import { EmbededHtml } from './EmbededHtml';
 
