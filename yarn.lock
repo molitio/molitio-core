@@ -2477,6 +2477,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@molitio/ui-storybook@workspace:packages/ui-storybook":
+  version: 0.0.0-use.local
+  resolution: "@molitio/ui-storybook@workspace:packages/ui-storybook"
+  dependencies:
+    "@storybook/addon-a11y": ^6.5.4
+    "@storybook/addon-actions": ^6.5.4
+    "@storybook/addon-docs": ^6.5.9
+    "@storybook/addon-essentials": ^6.5.4
+    "@storybook/addon-interactions": ^6.5.4
+    "@storybook/addon-jest": ^6.5.6
+    "@storybook/addon-links": ^6.5.4
+    "@storybook/addon-outline": ^6.5.9
+    "@storybook/addons": ^6.5.4
+    "@storybook/builder-webpack5": ^6.5.4
+    "@storybook/manager-webpack5": ^6.5.4
+    "@storybook/preset-scss": ^1.0.3
+    "@storybook/preset-typescript": ^3.0.0
+    "@storybook/react": ^6.5.4
+    "@storybook/testing-library": ^0.0.11
+    "@storybook/theming": ^6.5.4
+  languageName: unknown
+  linkType: soft
+
 "@mrmlnc/readdir-enhanced@npm:^2.2.1":
   version: 2.2.1
   resolution: "@mrmlnc/readdir-enhanced@npm:2.2.1"
