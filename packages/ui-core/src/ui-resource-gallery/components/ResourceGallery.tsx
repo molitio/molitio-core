@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentTag, SystemStyleTag, ThemeNameTags } from '@molitio/system-schema';
+import { ComponentTag, Gallery, SystemStyleTag, ThemeNameTags } from '@molitio/system-schema';
 import { createUseStyles } from 'react-jss';
 import { MolitioComponent } from 'ui-common';
 import { resolveSystemStyle, useSystemStyles } from 'ui-style-service';
@@ -7,7 +7,7 @@ import { ResourceGalleryProps } from '../interfaces/ResourceGalleryProps';
 import { CategoryBrowser } from './CategoryBrowser';
 import { ResourceGalleryActionType, ResourceGalleryReducer } from './ResourceGalleryReducer';
 
-export const ResourceGallery: MolitioComponent<ResourceGalleryProps> = (props) => {
+export const ResourceGallery: MolitioComponent<ResourceGalleryProps, Gallery, Record<string, string>> = (props) => {
     const { gallery } = props;
 
     const styles = createUseStyles({

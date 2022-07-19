@@ -8,6 +8,8 @@
     "debug": "cross-env NODE_OPTIONS=--inspect-brk STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 4242"
   },
   "dependencies": {
+    "@molitio/system-schema": "workspace:*",
+    "@molitio/ui-core": "workspace:*",
     "@storybook/addon-a11y": "^6.5.4",
     "@storybook/addon-actions": "^6.5.4",
     "@storybook/addon-docs": "^6.5.9",
@@ -23,6 +25,18 @@
     "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^6.5.4",
     "@storybook/testing-library": "^0.0.11",
-    "@storybook/theming": "^6.5.4"
+    "@storybook/theming": "^6.5.4",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "storybook-addon-designs": "^6.3.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.2"
   }
 }

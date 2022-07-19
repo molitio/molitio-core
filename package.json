@@ -23,11 +23,10 @@
   ],
   "scripts": {
     "build": "yarn workspace @molitio/ui-core build",
-    "storybook": "yarn workspace @molitio/ui-core storybook"
+    "storybook": "yarn workspace @molitio/ui-storybook storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
-    "@types/babel__core": "^7",
     "@types/eslint": "^8",
     "@types/node": "^18.0.3",
     "@types/react": "^18.0.15",
