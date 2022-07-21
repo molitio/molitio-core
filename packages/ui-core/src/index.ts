@@ -1,8 +1,8 @@
 /*
-ui-nav-menu
+ui-background
 */
 
-export * from './ui-nav-menu';
+export * from './ui-background';
 
 /* 
 ui-common
@@ -14,17 +14,40 @@ ui-controls
 */
 export * from './ui-controls';
 
+/*
+ui-layout
+*/
+export * from './ui-layout';
+
+/*
+ui-media
+*/
+export * from './ui-media';
+
+/*
+ui-nav-menu
+*/
+export * from './ui-nav-menu';
+
 /* 
 ui-page
 */
-
 export * from './ui-page';
 
 /*
-ui-background
+ui-platform
 */
+export * from './ui-platform';
 
-export * from './ui-background';
+/*
+ui-resource-gallery
+*/
+export * from './ui-resource-gallery';
+
+/*
+ui-style-service
+*/
+export * from './ui-style-service';
 
 /*
 ui-svg

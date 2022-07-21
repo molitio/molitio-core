@@ -2375,7 +2375,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@molitio/ui-core@workspace:packages/ui-core":
+"@molitio/ui-core@workspace:*, @molitio/ui-core@workspace:packages/ui-core":
   version: 0.0.0-use.local
   resolution: "@molitio/ui-core@workspace:packages/ui-core"
   dependencies:
@@ -2399,22 +2399,6 @@ __metadata:
     "@rollup/plugin-node-resolve": ^13.0.6
     "@rollup/plugin-replace": ^3.0.0
     "@rollup/plugin-typescript": ^8.3.0
-    "@storybook/addon-a11y": ^6.5.4
-    "@storybook/addon-actions": ^6.5.4
-    "@storybook/addon-docs": ^6.5.9
-    "@storybook/addon-essentials": ^6.5.4
-    "@storybook/addon-interactions": ^6.5.4
-    "@storybook/addon-jest": ^6.5.6
-    "@storybook/addon-links": ^6.5.4
-    "@storybook/addon-outline": ^6.5.9
-    "@storybook/addons": ^6.5.4
-    "@storybook/builder-webpack5": ^6.5.4
-    "@storybook/manager-webpack5": ^6.5.4
-    "@storybook/preset-scss": ^1.0.3
-    "@storybook/preset-typescript": ^3.0.0
-    "@storybook/react": ^6.5.4
-    "@storybook/testing-library": ^0.0.11
-    "@storybook/theming": ^6.5.4
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^13.3.0
     "@types/jest": ^27.5.2
@@ -2431,7 +2415,6 @@ __metadata:
     babel-preset-latest: ^6.24.1
     core-js: ^3.23.4
     cross-env: ^7.0.3
-    css-loader: ^6.7.1
     device-detector-js: ^3.0.2
     eslint: ^8.3.0
     eslint-config-google: ^0.14.0
@@ -2444,8 +2427,6 @@ __metadata:
     jsdoc: ~3.6.10
     nanoid: ^4.0.0
     node-sass: ^7.0.1
-    postcss: ^8.4.14
-    postcss-scss: ^4.0.4
     prettier: 2.6.2
     react: ^18.1.0
     react-docgen: ^5.4.3
@@ -2454,13 +2435,8 @@ __metadata:
     react-jss: ^10.9.0
     rollup: ^2.75.0
     rollup-plugin-peer-deps-external: ^2.2.4
-    rollup-plugin-postcss: ^4.0.2
     rollup-plugin-size: ^0.2.2
-    sass: ^1.52.1
-    sass-loader: ^12.6.0
     size-limit: ^7.0.3
-    storybook-addon-designs: ^6.3.1
-    style-loader: ^3.3.1
     styled-components: ^5.3.5
     ts-jest: ^28.0.4
     ts-loader: ^9.2.6
@@ -2474,6 +2450,41 @@ __metadata:
   peerDependencies:
     react: ^18.1.0
     react-dom: ^18.1.0
+  languageName: unknown
+  linkType: soft
+
+"@molitio/ui-storybook@workspace:packages/ui-storybook":
+  version: 0.0.0-use.local
+  resolution: "@molitio/ui-storybook@workspace:packages/ui-storybook"
+  dependencies:
+    "@molitio/system-schema": "workspace:*"
+    "@molitio/ui-core": "workspace:*"
+    "@storybook/addon-a11y": ^6.5.4
+    "@storybook/addon-actions": ^6.5.4
+    "@storybook/addon-docs": ^6.5.9
+    "@storybook/addon-essentials": ^6.5.4
+    "@storybook/addon-interactions": ^6.5.4
+    "@storybook/addon-jest": ^6.5.6
+    "@storybook/addon-links": ^6.5.4
+    "@storybook/addon-outline": ^6.5.9
+    "@storybook/addons": ^6.5.4
+    "@storybook/builder-webpack5": ^6.5.4
+    "@storybook/manager-webpack5": ^6.5.4
+    "@storybook/preset-scss": ^1.0.3
+    "@storybook/preset-typescript": ^3.0.0
+    "@storybook/react": ^6.5.4
+    "@storybook/testing-library": ^0.0.11
+    "@storybook/theming": ^6.5.4
+    "@types/react": ^18.0.15
+    "@types/react-dom": ^18.0.5
+    cross-env: ^7.0.3
+    css-loader: ^6.7.1
+    react: ^18.1.0
+    react-dom: ^18.1.0
+    sass-loader: ^12.6.0
+    storybook-addon-designs: ^6.3.1
+    style-loader: ^3.3.1
+    tsconfig-paths-webpack-plugin: ^3.5.2
   languageName: unknown
   linkType: soft
 
@@ -4666,7 +4677,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/babel__core@npm:^7, @types/babel__core@npm:^7.1.14, @types/babel__core@npm:^7.1.6":
+"@types/babel__core@npm:^7.1.14, @types/babel__core@npm:^7.1.6":
   version: 7.1.19
   resolution: "@types/babel__core@npm:7.1.19"
   dependencies:
@@ -16229,7 +16240,6 @@ __metadata:
   resolution: "molitio-core@workspace:."
   dependencies:
     "@babel/core": ^7.18.6
-    "@types/babel__core": ^7
     "@types/eslint": ^8
     "@types/node": ^18.0.3
     "@types/react": ^18.0.15
@@ -18272,15 +18282,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-scss@npm:^4.0.4":
-  version: 4.0.4
-  resolution: "postcss-scss@npm:4.0.4"
-  peerDependencies:
-    postcss: ^8.3.3
-  checksum: b4f240dd5eeb0c21738b673d9caf9a06b9a6db665a5b1c815ee4ca10c4c74a67c54f11cd5a4970dea98475cbb9e6d846e05dd3e48924189c2ecbf1f50cd44aa4
-  languageName: node
-  linkType: hard
-
 "postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4, postcss-selector-parser@npm:^6.0.5, postcss-selector-parser@npm:^6.0.9":
   version: 6.0.10
   resolution: "postcss-selector-parser@npm:6.0.10"
@@ -18349,7 +18350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.15, postcss@npm:^8.3.0, postcss@npm:^8.4.14, postcss@npm:^8.4.7":
+"postcss@npm:^8.2.15, postcss@npm:^8.3.0, postcss@npm:^8.4.7":
   version: 8.4.14
   resolution: "postcss@npm:8.4.14"
   dependencies:
@@ -19967,7 +19968,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.32.13, sass@npm:^1.52.1":
+"sass@npm:^1.32.13":
   version: 1.53.0
   resolution: "sass@npm:1.53.0"
   dependencies:

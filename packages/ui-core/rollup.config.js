@@ -7,7 +7,6 @@ import buble from '@rollup/plugin-buble';
 import size from 'rollup-plugin-size';
 import replace from '@rollup/plugin-replace';
 import image from '@rollup/plugin-image';
-import postcss from 'rollup-plugin-postcss';
 import json from '@rollup/plugin-json';
 
 const packageJson = require('./package.json');
@@ -15,7 +14,7 @@ const packageJson = require('./package.json');
 const isProd = process.env.NODE_ENV === 'production';
 
 const extensions = ['.ts', '.tsx', '.md', '.mdx', '.svg'];
-const exclusions = ['node_modules/**', '**/*.stories.tsx', '**/*.test.*'];
+const exclusions = ['node_modules/**', '**/*.stories.tsx','**/*.scss', '**/*.css'];
 
 const globals = {
     react: 'React',
@@ -46,11 +45,6 @@ export default [
                 exclude: [...exclusions],
             }),
             nodeResolve(),
-            postcss({
-                extract: false,
-                modules: true,
-                use: ['sass'],
-            }),
             buble({ transforms: { forOf: false } }),
             size(),
             image(),
@@ -94,11 +88,6 @@ export default [
                 exclude: [...exclusions],
             }),
             nodeResolve(),
-            postcss({
-                extract: false,
-                modules: true,
-                use: ['sass'],
-            }),
             buble({ transforms: { forOf: false } }),
             size(),
             image(),

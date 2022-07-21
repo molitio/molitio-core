@@ -1,0 +1,42 @@
+{
+  "name": "@molitio/ui-storybook",
+  "private": true,
+  "packageManager": "yarn@3.2.1",
+  "scripts": {
+    "storybook": "cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 4242 --no-manager-cache",
+    "build-storybook": "cd .artifact && rm -rf storybook && mkdir storybook && cd .. && cross-env STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true build-storybook -o .artifact/storybook --docs",
+    "debug": "cross-env NODE_OPTIONS=--inspect-brk STORYBOOK_DISPLAY_WARNING=true DISPLAY_WARNING=true start-storybook -p 4242"
+  },
+  "dependencies": {
+    "@molitio/system-schema": "workspace:*",
+    "@molitio/ui-core": "workspace:*",
+    "@storybook/addon-a11y": "^6.5.4",
+    "@storybook/addon-actions": "^6.5.4",
+    "@storybook/addon-docs": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.4",
+    "@storybook/addon-interactions": "^6.5.4",
+    "@storybook/addon-jest": "^6.5.6",
+    "@storybook/addon-links": "^6.5.4",
+    "@storybook/addon-outline": "^6.5.9",
+    "@storybook/addons": "^6.5.4",
+    "@storybook/builder-webpack5": "^6.5.4",
+    "@storybook/manager-webpack5": "^6.5.4",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^6.5.4",
+    "@storybook/testing-library": "^0.0.11",
+    "@storybook/theming": "^6.5.4",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "storybook-addon-designs": "^6.3.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.2"
+  }
+}

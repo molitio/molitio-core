@@ -3,7 +3,6 @@ import { createUseStyles } from 'react-jss';
 import { NavSegmentComponent } from './NavSegmentComponent';
 import { NavMenuComponentProps } from '../interface/NavMenuComponentProps';
 import { StyledThemeContext, NavPage } from '@molitio/system-schema';
-import styles from '../styles/NavMenuComponent.module.scss';
 
 export const NavMenuComponent: React.FC<NavMenuComponentProps> = (props: NavMenuComponentProps) => {
     const { pageCollection } = props;
@@ -70,8 +69,8 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = (props: NavMenu
         },
     })).apply({});
 
-    return (
-        <nav className={styles.navbar}>
+    return (<>breaks affter scss removal, needs fixing</>
+/*         <nav className={styles.navbar}>
             <div className={styles.brandTitle}>
                 <img src="" alt="" />
             </div>
@@ -92,6 +91,6 @@ export const NavMenuComponent: React.FC<NavMenuComponentProps> = (props: NavMenu
                     ))}
                 </ul>
             </div>
-        </nav>
+        </nav> */
     );
 };
